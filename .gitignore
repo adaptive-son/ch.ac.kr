@@ -7,9 +7,8 @@ pub/vtour/
 # DB 접속 정보 (비밀번호 포함)
 pub/main/config/dbconn.php
 
-# phpMyAdmin 설정
-adframe/MyAdmin/setup/config.php
-adframe/MyAdmin/config.inc.php
+# phpMyAdmin 전체 제외
+adframe/MyAdmin/
 
 # IDE
 .vscode/
