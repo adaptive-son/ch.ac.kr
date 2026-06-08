@@ -4,6 +4,15 @@ ch.ac.kr/
 # 관리자 업로드 파일
 manage/
 
+# 라이브러리 이미지/리소스
+adframe/bbs/Extention/Uploader/
+adframe/bbs/module/
+adframe/bootstrap/
+adframe/lib/
+assets/
+pdfjs/
+pub/*/pdfjs/
+
 # 가상투어 (대용량)
 pub/vtour/
 
