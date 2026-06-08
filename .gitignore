@@ -1,6 +1,9 @@
 # 빈 중첩 git 저장소 (불필요)
 ch.ac.kr/
 
+# 관리자 업로드 파일
+manage/
+
 # 가상투어 (대용량)
 pub/vtour/
 

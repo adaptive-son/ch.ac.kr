@@ -1,9 +1,0 @@
-<?php
-	$ce_editorkey="C9Y4Y1W6TSW4EQ7RND";
-	$ce_company="%uCD98%uD574%uBCF4%uAC74%uB300%uD559%uAD50";
-	$ce_use="Manager";
-	$ce_serial="9504-0014-200023";
-	$ce_lkt="CDHMT";
-	$ce_domain="Y2guYWMua3IsY2guYWRiYW5rLmNvLmtyLDIwMy4yMzIuMjU0LjYsMjEwLjExNC4xNzQuNjIsbG9jYWxob3N0LDEyNy4wLjAuMQ==";
-	$ce_exp="MjA5OS0xMi0zMQ==";
-?>
