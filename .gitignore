@@ -1,6 +1,11 @@
 # 빈 중첩 git 저장소 (불필요)
 ch.ac.kr/
 
+# 심볼릭 링크 - Windows core.symlinks=false로 git 추적 불가
+# 실서버: ln -s /adframe pub/child/adframe
+# 로컬: ln -s ../../adframe pub/child/adframe (수동 생성)
+pub/child/adframe
+
 # 관리자 업로드 파일
 manage/
 
