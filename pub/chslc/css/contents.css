@@ -1,0 +1,363 @@
+@import url("contents_pc.css");
+@media only all and (max-width: 1023px) {
+    .only-pc {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+    .introduce-area>img {
+        width: 12.5rem;
+        margin: 0 auto 1.875rem auto;
+    }
+    .introduce-area>dl {
+        margin-bottom: 1.25rem;
+    }
+    .introduce-area>dl>dt {
+        font-size: 1.625rem;
+        line-height: 1.917rem;
+    }
+    .introduce-area>dl>dd {
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+    }
+    .introduce-area>dl+p {
+        margin: 0 0 1.625rem 0;
+    }
+    .introduce-area>p {
+        font-size: 1rem;
+        line-height: 1.538rem;
+        margin-bottom: 1.625rem;
+    }
+    .introduce-area>p.word-sign {
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+    }
+    .introduce-area>p.word-sign>strong {
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+    }
+    .introduce-images-list {
+        margin-top: 1.25rem;
+    }
+    .introduce-images-list>li {
+        width: 49%;
+        margin-right: 0;
+    }
+    .introduce-images-list>li:nth-child(even) {
+        float: right;
+    }
+    /* 교수진 소개 */
+    .professor-wrapper02 {
+        display: block;
+    }
+    .professor-area02 {
+        min-height: auto;
+        padding: 1.875rem;
+        margin-bottom: 1.25rem;
+    }
+    .professor-area02>h4 {
+        margin-bottom: 0.625rem;
+        font-size: 1.625rem;
+        line-height: 2.875rem;
+        text-align: center;
+    }
+    .professor-area02>h4>span {
+        margin-left: 0.5417rem;
+        font-size: 1.125rem;
+    }
+    .professor-area02>img {
+        position: static;
+        display: block;
+        width: 13.75rem;
+        margin: 0 auto 0.4167rem auto;
+    }
+    .professor-box02>ul {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+    .professor-box02>ul>li {
+        margin-bottom: 0.4167rem;
+        padding-left: 0.7917rem;
+        line-height: 1.5rem;
+        font-size: 1.042rem;
+    }
+    .professor-box02>ul>li:before {
+        top: 0.7083rem;
+        width: 0.2083rem;
+        height: 0.2083rem;
+    }
+    .table-type01 table thead th,
+    .table-type01 table tbody th,
+    .table-type01 table tbody td {
+        padding: 0.5769rem;
+        font-size: 1rem;
+    }
+    .map-btns-wrapper {
+        margin-bottom: 1.25rem;
+    }
+    .map-btns-wrapper>a {
+        width: 49%;
+        height: 3.75rem;
+        padding-top: 1.125rem;
+        margin-left: 2%;
+        border-radius: 0.2917rem;
+    }
+    .map-btns-wrapper>a>img {
+        height: 1.292rem;
+        line-height: 1.292rem;
+        margin-right: 0.375rem;
+    }
+    .map-btns-wrapper>a>strong {
+        color: #212121;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.292rem;
+    }
+    .map-wrapper {
+        display: block;
+    }
+    .map-wrapper .root_daum_roughmap,
+    .map-wrapper .wrap_map {
+        display: block;
+        height: 18.75rem !important;
+    }
+    /* 교육대상 */
+    .education-area {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.25rem;
+    }
+    .education-area:nth-of-type(4n) {
+        margin-right: 0;
+    }
+    .education-area:last-child {
+        margin-bottom: 0;
+    }
+    .education-area>.image {
+        padding: 1.75rem 0;
+        height: auto;
+    }
+    .education-area>.image>img {
+        position: static;
+        width: 12.83rem;
+        margin: 0 auto;
+    }
+    .education-area>p {
+        padding: 1.375rem 1rem;
+        height: auto;
+        font-size: 1rem;
+        line-height: 1.875rem;
+    }
+    table .ul-list01>li:before {
+        top: 0.75rem;
+        width: 0.2083rem;
+        height: 0.2083rem;
+    }
+    .service-slider-wrapper button {
+        margin-top: -1.4585rem;
+        width: 2.917rem;
+        height: 2.917rem;
+        background-size: 1rem 0.5417rem;
+    }
+    .service-slider-wrapper .btn-prev {
+        left: 1.25rem;
+    }
+    .service-slider-wrapper .btn-next {
+        right: 1.25rem;
+    }
+    .service-slider-wrapper #service-pagination01 {
+        bottom: 1rem;
+    }
+    .service-slider-wrapper #service-pagination01 .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.2083rem;
+        border-radius: 0.5rem;
+    }
+    .service-slider-wrapper #service-pagination01 .swiper-pagination-bullet-active {
+        width: 2rem;
+    }
+    /* 절차 */
+    .process-area {
+        float: none;
+        display: table;
+        width: 100%;
+        height: 9.333rem;
+        margin-bottom: 0;
+        padding: 0 1.25rem 0 2.083rem;
+    }
+    .process-wrapper .arrow {
+        float: none;
+        display: table;
+        width: 100%;
+        height: 2.5rem;
+        background-image: url(../img/sub03/icon_arrow_bottom01.png);
+        background-size: 1.625rem 0.8333rem;
+    }
+    .process-box {
+        padding-left: 7.875rem;
+    }
+    .process-box>img {
+        width: 5.833rem;
+        margin-top: -2.917rem;
+    }
+    .process-box>dl>dt {
+        margin-bottom: 0.7917rem;
+        font-size: 1.083rem;
+        line-height: 1.25rem;
+    }
+    .process-box>dl>dd {
+        font-size: 1.25rem;
+        line-height: 1.667rem;
+    }
+    .customer-information-wrapper {
+        height: auto;
+        padding: 2.083rem;
+    }
+    .customer-information-wrapper:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .reservation-wrapper {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+    .reservation-area {
+        padding-left: 6rem;
+        width: 100%;
+        min-height: 5.292rem;
+    }
+    .reservation-area>img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 5.292rem;
+        margin-top: -2.625rem;
+    }
+    .reservation-area>h4 {
+        margin-bottom: 0.875rem;
+        font-size: 1.167rem;
+        line-height: 1.542rem;
+    }
+    .reservation-area>p {
+        font-size: 2rem;
+        line-height: 2.083rem;
+        letter-spacing: -1px
+    }
+    .center-information-wrapper {
+        float: none;
+        display: table;
+        width: 100%;
+        height: auto;
+    }
+    .center-information-area {
+        min-height: auto;
+    }
+    .center-information-area>h4 {
+        margin-bottom: 0.7917rem;
+        color: #1460c7;
+        font-size: 1.167rem;
+        line-height: 1.583rem;
+    }
+    .center-information-area>dl {
+        margin-top: 0.7917rem;
+        padding-left: 6.042rem;
+        font-size: 1.167rem;
+        line-height: 1.583rem;
+    }
+    .center-information-area>dl>dt:before {
+        left: 4.292rem;
+        width: 0.08333rem;
+        height: 1.083rem;
+        margin-top: -0.5417rem;
+    }
+    .qna-wrapper>dl>dt>button {
+        padding: 1rem 3.417rem 1rem 2.917rem;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1.125rem;
+        line-height: 1.917rem;
+        letter-spacing: -0.25px;
+    }
+    .qna-wrapper>dl>dt>button:before {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        display: block;
+        width: 1.875rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        text-align: center;
+        border-radius: 50%;
+        content: "Q";
+        color: #0089d8;
+        font-family: "Arial", sans-serif;
+        border: 1px solid #ddd;
+        font-weight: 700
+    }
+    .qna-wrapper>dl>dt>button:after {
+        position: absolute;
+        top: 50%;
+        right: 1.25rem;
+        content: "";
+        display: block;
+        width: 1.25rem;
+        height: 0.6667rem;
+        margin-top: -0.3333rem;
+        background-image: url(../img/sub03/icon_arrow01.png);
+        background-repeat: no-repeat;
+        background-size: 1.25rem 0.6667rem;
+        background-position: 0 0;
+        transition: all 0.2s ease-in-out;
+    }
+    .qna-wrapper>dl>dt>button.active:after {
+        transform: rotate(180deg);
+    }
+    .qna-wrapper>dl>dd {
+        display: none;
+        position: relative;
+        padding: 1.25rem 1.25rem 1.25rem 2.917rem;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        font-size: 1rem;
+        line-height: 1.625rem;
+        color: #616161
+    }
+    .qna-wrapper>dl>dd:before {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        display: block;
+        width: 1.875rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        text-align: center;
+        border-radius: 50%;
+        content: "A";
+        color: #fff;
+        background-color: #38465f;
+        font-family: "Arial", sans-serif;
+        border: 1px solid #38465f;
+        font-weight: 700
+    }
+}
+
+@media only all and (max-width: 359px) {
+    .customer-information-wrapper {
+        padding: 1.5rem;
+    }
+    .reservation-area>p {
+        font-size: 1.75rem;
+    }
+    .center-information-area>dl {
+        font-size: 1rem;
+        line-height: 1.583rem;
+    }
+}

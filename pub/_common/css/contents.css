@@ -1,0 +1,2128 @@
+@charset "UTF-8";
+
+@import url("contents_pc.css");
+
+
+@media only all and (max-width: 1023px) {
+	.span-br {
+		display: inline;
+	}
+
+	.span-mobile-br {
+		display: block;
+	}
+
+	.only-pc {
+		display: none;
+	}
+
+	.only-mobile {
+		display: block;
+	}
+
+
+	/* 교수소개 */
+	.professor-wrapper {
+		margin-bottom: 1.154rem;
+	}
+
+	.professor-area {
+		min-height: auto;
+		padding: 1.154rem 0;
+	}
+
+	.professor-area > .image {
+		position: static;
+		margin: 0 auto 0.9231rem auto;
+		width: 6.923rem;
+		height: 9.231rem;
+		overflow: hidden;
+	}
+
+	.professor-area > .image > img {
+		position: static;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.professor-area > h4 {
+		font-size: 1.462rem;
+		line-height:1.923rem;
+		padding-top: 0
+		padding-bottom: 0.5769rem;
+	}
+
+	.professor-area > ul > li {
+		padding-left: 8.154rem;
+		margin-bottom: 0.1923rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	.professor-area > ul > li > strong {
+		margin-left: -8.154rem;
+		padding-left: 0.6154rem;
+		background-position: 0 0.5769rem;
+		background-size: 0.2308rem 0.2308rem;
+	}
+
+	.professor-area > .btn-detail-view {
+		margin-top: 0.9231rem;
+		margin-right: 1.154rem;
+		padding: 0 1.154rem 0 1.538rem;
+		height: 1.923rem;
+		line-height: 1.923rem;
+		font-size: 0.7692rem;
+		border-radius: 0.9615rem;
+	}
+
+	.professor-area > .btn-detail-view > img {
+		width: 1.038rem;
+		margin-left: 0.3846rem;
+	}
+
+	.professor-list-area {
+		float: none !important;
+		width: 100%;
+		margin-bottom: 0.5769rem;
+		min-height: 11.54rem;
+		padding: 1.154rem 1.154rem 1.154rem 9.231rem;
+	}
+
+	.professor-list-area > .image {
+		top: 1.154rem;
+		left: 1.154rem;
+		/*
+		position: static;
+		margin: 0 auto 0.9231rem auto;
+
+		width: 6.923rem;
+		height: 9.231rem;
+
+
+		width: 10.38rem;
+		height: 13.85rem;
+		*/
+		width: 6.923rem;
+		height: 9.231rem;
+		overflow: hidden;
+	}
+
+	.professor-list-area > .image > img {
+		position: static;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.professor-list-area > h4 {
+		font-size: 1.462rem;
+		line-height:1.923rem;
+		padding-top: 0
+		padding-bottom: 0.5769rem;
+	}
+
+	.professor-list-area > ul {
+		min-height: auto;
+		padding-top: 0.5769rem;
+	}
+
+	.professor-list-area > ul > li {
+		padding-left: 5rem;
+		margin-bottom: 0.1923rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+
+	}
+
+	.professor-list-area > ul > li > strong {
+		width: 4.583rem;
+		margin-left: -5rem;
+		padding-left: 0.6154rem;
+		background-position: 0 0.5769rem;
+		background-size: 0.2308rem 0.2308rem;
+		word-break: keep-all;
+	}
+
+	.professor-list-area > ul > li > span {
+		display: block;
+		white-space: normal;
+		max-height: 100%;
+	}
+
+	.professor-list-area > .btn-detail-view {
+		position: relative;
+		margin-top: 0.9231rem;
+		padding: 0 2.692rem 0 1.538rem;
+		height: 1.923rem;
+		line-height: 2.077rem;
+		font-size: 0.7692rem;
+		border-radius: 0.9615rem;
+	}
+
+	.professor-list-area > .btn-detail-view > img {
+		position: absolute;
+		top: 50%;
+		right: 1.154rem;
+		width: 1.038rem;
+		margin-left: 0.3846rem;
+		margin-top: -0.1923rem;
+	}
+
+
+	.contents-area {
+		margin-bottom: 1.769rem;
+	}
+
+	.contents-box {
+		padding-left: 1.538rem;
+	}
+
+	.contents-box02 {
+		padding-left: 0;
+	}
+
+	.title-type01 {
+		padding-left: 1.538rem;
+		margin-bottom: 0.6538rem;
+		font-size: 1.308rem;
+		line-height: 1.538rem;
+		background-position: 0 0.1923rem;
+		background-size: 1.154rem 1.154rem;
+	}
+
+	.title-type02 {
+		padding-left: 0.7692rem;
+		font-size: 1.077rem;
+		line-height: 1.385rem;
+		background-position: left 0.5769rem;
+		background-size: 0.3846rem 0.3846rem;
+	}
+
+	.title-type03 {
+		padding: 0.7692rem 0.7692rem;
+		font-size: 1.077rem;
+		line-height: 1.385rem;
+	}
+
+	.title-type04 {
+		font-size: 1rem;
+		line-height: 1.538rem;
+	}
+
+	div + .title-type01,
+	p + .title-type01,
+	ul + .title-type01,
+	ol + .title-type01,
+	dl + .title-type01,
+	div + .title-type02,
+	p + .title-type02,
+	ul + .title-type02,
+	ol + .title-type02,
+	dl + .title-type02,
+	.contents-box + .contents-box,
+	.contents-box02 + .contents-box02 {
+		margin-top: 1.385rem;
+	}
+
+	h4 + h5,
+	h5 + h5,
+	h5 + h6,
+	p + h6,
+	div + h6,
+	ul + h6,
+	ol + h6 {
+		margin-top: 1.385rem;
+	}
+
+	.ul-list01 > li {
+		padding-left: 0.6154rem;
+		font-size: 1rem;
+		line-height: 1.538rem;
+		background-position: 0 0.6154rem;
+		background-size: 0.2308rem 0.2308rem;
+	}
+
+	.ul-list01.type02 > li {
+		font-size: 1.038rem;
+		line-height: 1.846rem;
+		background-position: 0 0.7692rem;
+	}
+
+
+	.ol-list01 > li {
+		padding-left: 1.308rem;
+		font-size: 1rem;
+		line-height: 1.538rem;
+	}
+
+	h5 + ol,
+	h5 + ul,
+	h5 + dl,
+	h5 + p,
+	h5 + div,
+	h5 + p + ol,
+	h5 + p + ul,
+	h5 + p + ol,
+	h5 + p + dl,
+	ul + p,
+	ol + p,
+	dl + p,
+	p + ul + ul,
+	p + ul + ol,
+	p + ol + ul,
+	p + ol + ol {
+		margin-top: 0.3846rem;
+		margin-left: 0.7692rem;
+	}
+
+	.ul-list01 > li > ul > li,
+	.ol-list01 > li > ul > li {
+		padding-left: 0.3846rem;
+		word-break: keep-all;
+	}
+
+	/* tabmenu list */
+	.tabmenu-wrapper {
+		margin-bottom: 2.308rem;
+		border: 1px solid #dadada;
+		background: #fbfbfb
+	}
+
+	.tabmenu-wrapper > ul > li {
+		position: relative;
+		float: left;
+		width: calc(50% + 2px);
+	}
+
+	.tabmenu-wrapper > ul > li > a {
+		min-width: 100%;
+		height: 3.077rem;
+		padding: 0.8077rem 0 0 0;
+		color: #777777;
+		font-size: 1.077rem;
+		line-height: 1.385rem;
+		text-align: center;
+	}
+
+	.tabmenu-wrapper.ratio {
+		border-bottom: 1px solid #dadada;
+		border-right: 1px solid #dadada
+	}
+
+
+	.tabmenu-wrapper.ratio > ul > li {
+		width: calc(50% + 1px) !important;
+		margin-bottom: -1px;
+	}
+
+	.tabmenu-wrapper.ratio > ul > li > a {
+		min-width: auto;
+		padding: 0.8077rem 0 0 0;
+	}
+
+	.club-wrapper {
+		margin-bottom: 1.538rem;
+	}
+
+	.club-wrapper .title-area {
+		display: block;
+	}
+
+	.club-wrapper .title-area > h4 {
+		float: none;
+		margin-right: 0s;
+		font-size: 1.615rem;
+		line-height: 1.769rem;
+		padding-left: 1.538rem;
+		background-size: 30px 30px;
+	}
+
+	.club-wrapper .title-area > a {
+		position: relative;
+		float: none;
+		display: block;
+		width: 100%;
+		height: 3.077rem;
+		line-height: 3.077rem;
+		padding: 0 1.538rem;
+		border-radius: 1.538rem;
+		margin-top: 0.9615rem;
+		font-size: 1rem;
+	}
+
+	.club-wrapper .title-area > a > img {
+		position: absolute;
+		top: 50%;
+		right: 1.538rem;
+		width: 33px;
+		margin-left: 0;
+		transform: translate(0, -50%);
+	}
+
+	.word-type01 {
+		font-size: 1rem;
+		line-height: 1.538rem;
+	}
+
+	.word-type01 + div,
+	.word-type01 + p,
+	.word-type01 + ul,
+	.word-type01 + ol,
+	.word-type01 + dl,
+	.word-type01 + ul + ol,
+	.word-type01 + ul + ul,
+	.word-type01 + ol + ol,
+	.word-type01 + ol + ul {
+		margin-top: 1.385rem;
+	}
+
+	.images-box > .pc {
+		display: none;
+	}
+
+	.images-box > .mobile {
+		display: block;
+	}
+
+	.images-box > img + img {
+		margin-top: 0.5rem
+	}
+
+	/* 표 */
+	.table-type01 table thead th {
+		padding: 0.5769rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+		word-break: break-all;
+	}
+
+	.table-type01 table tbody th,
+	.table-type01 table tfoot th,
+	.table-type01 table tfoot td {
+		padding: 0.5769rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+		word-break: break-all;
+	}
+
+
+	.table-type01 table tbody td {
+		padding: 0.5769rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+		word-break: break-all;
+	}
+
+	.table-type02 table thead th {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 1rem;
+	}
+
+	.table-type02 table tbody th,
+	.table-type02 table tfoot th,
+	.table-type02 table tfoot td {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 1rem;
+		word-break: break-all
+	}
+
+	.table-type02 table tbody td {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 1rem;
+		word-break: break-all
+	}
+
+
+	.table-type01 + .table-type01,
+	.table-type01 + .table-type02,
+	.table-type01 + .table-type02,
+	.table-type02 + .table-type02 {
+		margin-top: 1.154rem;
+	}
+
+	.break-all.font-small table thead th,
+	.break-al.font-small table tfoot td,
+	.break-all.font-small table tbody th,
+	.break-all.font-small table tbody td {
+		padding-left: 0.1923rem;
+		padding-right: 0.1923rem;
+		font-size: 0.9231rem;
+	}
+
+
+
+	.table-type03 table thead th {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 0.94rem;
+	}
+
+	.table-type03 table tbody th,
+	.table-type03 table tfoot th,
+	.table-type03 table tfoot td {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 0.94rem;
+		word-break: break-all
+	}
+
+	.table-type03 table tbody td {
+		padding: 0.5385rem 0.1923rem;
+		font-size: 0.7692rem;
+		line-height: 0.94rem;
+		word-break: break-all
+	}
+
+
+	/* Responsive table */
+	.horizontal-scroll {
+		position: relative;
+		width: 100%;
+		overflow-y: hidden;
+		overflow-x: auto;
+		background:
+				linear-gradient(to right, rgba(0, 0, 0, .15), rgba(0, 0, 0, 0)) no-repeat 0 0 / 20px 100% scroll,
+				linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)) no-repeat 100% 0 / 20px 100% scroll;
+	}
+
+	.horizontal-scroll table {
+		width: 40rem;
+		background:
+				linear-gradient(to right, #fff, rgba(255, 255, 255, 0)) no-repeat 0 0 / 80px 100% local,
+				linear-gradient(to right, rgba(255, 255, 255, 0), #fff) no-repeat 100% 0 / 80px 100% local;
+	}
+
+	.horizontal-scroll::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+		border-radius: 6px;
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+
+	.horizontal-scroll::-webkit-scrollbar-thumb {
+		border-radius: 6px;
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+
+	.horizontal-scroll table thead th {
+		background-color: rgba(119, 162, 250, .09);
+	}
+
+	.horizontal-scroll.table-type02 table thead th,
+	.horizontal-scroll.table-type03 table thead th {
+		background-color: rgba(57, 176, 231, .09);
+	}
+
+	.horizontal-scroll table tbody td,
+	.horizontal-scroll table tfoot td {
+		background-color: rgba(170, 170, 170, .09);
+	}
+
+	.table-type01 .bg01,
+	.table-type02 .bg01,
+	.table-type03 .bg01 {
+		background-color: rgba(203, 203, 203, .09);;
+	}
+
+	.horizontal-scroll table .bg02,
+	.horizontal-scroll table tfoot th,
+	.horizontal-scroll table tfoot td {
+		background-color: rgba(255, 230, 78, .09);
+	}
+
+	.table-type01 .bg03,
+	.table-type02 .bg03,
+	.table-type03 .bg03 {
+		background-color: rgba(255, 219, 0, .09);
+	}
+
+
+	/* 아코디언 메뉴 */
+	.accordion-menu-wrapper > dl > dt > a {
+		padding:  0.7692rem 2.885rem  0.7692rem 0;
+		font-size: 1.077rem;
+		line-height: 1.385rem
+	}
+
+	.accordion-menu-wrapper > dl > dt > a .arrow {
+		right: 0.7692rem;
+		display: block;
+		width: 0.5rem;
+		height: 0.3077rem;
+		margin-top: -0.1538rem;
+		background-size: 0.5rem 0.3077rem;
+	}
+
+	.accordion-menu-wrapper > dl > dt > a.active .arrow {
+		background-size: 0.5rem 0.3077rem;
+	}
+
+	.accordion-menu-wrapper > dl > dd {
+		padding:  0.7692rem 0;
+		color: #999999;
+		font-size: 0.9231rem;
+		line-height: 1.308rem;
+	}
+
+
+	.accordion-menu-area02 > h4 > button {
+		padding:  0.7692rem 2.885rem  0.7692rem 0.7692rem;
+		font-size: 1.077rem;
+		line-height: 1.385rem
+	}
+
+	.accordion-menu-area02 > h4 > button .arrow {
+		right: 0.7692rem;
+		display: block;
+		width: 0.5rem;
+		height: 0.3077rem;
+		margin-top: -0.1538rem;
+		background-size: 0.5rem 0.3077rem;
+	}
+
+	.accordion-menu-area02 > h4 > button.active .arrow {
+		background-size: 0.5rem 0.3077rem;
+	}
+
+	.accordion-menu-box02 {
+		padding: 0.7692rem;
+		color: #999999;
+		font-size: 0.9231rem;
+		line-height: 1.308rem;
+	}
+
+	.contents-box .images-box,
+	.contents-box .table-type01,
+	.contents-box .table-type02 {
+		margin-top: 0.5769rem;
+/*		margin-left: 0.5769rem; */
+	}
+
+	/* 학과시설 */
+	.facilities-area {
+		padding: 1.154rem;
+	}
+
+	.facilities-area > .image {
+		position: static;
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.facilities-area > .image.high {
+		height: auto;
+	}
+
+	.facilities-area > .image > img {
+		position: static;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.facilities-area > h4 {
+		font-size: 1.462rem;
+		line-height: 1.769rem;
+		padding-top: 1.346rem;
+		margin-bottom: 0.9231rem;
+	}
+
+	.facilities-area > h4 > span {
+		font-size: 1.308rem;
+	}
+
+	.facilities-detail-information > dl > dt {
+		padding: 0.5rem 0.6923rem;
+		width: 6.154rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	.facilities-detail-information > dl > dd {
+		padding: 0.5rem 0.6923rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	.facilities-area > p,
+	.facilities-area > ul,
+	.facilities-area > ol {
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	.facilities-area > h5 {
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	.facilities-area div + h5,
+	.facilities-area p + h5,
+	.facilities-area ul + h5,
+	.facilities-area ol + h5 {
+		margin-top: 1.154rem;
+	}
+
+	.facilities-area02 {
+		float: none;
+		width: 100%;
+		padding: 1.154rem;
+		border-bottom: 1px solid #d8d8d8
+	}
+
+	.facilities-area02:first-child {
+		border-top: 1px solid #d8d8d8
+	}
+
+	.facilities-area02:nth-child(even) {
+		float: none;
+	}
+
+	.facilities-area02 > .image {
+		width: 100%;
+		padding-bottom: 0;
+	}
+
+	.facilities-area02 > .image > img {
+		position: static;
+		display: block;
+		width: 100%;
+	}
+
+	.facilities-area02 > h4 {
+		font-size: 1.308rem;
+		line-height: 1.923rem;
+		padding: 1.154rem 0 0.5769rem 0;
+		white-space: normal;
+	}
+
+	.facilities-area02 > h4.type02 {
+		margin-bottom: 0;
+	}
+
+	.facilities-area02 > p {
+		height: auto;
+		margin-bottom: 0;
+		font-size: 1rem;
+		line-height: 1.385rem;
+		display: block;
+		overflow: auto;
+	}
+
+
+	.facilities-wrapper03 {
+		margin-top: 0;
+	}
+
+	.facilities-area03 {
+		width: 49%;
+		margin-right: 0;
+	}
+
+	.facilities-area03:nth-child(even) {
+		float: right;
+	}
+
+	.facilities-area03:nth-child(3n) {
+		margin-right: 0;
+	}
+
+	.facilities-area03 > .image {
+		margin-bottom: 0.3846rem
+	}
+
+	.facilities-area03 > .title {
+		height: 2.77rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+	}
+
+	/* 강의 시간표 */
+	.search-schdule-wrapper {
+		margin: 1.538rem 0 1.154rem 0;
+		padding-left: 3.846rem;
+	}
+
+	.search-schdule-wrapper > dt {
+		font-size: 1rem;
+		line-height: 1.154rem;
+	}
+
+	.search-schdule-wrapper > dd {
+		display: block;
+	}
+
+	.search-schdule-area {
+		position: relative;
+		padding-right: 5.192rem;
+	}
+
+	.search-schdule-area > select {
+		height: 3.077rem;
+		font-size: 0.9615rem;
+		background-position: 95% center;
+		background-size: 0.6154rem 0.3077rem;
+	}
+
+	.search-schdule-area > button {
+		width: 5.192rem;
+		height: 3.077rem;
+		font-size: 0.9615rem;
+	}
+
+	/* 인사말 */
+	.greeting-wrapper.type02 {
+		padding-left: 0;
+	}
+
+	.greeting-wrapper.type02 .greeting-slogan-wrapper > img {
+		position: static;
+		display: block;
+		width: 100%;
+		max-width: 13.85rem;
+		margin: 0 auto 2.308rem auto;
+	}
+
+	.greeting-slogan-wrapper {
+		position: relative;
+		padding-right: 0;
+		padding-bottom: 2.308rem
+	}
+
+	.greeting-slogan-wrapper .greeting-box {
+		padding-bottom: 0.7692rem;
+		margin-bottom: 1.154rem;
+		background-size: 3.077rem 0.1538rem;
+	}
+
+	.greeting-slogan-wrapper .summary {
+		padding-bottom: 1.346rem;
+		font-size: 1.231rem;
+		line-height: 1.692rem;
+	}
+
+	.greeting-slogan-wrapper .summary > span {
+		display: inline;
+	}
+
+	.greeting-slogan-wrapper .greeting {
+		font-size: 1.769rem;
+		line-height: 2.385rem;
+		padding-bottom: 1.346rem;
+		letter-spacing: -2px;
+		word-break: keep-all;
+	}
+
+	.greeting-slogan-wrapper > img {
+		position: static;
+		display: block;
+		width: 100%;
+		max-width: 31.56rem;
+		margin: 0 auto;
+	}
+
+	.greeting-wrapper > dl {
+		margin-top: 2.308rem;
+	}
+
+	.greeting-wrapper > dl > dt {
+		font-size: 1rem;
+		line-height: 1.538rem;
+		padding-top: 0.8462rem;
+
+	}
+
+	.greeting-wrapper > dl > dt > .bg-line {
+		width: 3.077rem;
+		height: 0.07692rem;
+	}
+
+	.greeting-wrapper > dl > dd {
+		display: block;
+		color: #333333;
+		font-size: 1.231rem;
+		line-height: 1.385rem;
+	}
+
+	.greeting-slogan-wrapper.none-height .greeting > span {
+		display: inline;
+	}
+
+	.greeting-wrapper .btn-professor {
+		display: inline-block;
+		vertical-align: middle;
+		margin-bottom: 1.538rem;
+		height: 3.077rem;
+		padding: 0.9615rem 1.538rem 0 1.538rem;
+		border-radius: 1.538rem;
+		font-size: 1rem;
+		line-height: 1.154rem;
+	}
+
+	.greeting-wrapper .btn-professor > img {
+		display: inline-block;
+		vertical-align: baseline;
+		width: 44px;
+	}
+
+	.greeting-wrapper .word-sign {
+		margin-top: 2.692rem;
+		font-size: 1.154rem;
+		line-height: 1.654rem;
+	}
+
+	.greeting-wrapper .word-sign > strong {
+		font-size: 1.154rem;
+		line-height: 1.654rem;
+	}
+
+	/* 연혁 */
+	.history-area {
+		padding: 1.538rem 1.154rem;
+	}
+
+	.history-area > h4 {
+		position: static;
+		width: auto;
+		font-size: 2rem;
+		line-height: 2.308rem;
+		text-align: left;
+		margin: 0 0 1.538rem 0;
+	}
+
+	.history-area > h4.type02 {
+		font-size: 2rem;
+	}
+
+	.history-box > dl {
+		position: relative;
+		padding-left: 5.385rem;
+		margin-bottom: 0.3846rem;
+		font-size: 1rem;
+		line-height: 1.538rem;
+	}
+
+	.history-box > dl.type02 {
+		padding-left: 0;
+	}
+
+	.history-box > dl:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+
+	.history-box > dl:last-child {
+		margin-bottom: 0;
+	}
+
+	.history-box > dl > dt {
+		position: static;
+		float: left;
+		margin-left: -5.385rem;
+		width: 4.615rem;
+		display: block;
+		color: #4a4143;
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.231rem;
+	}
+
+	.history-box > dl > dd {
+		background-position: 0 0.5rem;
+	}
+
+
+	/*190618_bjh 추가*/
+
+	.explain {
+		margin-bottom: 1rem;
+		font-size: 1.231rem;
+		line-height: 1.692rem;
+	}
+
+	.big-title {
+		font-size: 1.769rem;
+		line-height: 2.385rem;
+		margin-bottom: 1rem;
+		letter-spacing: -2px;
+		word-break: keep-all;
+	}
+
+	.big-title > span {
+		display: inline;
+	}
+
+	.ol-list02 > li {
+		position: relative;
+		padding-left:  2.125rem;
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+
+	.ol-list02 > li .number {
+		width: 1.563rem;
+		height: 1.563rem;
+		padding-top: 0.3125rem;
+		font-size:  0.875rem;
+		line-height: 1rem;
+	}
+
+	.ol-list03 > li {
+		margin-bottom: 0.7692rem;
+		border-radius:0.1923rem;
+
+	}
+
+	.ol-list03 > li .number {
+		font-size: 1.154rem;
+		line-height: 1.385rem;
+		border-radius:0.1923rem 0 0 0.1923rem;
+	}
+
+	.ol-list03 > li .number.type02 {
+		width:34%;
+	}
+
+	.ol-list03 > li > p {
+		padding: 1.154rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+
+	}
+
+	.ol-list03 > li > p.type02 {
+		width:66%;
+	}
+
+	.half-content-wrap {
+		width: 100%;
+	}
+
+	/*취업산업체*/
+	.company-wrap {
+		float: left;
+		width: 49% !important;
+		margin-right: 0 !important;
+		margin-bottom: 3.75rem;
+	}
+
+	.company-wrap:nth-child(2n) {
+		float: right;
+		margin-right: 0 !important;
+	}
+
+	.company-wrap > strong {
+		margin-top: 0.8077rem;
+		padding: 0 0.7692rem;
+		font-size: 1rem;
+		line-height: 1.269rem;
+		max-height: 2.538rem
+	}
+
+	.company-wrap > .company-box > .text-box02 {
+		height: 6.154rem;
+		font-size: 1rem;
+		line-height: 1.385rem;
+		padding: 0 1rem;
+	}
+
+	.company-wrap.depth3:nth-child(4n + 1) {
+		clear: initial;
+	}
+
+	.company-wrap.depth3:nth-child(3n + 1) {
+		clear: initial;
+	}
+
+	.company-wrap.depth3:nth-child(odd){
+		clear: both;
+	}
+
+	.company-wrap > .company-box > a {
+		height: 10.75rem
+	}
+
+	/*비전*/
+	.vision-wrap{
+		width:49%;
+		margin-right:2%;
+	}
+
+	.vision-wrap:nth-child(3n){
+	margin-right:2%;
+	}
+
+	.vision-wrap:nth-child(even){
+		margin-right:0;
+	}
+
+	.vision-wrap img{
+		width:100%;
+		height:auto;
+	}
+
+	.vision-wrap dl{
+		margin-top:1.154rem
+	}
+
+	.vision-wrap dl dt{
+		font-size:1.231rem;
+		line-height:1.385rem;
+		margin-bottom:0.7692rem;
+	}
+
+	.vision-wrap dl dd{
+		font-size:1rem;
+		line-height:1.077rem;
+	}
+
+	.btn-prmovie,
+	.btn-new-windows {
+		position: relative;
+		float: none;
+		display: block;
+		width: 100%;
+		height: 3.077rem;
+		line-height: 3.077rem;
+		padding: 0 1.538rem;
+		border-radius: 1.538rem;
+		margin-top: 0.9615rem;
+		font-size: 1rem;
+		text-align: left;
+	}
+
+	.btn-prmovie > img,
+	.btn-new-windows > img {
+		position: absolute;
+		top: 50%;
+		right: 1.538rem;
+		margin-left: 0;
+		transform: translate(0, -50%);
+		text-align: right;
+		width: 33px;
+	}
+
+	.word-sub-slogan01 {
+		margin-bottom: 1rem;
+		font-size: 1.308rem;
+		line-height: 1.538rem;
+	}
+
+	.word-sign > span {
+		font-size: 0.9231rem;
+		line-height: 1.462rem;
+	}
+
+	.word-sign > strong {
+		font-size: 1.308rem;
+		line-height: 1.462rem;
+	}
+
+	.mask-popupzone {
+		display: none;
+	}
+
+	.popupzone-wrapper {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 18.27rem;
+		min-width: 300px;
+		background: #343b58;
+		z-index: 110;
+		transform:translate(-50%, -50%);
+	}
+
+	.popupzone-wrapper .title-area {
+		display: block;
+		height: 4.308rem;
+		background: #343b58;
+		padding: 0 1.462rem;
+	}
+
+	.popupzone-wrapper .title-area > h2 {
+		color: #fff;
+		font-size: 1.308rem;
+		line-height: 4.308rem;
+		font-weight: 500;
+	}
+
+	.popupzone-wrapper .btn-close {
+		position: absolute;
+		top: 1.538rem;
+		right: 1.154rem;
+		display: block;
+	}
+
+	.popupzone-wrapper .btn-close:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+
+	.popupzone-wrapper .btn-close > span {
+		float: left;
+		color: #fff;
+		font-size: 1.231rem;
+		line-height: 1.231rem;
+		margin-right: 0.7692rem;
+		font-weight: 500;
+	}
+
+	.popupzone-wrapper .btn-close > img {
+		display: block;
+		float: left;
+		width: 0.7692rem;
+		margin-top: 0.1923rem;
+	}
+
+	.popupzone-area {
+		display: block;
+		border: 2px solid #292b33;
+	}
+
+	.popupzone-area #popupzone-slider {
+		display: block;
+	}
+
+	.popupzone-area #popupzone-slider .item {
+		display: block;
+		border: 0;
+	}
+
+	.popupzone-area #popupzone-slider .item > a {
+		display: block;
+	}
+
+	.popupzone-area #popupzone-slider .item > a > img {
+		display: block;
+		max-width: 100%;
+		max-height: 400px;
+		margin: 0 auto;
+	}
+
+	.popupzone-area #counter {
+		position: absolute;
+		top: 1.692rem;
+		left: 50%;
+		height: 1.538rem;
+		color: #fff;
+		font-weight: 700;
+		font-size: 1.308rem;
+		line-height: 1.538rem;
+		transform: translate(-50%, 0);
+	}
+
+	.popupzone-area .owl-carousel .owl-nav.disabled {
+		display: none;
+	}
+
+	.popupzone-area .owl-nav button {
+		position: absolute;
+		top: 1.538rem;
+		left: 50%;
+		text-indent: -5000rem;
+		display: block;
+		margin-top: -4.346rem;
+		width: 0.8462rem;
+		height: 1.577rem;
+	}
+
+
+	.popupzone-area .owl-nav .owl-prev {
+		margin-left: -3.269rem;
+		background: url(../img/btn/icon_arrrow_previous@2x.png) no-repeat 0 0 !important;
+		background-size: 0.8462rem 1.577rem !important;
+	}
+
+	.popupzone-area .owl-nav .owl-next {
+		margin-left: 2.808rem;
+		background: url(../img/btn/icon_arrrow_next@2x.png) no-repeat 0 0 !important;
+		background-size: 0.8462rem 1.577rem !important;
+	}
+
+	.popupzone-area .owl-dots {
+		display: none;
+		border: 1px solid red
+	}
+
+	.popupzone-wrapper .today-checked-close {
+		clear: both;
+		background: #292b33;
+		padding: 1.077rem;
+		text-align: right;
+	}
+
+	.popupzone-wrapper .today-checked-close input[type="checkbox"],
+	.popupzone-wrapper .today-checked-close label {
+		display: inline-block;;
+		vertical-align: middle;
+	}
+
+	.popupzone-wrapper .today-checked-close label {
+		color: #fff;
+		font-size: 0.9231rem;
+		line-height: 1rem;
+		margin-left: 0.3846rem
+		font-weight: 700;
+	}
+
+	/* 로그인 */
+	.login-wrapper {
+		padding-top: 3.077rem;
+	}
+
+	.login-area {
+		max-width: 19.23rem;
+	}
+
+	.login-area > input {
+		display: block;
+		margin-bottom: 0.3846rem;
+		width: 100%;
+		height: 3.077rem;
+		text-indent: 1rem;
+		font-size: 0.9231rem;
+	}
+
+	.login-area > button {
+		height: 3.077rem;
+		line-height: 3.077rem;
+		font-size: 0.9231rem;
+	}
+
+	.login-radio-wrapper {
+		margin-bottom: 0.8333rem;
+	}
+
+	.login-radio-area {
+		width: 50%;
+	}
+
+	.login-radio-area + .login-radio-area {
+		margin-left: 0;
+	}
+
+	.login-radio-area > input[type="radio"] {
+		margin-right: 0.125rem;
+	}
+
+	.login-radio-area > input[type="radio"] + label {
+		font-size: 1.125rem;
+		line-height: 1.5rem;
+	}
+
+	/* 졸업생 한마디 */
+	.student-slide-wrapper {
+		padding: 1.923rem;
+		border: 1.154rem solid #f1f1f1;
+	}
+
+	.student-information-wrapper {
+		padding-left: 0;
+		min-height: auto;
+	}
+
+
+	.student-information-wrapper > .image {
+		position: static;
+		margin: 0 auto 1.538rem auto;
+		/*
+		width: 6.923rem;
+		height: 9.231rem;
+		*/
+		width: 10.38rem;
+		height: 12.96rem;
+		overflow: hidden;
+	}
+
+	.student-information-wrapper > .image > img {
+		position: static;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.student-information-area {
+		min-height: auto;
+	}
+
+	.student-information-area > h4 {
+		margin-bottom: 0.5769rem;
+		font-size: 1.615rem;
+		line-height: 2.154rem;
+	}
+
+	.student-information-area > p {
+		font-size: 0.9231rem;
+		line-height: 1.731rem;
+	}
+
+	.student-information-area > p.graduation-name-yy {
+		margin-top: 0.6923rem;
+		font-size: 1.038rem;
+		line-height:  1.5rem;
+		text-align: right
+	}
+
+	.student-option-wrapper {
+		margin-top: 3.462rem;
+		padding: 0 1.731rem;
+		height: auto;
+	}
+
+	.student-option-wrapper #main-student-pagination01 {
+		position: static;
+		margin-top: 0;
+	}
+
+	.student-option-wrapper #main-student-pagination01 .swiper-pagination-bullet {
+		width: 0.6923rem;
+		height: 0.6923rem;
+		margin: 0 0.2308rem;
+	}
+
+	.student-btn-prev,
+	.student-btn-next {
+		width: 0.9231rem;
+		height: 1.5rem;
+		margin-top: -0.75rem;
+		background-size: 0.9231rem 1.5rem;
+	}
+
+	/* 교육시설 &amp; 기자재 */
+	.facilities-slide-area {
+		position: relative;
+		float: none !important;
+		width: 100%;
+		margin-bottom: 1.423rem;
+	}
+
+	.facilities-slide-area:last-child {
+		margin-bottom: 0;
+	}
+
+
+	.facilities-slide-area > h4 {
+		height: 2.885rem;
+		padding: 0.6923rem 9.231rem 0 1.154rem;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	.facilities-option-btn > button {
+		width: 2.885rem;
+		height: 2.885rem;
+		background-size: 2.885rem 2.846rem;
+	}
+
+	.facilities-slide-box p {
+		padding-top: 0.5769rem;
+		font-size: 1.077rem;
+		line-height: 1.615rem;
+	}
+
+	.div-pdf {
+		margin-top: 1.154rem;
+		height: 36.92rem;
+	}
+
+	.btn-download {
+		min-width: auto;
+		height: 2.885rem;
+	}
+
+	.btn-download > span {
+		padding: 0 0.8846rem 0 1.154rem;
+	}
+
+	.btn-download > span > strong {
+		font-size: 0.9231rem;
+		line-height: 2.077rem;
+		margin-top: 0.4615rem;
+	}
+
+	.btn-download > span > img {
+		width: 1.192rem;
+		margin-top: 0.8462rem;
+	}
+
+
+	/*대학생활*/
+	.schedule_head {
+		padding: 0 0.8846rem;
+		margin-bottom: 1.154rem;
+		border: 0;
+		background: #f7f7f7
+	}
+
+	.schedule_head h4 {
+		height: 3rem;
+		line-height: 3rem;
+		font-size: 1.385rem;
+		letter-spacing: -1px
+	}
+
+
+	.schedule_head > button {
+		position: absolute;
+		top: 1rem;
+		padding-left: 1.308rem;
+		background-repeat: no-repeat;
+		background-position: 0 center;
+		background-size: 0.6154rem 1rem;
+		font-size: 0.8462rem;
+		color: #555555;
+		font-weight: 500;
+	}
+
+	.schedule_head > button.prev {
+		left: 0.8462rem;
+	}
+
+	.schedule_head > button.next {
+		right: 0.8462rem;
+		padding: 0 1.308rem 0 0;
+		background-size: 0.6154rem 1rem;
+	}
+
+	.schedule_head .month {
+		position: relative;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0;
+	}
+
+	.schedule_head .month > div {
+		position: relative;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.schedule_head .month ul {
+		width: auto;
+		overflow: auto;
+		padding: 0.3846rem 0;
+		white-space: nowrap;
+	}
+	.schedule_head .month ul li {
+		width: auto;
+		float: none;
+		display: inline-block;
+	}
+	.schedule_head .month ul li button {
+		display: inline-block;
+		padding: 0.3846rem 0.5769rem;
+		font-size: 1rem
+	}
+	.schedule_list > div {
+		padding-left: 0;
+	}
+	.schedule_list > div h5 {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		margin-top: 0;
+		padding: 0.7692rem 0;
+		border-bottom: 1px solid #e1e1e1;
+		background: #f4f4f4;
+		color: #000;
+		font-size: 1.077rem;
+		line-height: 1.154rem;
+	}
+	.schedule_list > div h5 span {
+		display: inline-block;
+		padding-left: 0.2692rem;
+		color: #555;
+		font-size: 0.9231rem
+	}
+
+	.schedule_list > div ul {
+		margin-left: 0 !important;
+	}
+
+	.schedule_list > div ul li {
+		padding: 1rem 1rem 1rem 11rem;
+		font-size: 0.9231rem;
+		line-height: 1.154rem;
+		word-break: keep-all;
+	}
+	.schedule_list > div ul li time {
+		left: 0.9231rem;
+	}
+
+	.class-view-wrapper {
+		padding-left: 0;
+	}
+
+	.class-view-wrapper > img {
+		position: static;
+		display: block;
+		width: 10.65rem;
+		margin: 0 auto 1.923rem auto
+	}
+
+	.class-view-wrapper > p {
+		font-size: 1.038rem;
+		line-height: 1.846rem;
+	}
+
+
+
+	/* 비전 및 교육목표 */
+
+	.table-vision table,
+	.table-vision table tbody,
+	.table-vision td,
+	.table-vision tr {
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+	}
+
+	.table-vision td.space {
+		height: 1.154rem;
+	}
+
+	.table-vision > table .line {
+		border: 1px solid #dddddd;
+	}
+
+	.table-vision > table .line.type01 {
+		border-top: 0.1538rem solid #05ccff;
+	}
+
+	.table-vision > table .line.type02 {
+		border-top: 0.1538rem solid #00d10a;
+	}
+
+	.table-vision > table .line.type03 {
+		border-top: 0.1538rem solid #f9669f;
+	}
+
+	.vision-process-wrapper {
+		padding: 1.5rem;
+	}
+
+	.vision-process-wrapper > h4 {
+		padding-top: 0.6923rem;
+		padding-bottom: 1.538rem;
+	}
+
+	.vision-process-wrapper > h4 > img {
+		width: 3.462rem;
+		margin: 0 auto 0.8077rem auto;
+	}
+
+	.vision-process-wrapper > h4 strong {
+		display: block;
+		font-size: 1.962rem;
+		line-height:  2rem;
+	}
+
+
+	.vision-process-area {
+		padding-top: 1.423rem;
+	}
+
+	.vision-process-area > h5 {
+		margin-top: 1.154rem;
+		margin-bottom: 0.5769rem;
+		font-size: 1.154rem;
+		line-height: 1.615rem;
+	}
+
+	.gray-box {
+		margin: 10px 0 20px 0;
+		padding: 1.2rem;
+	}
+
+
+
+	.major-courses-wrapper {
+		min-height:20.2.5rem;
+		padding: 1.667rem 7.917rem 1.667rem 1.667rem;
+		background-image: url(../img/bg/bg_major_courses01_mobile.jpg);
+	}
+
+	.major-courses-wrapper > h4 {
+		margin-bottom: 11px;
+	}
+
+	.major-courses-wrapper > h4 > strong {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 1.667rem;
+		line-height: 1.875rem;
+		padding: 0 0.2917rem;
+		letter-spacing: -0.25px;
+	}
+
+	.major-courses-wrapper > h4 > strong:after {
+		bottom: 0;
+		height: 0.625rem;
+	}
+
+	.major-courses-wrapper > p {
+		padding-left: 0.2917rem;
+		font-size: 1.083rem;
+		line-height: 1.583rem;
+		word-break: keep-all;
+	}
+
+	.major-courses-wrapper > p > span {
+		display: inline;
+	}
+
+	.only-pc {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+
+	.introduce-area>img {
+        width: 12.5rem;
+        margin: 0 auto 1.875rem auto;
+    }
+    .introduce-area>dl {
+        margin-bottom: 1.25rem;
+    }
+    .introduce-area>dl>dt {
+        font-size: 1.625rem;
+        line-height: 1.917rem;
+    }
+    .introduce-area>dl>dd {
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+    }
+    .introduce-area>dl+p {
+        margin: 0 0 1.625rem 0;
+    }
+    .introduce-area>p {
+        font-size: 1rem;
+        line-height: 1.538rem;
+        margin-bottom: 1.625rem;
+    }
+    .introduce-area>p.word-sign {
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+    }
+    .introduce-area>p.word-sign>strong {
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+    }
+    .introduce-images-list {
+        margin-top: 1.25rem;
+    }
+    .introduce-images-list>li {
+        width: 49%;
+        margin-right: 0;
+    }
+    .introduce-images-list>li:nth-child(even) {
+        float: right;
+    }
+    /* 교수진 소개 */
+    .professor-wrapper02 {
+        display: block;
+    }
+    .professor-area02 {
+        min-height: auto;
+        padding: 1.875rem;
+        margin-bottom: 1.25rem;
+    }
+    .professor-area02>h4 {
+        margin-bottom: 0.625rem;
+        font-size: 1.625rem;
+        line-height: 2.875rem;
+        text-align: center;
+    }
+    .professor-area02>h4>span {
+        margin-left: 0.5417rem;
+        font-size: 1.125rem;
+    }
+    .professor-area02>img {
+        position: static;
+        display: block;
+        width: 13.75rem;
+        margin: 0 auto 0.4167rem auto;
+    }
+    .professor-box02>ul {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+    .professor-box02>ul>li {
+        margin-bottom: 0.4167rem;
+        padding-left: 0.7917rem;
+        line-height: 1.5rem;
+        font-size: 1.042rem;
+    }
+    .professor-box02>ul>li:before {
+        top: 0.7083rem;
+        width: 0.2083rem;
+        height: 0.2083rem;
+    }
+    .table-type01 table thead th,
+    .table-type01 table tbody th,
+    .table-type01 table tbody td {
+        padding: 0.5769rem;
+        font-size: 1rem;
+    }
+    .map-btns-wrapper {
+        margin-bottom: 1.25rem;
+    }
+    .map-btns-wrapper>a {
+        width: 49%;
+        height: 3.75rem;
+        padding-top: 1.125rem;
+        margin-left: 2%;
+        border-radius: 0.2917rem;
+    }
+    .map-btns-wrapper>a>img {
+        height: 1.292rem;
+        line-height: 1.292rem;
+        margin-right: 0.375rem;
+    }
+    .map-btns-wrapper>a>strong {
+        color: #212121;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.292rem;
+    }
+    .map-wrapper {
+        display: block;
+    }
+    .map-wrapper .root_daum_roughmap,
+    .map-wrapper .wrap_map {
+        display: block;
+        height: 18.75rem !important;
+    }
+    /* 교육대상 */
+    .education-area {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.25rem;
+    }
+    .education-area:nth-of-type(4n) {
+        margin-right: 0;
+    }
+    .education-area:last-child {
+        margin-bottom: 0;
+    }
+    .education-area>.image {
+        padding: 1.75rem 0;
+        height: auto;
+    }
+    .education-area>.image>img {
+        position: static;
+        width: 12.83rem;
+        margin: 0 auto;
+    }
+    .education-area>p {
+        padding: 1.375rem 1rem;
+        height: auto;
+        font-size: 1rem;
+        line-height: 1.875rem;
+    }
+    table .ul-list01>li:before {
+        top: 0.75rem;
+        width: 0.2083rem;
+        height: 0.2083rem;
+    }
+    .service-slider-wrapper button {
+        margin-top: -1.4585rem;
+        width: 2.917rem;
+        height: 2.917rem;
+        background-size: 1rem 0.5417rem;
+    }
+    .service-slider-wrapper .btn-prev {
+        left: 1.25rem;
+    }
+    .service-slider-wrapper .btn-next {
+        right: 1.25rem;
+    }
+    .service-slider-wrapper #service-pagination01 {
+        bottom: 1rem;
+    }
+    .service-slider-wrapper #service-pagination01 .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.2083rem;
+        border-radius: 0.5rem;
+    }
+    .service-slider-wrapper #service-pagination01 .swiper-pagination-bullet-active {
+        width: 2rem;
+    }
+    /* 절차 */
+    .process-area {
+        float: none;
+        display: table;
+        width: 100%;
+        height: 9.333rem;
+        margin-bottom: 0;
+        padding: 0 1.25rem 0 2.083rem;
+    }
+    .process-wrapper .arrow {
+        float: none;
+        display: table;
+        width: 100%;
+        height: 2.5rem;
+        background-image: url(../img/sub03/icon_arrow_bottom01.png);
+        background-size: 1.625rem 0.8333rem;
+    }
+    .process-box {
+        padding-left: 7.875rem;
+    }
+    .process-box>img {
+        width: 5.833rem;
+        margin-top: -2.917rem;
+    }
+    .process-box>dl>dt {
+        margin-bottom: 0.7917rem;
+        font-size: 1.083rem;
+        line-height: 1.25rem;
+    }
+    .process-box>dl>dd {
+        font-size: 1.25rem;
+        line-height: 1.667rem;
+    }
+    .customer-information-wrapper {
+        height: auto;
+        padding: 2.083rem;
+    }
+    .customer-information-wrapper:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .reservation-wrapper {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+    .reservation-area {
+        padding-left: 6rem;
+        width: 100%;
+        min-height: 5.292rem;
+    }
+    .reservation-area>img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 5.292rem;
+        margin-top: -2.625rem;
+    }
+    .reservation-area>h4 {
+        margin-bottom: 0.875rem;
+        font-size: 1.167rem;
+        line-height: 1.542rem;
+    }
+    .reservation-area>p {
+        font-size: 2rem;
+        line-height: 2.083rem;
+        letter-spacing: -1px
+    }
+    .center-information-wrapper {
+        float: none;
+        display: table;
+        width: 100%;
+        height: auto;
+    }
+    .center-information-area {
+        min-height: auto;
+    }
+    .center-information-area>h4 {
+        margin-bottom: 0.7917rem;
+        color: #1460c7;
+        font-size: 1.167rem;
+        line-height: 1.583rem;
+    }
+    .center-information-area>dl {
+        margin-top: 0.7917rem;
+        padding-left: 6.042rem;
+        font-size: 1.167rem;
+        line-height: 1.583rem;
+    }
+    .center-information-area>dl>dt:before {
+        left: 4.292rem;
+        width: 0.08333rem;
+        height: 1.083rem;
+        margin-top: -0.5417rem;
+    }
+    .qna-wrapper>dl>dt>button {
+        padding: 1rem 3.417rem 1rem 2.917rem;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1.125rem;
+        line-height: 1.917rem;
+        letter-spacing: -0.25px;
+    }
+    .qna-wrapper>dl>dt>button:before {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        display: block;
+        width: 1.875rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        text-align: center;
+        border-radius: 50%;
+        content: "Q";
+        color: #0089d8;
+        font-family: "Arial", sans-serif;
+        border: 1px solid #ddd;
+        font-weight: 700
+    }
+    .qna-wrapper>dl>dt>button:after {
+        position: absolute;
+        top: 50%;
+        right: 1.25rem;
+        content: "";
+        display: block;
+        width: 1.25rem;
+        height: 0.6667rem;
+        margin-top: -0.3333rem;
+        background-image: url(../img/sub03/icon_arrow01.png);
+        background-repeat: no-repeat;
+        background-size: 1.25rem 0.6667rem;
+        background-position: 0 0;
+        transition: all 0.2s ease-in-out;
+    }
+    .qna-wrapper>dl>dt>button.active:after {
+        transform: rotate(180deg);
+    }
+    .qna-wrapper>dl>dd {
+        display: none;
+        position: relative;
+        padding: 1.25rem 1.25rem 1.25rem 2.917rem;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        font-size: 1rem;
+        line-height: 1.625rem;
+        color: #616161
+    }
+    .qna-wrapper>dl>dd:before {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        display: block;
+        width: 1.875rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        text-align: center;
+        border-radius: 50%;
+        content: "A";
+        color: #fff;
+        background-color: #38465f;
+        font-family: "Arial", sans-serif;
+        border: 1px solid #38465f;
+        font-weight: 700
+    }
+
+	.pdf-box-area {
+		position: relative;
+		border: 12px solid #efefef;
+		overflow: hidden;
+	}
+
+	.pdf-box-area object {
+		width: 100%;
+		height: 1000px;
+	}
+}
+
+@media only all and (max-width: 767px) {
+	.club-wrapper .title-area > h4 {
+		background-size: 1.154rem 1.154rem;
+	}
+
+	.club-wrapper .title-area > a > img,
+	.btn-prmovie > img {
+		width: 1.269rem;
+	}
+
+	.greeting-wrapper .btn-professor > img {
+		width: 0.8462rem;
+	}
+	.btn-prmovie > img,
+	.btn-new-windows > img {
+		width: 1.269rem;
+	}
+	
+	/* 학부안내>비전 및 교육목표 */
+	.img_duck{
+		width:180px;
+	}
+	.move-title{
+		width:300px;
+	}
+	.move-title span{
+		animation: move 1s linear infinite alternate;
+		font-size: 1rem;
+	}
+	@keyframes move {
+	  from { left: 0; }
+	  to   { left: calc(100% - 265px); }
+	}
+	/* //학부안내>비전 및 교육목표 */
+}
+
+@media only all and (max-width: 400px) {
+	.company-wrap {
+		float:none;
+		width:100% !important;
+		margin-right: 0 !important;
+	}
+
+	.company-wrap:last-child {
+		margin-bottom: 0
+	}
+
+	.company-wrap > .company-box > .text-box02 {
+		display: block;
+		height: auto;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	.company-wrap > .company-box > .text-box02 > strong {
+		display: block
+	}
+
+	.company-wrap > .company-box > .text-box02 > strong > span {
+		display: inline;
+	}
+
+	.company-wrap:nth-child(2n) {
+		float: none !important;
+		margin-right: 0 !important;
+	}
+}
+
+@media only all and (max-width: 359px) {
+    .customer-information-wrapper {
+        padding: 1.5rem;
+    }
+    .reservation-area>p {
+        font-size: 1.75rem;
+    }
+    .center-information-area>dl {
+        font-size: 1rem;
+        line-height: 1.583rem;
+    }
+}

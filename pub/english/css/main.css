@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+@import url("main_pc.css");
+
+@media only all and (max-width: 1023px) {
+	/* main visual */
+	.main-visual-wrapper {
+		height: auto;
+	}
+
+	.main-visual-wrapper img.pc {
+		display: none;
+	}
+
+	.main-visual-wrapper img.mobile {
+		display: block;
+		width: 100%;
+	}
+
+	.main-visual-slogan {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+
+	.main-visual-slogan > p {
+		padding: 0 1rem;
+		margin-bottom: 1.75rem;
+	}
+
+	.main-visual-slogan > p > strong {
+		margin-bottom: 1.25rem;
+		font-size: 2.167rem;
+		line-height: 2.542rem;
+	}
+
+	.main-visual-slogan > p > span {
+		font-size: 1.083rem;
+		line-height: 1.583rem;
+	}
+
+	.main-visual-slogan .btn-about-chonhae {
+		display: block;
+		width: 13.92rem;
+		height: 3.375rem;
+		text-indent: -5000rem;
+		background-image: url(../img03/main/btn_about_choonhae_mobile01.png);;
+		background-size: 13.92rem 3.375rem;
+	}
+
+
+
+	.main-contents01 {
+		display: block;
+		padding: 1.25rem;
+	}
+
+	.main-contents-wrapper {
+		max-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+
+
+	.main-menu-wrapper > li {
+		position: relative;
+		float: left;
+		width: 33.333%;
+		height: auto;
+		padding: 1.25rem 0;
+	}
+
+	.main-menu-wrapper > li:nth-child(3n - 1) {
+		width: 33.334%;
+	}
+
+	.main-menu-wrapper > li:nth-child(3n + 1) {
+		clear: both;
+	}
+
+	.main-menu-wrapper > li:before {
+		top: 1.25rem;
+		height: 6.25rem;
+	}
+
+
+
+	.main-menu-wrapper > li:last-child {
+		width: 33.333%;
+	}
+	.main-menu-wrapper > li:nth-of-type(3):before,
+	.main-menu-wrapper > li:last-child:before {
+		background: transparent;
+	}
+
+	.main-menu-wrapper > li > a {
+		padding-top: 0;
+	}
+
+	.main-menu-wrapper > li > a > img {
+		width: 4rem;
+		margin: 0 auto 1rem auto;
+	}
+
+	.main-menu-wrapper > li > a > strong {
+		font-size: 1.083rem;
+		line-height: 1.125rem;
+	}
+
+	.main-contents02 {
+		padding: 1.667rem 1.25rem  2.125rem 1.25rem;
+	}
+
+	.main-menu-wrapper02 {
+		margin-bottom: 0;
+	}
+
+	.main-menu-area02 {
+		float: none;
+		width: 100%;
+		max-width: 100%;
+		margin-right: 0;
+		margin-bottom: 2.5rem;
+	}
+
+	.main-menu-area02 .image {
+		margin-bottom: 1.25rem;
+	}
+
+
+	.main-menu-box02 > h2 {
+		margin-bottom: 0.4583rem;
+		font-size: 1.75rem;
+		line-height: 1.958rem;
+	}
+
+	.main-menu-box02 > p {
+		min-height: auto;
+		margin-bottom: 1.25rem;
+		font-size: 1.208rem;
+		line-height: 1.667rem;
+	}
+
+	.main-menu-box02 > .btn-more {
+		padding: 0.6667rem  2.833rem 0 1.25rem;
+		height: 2.917rem;
+		font-size: 1rem;
+		line-height: 1.542rem;
+		border-radius: 0.3333rem;
+	}
+
+	.main-menu-box02 > .btn-more:before {
+		right: 1.25rem;
+		width: 0.375rem;
+		height: 0.5833rem;
+		margin-top: -0.2917rem;
+		background-repeat: no-repeat;
+		background-size: 0.375rem 0.5833rem;
+	}
+
+	.main-menu-wrapper0202 > a {
+		display: block;
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 2.958rem
+	}
+
+	.main-menu-wrapper0202 > a:last-child {
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	.main-menu-wrapper0202 > a > strong {
+		padding-left: 2.875rem;
+		padding-right: 2.292rem;
+		margin-bottom: 0.8333rem;
+		font-size: 1.75rem;
+		line-height: 1.792rem;
+	}
+
+	.main-menu-wrapper0202 > a > strong:before {
+		width: 1.958rem;
+		height:1.792rem;
+		margin-top: -0.875rem;
+		background-image: url(../img03/main/main_bullet_type01_mobile.png);
+		background-size: 1.958rem 1.792rem;
+	}
+
+	.main-menu-wrapper0202 > a > strong:after {
+		width: 0.625rem;
+		height: 1.042rem;
+		margin-top: - 0.5rem;
+		background-image: url(../img03/main/icon_arrow_right01_mobile.png);
+		background-size: 0.625rem 1.042rem;
+	}
+
+	.main-menu-wrapper0202 > a > span {
+		font-size: 1.083rem;
+		line-height: 1.542rem;
+	}
+
+	.main-menu-wrapper0202 > a > span > span {
+		display: inline;
+	}
+
+	.main-contents03 {
+		height: auto;
+	}
+
+	.main-contents03:before,
+	.main-contents03:after {
+		display: none;
+	}
+
+
+	.main-prcenter-wrapper {
+		position: relative;
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 1.542rem 1.25rem 2.5rem 1.25rem;
+		margin-right: 0;
+	}
+
+	.main-prcenter-wrapper > h2 {
+		margin-bottom: 1.667rem;
+		font-size: 1.75rem;
+		line-height: 3.125rem;
+		padding-bottom: 0.8333rem;
+	}
+
+	.main-prcenter-wrapper > h2:before {
+		height: 0.1667rem;
+	}
+
+
+	.main-prcenter-area > a {
+		padding-right:11.88rem;
+		font-size: 1.083rem;
+		line-height: 1.458rem;
+	}
+
+	.main-prcenter-area > a .image {
+		width: 10.63rem;
+		height: 7.917rem;
+	}
+
+	.main-prcenter-area > a .substance {
+		margin-bottom: 1rem;
+		height: 5.833rem;
+	}
+
+	.main-prcenter-area > a .date {
+		display: block;
+	}
+
+	.main-prcenter-wrapper .btn-more {
+		top: 2.083rem;
+		right: 1.25rem;
+		width: 2.083rem;
+		height: 2.083rem;
+		background-size: 0.7083rem 0.7083rem;
+
+	}
+
+	.main-president-wrapper {
+		float: none;
+		width: 100%;
+	}
+
+	.main-president-wrapper > a {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 17.17rem;
+		padding: 2.458rem 1.25rem 0 1.25rem;
+		background-image: url(../img03/main/img_main_president_mobile.jpg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: cover;
+	}
+
+	.main-president-wrapper > a > h2 {
+		margin-bottom: 1.125rem;
+		font-size: 1.75rem;
+		line-height: 2.083rem;
+	}
+
+	.main-president-wrapper > a > p {
+		font-size: 1.083rem;
+		line-height: 1.167rem;
+	}
+
+	.main-president-wrapper > a .arrow {
+		content: "";
+		display: block;
+		margin-top: 1.875rem;
+		width: 40px;
+		height: 5px;
+		background-size: 40px 5px;
+	}
+
+	.main-president-wrapper:before {
+		display: none;
+	}
+

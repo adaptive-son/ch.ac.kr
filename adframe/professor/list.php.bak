@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <?
+    if($TREE_ID=="") $TREE_ID = $_GET['site_id'];
+    define(TREE_ID,$TREE_ID);
+    include("../".$TREE_ID."/include/meta.php");
+    if ( $TREE_NO == "" || !$TREE_NO ) go_back("페이지를 찾을 수 없습니다.");
+    else {
+        $sql_infoContents = " SELECT * FROM ".TABLE_CMS_CONTENTS." WHERE TREE_ID = '".TREE_ID."' AND TREE_NO = '".$TREE_NO."' ";
+        $rs_infoContents = $adb->getRow($sql_infoContents, DB_FETCHMODE_ASSOC);
+    }
+    ?>
+    <title><?=$PAGENAME3.$PAGENAME2.$PAGENAME1._TAG_TITLE?></title>
+</head>
+<body>
+
+<!-- wrapper -->
+<div class="wrapper" id="wrapper">
+    <!-- header -->
+    <? include("../".$TREE_ID."/include/header.php");?>
+    <!-- //header -->
+
+    <!-- sub visual -->
+    <? include("../".$TREE_ID."/include/sub_visual.php"); ?>
+    <!-- sub visual -->
+
+    <!-- container -->
+    <section>
+        <div class="container" id="container">
+
+            <!-- contents_navi -->
+            <? include("../".$TREE_ID."/include/contents_navi.php");?>
+            <!-- //contents_navi -->
+
+            <div class="container-wrapper">
+                <!-- lnb -->
+                <? include("../".$TREE_ID."/include/lnb.php");?>
+                <!-- //lnb -->
+
+                <!-- contents -->
+                <article>
+                    <div class="contents" id="contents">
+                        <h3 class="contents-title">
+                            교수소개
+                            <span class="arrow"></span>
+                        </h3>
+
+                        <div class="contents-wrapper">
+                            <!-- CMS 시작 -->
+
+
+                            <div class="professor-wrapper">
+
+                                <?php
+                                $file_path = PROFESSOR_LOAD_PATH;
+                                // 교수 조회
+                                $proQuery = "select * from ".TABLE_PROFESSOR." WHERE site_id='".$site_id."' AND del_yn='N' ORDER BY sort asc ";
+                                $result = DBquery($proQuery);
+
+                                for($i=0; $row=@mysql_fetch_array($result); $i++) {
+                                    ?>
+                                    <div class="professor-area">
+                                        <div class="image center-crop">
+                                            <img src="<?=$file_path."/".$row[file_name]?>" alt="<?=$row[name]?>" />
+                                        </div>
+
+                                        <h4>
+                                            <?=$row[name]?>
+                                        </h4>
+
+                                        <ul>
+                                            <li>
+                                                <strong>
+                                                    직위
+                                                </strong>
+                                                <?=$row[position]?>
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    담당과목
+                                                </strong>
+                                                <?=$row[responsibility]?>
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    연구실
+                                                </strong>
+                                                <?=$row[office]?>
+                                            </li>
+                                            <li>
+                                                <strong>
+                                                    연락처
+                                                </strong>
+                                                <?=$row[tel]?>(<?=$row[email]?>)
+                                            </li>
+                                            <?if($row[career2]!=""){?>
+                                            <li>
+                                                <strong>
+                                                    가족회사 및<br />
+                                                    산업체관련 경력
+                                                </strong>
+                                                <?=$row[career2]?>
+                                            </li>
+                                            <? }?>
+                                        </ul>
+										<!--기계공학계열 교수소개 자세히보기 버튼 삭제- 190807희-->
+										<?php if($site_id=='machine' || $site_id=='sw' || $site_id=='nurse') { ?>
+
+										<?php } else {?> 
+											<a href="view.php?<?=$_SERVER['QUERY_STRING']?>&idx=<?=$row[idx]?>" class="btn-detail-view">
+                                            자세히보기
+                                            <img src="/pub/_common/img/icon/icon_arrow01.png" alt="" />
+                                        	</a>
+										<?php } ?>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                    </div>
+                </article>
+                <!-- //contents -->
+            </div>
+        </div>
+    </section>
+    <!-- //container -->
+
+    <script type="text/javascript">
+        menuOn(<?=$PAGEINDEX1?>, <?=$PAGEINDEX2?>, <?=($PAGEINDEX3=="")?'0':$PAGEINDEX3?>);
+    </script>
+
+    <!-- footer -->
+    <? include("../_common/footer.php");?>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+
+
+
+</body>
+</html>

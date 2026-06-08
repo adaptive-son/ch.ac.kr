@@ -1,0 +1,48 @@
+# 빈 중첩 git 저장소 (불필요)
+ch.ac.kr/
+
+# 가상투어 (대용량)
+pub/vtour/
+
+# DB 접속 정보 (비밀번호 포함)
+pub/main/config/dbconn.php
+
+# phpMyAdmin 설정
+adframe/MyAdmin/setup/config.php
+adframe/MyAdmin/config.inc.php
+
+# IDE
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 임시/캐시
+*.log
+*.tmp
+
+# 미디어/이미지/압축 파일 (GitHub 용량 제한)
+*.mp4
+*.mp3
+*.avi
+*.mov
+*.wmv
+*.flv
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
+*.swf
+*.psd
+*.ai

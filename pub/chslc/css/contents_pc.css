@@ -1,0 +1,751 @@
+.only-pc {
+    display: block !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+
+.introduce-wrapper {
+    margin-bottom: 35px;
+}
+
+.introduce-area {
+    position: relative;
+    padding-left: 355px;
+}
+
+.introduce-area>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.introduce-area>dl {
+    display: block;
+    margin-bottom: 19px;
+}
+
+.introduce-area>dl>dt {
+    display: block;
+    color: #212121;
+    font-size: 26px;
+    line-height: 46px;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+    word-break: keep-all;
+}
+
+.introduce-area>dl>dd {
+    display: block;
+    color: #212121;
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 500;
+    letter-spacing: -0.25px;
+    word-break: keep-all;
+}
+
+.introduce-area>dl>dd>strong {
+    font-weight: 700;
+    color: #00a6f7
+}
+
+.introduce-area>dl+p {
+    margin: 0 0 26px 0;
+}
+
+.introduce-area>p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+    margin-bottom: 26px;
+    word-break: keep-all;
+}
+
+.introduce-area>p:last-child {
+    margin-bottom: 0;
+}
+
+.introduce-area>p.word-sign {
+    text-align: right;
+    font-size: 20px;
+    line-height: 26px;
+    color: #212121;
+    font-size: 400;
+}
+
+.introduce-area>p.word-sign>strong {
+    display: inline;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+}
+
+.introduce-images-list {
+    display: block;
+}
+
+.introduce-images-list:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.introduce-images-list>li {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.introduce-images-list>li:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.introduce-images-list>li>img {
+    display: block;
+    width: 100%;
+}
+
+
+/* 교수진 소개 */
+
+.professor-wrapper02 {
+    display: block;
+}
+
+.professor-area02 {
+    position: relative;
+    min-height: 325px;
+    padding: 29px 30px 30px 300px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd
+}
+
+.professor-area02>h4 {
+    margin-bottom: 10px;
+    color: #212121;
+    font-size: 26px;
+    line-height: 46px;
+    font-weight: 500;
+    letter-spacing: -0.25px;
+}
+
+.professor-area02>h4>span {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 9px;
+    color: #0089d8;
+    font-size: 18px;
+}
+
+.professor-area02>img {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 220px;
+}
+
+.professor-box02 {
+    display: block;
+}
+
+.professor-box02:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.professor-box02>ul {
+    float: left;
+    width: 47.5%;
+    margin-left: 5%;
+}
+
+.professor-box02>ul:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.professor-box02>ul>li {
+    position: relative;
+    display: block;
+    margin-bottom: 6px;
+    padding-left: 13px;
+    line-height: 24px;
+    font-size: 17px;
+    color: #666666;
+    word-break: keep-all;
+}
+
+.professor-box02>ul>li:before {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: #0089d8;
+}
+
+
+/* 오시는 길 */
+
+.table-type01 {
+    border-color: #212121;
+}
+
+.table-type01 table thead th,
+.table-type01 table tbody th,
+.table-type01 table tbody td {
+    font-size: 16px;
+    padding: 20px;
+}
+
+.map-btns-wrapper {
+    margin-bottom: 20px;
+}
+
+.map-btns-wrapper:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.map-btns-wrapper>a {
+    float: left;
+    display: block;
+    width: 380px;
+    height: 60px;
+    padding-top: 18px;
+    text-align: center;
+    border: 1px solid #c8c8c8;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.map-btns-wrapper>a:hover,
+.map-btns-wrapper>a:focus {
+    background-color: #f9f9f9;
+}
+
+.map-btns-wrapper>a:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.map-btns-wrapper>a>img,
+.map-btns-wrapper>a>strong {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.map-btns-wrapper>a>img {
+    height: 21px;
+    line-height: 21px;
+    margin-right: 6px;
+}
+
+.map-btns-wrapper>a>strong {
+    color: #212121;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.map-wrapper {
+    display: block;
+}
+
+.map-wrapper .root_daum_roughmap,
+.map-wrapper .wrap_map {
+    display: block;
+}
+
+
+/* 교육대상 */
+
+.education-wrapper {
+    display: block;
+}
+
+.education-wrapper:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.education-area {
+    float: left;
+    width: 23.5%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.education-area:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.education-area>.image {
+    position: relative;
+    display: block;
+    height: 157px;
+    border: 1px solid #dddddd;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.education-area>.image>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 154px;
+    margin-left: -77px;
+    margin-top: -41px;
+}
+
+.education-area>p {
+    padding: 22px 10px;
+    height: 232px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    font-size: 16px;
+    line-height: 30px;
+    color: #333333;
+    text-align: center;
+    word-break: keep-all;
+}
+
+table .ul-list01>li {
+    position: relative;
+    background: transparent;
+}
+
+table .ul-list01>li:before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #0089d8;
+}
+
+.service-slider-wrapper {
+    position: relative;
+}
+
+.service-slider-wrapper button {
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 24px 13px;
+    background-position: center center;
+    text-indent: -5000rem;
+    z-index: 50;
+}
+
+.service-slider-wrapper .btn-prev {
+    left: 60px;
+    background-image: url(../img/sub02/btn_previous01.png);
+}
+
+.service-slider-wrapper .btn-next {
+    right: 60px;
+    background-image: url(../img/sub02/btn_next01.png);
+}
+
+.service-slider-wrapper .swiper-container .swiper-wrapper .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.service-slider-wrapper #service-pagination01 {
+    width: 100%;
+    bottom: 70px;
+    left: 0;
+}
+
+.service-slider-wrapper #service-pagination01 .swiper-pagination-bullet {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 15px;
+    background-color: #fff;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.service-slider-wrapper #service-pagination01 .swiper-pagination-bullet-active {
+    width: 60px;
+    background-color: #20b171;
+}
+
+
+/* 절차 */
+
+.process-wrapper {
+    display: block;
+}
+
+.process-wrapper:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.process-area {
+    float: left;
+    display: table;
+    width: 30%;
+    height: 180px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+    border: 1px solid #dddddd
+}
+
+.process-wrapper .arrow {
+    float: left;
+    display: block;
+    width: 5%;
+    height: 180px;
+    background-image: url(../img/sub03/icon_arrow_right01.png);
+    background-repeat: no-repeat;
+    background-size: 9px 18px;
+    background-position: center center;
+}
+
+.process-box {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding-left: 110px;
+}
+
+.process-box>img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 90px;
+    margin-top: -45px;
+}
+
+.process-box>dl {
+    display: block;
+}
+
+.process-box>dl>dt {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #1460c7;
+    word-break: keep-all
+}
+
+.process-box>dl>dd {
+    display: block;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #333333;
+    word-break: keep-all
+}
+
+.customer-information-wrapper {
+    height: 220px;
+    padding: 60px 68px;
+    border: 1px solid #dddddd
+}
+
+.customer-information-wrapper:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.reservation-wrapper {
+    float: left;
+    display: table;
+    width: 47.5%;
+    height: 100%;
+}
+
+.reservation-area {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 116px;
+    width: 100%;
+    min-height: 96px;
+}
+
+.reservation-area>img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 96px;
+    margin-top: -48px;
+}
+
+.reservation-area>h4 {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.reservation-area>p {
+    display: block;
+    color: #333333;
+    font-size: 36px;
+    line-height: 37px;
+    font-weight: bolder;
+}
+
+.center-information-wrapper {
+    float: right;
+    display: table;
+    width: 47.5%;
+    height: 100%;
+}
+
+.center-information-area {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    min-height: 96px;
+}
+
+.center-information-area>h4 {
+    margin-bottom: 11px;
+    color: #1460c7;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.center-information-area>dl {
+    position: relative;
+    display: block;
+    padding-left: 92px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+	margin-top: 0;
+	margin-left: 0;
+}
+
+.center-information-area>dl:first-child {
+    margin-top: 0;
+}
+
+.center-information-area>dl>dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.center-information-area>dl>dt:before {
+    position: absolute;
+    top: 50%;
+    left: 66px;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 16px;
+    margin-top: -7px;
+    background-color: #dddddd;
+}
+
+.center-information-area>dl>dd {
+    display: block;
+}
+
+
+/* FAQ */
+
+.qna-wrapper {
+    border-top: 2px solid #66747e;
+}
+
+.qna-wrapper>dl {
+    border-bottom: 1px solid #dddddd
+}
+
+.qna-wrapper>dl>dt {
+    display: block;
+}
+
+.qna-wrapper>dl>dt>button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 16px 55px 16px 68px;
+    background-color: #fff;
+    text-align: left;
+    font-size: 18px;
+    line-height: 31px;
+    letter-spacing: -0.25px;
+    word-break: keep-all;
+}
+
+.qna-wrapper>dl>dt>button:before {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    content: "Q";
+    color: #0089d8;
+    font-family: "Arial", sans-serif;
+    border: 1px solid #ddd;
+    font-weight: 700
+}
+
+.qna-wrapper>dl>dt>button:after {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    content: "";
+    display: block;
+    width: 15px;
+    height: 8px;
+    margin-top: -4px;
+    background-image: url(../img/sub03/icon_arrow01.png);
+    background-repeat: no-repeat;
+    background-size: 15px 8px;
+    background-position: 0 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.qna-wrapper>dl>dt>button.active:after {
+    transform: rotate(180deg);
+}
+
+.qna-wrapper>dl>dd {
+    display: none;
+    position: relative;
+    padding: 20px 20px 20px 68px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    line-height: 26px;
+    color: #616161;
+    word-break: keep-all;
+}
+
+.qna-wrapper>dl>dd:before {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    content: "A";
+    color: #fff;
+    background-color: #38465f;
+    font-family: "Arial", sans-serif;
+    border: 1px solid #38465f;
+    font-weight: 700
+}
+
+@media only all and (max-width: 1279px) {
+    .education-area>p {
+        line-height: 24px;
+    }
+    .process-area {
+        width: 31%;
+        height: 150px;
+        padding: 0 20px;
+    }
+    .process-wrapper .arrow {
+        width: 3.5%;
+        height: 150px;
+    }
+    .process-box {
+        padding-left: 80px;
+    }
+    .process-box>img {
+        width: 70px;
+        margin-top: -35px;
+    }
+    .process-box>dl>dt {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .process-box>dl>dd {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .customer-information-wrapper {
+        padding: 60px 30px;
+    }
+    .reservation-wrapper {
+        width: 52%;
+    }
+    .center-information-wrapper {
+        width: 46%;
+    }
+}
+
+@media only all and (max-width: 1179px) {
+    .introduce-area {
+        position: relative;
+        padding-left: 0;
+    }
+    .introduce-area>img {
+        position: static;
+        top: 0;
+        left: 0;
+        display: block;
+        margin: 0 auto 30px auto;
+    }
+    .professor-area02 {
+        padding: 29px 30px 30px 230px;
+    }
+    .professor-area02>img {
+        width: 160px;
+    }
+    .map-btns-wrapper>a {
+        width: 350px;
+    }
+    .education-area>p {
+        line-height: 22px;
+        height: 300px;
+    }
+    .customer-information-wrapper {
+        padding: 30px 20px;
+    }
+    .reservation-area>p {
+        font-size: 32px;
+    }
+    .center-information-area>dl {
+        font-size: 16px;
+    }
+}

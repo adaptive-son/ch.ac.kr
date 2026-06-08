@@ -1,0 +1,1 @@
+	<script language="JavaScript" type="text/javascript">		//alert("11");		opener.location.reload();		window.close();	</script>

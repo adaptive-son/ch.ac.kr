@@ -1,0 +1,102 @@
+/* lnb */
+.lnb,
+#lnb {
+	height: 100%;
+}
+
+#lnb > ul {
+	height: 100%;
+}
+
+
+#lnb #lnb {
+    position: relative;
+    width: 272px;
+	height: calc(100% - 140px);
+    padding-top:20px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+#lnb h1 {
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: -2px;
+    background: #d71a21;
+}
+
+#lnb > ul {
+}
+
+#lnb > ul > li {
+    /*border-bottom: 1px solid #dcdcdc;*/
+}
+
+#lnb > ul > li > a {
+    display: block;
+    padding: 15px 35px 15px 18px;
+    color: inherit;
+    font-size: 16px;
+    background-color: #4d5158;
+    box-shadow: inset 0 -1px #565a60;
+	color : #fff;
+}
+
+#lnb > ul > li a:hover {
+    /* color: #d91c1b; */
+    background-color: #30a5ff;
+}
+
+#lnb > ul > li.on > a {
+    background-color:#30a5ff;
+    /* color: #d91c1b; */
+}
+
+#lnb > ul > li ul {
+    display: none;
+}
+
+#lnb > ul > li > ul > li > a {
+    display: block;
+    padding: 12px 25px 12px 18px;
+    font-size: 13px;
+    box-shadow: inset 0 -1px #565a60;
+}
+
+#lnb > ul > li > ul > li > a {
+    color : #fff;
+    background-color: #35383d;
+}
+
+#lnb > ul > li > ul > li > a:hover {
+    background: #5a6a8a;
+}
+
+#lnb > ul > li > ul > li.on a {
+    color: #fff;
+    background-color: #55824e;
+}
+
+#lnb > ul > li > ul li ul {
+    display: none;
+   /* padding-bottom: 8px;*/
+}
+
+#lnb > ul > li > ul li li a {
+    display: block;
+    padding: 14px 25px 12px 32px;
+    color: #666;
+    font-size: 12px;
+    background-color: #f5f2ec;
+}
+
+#lnb > ul > li > ul > li li a:hover {
+    /* color: #d91c1b; */
+}
+
+#lnb > ul li.noDepth a {
+    background-image: none !important;
+}

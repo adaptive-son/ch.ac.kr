@@ -1,0 +1,1163 @@
+@charset "utf-8";
+/*페이지 담당자 안내*/
+.fdata_wrap {
+	position: relative;
+	width: 100%
+}
+.fdata_wrap, .fdata_wrap dd:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.fdata_wrap dt {
+	width: 100%;
+	border-bottom: 1px solid #444;
+}
+.fdata_wrap dd {
+	width: 100%;
+	background-color: #fbfbfb;
+	padding: 5px 0 5px 0
+}
+.fdata_wrap dd ul {
+	float: left;
+}
+.fdata_wrap dd li {
+	float: left;
+	background: url("/make_img/page/o.gif") 0 3px no-repeat;
+	padding-left: 20px;
+	margin: 0 15px 0 5px
+}
+.fdata_wrap .last {
+	margin-right: 0px
+}
+.fdata_wrap dd li .ctit {
+	font-weight: bold;
+	float: left;
+}
+.fdata_wrap dd li .ctxt {
+	width: 80px;
+	float: left;
+	overflow: hidden;
+}
+.fdata_wrap .btn_print {
+	float: right;
+}
+/*탭*/
+.tabmenu {
+	margin-bottom: 15px;
+}
+.tabmenu ul {
+	display: block;
+	width: 100%;
+	position: relative;
+	height: 34px;
+	border-bottom: 2px solid #045c9c;
+}
+.tabmenu ul:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+.tabmenu li {
+	margin-right: 0px;
+	float: left;
+	letter-spacing: -1px;
+}
+.tabmenu li a, .tabmenu li span {
+	display: inline-block;
+	background-repeat: no-repeat;
+	height: 34px;
+}
+.tabmenu li a {
+	background-image: url(/make_img/sub01/tab_bgl.gif);
+	background-position: left -35px;
+	padding-left: 35px;
+}
+.tabmenu li span {
+	background-image: url(/make_img/sub01/tab_bgr.gif);
+	background-position: right -35px;
+	padding-right: 35px;
+	padding-top: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #444;
+	height: 24px;
+}
+.tabmenu li a:hover, .tabmenu li.over a {
+	background-position: left 0px;
+}
+.tabmenu li a:hover span, .tabmenu li.over a span {
+	background-position: right 0px;
+	color: #fff;
+}
+/*연혁*/
+.page3_tabmenu {
+	position: relative;
+	width: 100%;
+}
+.page3_tabmenu:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page3_tabmenu li {
+	float: left;
+	height: 30px;
+}
+.page3_wrap {
+	position: relative;
+	width: 100%;
+	margin-top: 40px
+}
+.page3_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page3_wrap .cleft {
+	float: left;
+}
+.page3_wrap .cright {
+	float: right;
+	width: 435px;
+}
+.page3_wrap .cright dl {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e7e7e7
+}
+.page3_wrap .cright .last {
+	border-bottom: 0px
+}
+.page3_wrap .cright dt {
+	margin: 10px 0 20px 0
+}
+.page3_wrap li {
+	position: relative;
+	width: 100%;
+	line-height: 150%;
+	background: url(/make_img/main/m_notice_dot.gif) no-repeat left 9px;
+	padding-left: 60px;
+	margin-left: 15px;
+}
+.page3_wrap li:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page3_wrap .smonth {
+	position: absolute;
+	left: 10px;
+	font-weight: bold;
+	color: #1a62a6;
+	width: 50px;
+	float: left;
+}
+.page3_wrap .stxt {
+	float: left;
+}
+/*조직도*/
+.page4_wrap {
+	position: relative;
+	display: block;
+	width: 700px;
+	height: 660px;
+	background: url("/make_img/sub01/page4_bg.gif") center 0 no-repeat;
+	border: 0px solid red;
+}
+.page4_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page4_wrap .box01 {
+	position: absolute;
+	top: 0px;
+	left: 281px;
+}
+.page4_wrap .box02 {
+	position: absolute;
+	top: 65px;
+	left: 416px;
+}
+.page4_wrap .box03 {
+	padding: 120px 0 0 17px;
+	border: 0px solid red;
+	overflow: hidden;
+}
+.page4_wrap .box03_01 {
+	float: left;
+	padding-left: 15px;
+	padding-top: 12px;
+	border: 0px solid red;
+}
+.page4_wrap .box03_02 {
+	padding-top: 11px;
+	border: 0px solid red;
+}
+.page4_wrap .box03_02 li {
+	padding-bottom: 9px;
+}
+/*춘해역사관*/
+.page5_1_wrap {
+	position: relative;
+	width: 100%;
+	height: 238px;
+	background: url("/make_img/sub01/page5_1_bg.jpg") 0 0 no-repeat;
+}
+.page5_1_wrap .cname {
+	margin: 20px 0 0 300px;
+	display: block;
+}
+.page5_1_wrap .ctxt {
+	margin: 20px 0 0 300px;
+	display: block;
+}
+.page5_1_list {
+	margin: 10px 0 40px 0
+}
+.page5_1_list li {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+	padding: 5px
+}
+.page5_1_list li:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page5_1_list .cyear {
+	width: 100px;
+	float: left;
+	color: #004a71
+}
+.page5_1_list .ctxt {
+	padding-left: 10px;
+	float: left;
+}
+.page5_2_wrap {
+	position: relative;
+	width: 100%;
+	height: 238px;
+	background: url("/make_img/sub01/page5_2_bg.jpg") 0 0 no-repeat;
+}
+.page5_2_wrap .cname {
+	margin: 20px 0 0 300px;
+	display: block;
+}
+.page5_2_wrap .ctxt {
+	margin: 20px 0 0 300px;
+	display: block;
+}
+/*춘해가족_춘해병원*/
+.page6_1_wrap {
+	position: relative;
+	width: 100%;
+	background: url("/make_img/sub01/page6_1_bg.jpg") right 0 no-repeat;
+}
+.page6_1_wrap .ctxt {
+	margin: 40px 0 40px 50px
+}
+.page6_1_wrap .cbtn {
+	margin: 40px 0 0 0px
+}
+.page6_1_wrap .clist li {
+	margin: 10px 0 10px 0
+}
+.page06_02_wrap {
+	position: relative;
+	width: 100%;
+	background: url("/make_img/sub01/sub06_02_img.jpg") right 50px no-repeat;
+}
+.page06_02_wrap .table_box {
+	margin-top: 45px
+}
+/*기부/후원 텍스트페이지*/
+.page07 {
+	width: 100%;
+	border-top: 1px solid #ddd;
+	padding-top: 10px;
+	margin: 10px 0 40px 0;
+}
+/*춘해 UI*/
+.ui01_wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.ui01_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.ui01_wrap .cfl {
+	float: left;
+}
+.ui01_wrap .cfr {
+	float: right;
+	width: 340px
+}
+.ui04_wrap {
+	position: relative;
+	width: 650px;
+	border: 1px solid #ddd;
+	padding: 20px
+}
+.ui04_wrap .ui04 {
+	width: 100%;
+}
+.ui04_wrap .ui04:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.ui04_wrap .ui04 .cleft {
+	float: left;
+}
+.ui04_wrap .ui04 .cright {
+	float: right;
+	width: 350px;
+	border: 1px solid #ddd;
+	padding: 20px;
+}
+.ui04_wrap .ui04 .cright:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.ui04_wrap .ui04 .cright li {
+	width: 180px;
+	float: left;
+}
+.ui04_wrap .ui04_list {
+	margin: 30px auto;
+}
+.ui04_wrap .ui04_list li {
+	float: left;
+	margin: 0 45px 0 0;
+}
+/*교기/교가*/
+.page8_2_wrap {
+	position: relative;
+	display: block;
+	width: 100%
+}
+.page8_2_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page8_2_wrap .cleft {
+	width: 253px;
+	height: 498px;
+	float: left;
+	background: url("/make_img/sub01/page8_2_bgl.gif") 0 0 no-repeat;
+}
+.page8_2_wrap .cleft .cname {
+	position: absolute;
+	top: 50px;
+	left: 156px;
+}
+.page8_2_wrap .cleft .ctxt {
+	position: absolute;
+	top: 100px;
+	left: 90px;
+}
+.page8_2_wrap .cright {
+	width: 430px;
+	height: 498px;
+	float: left;
+	background: url("/make_img/sub01/page8_2_bgr.gif") 0 0 no-repeat;
+}
+.page8_2_wrap .cright .ctit {
+	position: absolute;
+	top: 50px;
+	left: 517px;
+}
+.page8_2_wrap .cright .clyrics {
+	position: absolute;
+	top: 144px;
+	left: 310px;
+}
+/*춘해가이드_오시는길*/
+.page9_2_wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	background: url("/make_img/sub01/page9_2_bg.jpg") 0 50px no-repeat;
+}
+.page9_2_wrap .page9_2 {
+	width: 350px;
+	margin-left: 330px
+}
+.page9_2_wrap .page9_2 h4 {
+	margin-bottom: 10px
+}
+.page9_2_cbox {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-top: 10px
+}
+/*춘해가이드_통학버스안내*/
+.page9_3_wrap {
+	position: relative;
+	display: block;
+	height: 347px;
+	margin-top: 20px;
+	background: url("/make_img/sub01/page9_3_bg.jpg") 0 0 no-repeat;
+	padding: 30px 0 0 120px;
+}
+.page9_3_table {
+	position: relative;
+	width: 100%;
+}
+.table01_box:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.table01_box {
+	float: left;
+	width: 220px;
+	margin-right: 10px
+}
+.page9_3_table02 {
+	width: 100%;
+}
+.page9_3_table02 .cleft {
+	float: left;
+	width: 300px;
+	margin-right: 30px
+}
+.page9_3_table02 .cright {
+	float: left;
+	width: 300px
+}
+/*전화번호안내*/
+.page9_5_1_wrap {
+	position: relative;
+	display: block;
+	height: 201px;
+	background: url("/make_img/sub01/page9_5_1_bg.gif") 0 0 no-repeat;
+	padding: 30px 0 0 120px;
+}
+.page9_5_1_txt {
+	margin: 0 0 0 160px;
+}
+.ctel {
+	position: absolute;
+	bottom: 50px;
+	right: 30px
+}
+.ctel:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.ctel .ctxt {
+	float: left;
+	width: 240px
+}
+.ctel .cbtn {
+	float: left;
+}
+/*건학이념*/
+.sub01_01_wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 600px;
+	background: url("/make_img/sub01/sub01_img01.jpg") 0 73px no-repeat;
+}
+.sub01_01_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.sub01_01_wrap .sub01_01a {
+	width: 100%;
+}
+.sub01_01_wrap .sub01_01a:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.sub01_01_wrap h4 {
+	float: left;
+	width: 100px;
+	margin-right: 35px
+}
+.sub01_01_wrap .sub01_txt01 {
+	float: left;
+	padding-top: 2px;
+}
+.sub01_01_wrap .sub01_txt01 .pad10t {
+	padding-top: 10px;
+}
+.sub01_01_wrap .imgtxt01 {
+	position: absolute;
+	top: 204px;
+	left: 441px
+}
+.sub01_01_wrap .imgtxt_wrap {
+	width: 100%;
+}
+.sub01_01_wrap .imgtxt_wrap .it01 {
+	position: absolute;
+	top: 300px;
+	left: 280px;
+}
+.sub01_01_wrap .imgtxt_wrap .it02 {
+	position: absolute;
+	top: 330px;
+	left: 330px;
+}
+.sub01_01_wrap .imgtxt_wrap .it03 {
+	position: absolute;
+	top: 400px;
+	left: 440px;
+}
+.sub01_01_wrap .imgtxt_wrap .it04 {
+	position: absolute;
+	top: 430px;
+	left: 550px;
+}
+.mg_t {
+	padding-top: 336px;
+}
+/*춘해비젼*/
+.page1_2_wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 60px;
+	background: url("/make_img/sub01/page1_2_img.jpg") right 104px no-repeat;
+}
+.page1_2_1_box {
+	position: relative;
+	height: 450px;
+	border: 1px solid #ddd;
+	background: #f4f4f4 url("/make_img/sub01/page1_2_1_bg.jpg") center 40px no-repeat;
+}
+.page1_2_1_box .stit01 {
+	position: absolute;
+	left: 160px;
+	top: 40px;
+}
+.page1_2_1_box .stit02 {
+	position: absolute;
+	left: 300px;
+	top: 160px;
+}
+.page1_2_1_box .stxt01 {
+	position: absolute;
+	left: 285px;
+	top: 308px;
+}
+.page1_2_1_box .stxt02 {
+	position: absolute;
+	left: -141px;
+	top: -117px;
+}
+.page1_2_1_box .stxt03 {
+	position: absolute;
+	left: 136px;
+	top: -117px;
+}
+.page1_2_2_box {
+	position: relative;
+	height: 420px;
+	border: 1px solid #ddd;
+	background: #f4f4f4;
+}
+.page1_2_2_box .stit01 {
+	position: absolute;
+	left: 80px;
+	top: 40px;
+}
+.page1_2_2_box .stit02 {
+	position: absolute;
+	left: 120px;
+	top: 120px;
+}
+.page1_2_2_box .stxt01 {
+	position: absolute;
+	left: 250px;
+	top: 120px;
+}
+.page1_2_2_box .stxt02 {
+	position: absolute;
+	left: 250px;
+	top: 183px;
+}
+.page1_2_2_box .stxt03 {
+	position: absolute;
+	left: 250px;
+	top: 246px;
+}
+.page1_2_2_box .stxt04 {
+	position: absolute;
+	left: 250px;
+	top: 309px;
+}
+.page1_2_3_box {
+	position: relative;
+	height: 420px;
+	border: 1px solid #ddd;
+	background: #f4f4f4;
+}
+.page1_2_3_box .stit01 {
+	position: absolute;
+	left: 80px;
+	top: 40px;
+}
+.page1_2_3_box .stit02 {
+	position: absolute;
+	left: 80px;
+	top: 120px;
+}
+.page1_2_3_box .stxt01 {
+	position: absolute;
+	left: 130px;
+	top: 120px;
+}
+.page1_2_3_box .stxt02 {
+	position: absolute;
+	left: 130px;
+	top: 183px;
+}
+.page1_2_3_box .stxt03 {
+	position: absolute;
+	left: 130px;
+	top: 246px;
+}
+.page1_2_3_box .stxt04 {
+	position: absolute;
+	left: 130px;
+	top: 309px;
+}
+/*인사말_이사장,총장*/
+.page2_1_wrap {
+	position: relative;
+	width: 100%;
+}
+.page2_1_wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.page2_1_wrap .left_form {
+	float: left;
+	width: 400px;
+}
+.page2_1_wrap .left_form .ctxt {
+	background: url("/make_img/sub01/page2_1_bg.gif") 0 0 no-repeat;
+	padding: 70px 0 0 40px;
+}
+.page2_1_wrap .left_form .ctxt p {
+	padding-bottom: 20px
+}
+.page2_1_wrap .left_form .cname {
+	text-align: right;
+	margin: 20px 0 50px 0
+}
+.page2_1_wrap .right_form {
+	float: right;
+	padding-top: 30px
+}
+.sm03_class_btn_wrap {
+	padding-top: 40px;
+	width: 100%;
+	height: 100%;
+	background: url("/make_img/sub03/sub03_sm_bg.jpg") right 50px no-repeat;
+}
+.sm03_class_btn_wrap .sm03_class_btn {
+	margin-top: 30px;
+	width: 215px;
+}
+.sm03_class_btn_wrap .sm03_class_btn dt {
+	padding-bottom: 10px;
+}
+/*  전공심화과정  */
+.intne-cont {
+	width: 100%;
+	position: relative;
+	padding-top: 35px;
+	min-height: 400px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 20px;
+}
+.intne-cont a:hover {
+	color: #4275ac;
+	font-weight: normal;
+}
+.inten-box {
+	margin-bottom: 40px;
+}
+.inten-title {
+	padding-bottom: 15px;
+}
+.inten-stitle {
+	font-weight: bold;
+	margin: 5px 0;
+}
+.inten-img {
+	padding: 15px 0;
+	text-align: center;
+}
+.intne-cont dl {
+	margin-bottom: 15px;
+}
+.intne-cont dt {
+	font-weight: bold;
+}
+.intne-cont dd li {
+	padding-left: 15px;
+}
+.transfer-title {
+	font-size: 20px;
+	font-weight: bold;
+	color: #118DCD;
+	margin-bottom: 15px;
+}
+.point {
+	font-weight: bold;
+	color: #4275ac;
+}
+.t1 {
+	width: 100%;
+	border-top: 2px solid #4275ac;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.t1 thead th {
+	padding: 8px 0;
+	font-weight: bold;
+	background: #e9f0f7;
+	border-bottom: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+.t1 tbody td {
+	padding: 8px;
+	border-bottom: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+}
+.t1 .end {
+	border-right: none;
+}
+.t1 .text-left {
+	text-align: left;
+}
+.down-area {
+	display: block;
+	position: relative;
+	padding-right: 93px;
+}
+.down {
+	width: 76px;
+	height: 22px;
+	font-size: 11px;
+	position: absolute;
+	top: 0;
+	margin-top: -2px;
+	padding-left: 5px;
+}
+.down a {
+	display: block;
+	line-height: 24px;
+	text-align: left;
+	padding-left: 10px;
+	color: #4275ac;
+	background: url(../make_img/intensive/down_btn_bg.gif) no-repeat left top;
+}
+.down a:hover {
+	display: block;
+	color: #666;
+	font-weight: normal;
+}
+.inten-btnbox {
+	position: relative;
+	width: 886px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	overflow: hidden;
+}
+.inten-btnbox a {
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+.inten-btnbox a.end {
+	margin-right: 0;
+	;
+}
+/*버튼*/
+.btn_blue {
+	position: relative;
+	margin-bottom: 15px;
+}
+.btn_blue ul {
+	position: relative;
+}
+.btn_blue ul:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.btn_blue li {
+	display: block;
+	padding-left: 0px;
+	padding-right: 5px;
+	margin-bottom: 5px;
+}
+.btn_blue a {
+	display:  block;
+	padding-left: 20px;
+	width: 170px;
+	letter-spacing: -1px;
+	background: url("/make_img/common/btn_blue01.gif") no-repeat left top;
+	height: 27px;
+	color: #555555;
+	font-weight: bold;
+	line-height: 17px;
+}
+.btn_blue li ul {
+	margin: 10px 0;
+}
+.btn_blue li ul li a {
+	height: auto;
+	line-height: 18px;
+	background: none;
+}
+.btn_blue li ul li a:hover {
+	color: #40a1d8;
+}
+.btn_blue a span {
+	padding-bottom: 0px;
+	width: 100%;
+	letter-spacing: -1px;
+	padding-right: 20px;
+	display: inline-block;
+	background: url(/make_img/common/btn_blue01.gif) no-repeat right top;
+	height: 21px;
+	color: #555555;
+	cursor: pointer;
+	font-weight: bold;
+	padding-top: 6px
+}
+.btn_blue a:hover {
+	background-position: left -30px;
+	color: #fff;
+}
+.btn_blue .over a {
+	background-position: left -30px;
+	color: #fff
+}
+.btn_blue a.over {
+	background-position: left -30px;
+	color: #fff
+}
+.btn_blue a:hover span {
+	background-position: right -30px;
+	color: #fff
+}
+.btn_blue .over a span {
+	background-position: right -30px;
+	color: #fff
+}
+.btn_blue a.over span {
+	background-position: right -30px;
+	color: #fff
+}
+.sm04_wrap {
+	position: relative;
+	padding-top: 40px;
+	width: 100%;
+	height: 860px;
+	background: url("/make_img/sub04/sub04_sm_bg.jpg") 0 bottom no-repeat;
+}
+.sm04_wrap:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.sm04_wrap .sm04_fl {
+	float: left;
+}
+.sm04_wrap .sm04_fl h4 {
+	padding-bottom: 10px
+}
+.sm04_wrap .sm04_fr {
+	float: right;
+}
+.sm04_class_btn_wrap {
+	width: 460px;
+}
+.sm04_class_btn_wrap:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.sm04_class_btn_wrap .sm04_class_btn {
+	margin-top: 30px;
+}
+.sm04_class_btn_wrap .sm04_class_btn dt {
+	padding-bottom: 10px
+}
+.sm04_class_btn_wrap .ab01 {
+	position: absolute;
+	left: 250px;
+	top: 0px;
+}
+.sm04_class_btn_wrap .ab02 {
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+.sm04_class_btn_wrap .ab03 {
+	position: absolute;
+	left: 250px;
+	top: 210px;
+}
+.sm04_class_btn_wrap .ab04 {
+	position: absolute;
+	left: 250px;
+	top: 420px;
+}
+.sm04_class_btn_wrap .ab05 {
+	position: absolute;
+	right: 20px;
+	top: 460px;
+}
+/*대학기구>교무처 외 서브페이지 코딩*/
+.sub03_box_wrap {
+	width: 100%;
+	height: 207px;
+	background: url("/make_img/sub03/sub03_con_bg.gif") 0 0 no-repeat;
+}
+.sub03_box_wrap:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.sub03_box_wrap .cfl {
+	float: left;
+	padding: 20px 0 0 23px;
+}
+.sub03_box_wrap .cfl img {
+	width: 200px;
+	height: 157px;
+}
+.sub03_box_wrap .cfr {
+	float: left;
+	margin: 20px 0 0 50px;
+}
+.sub03_box_wrap .cfr dt {
+	width: 375px;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #c4c4c4;
+	padding-bottom: 10px
+}
+.sub03_box_wrap .cfr dd {
+	padding-top: 20px
+}
+.sub03_box_wrap .cfr ul .ctit {
+	font-weight: bold;
+}
+.sub03_box_wrap .cfr ul .ctxt {
+	line-height: 200%;
+}
+.sub03_box_wrap .cfr dd ul .ctel01 {
+	width: auto;
+	height: auto;
+	background: url("/make_img/sub03/ico1.gif") 0 0 no-repeat;
+	padding-left: 30px
+}
+.sub03_box_wrap .cfr dd ul .cfax {
+	width: auto;
+	height: auto;
+	background: url("/make_img/sub03/ico2.gif") 0 0 no-repeat;
+	padding-left: 30px
+}
+.sub03_box_wrap .cfr dd ul .clok {
+	width: auto;
+	height: auto;
+	background: url("/make_img/sub03/ico3.gif") 0 0 no-repeat;
+	padding-left: 30px
+}
+.sub03_box_wrap .cfr dd ul .email {
+	width: auto;
+	height: auto;
+	background: url("/make_img/sub03/ico4.gif") 0 0 no-repeat;
+	padding-left: 30px
+}
+.sub03_box_wrap .cfr dd .cbtn {
+	text-align: right;
+}
+.pd30t {
+	margin-top: 30px
+}
+.clist01 {
+	padding: 5px 0 0 21px;
+	text-align: justify;
+}
+/*프로필*/
+.profile_wrap {
+	width: 100%;
+	border: 1px solid #ddd;
+	background-color: #efefef;
+	padding: 10px;
+	margin: 10px 0 10px 0;
+}
+.profile_wrap:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.profile_wrap .cleft {
+	float: left;
+	width: 80px;
+	height: 110px
+}
+.profile_wrap .cright {
+	padding: 0 0 0 40px;
+	width: 550px
+}
+.profile_wrap .cright:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.profile_wrap .cright li {
+	width: 100%;
+	line-height: 200%;
+	border-bottom: 1px solid #ddd
+}
+.profile_wrap .cright li .ctit {
+	display: block;
+	width: 80px;
+	float: left;
+	color: #444;
+	border-right: 1px solid #ddd;
+}
+.profile_wrap .cright li .ctxt {
+	display: block;
+	width: 200px;
+	float: left;
+	padding-left: 20px
+}
+/*개인정보취급방침*/
+.popup_wrap {
+	width: 100%;
+	height: 45px;
+	display: block;
+	position: relative;
+	background: url(/07_etc/images/popup_topbg.gif) 0 top repeat-x;
+}
+.popup_wrap {
+	display: block;
+	clear: both;
+	content: "";
+}
+.popup_wrap h3 {
+	font-weight: bold;
+	font-size: 16px;
+	height: 60px;
+	color: #fff;
+	padding: 13px 0 0 10px;
+}
+.popup_wrap .popup {
+	margin: 0 20px 20px 20px;
+}
+.privacy_box {
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 1px solid #ededed;
+	background-color: #f7f7f7
+}
+.text_box_wrap {
+	width: 800px;
+	height: 300px;
+	margin-bottom: 30px;
+	border: 2px solid #f2f2f2;
+	overflow: auto;
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #BFBFBF;
+	scrollbar-highlight-color: #BFBFBF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #f9f9f9;
+	scrollbar-arrow-color: #464646;
+	padding: 10px 10px;
+}
+.popup_wrap .close {
+	width: 27px;
+	height: 27px;
+	top: 9px;
+	right: 20px;
+	position: absolute;
+}
+/* 모집요강 */
+.admissions_scroll {
+	border: 15px solid #f4f4f4;
+}
+.admissions_scroll_box {
+	margin: 0;
+	padding: 0;
+	background-color: #fff
+}
+.admissions_scroll_box ul {
+	margin: 0;
+	padding: 0;
+}
+.admissions_scroll_box ul li {
+	margin: 0;
+	padding-bottom: 0px;
+	border-bottom: 10px solid #CCCCCC;
+}
+.transfer-con {
+	width: 100%;
+	margin: 0 auto;
+	padding: 40px 0;
+	font-weight: normal;
+}
+.transfer-con a {
+	font-weight: bold;
+}
+.transfer-con a:hover {
+	color: #4275ac;
+}
+.download-btn {
+	margin-bottom: 30px;
+}
+.download-btn a {
+	display: inline-block;
+	width: 200px;
+	height: 35px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	line-height: 33px;
+	background: #4275ac;
+	border-radius: 2px;
+}
+.download-btn a:hover {
+	color: #fff;
+}
+.download-btn a.download1 {
+	background: #F03
+}
+.title-box {
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	font-weight: bold;
+	color: #fff;
+	padding: 0 20px;
+	background: #4275ac;
+	margin-bottom: 10px;
+}

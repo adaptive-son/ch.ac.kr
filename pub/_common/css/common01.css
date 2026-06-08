@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+@import url("common01_pc.css");
+
+@media only all and (max-width: 1023px) {
+	html {
+		font-size: 1.625rem; /* 기본베이스 폰트사이즈 26px */
+		line-height: 1.625rem; /* 기본베이스 line-height 사이즈 26px */
+	}
+
+	.sub-visual {
+		max-width: 100%;
+		height: auto;
+		padding: 0;
+		margin: 0;
+	}
+
+	.sub-visual > img {
+		position: static;
+		width: 100%;
+		transform: none;
+	}
+
+	.sub-visual > .pc {
+		display: none;
+	}
+
+	.sub-visual > .mobile {
+		display: block;
+	}
+
+	.sub-visual .word-slogan-wrapper {
+		position: absolute;
+		top: 50%;
+		max-width: 100%;
+		width: 100%;
+		padding: 01.538rem;
+		text-align: center;
+		transform: translate(0, -50%);
+		text-shadow: 0.07692rem 0.07692rem 0.1923rem rgba(0,0,0, 0.2);
+	}
+
+	.sub-visual .word-slogan-wrapper .title {
+		display: block;
+		font-size: 2rem;
+		line-height: 2.308rem;
+		font-weight: 700;
+	}
+
+	.sub-visual .word-slogan-wrapper .type01,
+	.sub-visual .word-slogan-wrapper .type02 {
+		display: none;
+	}
+
+	.container {
+		position: relative;
+		padding: 3.846rem 0;
+	}
+
+	.contents-navigation-wrapper {
+		display: none;
+	}
+
+	.container-wrapper {
+		position: static;
+		padding: 0;
+		margin: 0;
+	}
+
+	.lnb-wrapper {
+		position: fixed;
+		top: 8.077rem;
+		left: 0;
+		display: none;
+		float: none;
+		margin-left: 0;
+		width: 100%;
+		height: calc(100% - 8.077rem);
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 100;
+	}
+
+	.lnb-wrapper .lnb-title {
+		display: none;
+	}
+
+	.lnb-area {
+		display: block;
+	}
+
+	.lnb-area > h2 {
+		display: none;
+	}
+
+	.lnb-area > ul > li > a {
+		font-size: 1rem;
+		line-height: 1.154rem;
+		padding: 0.7692rem 4.462rem 0.7692rem 1.538rem;
+		border-left: 0;
+		border-right: 0;
+	}
+
+	.lnb-area > ul > li > a.active,
+	.lnb-area > ul > li > a.point,
+	.lnb-area > ul > li > a:hover {
+		border: 1px solid #38465f;
+		background: #38465f;
+	}
+
+
+	.lnb-area > ul > li > a .arrow {
+		right: 1.538rem;
+		width: 0.6923rem;
+		height: 0.3846rem;
+		margin-top: -0.1923rem;
+		background-size: 0.6923rem 0.3846rem;
+	}
+
+	.lnb-area > ul > li > a.active .arrow,
+	.lnb-area > ul > li > a.point .arrow {
+		background-size: 0.6923rem 0.3846rem;
+	}
+
+	.lnb-area > ul > li > a + ul {
+		padding: 1.154rem;
+		border-left: 0;
+		border-right: 0;
+	}
+
+	.lnb-area > ul > li > ul > li {
+		margin-bottom: 0.7692rem;
+	}
+
+	.lnb-area > ul > li > ul > li > a {
+		padding-left: 1rem;
+		font-size: 1rem;
+		line-height: 1.154rem;
+	}
+
+
+	.lnb-area > ul > li > ul > li > a .bg {
+		top: 0.3077rem;
+		width: 0.3846rem;
+		height: 0.3846rem;
+		margin-left: 0.1923rem;
+	}
+
+	.contents {
+		margin: 0;
+		padding: 1.154rem;
+		display: block;
+		font-size: 1rem !important; 
+		line-height: 1rem !important
+	}
+
+	.contents-title {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3.846rem;
+		line-height: 3.846rem;
+		text-align: center;
+		color: #fff;
+		font-weight: 400;
+		font-size: 1.462rem;
+		background: #009bd8;
+		padding: 0 4.462rem;
+	}
+
+	.contents-title .arrow {
+		position: absolute;
+		top: 50%;
+		right: 1.538rem;
+		display: block;
+		width: 1.385rem;
+		height: 0.6923rem;
+		margin-top: -0.3462rem;
+		background: url(../img/icon/icon_arrow_down02.png) no-repeat 0 0;
+		background-size: 1.385rem 0.6923rem;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.contents-title.active {
+		position: fixed;
+		top: 4.231rem;
+		box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+		z-index: 10;
+	}
+
+	.contents-title.active .arrow {
+		transform: rotate(180deg);  
+	}
+}
+
+
+@media only all and (max-width: 767px) {
+	html {
+		font-size: 1.25rem; /* 기본베이스 폰트사이즈 18px */
+		line-height: 1.25rem; /* 기본베이스 line-height 사이즈 18px */ 
+	}
+}
+
+
+@media only all and (max-width: 600px) {
+	html {
+		font-size: 0.9375rem; /* 기본베이스 폰트사이즈 15px */
+		line-height:  0.9375rem; /* 기본베이스 line-height 사이즈 15px */ 
+	}
+}
+
+
+@media only all and (max-width: 475px) {
+	html {
+		font-size: 0.8125rem; /* 기본베이스 폰트사이즈 13px */
+		line-height:  0.8125rem; /* 기본베이스 line-height 사이즈 13px */ 
+	}
+}

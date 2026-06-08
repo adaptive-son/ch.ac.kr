@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@media only all and (max-width: 1023px) {
+	.table-type03 table tbody td {
+		background: #f7f7f7;
+	}
+	.table-type03 table thead th {
+		background-color: #e9f7fd !important;
+	}
+}

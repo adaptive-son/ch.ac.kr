@@ -1,0 +1,342 @@
+/* 팝업존 */
+/*
+#divpop0 .popupzone-footer-wrapper-pc{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+*/
+.popupzone-wrapper {
+	position: relative;
+	background: #39555f;
+	padding: 20px 0 10px 0;
+	z-index: 100;
+}
+
+.popupzone-area {
+	position: relative;
+	max-width: 984px;
+	margin: 0 auto;
+}
+
+.popupzone-area:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.popupzone-area #top-popupzone-slider {
+	display: block;
+	background: url(https://www.ch.ac.kr/_common/img02/popup/icon_dotted@2x.gif) repeat-y center top;
+	background-size: 1px 5px;
+}
+
+.popupzone-area #top-popupzone-slider .item {
+	display: block;
+}
+
+.popupzone-area #top-popupzone-slider .item > a {
+	position: relative;
+	display: block;
+	text-align: center;
+}
+
+.popupzone-area #top-popupzone-slider .item > a:focus:before {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	content: "";
+	display: block;
+	width: calc(100% - 6px);
+	height: calc(100% - 6px);
+	outline: 3px dashed #fe00f5;
+
+}
+
+.popupzone-area #top-popupzone-slider .item img {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	width: initial;
+	max-width: 100% !important;;
+}
+
+.popupzone-footer-wrapper {
+	position: relative;
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+	z-index: 10;
+}
+
+.popupzone-footer-wrapper .today-checked-close {
+	margin-right: 10px;
+	float: left;
+}
+
+.popupzone-footer-wrapper .today-checked-close input[type="checkbox"] {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.popupzone-footer-wrapper .today-checked-close label {
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	font-weight: 700;
+}
+.popupzone-btns-wrapper{
+	position: absolute;
+	left: 0;
+	top:13px;
+	display: block;
+}
+
+.popupzone-btns-wrapper:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.popupzone-btns-wrapper #popup-thumbs01,
+.popupzone-btns-wrapper #popup-thumbs01 > li {
+	float: left;
+}
+
+.popupzone-btns-wrapper > button{
+	text-indent: -5000rem;
+	width: 12px; height: 12px;
+	display: block;
+	float: left;
+}
+.popupzone-btns-wrapper > button.btn-popupzone-play{
+	background: url(https://www.ch.ac.kr/_common/img02/popup/icon_play01@2x.gif) no-repeat 0 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px 13px;
+	margin:0 5px;
+}
+.popupzone-btns-wrapper > button.btn-popupzone-stop{
+		background: url(https://www.ch.ac.kr/_common/img02/popup/icon_stop01@2x.gif) no-repeat 0 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px 13px;
+}
+
+.popupzone-footer-wrapper{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.popupzone-footer-wrapper .btn-close {
+	position: static;
+	float: left;
+	margin-top: 3px;
+	width: 13px;
+	height: 13px;
+	background: url(https://www.ch.ac.kr/_common/img02/popup/btn_close@2x.gif) no-repeat 0 0;
+	background-size: 13px 13px;
+	text-indent: -5000rem;
+}
+
+.popupzone-footer-wrapper .btn-popup-close {
+	position: static;
+	float: left;
+	margin-top: 3px;
+	width: 13px;
+	height: 13px;
+	background: url(https://www.ch.ac.kr/_common/img02/popup/btn_close@2x.gif) no-repeat 0 0;
+	background-size: 13px 13px;
+	text-indent: -5000rem;
+}
+
+.popupzone-area .owl-dots {
+}
+
+.popupzone-area .owl-dots .owl-dot {
+	float: left;
+	display: block;
+	
+	margin: 0 5px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #e1e1e1;
+	transition: all 0.2s ease-in-out;
+}
+
+.popupzone-area .owl-dots .owl-dot > button {
+	text-indent: -5000rem;
+}
+
+.popupzone-area .owl-dots .owl-dot.active {
+	background: #ffde45;
+	width: 13px;
+	height: 13px;
+}
+
+.popupzone-area .owl-nav button {
+	position: absolute;
+	top: 50%;
+	text-indent: -5000rem;
+	display: block;
+	width: 22px;
+	height: 42px;
+	margin-top: -21px;
+}
+
+.popupzone-area .owl-nav button.disabled {
+	opacity: 0.3
+}
+
+
+.popupzone-area .owl-nav .owl-prev {
+	left: -40px;
+	background: url(https://www.ch.ac.kr/_common/img02/popup/btn_previous@2x.png) no-repeat 0 0 !important;
+	background-size: 22px 42px !important;
+}
+
+.popupzone-area .owl-nav .owl-next {
+	right: -40px;
+	background: url(https://www.ch.ac.kr/_common/img02/popup/btn_next@2x.png) no-repeat 0 0 !important;
+	background-size: 22px 42px !important;
+}
+
+.popupzone-area .owl-dots .owl-dot:focus,
+.popupzone-area .owl-nav .owl-prev:focus,
+.popupzone-area .owl-nav .owl-next:focus {
+	outline: dashed 3px #fe00f5
+}
+
+
+@media only all and (max-width: 1023px) {
+	/* 팝업존 */
+	.popupzone-wrapper {
+		padding: 1.25rem 0 0.5rem 0;
+		z-index: 1;
+	}
+
+	.popupzone-area {
+		max-width: 100%;
+		padding: 0 1.538rem;
+		margin: 0;
+	}
+
+	.popupzone-area #popupzone-slider {
+		height: auto;
+		background: transparent;
+	}
+	
+	.popupzone-area .btn-close span{
+		text-indent: -9999px;
+	}
+
+	.popupzone-footer-wrapper {
+		margin-right: 0;
+		padding: 0.5rem 0 0 0;
+	}
+
+	.popupzone-footer-wrapper .today-checked-close {
+		margin-right: 0.3846rem;
+	}
+
+	.popupzone-footer-wrapper .today-checked-close input[type="checkbox"] {
+		margin-right: 0.1923rem;
+	}
+
+	.popupzone-footer-wrapper .today-checked-close label {
+		font-size: 0.7692rem;
+		line-height: 0.9231rem;
+	}
+
+	.popupzone-footer-wrapper .btn-close {
+		/* margin-top: 0.08333rem; */
+		width: 0.75rem;
+		height: 0.75rem;
+		background-size: 0.75rem 0.75rem;
+	}
+	
+	.popupzone-footer-wrapper .btn-popup-close {
+		/*  margin-top: 0.08333rem; */
+		width: 0.75rem;
+		height: 0.75rem;
+		background-size: 0.75rem 0.75rem;
+	}
+
+
+	.popupzone-area .owl-dots {
+		bottom: 0;
+		margin-bottom: -1.5rem;
+		right: auto;
+		right: initial;
+		left: 0;
+		width: auto;
+	}
+
+	.popupzone-area .owl-dots .owl-dot {
+		width:1.083rem;
+		height: 1.083rem;
+		margin: 0 0.25rem;
+		border-radius: 50%;
+	}
+	.popupzone-area .owl-dots .owl-dot.active{
+		width:1.083rem;
+		height: 1.083rem;
+		
+	}
+
+	.popupzone-area .owl-dots .owl-dot > span {
+		width: 1.083rem;
+		height: 1.083rem;
+		border-radius: 0.46155rem
+	}
+
+	.popupzone-area .owl-dots .owl-dot.active > span {
+		width: 1.25rem;
+	}
+
+
+	.popupzone-area .owl-nav button {
+		position: absolute;
+		top: 50%;
+		text-indent: -5000rem;
+		display: block;
+		width: 0.8462rem;
+		height: 1.615rem;
+		margin-top: -0.8077rem;
+	}
+
+	.popupzone-area .owl-nav .owl-prev {
+		left: -0.7692rem;
+		background-size:  0.8462rem 1.615rem !important;
+	}
+
+	.popupzone-area .owl-nav .owl-next {
+		right: -0.7692rem;
+		background-size:  0.8462rem 1.615rem !important;
+	}
+
+	.popupzone-btns-wrapper{
+/*		left:9rem;*/
+		top:0.5rem;
+		display: flex;
+	}
+	.popupzone-btns-wrapper > button{
+		width: 1.083rem;
+		height:1.083rem;
+
+	}
+	.popupzone-btns-wrapper > button.btn-popupzone-play{
+		background-size: 1.083rem 1.083rem;
+		margin:0 0.25rem;
+	}
+	.popupzone-btns-wrapper > button.btn-popupzone-stop{
+		background-size: 1.083rem 1.083rem;
+		margin:0 0.25rem;
+	}
+}

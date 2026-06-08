@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <? include"../include/meta.html"?>
+    <title>
+        ISC 업무캘린더 &lt; 정보마당 &lt; 산업별 인적자원개발위원회(ISC)
+    </title>
+</head>
+
+<body>
+    <!-- skip navigation -->
+    <p class="skip-navigation">
+        <a href="#contents">본문 바로가기</a>
+    </p>
+    <!-- //skip navigation -->
+
+    <!-- wrapper -->
+    <div class="wrapper" id="wrapper">
+
+
+
+        <!-- header -->
+        <header>
+            <? include "../include/header.html" ?>
+        </header>
+        <!-- //header -->
+
+        <!-- sub visual -->
+        <div class="sub-visual">
+            <h2>
+                ISC 업무캘린더
+            </h2>
+
+            <? include "../include/additional_function.html" ?>
+        </div>
+        <!-- sub visual -->
+        <!-- container -->
+        <section>
+            <div class="container" id="container">
+                <!-- contents navigation, content options -->
+                <? include"../include/contents_navigation.html"?>
+                <!-- contents navigation, content options -->
+                <div class="container-wrapper">
+                    <div class="lnb-wrapper">
+                        <div class="lnb-area">
+                            <? include"../include/lnb04.html"?>
+                        </div>
+                    </div>
+                    <!-- contents  -->
+                    <article>
+                        <div class="contents" id="contents">
+                            <div class="contents-wrapper">
+
+                                <!-- CMS 시작 -->
+
+                                <script src="../../assets/js/fullcalendar/index.global.min.js"></script>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var calendarEl = document.getElementById('calendar');
+                                        var calendar = new FullCalendar.Calendar(calendarEl, {
+                                            initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면 (기본 설정: 달)
+                                            headerToolbar: { // 헤더에 표시할 툴 바
+                                                start: 'prev',
+                                                center: 'title',
+                                                end: 'next'
+                                            },
+                                            //                                                editable: true,
+                                            //                                                selectable: true,
+                                            businessHours: false,
+                                            dayMaxEvents: true,
+                                            locale: 'ko', // 한국어 설정
+                                            expandRows: true, // 화면에 맞게 높이 재설정
+                                            height: '925px', // calendar 높이 설정
+                                            events: [ // 일정 데이터 추가 , DB의 event를 가져오려면 JSON 형식으로 변환해 events에 넣어주면된다.
+                                                {
+                                                    title: 'Sports Program(1차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'Sports Program(2차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'Sports Program(3차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'Sports Program(4차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'Sports Program(5차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'Sports Program(6차)',
+                                                    start: '2023-10-10',
+                                                    end: '2023-10-10'
+                                                }, {
+                                                    title: 'CCP_Philosopy Club 시작',
+                                                    start: '2023-10-12',
+                                                    end: '2023-10-15',
+                                                    backgroundColor: "rgb(118, 64, 4)",
+                                                    borderColor: "rgb(118, 64, 4)",
+
+                                                }
+                                            ],
+                                        });
+                                        calendar.render();
+                                    });
+                                </script>
+                                <div class="contents-area">
+                                    <div class="schdule-wrapper">
+                                        <div class="choise-select-wrapper">
+                                            <select id="" name="">
+                                                <option value="">
+                                                    통합ISC
+                                                </option>
+                                            </select>
+                                            <button type="button" class="btn-color02">
+                                                선택
+                                            </button>
+                                        </div>
+                                        <div id='calendar'></div>
+                                    </div>
+                                </div>
+
+                                <div class="btns-area">
+                                    <button type="button" class="btn-b01 round01 btn-color03 left">
+                                        <span>
+                                            예약하기
+                                        </span>
+                                        <img src="../img/icon/icon_arrow_right03.png" alt="" class="arrow01" />
+                                    </button>
+
+                                </div>
+
+
+                                <!-- //CMS 끝 -->
+
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- //contents  -->
+
+            </div>
+        </section>
+        <!-- //container -->
+
+        <!-- footer -->
+        <footer>
+            <? include"../include/footer.html"?>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrapper -->
+    <script>
+        menuOn(4, 2, 0, 0);
+    </script>
+</body>
+
+</html>

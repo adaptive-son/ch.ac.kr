@@ -1,0 +1,274 @@
+@charset "UTF-8";
+html,body {
+	height: 100%;
+	-webkit-tap-highlight: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	-webkit-focus-ring-color: rgba(0,0,0,0);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clear:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+body {
+	min-width: 320px;
+	font-family: "Noto Sans KR", "맑은 고딕", "돋움", AppleSDGothicNeo, Dotum, Droid Sans, arial, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #666667;
+	list-style: none;
+	outline: 0;
+	font-size: 16px;
+	line-height: 16px;
+	-webkit-text-size-adjust: none;
+}
+
+.intro-wrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/intro/bg_intro_pc.png) no-repeat center center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.word-slogan-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 616px;
+	text-align: center;
+	transform:translate(-50%, -50%);
+}
+
+.word-slogan-wrapper .logo {
+	display: block;
+	width: 291px;
+	margin: 0 auto 30px auto;
+}
+
+.word-slogan-wrapper .logo > img {
+	display: block;
+	width: 291px;
+}
+
+.word-slogan-area {
+	position: relative;
+	display: block;
+	padding: 20px 0 14px 0;
+	margin-bottom: 16px;
+}
+
+.word-slogan-area .bg-line {
+	position: absolute;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: url(../img/intro/bg_line.png) repeat-x left top;
+	background-size: 1px 1px;
+}
+
+.word-slogan-area .bg-line.top {
+	top: 0;
+}
+
+.word-slogan-area .bg-line.bottom {
+	bottom: 0;
+}
+
+.word-slogan-area .eng,
+.word-slogan-area .kor {
+	display: block;
+}
+
+.word-slogan-area .eng {
+	display: block;
+	width: 439px;
+	margin: 0 auto;
+}
+
+
+.word-slogan-area .eng > img {
+	display: block;
+	width: 439px;
+}
+
+.word-slogan-area .kor {
+	display: block;
+	color: #fff;
+	font-size: 44px;
+	line-height: 66px;
+	letter-spacing: -4px;
+	font-weight: 300;
+}
+
+.word-slogan-area .kor > strong {
+	font-weight: 700;
+}
+
+.word-summary {
+	display: block;
+	margin-bottom: 30px;
+	color: #e4e4e4;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 300;
+	word-break: keep-all;
+	letter-spacing: -1px;
+}
+
+.word-summary > .span-br {
+	display: block;
+}
+
+.word-notice {
+	margin-bottom: 30px;
+	color: #ffffff;
+	font-size: 30px;
+	line-height: 50px;
+	font-family: "notoKrL", notoKrL, sans-serif;
+}
+
+
+.copyright {
+	position: absolute;
+	bottom: 57px;
+	left: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+	color: #b6b6b6;
+	font-size: 13px;
+	line-height: 24px;
+	font-weight: 500;
+	font-family: "Roboto", Roboto, sans-serif;
+}
+
+.customer-information {
+	display: block;
+	width: 615px;
+	margin: 0 auto;
+}
+
+@media only all and (max-width: 1023px) {
+	html {
+		font-size: 1.625rem; /* 기본베이스 폰트사이즈 26px */
+		line-height: 1.625rem; /* 기본베이스 line-height 사이즈 26px */
+	}
+
+	.intro-wrapper {
+		background: url(../img/intro/bg_intro_mobile.png) no-repeat center bottom;
+		background-size: cover;
+	}
+
+	.word-slogan-wrapper {
+		width: 100%;
+		max-width: 27.69rem;
+		padding: 0 2.538rem;
+		transform: translate(-50%, -50%);
+	}
+
+	.word-slogan-wrapper .logo {
+		width: 18.19rem;
+		margin: 0 auto 1.385rem auto;
+	}
+
+	.word-slogan-wrapper .logo > img {
+		width: 18.19rem;
+	}
+
+	.word-slogan-area {
+		padding: 1.154rem 0;
+		margin-bottom: 1rem;
+	}
+
+	.word-slogan-area .eng {
+		width: 20.35rem;
+	}
+
+
+	.word-slogan-area .eng > img {
+		width: 20.35rem;
+	}
+
+	.word-slogan-area .kor {
+		margin-top: 0.1538rem;
+		font-size: 2.077rem;
+		line-height:  2.538rem;
+		letter-spacing: -0.1923rem;
+	}
+
+	.word-summary {
+		margin-bottom: 1.154rem;
+		font-size: 0.7692rem;
+		line-height: 1.077rem;	
+	}
+
+	.word-summary .span-mobile-br {
+		display: block;
+	}
+
+	.word-notice {
+		font-size: 1rem;
+		line-height: 1.154rem;
+	}
+
+
+	.copyright {
+		padding: 0 3.5rem;
+		margin-bottom: 2.115rem;
+		bottom: 0;
+		font-size: 0.6154rem;
+		line-height: 0.9231rem;
+		word-break: keep-all;
+	}
+
+	.customer-information {
+		width: 100%;
+		max-width: 615px;
+	}
+
+}
+
+
+@media only all and (max-width: 767px) {
+	html {
+		font-size: 1.25rem; /* 기본베이스 폰트사이즈 18px */
+		line-height: 1.25rem; /* 기본베이스 line-height 사이즈 18px */ 
+	}
+}
+
+
+@media only all and (max-width: 600px) {
+	html {
+		font-size: 0.9375rem; /* 기본베이스 폰트사이즈 15px */
+		line-height:  0.9375rem; /* 기본베이스 line-height 사이즈 15px */ 
+	}
+}
+
+
+@media only all and (max-width: 475px) {
+	html {
+		font-size: 0.8125rem; /* 기본베이스 폰트사이즈 13px */
+		line-height:  0.8125rem; /* 기본베이스 line-height 사이즈 13px */ 
+	}
+}
+
+
+@media only all and (max-width: 320px) {
+	.word-slogan-wrapper {
+		padding: 0 1.154rem;
+	}
+}

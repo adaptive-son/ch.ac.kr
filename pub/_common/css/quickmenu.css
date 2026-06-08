@@ -1,0 +1,219 @@
+.aside-quickmenu-wrapper {
+	position: fixed;
+	top: 228px;
+	right: -360px;
+	display: block;
+	width: 360px;
+	z-index: 11;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper.active {
+	right: 0;
+}
+
+.aside-quickmenu-wrapper.on {
+	top: calc(228px * 1.75);
+}
+
+
+.aside-quickmenu-wrapper > button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: -119px;
+	width: 119px;
+	height: 210px;
+	background-color: #005aab;
+	padding: 5px 25px 0 25px;
+	vertical-align: top;
+}
+
+.aside-quickmenu-wrapper > button:before {
+	position: absolute;
+	bottom: 0;;
+	right: 0;
+	content: "";
+	display: block;
+	width: 119px;
+	height: 55px;
+	margin-bottom: -55px;
+	background-image: url(../img02/quickmenu/bg_quickmenu_shadow01.png);
+	background-repeat: no-repeat;
+	background-size: 141px 55px;
+	background-position: 0 0;
+}
+
+.aside-quickmenu-wrapper > button span {
+	position: relative;
+	padding-top: 21px;
+	margin-bottom: 26px;
+	vertical-align: top;
+	display: block;
+	color: #ffffff;
+	font-size: 24px;
+	line-height: 30px;
+	font-family: 'NanumSquare', sans-serif;
+	font-weight: 700;
+}
+
+.aside-quickmenu-wrapper > button span:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: "";
+	width: 100%;
+	height: 4px;
+	background-color: #f8c743;
+}
+
+.aside-quickmenu-wrapper > button > img {
+	display: block;
+	width: 30px;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper.active > button > img {
+	transform: rotate(-180deg);
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper {
+	display: none;
+	width: 360px;
+	height: 537px;
+	background-color: #eff0f2;
+	background-image: url(../img02/quickmenu/quickmenu/bg_quickmenu01.gif);
+	background-repeat: no-repeat;
+	background-size: 220px 57px;
+	background-position: right top;
+}
+
+.aside-quickmenu-wrapper.active > .quickmenu-wrapper {
+	display: block;
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul {
+	position: relative;
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button {
+	position: relative;
+	float: left;
+	display: block;
+	padding: 0 8px;
+	margin-left: 8px;
+	height: 57px;
+	color: #777777;
+	font-size: 15px;
+	font-weight: 700;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:hover,
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:focus,
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active {
+	color: #005aab
+}
+
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:before {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 4px;
+	background-color: #005aab;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:hover:before,
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:focus:before,
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active:before {
+	left: 0;
+	width: 100%;
+}
+
+
+.aside-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active + .quickmenu-area {
+	display: block;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area {
+	position: absolute;
+	top: 57px;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 480px;
+	background: #fff;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul {
+	display: block;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li {
+	float: left;
+	width: 120px;
+	height: 120px;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-top: 28px;
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a > img {
+	display: block;
+	width: 52px;
+	margin: 0 auto 13px auto
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a > strong {
+	display: block;
+	color: #333333;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 23px;
+	letter-spacing: -0.5px;
+	transition: all 0.2s ease-in-out;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a:hover,
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a:focus {
+	background-color: #fdfbf0;
+}
+
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a:hover > strong,
+.aside-quickmenu-wrapper .quickmenu-area > ul > li > a:focus > strong {
+	color: #005aab
+}
+
+
+@media only all and (max-width: 1023px) {
+	.aside-quickmenu-wrapper {
+		display: none;
+	}
+}
