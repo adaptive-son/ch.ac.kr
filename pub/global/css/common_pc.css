@@ -1888,5 +1888,13 @@ caption {
 
 
 
+}
 
+/* 구글 번역 드롭다운 - global 헤더 (흰색 배경에 맞게) */
+.header-area .g-lan-box {
+    position: absolute;
+    right: 85px; /* btn-totalmenu(80px) 왼쪽 */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
 }
