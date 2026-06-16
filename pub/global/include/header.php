@@ -1,4 +1,13 @@
 <style>
+/* 버튼 위치: header-area 우측, btn-totalmenu(80px) 바로 왼쪽 */
+.header-area .g-lan-box {
+    position: absolute;
+    right: 85px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+}
+
 .custom-lang-dropdown { position: relative; }
 
 .custom-lang-dropdown button#langToggle {
@@ -19,6 +28,7 @@
     color: #0c4ca3;
     background-color: #f5f5f5;
 }
+
 .custom-lang-dropdown button#langToggle::after {
     content: '';
     display: inline-block;
@@ -101,7 +111,7 @@ function googleTranslateElementInit() {
 						<div class="g-lan-box notranslate" translate="no">
 							<div class="custom-lang-dropdown">
 								<button id="langToggle" title="구글번역 언어선택">
-									<img src="/_common/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;">
+									<img src="https://www.ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;">
 									<span>LANGUAGE</span>
 								</button>
 								<ul id="langList" class="notranslate" translate="no">
