@@ -146,6 +146,7 @@ function googleTranslateElementInit() {
 						    <li data-lang="si">Sinhala</li>
 						    <li data-lang="mn">Mongolian</li>
 						    <li data-lang="zh-CN">Chinese</li>
+							<li data-lang="ja">Japanese</li>
 							<li data-lang="ko">Korean</li>
 						  </ul>
 						</div>

@@ -21,10 +21,11 @@
 <link rel="stylesheet" href="/_common/css/main_contents.css?ver=<?php echo date("Ymd")?>" />
 <link rel="stylesheet" href="/_common/css/quickmenu.css?ver=<?php echo date("Ymd")?>" />
 
-<script type="text/javascript" src="/_common/js/jquery.min.js?ver=<?php echo date("Ymd")?>"></script>
+<script type="text/javascript" src="/_common/js/jquery-3.7.1.min.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/_common/js/jquery-ui.min.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/_common/js/jquery.easing.1.3.js?ver=<?php echo date("Ymd")?>" ></script>
-<script type="text/javascript" src="/_common/js/jquery-migrate-1.2.1.min.js?ver=<?php echo date("Ymd")?>"></script>
+<!-- 유진 : 제이쿼리 최신 버전 업데이트 확인용_260609 -->
+<script type="text/javascript" src="/_common/js/jquery-migrate-3.5.0.min.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/_common/js/main_common.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/_common/js/board.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/adframe/mng/js/basic.js?ver=<?php echo date("Ymd")?>"></script>

@@ -3,6 +3,15 @@
 	define("__AF__", TRUE);
 	// adframe 템플릿 페이지 설정.
 	include($_SERVER["DOCUMENT_ROOT"] . "/adframe/af_common.php");
+	// PHP7 compatibility: mysql_* shim using PEAR DB
+	if (!isset($HTTP_POST_FILES) || !is_array($HTTP_POST_FILES)) { $HTTP_POST_FILES = $_FILES; }
+	if (!function_exists('mysql_query')) {
+		function mysql_query($q) { global $adb; $r=$adb->query($q); return PEAR::isError($r)?false:$r; }
+		function mysql_num_rows($r) { if(!$r)return 0; return method_exists($r,'numRows')?$r->numRows():0; }
+		function mysql_insert_id() { global $adb; return (int)$adb->getOne('SELECT LAST_INSERT_ID()'); }
+		function mysql_fetch_array($r,$t=0) { if(!$r)return false; return $r->fetchRow(DB_FETCHMODE_ASSOC); }
+	}
+
 
 	function Error( $msg ) {
 		echo "<script> alert('".$msg."'); history.back(); </script>";
@@ -31,9 +40,11 @@
 		if($file1_size>0) {
 			$s_file_name1 = $file1_name;
 			$temp1=explode(".",$file1_name);
+			$allowed_ext = array('jpg','jpeg','png','gif','pdf','doc','docx','hwp');
+			if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
 			$temp1_name = $reg_date.'.'.$temp1[1];
 
-			$file1 = eregi_replace("\\\\","\\",$file1);
+			$file1 = preg_replace("/\\\\\\\\/","\\\\", $file1);
 			$s_file_name1 = str_replace(" ","_",$s_file_name1);
 			$s_file_name1 = str_replace("-","_",$s_file_name1);
 

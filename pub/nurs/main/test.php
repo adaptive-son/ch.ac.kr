@@ -18,7 +18,7 @@
 	<div class="wrapper" id="wrapper">	
 		<!-- header -->
 		<header>
-			<? include "../../_common/header.php" ?>
+			<? include "../include/header.php" ?>
 		</header>
 		<!-- //header -->
 		<!-- container -->

@@ -8,7 +8,7 @@
   <?php 
 	include "../include/meta.php";
 
-	$sql = "SELECT * FROM ".TABLE_TOPPOPUP." WHERE no='".$_GET['no']."'";
+	$sql = "SELECT * FROM ".TABLE_TOPPOPUP." WHERE no=".intval($_GET['no']);
 	$row = $adb->getRow($sql);
   ?>
   <title><?php echo $row['title']?></title>

@@ -7,10 +7,10 @@ ini_set('register_globals','1');
 ini_set('session.bug_compat_42','0'); 
 ini_set('session.bug_compat_warn','0'); 
 ini_set('session.auto_start','1'); 
-//¼¼¼ÇÁ¾·á½Ã°£ 30ºÐ º¯°æ ( 2016-04-27 By.Son )
-// cach_expire -> ºÐ´ÜÀ§ ( ºÐ ´ÜÀ§·Î Ä³½ÃÇÑ ¼¼¼Ç ÆäÀÌÁö°¡ »ì¾ÆÀÖÀ» ½Ã°£ )
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ 30ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ( 2016-04-27 By.Son )
+// cach_expire -> ï¿½Ð´ï¿½ï¿½ï¿½ ( ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ )
 ini_set("session.cache_expire", 30);
-// gc_maxlifetime -> ÃÊ´ÜÀ§ ( µ¥ÀÌÅÍ°¡ '¾²·¹±â'·Î Ãë±ÞµÇ°í Ã»¼ÒÇÒ ½Ã°£ )  -  ¼¼¼Ç ¸¸·á ½Ã°£
+// gc_maxlifetime -> ï¿½Ê´ï¿½ï¿½ï¿½ ( ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ÞµÇ°ï¿½ Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ )  -  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 ini_set("session.gc_maxlifetime", 1800);
 
 
@@ -24,17 +24,17 @@ ini_set("session.cookie_domain", ".ch.ac.kr");
 
 @session_start();
 
-extract($_POST);
-extract($_GET);
-extract($_SESSION);
-extract($_SERVER);
+@extract($_POST, EXTR_SKIP);
+@extract($_GET, EXTR_SKIP);
+// extract($_SESSION);
+// extract($_SERVER);
 $PHP_SELF=$_SERVER[PHP_SELF];
 //$HTTP_POST_FILES = $_FILES;
 //$HTTP_REFERER=$_SERVER[HTTP_REFERER]; 
 //$REMOTE_ADDR=$_SERVER[REMOTE_ADDR];
 
 
-$HOMEDIR = "/home/ch/www.ch.ac.kr_new/";	//·çÆ®Æú´õ
+$HOMEDIR = "/home/ch/www.ch.ac.kr_new/";	//ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
 
 $UCC_SIZE_WIDTH = "600";
 $UCC_SIZE_HEIGHT = "338";
@@ -43,36 +43,36 @@ $UCC_SIZE_HEIGHT = "338";
 //$LOGINURL = "http://www.ch.ac.kr";
 
 $MAINSITEURL = "www.ch.ac.kr";
-//ÀÓ½Ã·Î http·Î ÇÔ
+//ï¿½Ó½Ã·ï¿½ httpï¿½ï¿½ ï¿½ï¿½
 //$LOGINURL = "http://www.ch.ac.kr";
 $LOGINURL = "https://www.ch.ac.kr";
 
 $AdminMail = "info@ch.ac.kr";
 
-// ÇöÀç ³¯Â¥¿Í ½Ã°£
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½Ã°ï¿½
 $timecode = time();
 $today = date("Y-m-d", time());
 $today1 = date("Ymd", time());
 $now   = date("Y-m-d H:i:s", time());
 
-// ¿äÀÏ
-$_WEEK[0] = "ÀÏ";
-$_WEEK[1] = "¿ù";
+// ï¿½ï¿½ï¿½ï¿½
+$_WEEK[0] = "ï¿½ï¿½";
+$_WEEK[1] = "ï¿½ï¿½";
 $_WEEK[2] = "È­";
-$_WEEK[3] = "¼ö";
-$_WEEK[4] = "¸ñ";
-$_WEEK[5] = "±Ý";
-$_WEEK[6] = "Åä";
+$_WEEK[3] = "ï¿½ï¿½";
+$_WEEK[4] = "ï¿½ï¿½";
+$_WEEK[5] = "ï¿½ï¿½";
+$_WEEK[6] = "ï¿½ï¿½";
 
 $Config_FileLimitExt = "ext|htm|html|css|asp|aspx|js|jsp|php|php3|php4|php5|phtml|phtm|inc|cgi|phps|pl|sh|htaccess|conf";
 $Config_FileImage = "jpg|jpeg|png|gif";
 
 // file load
-define(__Error20 ,"Á¤»óÀûÀÎ ¹æ¹ýÀÇ ¾÷·Îµå°¡ ¾Æ´Õ´Ï´Ù.");
-define(__Error21 ,"html, php ¼­¹ö°ü·ÃÆÄÀÏÀº ¾÷·ÎµåÇÒ¼ö ¾ø½À´Ï´Ù");
-define(__Error22 ,"»çÁøÀÇ Å©±â´Â 150*150 ÀÌÇÏ¿©¾ß ÇÕ´Ï´Ù");
-define(__Error23 ,"»çÁøÀº gif ¶Ç´Â jpg.png ÇüÅÂÀÇ À¥ÆÄÀÏÀ» ¿Ã·ÁÁÖ¼¼¿ä");
-define(__Error24 ,"ÆÄÀÏ¾÷·Îµå¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù.");
+define(__Error20 ,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµå°¡ ï¿½Æ´Õ´Ï´ï¿½.");
+define(__Error21 ,"html, php ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½Ò¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
+define(__Error22 ,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ 150*150 ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½");
+define(__Error23 ,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ gif ï¿½Ç´ï¿½ jpg.png ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
+define(__Error24 ,"ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½Îµå¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 
 /*
 echo "\$PHPSESSID : " .  $PHPSESSID . "<br>"; 

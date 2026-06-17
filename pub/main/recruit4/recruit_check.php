@@ -84,7 +84,7 @@ if(!$_POST['resume_num']){
                             <span class="arrow"></span>
                         </h3>
                         <form name="frm" method="POST" onsubmit="return check_form(this)">
-							<input type="hidden" name="resume_num" value="<?php echo $_POST['resume_num']?>" />
+							<input type="hidden" name="resume_num" value="<?php echo intval($_POST['resume_num'])?>" />
                             <div style="width: 800px; min-height:220px;margin:0 auto;">
                                 <p class="word-type01">
                                     * 이력서 접수 및 수정을 위하여 이름과 연락처를 입력해주세요.

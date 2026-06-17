@@ -18,7 +18,7 @@
     padding: 0 15px;
     background: transparent;
     border: none;
-    color: #b1c3db;
+    color: #828282;
     font-size: 14px;
     cursor: pointer;
     white-space: nowrap;
@@ -101,7 +101,7 @@ function googleTranslateElementInit() {
 						<li>
 							<div class="g-lan-box" translate="no">
 								<div class="custom-lang-dropdown notranslate">
-								  <button id="langToggle" title="구글번역 언어선택"><img src="/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span>LANGUAGE</span></button>
+								  <button id="langToggle" title="구글번역 언어선택"><img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span>LANGUAGE</span></button>
 								  <ul id="langList" class="notranslate" translate="no">
 									<li data-lang="vi">Vietnamese</li>
 									<li data-lang="uz">Uzbek</li>

@@ -4,7 +4,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/config/session.php";
 include_once("./research_date.php");
 
 if($_SESSION['MEMBER_UID'] == ""){
-?><script>alert("Àß¸øµÈÁ¢±ÙÀÔ´Ï´Ù.");
+?><script>alert("ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 </script><? exit; } ?>
 <?
 
@@ -65,17 +65,17 @@ if($date >= $date_start and $date < $date_end){
 
 	
 	$sql = " insert into way_survey2015 set $sql_common ";
-	mysql_query($sql)or die(mysql_error());
+	if (!mysql_query($sql)) { error_log("DB Err: ".mysql_error()); }
 ?>
 	<script>
-	alert("¼³¹®Á¶»ç Âü¿©°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù. °¨»çÇÕ´Ï´Ù.");
+	alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	//window.close();
 	location.href="/index.php";
 	</script>
 <?	
  }else{ ?>
 	<script>
-	alert("¼³¹®Á¶»ç ±â°£ÀÌ ¾Æ´Õ´Ï´Ù.");
+	alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â°£ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½.");
 	//window.close();
 	location.href="/index.php";
 	</script>

@@ -31,6 +31,8 @@ if($file1_size>0&&$file1) {
     if($file1_size>0) {
         $s_file_name1 = $file1_name;
         $temp1=explode(".",$file1_name);
+        $allowed_ext = ['jpg','jpeg','png','gif','pdf','doc','docx','hwp'];
+        if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
         $temp1_name = $reg_date.'.'.$temp1[1];
 
         $file1 = eregi_replace("\\\\","\\",$file1);
