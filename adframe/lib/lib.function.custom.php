@@ -639,7 +639,8 @@ function get_firstLetter( $str ) {
 
 function get_site_id(){
     $dir = getcwd(); // 현재 디렉토리명을 반환하는 PHP 함수이다.
-    if($_SERVER['REMOTE_ADDR']=="127.0.0.1"){
+    // Windows 경로(역슬래시)인지 여부로 판단 (IPv6 ::1 접속 시 127.0.0.1 조건 실패 버그 수정)
+    if(strpos($dir, '\\') !== false){
         $temp = explode("\\", $dir);
     }else{
         $temp = explode("/", $dir);

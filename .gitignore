@@ -2,9 +2,17 @@
 ch.ac.kr/
 
 # 심볼릭 링크 - Windows core.symlinks=false로 git 추적 불가
-# 실서버: ln -s /adframe pub/child/adframe
-# 로컬: ln -s ../../adframe pub/child/adframe (수동 생성)
+# 실서버: ln -s /adframe pub/child/adframe (각 학과별 동일 구조)
+# 로컬: 심볼릭링크 대신 실제 폴더로 복사됨 → git 제외 (원본은 루트 adframe/, pub/_common/)
 pub/child/adframe
+pub/*/adframe/
+pub/*/_common/
+
+# 로컬 전용 파일
+pub/local_domain_fix.php
+
+# CMS 관리자 업로드 파일
+pub/*/data/
 
 # 관리자 업로드 파일
 manage/

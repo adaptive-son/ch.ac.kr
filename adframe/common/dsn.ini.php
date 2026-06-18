@@ -2,7 +2,7 @@
 	$dsn = array(
 		"phptype" => "mysql",
 		"username" => "root",
-		"password" => "se130901",
+		"password" => "",
 		"hostspec" => "localhost",
 		"database" => "ch_2020"
 	);

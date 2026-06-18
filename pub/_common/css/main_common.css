@@ -80,13 +80,13 @@
 		float: left;
 		position: static;
 /*		margin-top: 1.167rem;*/
-		margin-top: 1.583rem; /* 228*62 -> 102-62=38 */
+		margin-top: 1.25rem; /* 228*62 -> 102-62=38 */
 /*
 		width: 10.83rem;
 		height: 2rem;
 */
 		width: 11.25rem;
-		height: 1.5415rem;
+		height: 1.792rem;
 	}
 
 	.header-area > h1 > a {
@@ -96,9 +96,9 @@
 		height: 2rem;
 */
 		width: 11.25rem;
-		height: 1.5415rem;
-		background-position: 0 -1.5415rem !important;
-		background-size: 11.25rem 3.083rem;
+		height: 1.792rem;
+		background-position: 0 -1.792rem !important;
+		background-size: 11.25rem 3.584rem;
 	}
 
 	.top-menu-wrapper {
