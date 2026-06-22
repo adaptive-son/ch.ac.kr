@@ -80,7 +80,7 @@
 		float: left;
 		position: static;
 /*		margin-top: 1.167rem;*/
-		margin-top: 1.25rem; /* 228*62 -> 102-62=38 */
+		margin-top: 1.25rem; /* 228*86 -> (102-43)/2=29.5 인데 30으로 계산 */
 /*
 		width: 10.83rem;
 		height: 2rem;

@@ -220,10 +220,14 @@ body{
 
 .main-logo{
 	padding : 60px 0 40px;
-	width:470px;
 }
 .main-logo a{
 	display: block;
+}
+
+.main-logo a img{
+	display: block;
+	width:450px;
 }
 
 .intro-left{
@@ -341,17 +345,17 @@ section{
 
 @media (max-width: 1440px) {
 	.main-logo{
-		padding : 30px 0;
-		width:100%;
+		padding : 40px 0 30px;
 	}
 	.main-logo > a{
-		width:100%;
-		text-align: center;
+		display: flex;
+		justify-content: center;
 	}
-	.main-logo > a > img{display: flex;
-	align-items: center;
-		width:40%;
+	
+	.main-logo > a img{
+		width:50%;
 	}
+
 	.intro-area{
 		width:100%;
 		padding: 0 40px;
@@ -407,8 +411,12 @@ section{
 }
 
 @media (max-width: 768px)  {
+	.main-logo{
+		padding : 30px 0 20px;
+	}
+	
 	.main-logo > a > img{
-		width:70%;
+		width:60%;
 	}
 	.intro-area{
 		padding: 0 10px;
