@@ -1,7 +1,7 @@
 <?php
-// 개별 페이지 실행 방지. 해당 문자열은 inc.constant.php에 정의된다.
+// 개별 ?�?��? ?�행 방�?. ?��?문자?�은 inc.constant.php?� ?�?�?�??
 define("__AF__", TRUE);
-// adframe 템플릿 페이지 설정.
+// adframe ?�?��??�?��? ?�정.
 include($_SERVER["DOCUMENT_ROOT"] . "/adframe/af_common.php");
 
 function Error( $msg ) {
@@ -24,36 +24,36 @@ if($HTTP_POST_FILES[file1]) {
 
 if($file1_size>0&&$file1) {
 
-    if(!is_uploaded_file($file1)) Error("정상적인 방법으로 업로드 해주세요");
+    if(!is_uploaded_file($file1)) Error("?�?�?�??방�??��? ?�로?� ?�주?�요");
     $file1_size=filesize($file1);
 
-    // 업로드 금지
+    // ?�로?� 금지
     if($file1_size>0) {
         $s_file_name1 = $file1_name;
         $temp1=explode(".",$file1_name);
-        $allowed_ext = ['jpg','jpeg','png','gif','pdf','doc','docx','hwp'];
-        if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
+        $allowed_ext = array('jpg','jpeg','png','gif','pdf','doc','docx','hwp');
+        if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("?�?�되지 ?�?� ?�???�?�?�?�??"); }
         $temp1_name = $reg_date.'.'.$temp1[1];
 
         $file1 = eregi_replace("\\\\","\\",$file1);
         $s_file_name1 = str_replace(" ","_",$s_file_name1);
         $s_file_name1 = str_replace("-","_",$s_file_name1);
 
-        // 디렉토리를 검사함
+        // ?�?�?�리�? 검?��?
         if(!is_dir("./file_data/".$id)) {
             @mkdir("./file_data/".$id,0777);
             @chmod("./file_data/".$id,0706);
         }
 
-        // 중복파일이 있을때;;
+        // 중복파?��??�?�?�;;
         if(file_exists("./file_data/$id/".$temp1_name)) {
             @mkdir("./file_data/$id/".$reg_date,0777);
-            if(!move_uploaded_file($file1,"./file_data/$id/".$reg_date."/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
+            if(!move_uploaded_file($file1,"./file_data/$id/".$reg_date."/".$temp1_name)) Error("���Ͼ��ε尡 �ùٷ� ���� �ʾҽ��ϴ�");
             $file_name1 = "/recruit2/file_data/$id/".$reg_date."/".$temp1_name;
             @chmod($file_name1,0706);
             @chmod("./file_data/$id/".$reg_date,0707);
         } else {
-            if(!move_uploaded_file($file1,"./file_data/$id/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
+            if(!move_uploaded_file($file1,"./file_data/$id/".$temp1_name)) Error("���Ͼ��ε尡 �ùٷ� ���� �ʾҽ��ϴ�");
             $file_name1 = "/recruit2/file_data/$id/".$temp1_name;
             @chmod($file_name1,0706);
         }
@@ -70,18 +70,18 @@ if($apply_major == "간호학과"){
 $apply_num_2 = "(2019)-01-";
 
 /*
-	if($gubun=="정년과정"){
-		$apply_num_2 = "(정)";
-	}elseif($gubun=="비정년과정"){
+	if($gubun=="?�?�과정"){
+		$apply_num_2 = "(?�)";
+	}elseif($gubun=="비?�?�과정"){
 		$apply_num_2 = "(비)";
 	}
 
 */
 /*
-	if($type_gubun == "정신간호학"){
-		$apply_num_3 = "-정신-";
+	if($type_gubun == "?�?�간?�학"){
+		$apply_num_3 = "-?�?�-";
 	}else{
-		$apply_num_3 = "-간호-";
+		$apply_num_3 = "-간??";
 	}
 */
 $apply_count=mysql_num_rows(mysql_query("SELECT * FROM recruit_copy_bi WHERE resume_num='$resume_num'"));
@@ -474,9 +474,9 @@ if($j==""){
     $sql1 = "INSERT recruit_bi1 SET parent = '$wr_ins_id',wr_datetime=now(),type_gubun='$type_gubun',$query2";
     mysql_query($sql1);
     if($result){
-        echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./'</script>";
+        echo "<script>alert('이력서가 정상적으로 접수되었습니다');location.href='./'</script>";
     }else{
-        echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
+        echo "<script>alert('오류가 발생하였습니다');history.back();</script>";
     }
 }else if($j=="u"){
 
@@ -491,9 +491,9 @@ if($j==""){
     mysql_query($sql1);
     if($result){
 
-        echo "<script>alert('이력서가 정상적으로 수정되었습니다.');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
+        echo "<script>alert('이력서가 정상적으로 수정되었습니다');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
     }else{
-        echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
+        echo "<script>alert('오류가 발생하였습니다');history.back();</script>";
     }
 }
 ?>
