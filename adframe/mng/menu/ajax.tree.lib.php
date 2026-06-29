@@ -28,9 +28,9 @@ switch ( $mode ) {
     // 메뉴 순서 저장
     case 'order':
 
-        $exp_line = explode( "||", $_GET['data'] );              // 라인 구분
+        $exp_line = explode( "|", $_GET['data'] );              // 라인 구분
         foreach ( $exp_line as $k => $v ) {
-            $exp_var = explode( "//", $v );                     // 변수 구분
+            $exp_var = explode( ",", $v );                     // 변수 구분
             if ( $sql_sub != "" ) $sql_sub .= ", ";             // 삽입값 구분
             $sql_sub .= " ( ";
             for ( $i = 0 ; $i < count($exp_var) ; $i++ ) {

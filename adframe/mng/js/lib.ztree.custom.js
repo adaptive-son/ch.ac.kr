@@ -142,19 +142,17 @@ function saveOrderMenuList() {
 
 	var ajaxData = "";
 	for ( var i in nodes ) {
-		if ( ajaxData != "" ) ajaxData += "||";				// 줄구분
-		ajaxData += nodes[i].id+"//";						// 식별번호
+		if ( ajaxData != "" ) ajaxData += "|";				// 줄구분
+		ajaxData += nodes[i].id+",";						// 식별번호
 		if ( nodes[i].pId == "null" || !nodes[i].pId ) nodes[i].pId = "0";
-		ajaxData += nodes[i].pId+"//";						// 부모식별번호
-		ajaxData += (nodes[i].getIndex()+1)+"//";			// 정렬번호
+		ajaxData += nodes[i].pId+",";						// 부모식별번호
+		ajaxData += (nodes[i].getIndex()+1)+",";			// 정렬번호
 		ajaxData += nodes[i].level;							// Depth 번호
 	}
-	//춘해대는 POST ajax 전송을 받지못하고 있음. 서버가 실서버 중이라 손대지 아니함.
-	//console.log(ajaxData);
-	// 2023.11.10 - ajax :: 403 error. 
+	// 2023.11.10 - ajax :: 403 error.
 	// 2024.01.10 - 전송방식 변경 : POST > GET
-	// _data의 길이가 2048자 이상인 경우, 제대로 변경되지 않음
-	if ( ajaxData.length <= 2030 ) {
+	// 2026.06.29 - 구분자 압축 (//→, / ||→|) 으로 수용량 약 2배 확대
+	if ( ajaxData.length <= 3500 ) {
 		var _data = {"mode": "order", "TREE_ID": TREE_ID, "data": ajaxData};
 		$.ajax({
 			type: "GET",
