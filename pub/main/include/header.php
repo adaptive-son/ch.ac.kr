@@ -535,5 +535,39 @@ function googleTranslateElementInit() {
 
         // 페이지 로드 후 이미 번역된 상태인 경우 대비
         setTimeout(syncMenuDataHover, 1000);
+
+        // 구글 번역이 "춘해보건대학교"를 잘못된 영문 학교명으로 번역하는 문제 보정
+        // (구글 번역 위젯은 용어집 기능을 지원하지 않아 번역 결과를 직접 치환)
+        var schoolNameFixes = [
+            [/Chunhae College of Health Sciences/gi, 'Choonhae Health Sciences University'],
+            [/Chunhae University of Health Sciences/gi, 'Choonhae Health Sciences University'],
+            [/\bChunhae\b/g, 'Choonhae']
+        ];
+        function fixSchoolNameTranslation(root) {
+            var walker = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while (node = walker.nextNode()) {
+                var text = node.nodeValue;
+                if (text.indexOf('Chunhae') === -1) continue;
+                var fixed = text;
+                schoolNameFixes.forEach(function(pair) {
+                    fixed = fixed.replace(pair[0], pair[1]);
+                });
+                if (fixed !== text) node.nodeValue = fixed;
+            }
+        }
+
+        var schoolNameFixTimer = null;
+        var schoolNameObserver = new MutationObserver(function() {
+            clearTimeout(schoolNameFixTimer);
+            schoolNameFixTimer = setTimeout(function() { fixSchoolNameTranslation(document.body); }, 300);
+        });
+        schoolNameObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+            characterData: true
+        });
+
+        setTimeout(function() { fixSchoolNameTranslation(document.body); }, 1000);
     });
 </script>
