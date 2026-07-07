@@ -149,7 +149,7 @@
 								(44965) 울산광역시 울주군 웅촌면 대학길 9 춘해보건대학교 TEL : (052) 270-0100 FAX : (052) 225-9889
 							</address>
 							<p class="copyright">
-								Copyright(c)2021 Choonhae  Health Sciences University All Rights Reserved.
+								Copyright (c) 2021 Choonhae Health Sciences University All Rights Reserved.
 							</p>
 						</div>
 					</div>
