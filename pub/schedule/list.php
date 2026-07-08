@@ -19,7 +19,7 @@
 	<!-- wrapper -->
 	<div class="wrapper" id="wrapper">
 		<!-- header -->
-		<? include("../".$TREE_ID."/include/header.php");?>
+		<? include("../".$TREE_ID."/../_common/header.php");?>
 		<!-- //header -->
 
 		<!-- sub visual -->
