@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 
 <head>
@@ -39,7 +39,7 @@
 	<div class="wrapper" id="wrapper">
 		<!-- header -->
 		<header>
-			<? include "../include/header.php" ?>
+			<? include "../../_common/header.php" ?>
 		</header>
 		<!-- //header -->
 

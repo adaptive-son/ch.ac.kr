@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
 
@@ -27,7 +27,7 @@ if ($_SERVER['REMOTE_ADDR']=="112.217.216.250"){
 	<div class="wrapper" id="wrapper">	
 		<!-- header -->
 		<header>
-			<? include "../include/header.php" ?>
+			<? include "../../_common/header.php" ?>
 		</header>
 		<!-- //header -->
 		<!-- container -->
