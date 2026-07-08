@@ -42,6 +42,9 @@
 .custom-lang-dropdown.open button#langToggle::after {
     transform: rotate(180deg);
 }
+#langToggle .lang-text::before {
+    content: 'LANGUAGE';
+}
 
 #langList {
     display: none;
@@ -101,17 +104,19 @@ function googleTranslateElementInit() {
 						<li>
 							<div class="g-lan-box" translate="no">
 								<div class="custom-lang-dropdown notranslate">
-								  <button id="langToggle" title="구글번역 언어선택"><img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span>LANGUAGE</span></button>
+								  <button id="langToggle" title="구글번역 언어선택"><img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span class="lang-text notranslate" translate="no"></span></button>
 								  <ul id="langList" class="notranslate" translate="no">
-									<li data-lang="vi">Vietnamese</li>
-									<li data-lang="uz">Uzbek</li>
-									<li data-lang="th">Thai</li>
-									<li data-lang="my">Burmese</li>
-									<li data-lang="id">Indonesian</li>
-									<li data-lang="si">Sinhala</li>
-									<li data-lang="mn">Mongolian</li>
-									<li data-lang="zh-CN">Chinese</li>
-									<li data-lang="ko">Korean</li>
+									<li data-lang="en">English</li>
+                                    <li data-lang="vi">Vietnamese</li>
+                                    <li data-lang="uz">Uzbek</li>
+                                    <li data-lang="th">Thai</li>
+                                    <li data-lang="my">Burmese</li>
+                                    <li data-lang="id">Indonesian</li>
+                                    <li data-lang="si">Sinhala</li>
+                                    <li data-lang="mn">Mongolian</li>
+                                    <li data-lang="zh-CN">Chinese</li>
+                                    <li data-lang="ja">Japanese</li>
+                                    <li data-lang="ko">Korean</li>
 								  </ul>
 								</div>
 							</div>
@@ -410,7 +415,6 @@ function googleTranslateElementInit() {
         var savedLang = localStorage.getItem('selectedLang');
         var savedLabel = localStorage.getItem('selectedLangLabel');
         if (savedLang && savedLang !== 'ko' && savedLabel) {
-            $('#langToggle span').text(savedLabel);
             $('#langList li[data-lang="' + savedLang + '"]').addClass('active');
         }
 
@@ -438,7 +442,6 @@ function googleTranslateElementInit() {
             var label = $(this).text().trim();
             $('#langList li').removeClass('active');
             $(this).addClass('active');
-            $('#langToggle span').text(label);
             $('.custom-lang-dropdown').removeClass('open');
             $('#langList').removeClass('open');
 

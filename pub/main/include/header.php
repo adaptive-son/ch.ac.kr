@@ -41,6 +41,9 @@
 .custom-lang-dropdown.open button#langToggle::after {
     transform: rotate(180deg);
 }
+#langToggle .lang-text::before {
+    content: 'LANGUAGE';
+}
 
 #langList {
     display: none;
@@ -135,7 +138,7 @@ function googleTranslateElementInit() {
 				<li>
 					<div class="g-lan-box" translate="no">
 						<div class="custom-lang-dropdown notranslate">
-						  <button id="langToggle" title="구글번역 언어선택"><img src="/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span>LANGUAGE</span></button>
+						  <button id="langToggle" title="구글번역 언어선택"><img src="/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span class="lang-text notranslate" translate="no"></span></button>
 						  <ul id="langList" class="notranslate" translate="no">
 						    <li data-lang="en">English</li>
 						  	<li data-lang="vi">Vietnamese</li>
@@ -474,7 +477,6 @@ function googleTranslateElementInit() {
         var savedLang = localStorage.getItem('selectedLang');
         var savedLabel = localStorage.getItem('selectedLangLabel');
         if (savedLang && savedLang !== 'ko' && savedLabel) {
-            $('#langToggle span').text(savedLabel);
             $('#langList li[data-lang="' + savedLang + '"]').addClass('active');
         }
 
@@ -484,7 +486,6 @@ function googleTranslateElementInit() {
             var label = $(this).text().trim();
             $('#langList li').removeClass('active');
             $(this).addClass('active');
-            $('#langToggle span').text(label);
             $('.custom-lang-dropdown').removeClass('open');
             $('#langList').removeClass('open');
 
