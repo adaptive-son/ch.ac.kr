@@ -88,6 +88,20 @@ function googleTranslateElementInit() {
 }
 </script>
 
+<script type="text/javascript">
+(function() {
+    // 브라우저를 완전히 껏다 켜서 새로 방문한 경우(이번 세션에 sessionStorage 기록이 없음)라면
+    // 이전에 선택했던 googtrans 쿠키와 localStorage에 저장된 언어를 지워 한국어로 초기화한다.
+    // 같은 브라우저를 계속 켜둔 채로 페이지 이동/새로고침하는 동안에는 선택한 언어가 유지된다.
+    if (!sessionStorage.getItem('ch_lang_session')) {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname + ';';
+        localStorage.removeItem('selectedLang');
+        localStorage.removeItem('selectedLangLabel');
+        sessionStorage.setItem('ch_lang_session', '1');
+    }
+})();
+</script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <header>
     <!-- skip navigation -->
