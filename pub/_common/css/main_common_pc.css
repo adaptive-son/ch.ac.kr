@@ -182,6 +182,81 @@ caption,
     background-color: rgba(0, 0, 0, 0.3)
 }
 
+/* LANGUAGE */
+.g-lan-box { position: relative; display: inline-block; }
+
+.custom-lang-dropdown { position: relative; }
+
+/* gnb-wrapper가 .header(z-index:100, DOM 후순위)에 가려지지 않도록 */
+.gnb-wrapper { z-index: 200 !important; }
+
+.custom-lang-dropdown button#langToggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+    padding: 0 15px;
+    background: transparent;
+    border: none;
+    color: #b1c3db;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+.custom-lang-dropdown button#langToggle:hover {
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+}
+.custom-lang-dropdown button#langToggle::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid rgba(255,255,255,0.8);
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+.custom-lang-dropdown.open button#langToggle::after {
+    transform: rotate(180deg);
+}
+#langToggle .lang-text::before {
+    content: 'LANGUAGE';
+}
+
+#langList {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    min-width: 130px;
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+#langList.open { display: block; }
+
+#langList li {
+    padding: 7px 14px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+#langList li:hover { background: #f2f2f2; }
+#langList li.active { font-weight: bold; color: #0054a4; }
+/* //LANGUAGE */
+
 .gnb-wrapper .btn-popup {
     position: relative;
     float: left;

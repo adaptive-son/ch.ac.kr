@@ -1,80 +1,7 @@
 <?
 @session_start();
 ?>
-<style>
-.g-lan-box { position: relative; display: inline-block; }
-
-.custom-lang-dropdown { position: relative; }
-
-/* gnb-wrapper가 .header(z-index:100, DOM 후순위)에 가려지지 않도록 */
-.gnb-wrapper { z-index: 200 !important; }
-
-.custom-lang-dropdown button#langToggle {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    height: 40px;
-    padding: 0 15px;
-    background: transparent;
-    border: none;
-    color: #b1c3db;
-    font-size: 14px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.2s ease-in-out;
-}
-.custom-lang-dropdown button#langToggle:hover {
-    color: #fff;
-    background-color: rgba(0,0,0,0.3);
-}
-.custom-lang-dropdown button#langToggle::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 5px solid rgba(255,255,255,0.8);
-    margin-left: 4px;
-    transition: transform 0.2s;
-}
-.custom-lang-dropdown.open button#langToggle::after {
-    transform: rotate(180deg);
-}
-#langToggle .lang-text::before {
-    content: 'LANGUAGE';
-}
-
-#langList {
-    display: none;
-    position: absolute;
-    top: calc(100% + 4px);
-    right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    list-style: none;
-    padding: 4px 0;
-    margin: 0;
-    min-width: 130px;
-    max-height: 260px;
-    overflow-y: auto;
-    z-index: 9999;
-}
-#langList.open { display: block; }
-
-#langList li {
-    padding: 7px 14px;
-    font-size: 13px;
-    color: #333;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.15s;
-}
-#langList li:hover { background: #f2f2f2; }
-#langList li.active { font-weight: bold; color: #0054a4; }
-</style>
+<!-- LANGUAGE -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -102,6 +29,7 @@ function googleTranslateElementInit() {
 })();
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- //LANGUAGE -->
 <header>
 	<!-- gnb wrapper -->
 	<div class="gnb-wrapper">
@@ -149,6 +77,7 @@ function googleTranslateElementInit() {
 		</div>
 		<div class="right">
 			<ul>
+				<!-- LANGUAGE -->
 				<li>
 					<div class="g-lan-box" translate="no">
 						<div class="custom-lang-dropdown notranslate">
@@ -169,6 +98,7 @@ function googleTranslateElementInit() {
 						</div>
 					</div>
 				</li>
+				<!-- //LANGUAGE -->
 				<!-- <li>
 					<a href="/english/main/index.php" target="_blank" title="새창 열림">
 						ENGLISH
@@ -304,16 +234,41 @@ function googleTranslateElementInit() {
 					<?}?>
 				</li>
 
+				<!-- LANGUAGE -->
 				<li>
-					<!-- http://eng.ch.ac.kr/(기존) -> 인트로 페이지가 생기면서 링크 수정 -->
+					<div class="g-lan-box" translate="no">
+						<div class="custom-lang-dropdown notranslate">
+							<button id="langToggleMob" title="구글번역 언어선택"><img src="/img/common/google_logo.png" alt="Google 번역"><span class="lang-text notranslate" translate="no"></span></button>
+							<ul id="langListMob" class="notranslate" translate="no">
+							<li data-lang="en">English</li>
+							<li data-lang="vi">Vietnamese</li>
+							<li data-lang="uz">Uzbek</li>
+							<li data-lang="th">Thai</li>
+							<li data-lang="my">Burmese</li>
+							<li data-lang="id">Indonesian</li>
+							<li data-lang="si">Sinhala</li>
+							<li data-lang="mn">Mongolian</li>
+							<li data-lang="zh-CN">Chinese</li>
+							<li data-lang="ja">Japanese</li>
+							<li data-lang="ko">Korean</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<!-- //LANGUAGE -->
+				<!--<li>
+					http://eng.ch.ac.kr/(기존) -> 인트로 페이지가 생기면서 링크 수정
 					<a href="https://www.ch.ac.kr/english/main/index.php" target="_blank" title="새창열림">
 						<img src="/img/common/icon_mobile_gnb0103.png" alt="대학메인" />
 						<strong>
 							ENGLISH
 						</strong>
 					</a>
-				</li>
+				</li>-->
+				
 			</ul>
+
+			
 		</div>
 
 
@@ -469,6 +424,7 @@ function googleTranslateElementInit() {
 			}
         });
 
+        // LANGUAGE
         // 언어 드롭다운 토글
         $('#langToggle').on('click', function(e) {
             e.stopPropagation();
@@ -479,11 +435,21 @@ function googleTranslateElementInit() {
             $list.toggleClass('open', !isOpen);
         });
 
+        // 언어 드롭다운 토글 (모바일 전체메뉴)
+        $('#langToggleMob').on('click', function(e) {
+            e.stopPropagation();
+            var $dropdown = $(this).closest('.custom-lang-dropdown');
+            var $list = $('#langListMob');
+            var isOpen = $dropdown.hasClass('open');
+            $dropdown.toggleClass('open', !isOpen);
+            $list.toggleClass('open', !isOpen);
+        });
+
         // 외부 클릭 시 닫기
         $(document).on('click', function(e) {
             if (!$(e.target).closest('.g-lan-box').length) {
                 $('.custom-lang-dropdown').removeClass('open');
-                $('#langList').removeClass('open');
+                $('#langList, #langListMob').removeClass('open');
             }
         });
 
@@ -491,17 +457,17 @@ function googleTranslateElementInit() {
         var savedLang = localStorage.getItem('selectedLang');
         var savedLabel = localStorage.getItem('selectedLangLabel');
         if (savedLang && savedLang !== 'ko' && savedLabel) {
-            $('#langList li[data-lang="' + savedLang + '"]').addClass('active');
+            $('#langList li[data-lang="' + savedLang + '"], #langListMob li[data-lang="' + savedLang + '"]').addClass('active');
         }
 
         // 언어 선택
-        $('#langList').on('click', 'li', function() {
+        $('#langList, #langListMob').on('click', 'li', function() {
             var lang = $(this).data('lang');
             var label = $(this).text().trim();
-            $('#langList li').removeClass('active');
+            $('#langList li, #langListMob li').removeClass('active');
             $(this).addClass('active');
             $('.custom-lang-dropdown').removeClass('open');
-            $('#langList').removeClass('open');
+            $('#langList, #langListMob').removeClass('open');
 
             if (lang === 'ko') {
                 localStorage.removeItem('selectedLang');
@@ -527,6 +493,7 @@ function googleTranslateElementInit() {
                 location.reload();
             }
         });
+        // //LANGUAGE
 
         // data-hover 속성을 번역된 텍스트로 동기화
         // 구글 번역은 DOM 텍스트는 바꾸지만 data-* 속성은 바꾸지 않으므로 직접 갱신
