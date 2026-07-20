@@ -14,19 +14,18 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    height: 40px;
-    padding: 0 15px;
+    height: 38px;
+    padding: 0 20px;
     background: transparent;
     border: none;
     color: #828282;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
 }
 .custom-lang-dropdown button#langToggle:hover {
-    color: #fff;
-    background-color: rgba(0,0,0,0.3);
+    background: #edecea;
 }
 .custom-lang-dropdown button#langToggle::after {
     content: '';
@@ -35,7 +34,7 @@
     height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 5px solid rgba(255,255,255,0.8);
+    border-top: 5px solid #828282;
     margin-left: 4px;
     transition: transform 0.2s;
 }
@@ -89,13 +88,21 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript">
+function clearGoogTransCookie() {
+    // 구글 번역 위젯이 현재 호스트뿐 아니라 상위 도메인(예: .ch.localhost)에도
+    // 자체적으로 googtrans 쿠키를 심는 경우가 있어, 가능한 모든 도메인 단계를 지운다.
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    var parts = location.hostname.split('.');
+    for (var i = 0; i < parts.length - 1; i++) {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + parts.slice(i).join('.') + ';';
+    }
+}
 (function() {
     // 브라우저를 완전히 껏다 켜서 새로 방문한 경우(이번 세션에 sessionStorage 기록이 없음)라면
     // 이전에 선택했던 googtrans 쿠키와 localStorage에 저장된 언어를 지워 한국어로 초기화한다.
     // 같은 브라우저를 계속 켜둔 채로 페이지 이동/새로고침하는 동안에는 선택한 언어가 유지된다.
     if (!sessionStorage.getItem('ch_lang_session')) {
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname + ';';
+        clearGoogTransCookie();
         localStorage.removeItem('selectedLang');
         localStorage.removeItem('selectedLangLabel');
         sessionStorage.setItem('ch_lang_session', '1');
@@ -114,28 +121,6 @@ function googleTranslateElementInit() {
         <div class="gnb-wrapper">
 			<div class="gnb-area">
 				<div class="gnb-box">
-					<ul>
-						<li>
-							<div class="g-lan-box" translate="no">
-								<div class="custom-lang-dropdown notranslate">
-								  <button id="langToggle" title="구글번역 언어선택"><img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span class="lang-text notranslate" translate="no"></span></button>
-								  <ul id="langList" class="notranslate" translate="no">
-									<li data-lang="en">English</li>
-                                    <li data-lang="vi">Vietnamese</li>
-                                    <li data-lang="uz">Uzbek</li>
-                                    <li data-lang="th">Thai</li>
-                                    <li data-lang="my">Burmese</li>
-                                    <li data-lang="id">Indonesian</li>
-                                    <li data-lang="si">Sinhala</li>
-                                    <li data-lang="mn">Mongolian</li>
-                                    <li data-lang="zh-CN">Chinese</li>
-                                    <li data-lang="ja">Japanese</li>
-                                    <li data-lang="ko">Korean</li>
-								  </ul>
-								</div>
-							</div>
-						</li>
-					</ul>
 					<dl>
 						<dt>
 							글자크기
@@ -192,6 +177,29 @@ function googleTranslateElementInit() {
                                 </a>
                             <?}?>
 						</li>
+
+						<!-- LANGUAGE -->
+						<li>
+							<div class="g-lan-box" translate="no">
+								<div class="custom-lang-dropdown notranslate">
+								  <button id="langToggle" title="구글번역 언어선택"><img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;"><span class="lang-text notranslate" translate="no"></span></button>
+								  <ul id="langList" class="notranslate" translate="no">
+									<li data-lang="en">English</li>
+                                    <li data-lang="vi">Vietnamese</li>
+                                    <li data-lang="uz">Uzbek</li>
+                                    <li data-lang="th">Thai</li>
+                                    <li data-lang="my">Burmese</li>
+                                    <li data-lang="id">Indonesian</li>
+                                    <li data-lang="si">Sinhala</li>
+                                    <li data-lang="mn">Mongolian</li>
+                                    <li data-lang="zh-CN">Chinese</li>
+                                    <li data-lang="ja">Japanese</li>
+                                    <li data-lang="ko">Korean</li>
+								  </ul>
+								</div>
+							</div>
+						</li>
+						<!-- //LANGUAGE -->
 					</ul>
 
 					<ul class="sns-list">
@@ -357,6 +365,32 @@ function googleTranslateElementInit() {
 							</strong>
 						</a>
 					</li>
+
+					<!-- LANGUAGE -->
+					<li>
+						<a href="javascript:void(0);" id="langToggleMob" class="custom-lang-dropdown notranslate" translate="no">
+							<span class="image">
+								<img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" />
+							</span>
+							<strong>
+								LANGUAGE<span class="mob-lang-arrow"></span>
+							</strong>
+						</a>
+						<ul id="langListMob" class="notranslate" translate="no">
+							<li data-lang="en">English</li>
+							<li data-lang="vi">Vietnamese</li>
+							<li data-lang="uz">Uzbek</li>
+							<li data-lang="th">Thai</li>
+							<li data-lang="my">Burmese</li>
+							<li data-lang="id">Indonesian</li>
+							<li data-lang="si">Sinhala</li>
+							<li data-lang="mn">Mongolian</li>
+							<li data-lang="zh-CN">Chinese</li>
+							<li data-lang="ja">Japanese</li>
+							<li data-lang="ko">Korean</li>
+						</ul>
+					</li>
+					<!-- //LANGUAGE -->
 				</ul>
             </div>
         </div>
@@ -429,7 +463,7 @@ function googleTranslateElementInit() {
         var savedLang = localStorage.getItem('selectedLang');
         var savedLabel = localStorage.getItem('selectedLangLabel');
         if (savedLang && savedLang !== 'ko' && savedLabel) {
-            $('#langList li[data-lang="' + savedLang + '"]').addClass('active');
+            $('#langList li[data-lang="' + savedLang + '"], #langListMob li[data-lang="' + savedLang + '"]').addClass('active');
         }
 
         // 언어 드롭다운 토글
@@ -442,29 +476,36 @@ function googleTranslateElementInit() {
             $list.toggleClass('open', !isOpen);
         });
 
+        $('#langToggleMob').on('click', function(e) {
+            e.stopPropagation();
+            var $dropdown = $(this).closest('.custom-lang-dropdown');
+            var $list = $('#langListMob');
+            var isOpen = $dropdown.hasClass('open');
+            $dropdown.toggleClass('open', !isOpen);
+            $list.toggleClass('open', !isOpen);
+        });
+
         // 외부 클릭 시 닫기
         $(document).on('click', function(e) {
             if (!$(e.target).closest('.g-lan-box').length) {
                 $('.custom-lang-dropdown').removeClass('open');
-                $('#langList').removeClass('open');
+                $('#langList, #langListMob').removeClass('open');
             }
         });
 
         // 언어 선택
-        $('#langList').on('click', 'li', function() {
+        $('#langList, #langListMob').on('click', 'li', function() {
             var lang = $(this).data('lang');
             var label = $(this).text().trim();
-            $('#langList li').removeClass('active');
-            $(this).addClass('active');
+            $('#langList li, #langListMob li').removeClass('active');
+            $('#langList li[data-lang="' + lang + '"], #langListMob li[data-lang="' + lang + '"]').addClass('active');
             $('.custom-lang-dropdown').removeClass('open');
-            $('#langList').removeClass('open');
+            $('#langList, #langListMob').removeClass('open');
 
             if (lang === 'ko') {
                 localStorage.removeItem('selectedLang');
                 localStorage.removeItem('selectedLangLabel');
-                var cookie = '/';
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + cookie;
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + cookie + '; domain=' + location.hostname;
+                clearGoogTransCookie();
                 location.reload();
                 return;
             }
