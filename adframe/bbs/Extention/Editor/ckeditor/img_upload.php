@@ -11,6 +11,9 @@ $uploadDir = $uploadDirBase . $fdate . '/';
 
 if (!file_exists($uploadDir)) {
     mkdir($uploadDir, 0777, true);
+    // mkdir()의 모드는 프로세스 umask 영향을 받아 0777 그대로 적용되지 않을 수 있어서
+    // (실제로 0755로 생성되어 업로드 계정 외에는 쓰기가 안 되는 문제가 있었음) 명시적으로 재적용.
+    chmod($uploadDir, 0777);
 }
 
 $returnFiles = array();
