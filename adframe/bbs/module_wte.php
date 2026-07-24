@@ -12,6 +12,15 @@ $dataArr=Decode64($_POST['data']);
 $configBBS = DBarray("SELECT * FROM abbs_manager WHERE board_key='".$dataArr[Boardkey]."'"); //게시판 설정로드
 if(empty($configBBS[idx]))	go_back("존재하지 않는 게시판입니다.");
 
+// 2026-07-24 글쓰기 시 이미지 태그(따옴표)가 이중 이스케이프되어 저장되던 문제 조치.
+// bbs_welf에서 먼저 확인 후 전체 게시판으로 적용범위 확대함 (2026-07-24).
+// magic_quotes_gpc가 이미 한 번 이스케이프한 상태에서 위 3번째 줄의
+// mysql_escape_string()이 또 한 번 이스케이프해서 두 겹이 걸리던 것을,
+// 여기서 한 겹만 벗겨내어 원래 magic_quotes_gpc가 만든 한 겹만 남도록 되돌린다.
+if(isset($_POST['fm_content'])){
+	$_POST['fm_content'] = stripslashes($_POST['fm_content']);
+}
+
 //권한매핑 설정
 include $_SERVER["DOCUMENT_ROOT"]."/adframe/mng/bbs_manager/auth_config.php";
 
