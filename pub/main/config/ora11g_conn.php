@@ -1,15 +1,15 @@
 <?
 class ora11g {
-        var $ORA_USER;	//¿À¶óÅ¬ »ç¿ëÀÚ
-        var $ORA_PASSWD;	//¿À¶óÅ¬ ¾ÏÈ£
-        var $ORA_DNS;	//¿À¶óÅ¬ DNS
-        var $db;	//dbÁ¢¼Ó
-        var $autocommit = true;	//ÀÚµ¿Ä¿¹Ô
-        var $debug=false;	//µð¹ö±×¸ðµå
+        var $ORA_USER;	//ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½ï¿½
+        var $ORA_PASSWD;	//ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½È£
+        var $ORA_DNS;	//ï¿½ï¿½ï¿½ï¿½Å¬ DNS
+        var $db;	//dbï¿½ï¿½ï¿½ï¿½
+        var $autocommit = true;	//ï¿½Úµï¿½Ä¿ï¿½ï¿½
+        var $debug=false;	//ï¿½ï¿½ï¿½ï¿½×¸ï¿½ï¿½
         
         var $error = array();
 
-        //¿À¶óÅ¬ Á¢¼ÓÁ¤º¸ ÃÊ±âÈ­
+        //ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         function ora11g($user='bada', $passwd='bada2048', $dns='ORA7') {
 			  
 				if($dns == "ORA7") {
@@ -31,17 +31,17 @@ class ora11g {
                 //echo $db_dns;
         }
         
-        //¿À¶óÅ¬ Á¢¼Ó
+        //ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½
         function con() {
                 $this->db= OCILogon($this->ORA_USER,$this->ORA_PASSWD,$this->ORA_DNS) or die("DB Connect Error");
         }
 
-        //¿À¶óÅ¬ Á¢¼Ó ÇØÁ¦
+        //ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         function discon() {
                 return @OCILogoff($this->db);
         }
 
-        //¿¡·¯¸Þ¼¼Áö Ãâ·Â
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         function error($mes) {
 			$this->discon();
 			echo "<script language=Javascript>
@@ -54,10 +54,10 @@ class ora11g {
 			$this->autocommit=$autocommit;
         }
 
-        //°ªÀÌ ¹®ÀÚ¿­°æ¿ì '' ºÙ¿©ÁÜ
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ '' ï¿½Ù¿ï¿½ï¿½ï¿½
         function set_str($str) {
 			
-			//¹«½ÃÇÒ ¹®ÀÚ¿­
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
 			$chk="sysdate|nextval|curval|null";
 			
 			if(!preg_match("/$chk/i", $str)) {
@@ -73,8 +73,8 @@ class ora11g {
         }
         
         
-        /***************************** Äû¸® ³¯¸®±â *******************************************/
-        //ÀÏ¹Ý Äû¸®
+        /***************************** ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *******************************************/
+        //ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½
         function query($query) {
             if($this->debug) echo $query;
             
@@ -84,66 +84,66 @@ class ora11g {
             $stmt = @OCIParse($this->db, $query);
             
 
-            if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
          	
          	$err=@OCIExecute($stmt);
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             	
                     $erra=OCIError($err);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
-            if(@OCIFetchinto($stmt, &$value, OCI_ASSOC)) {
+            if(@OCIFetchinto($stmt, $value, OCI_ASSOC)) {
                     @OCIFreeStatement($stmt);
-                    return $value;	//¹è¿­ÇüÅÂ·Î Àü¼Û
+                    return $value;	//ï¿½è¿­ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
             } else {
                     @OCIFreeStatement($stmt);
                     return false;
             }
         }
 
-        //¿©·¯°³ÀÇ °á°ú¿ë Äû¸®
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         function querys($query) {
                 if($this->debug) echo $query;
 
                 $stmt = @OCIParse($this->db, $query);
-                if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+                if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                         $erra=OCIError($stmt);
                         $this->error("SQL Error: $erra[code] $erra[message]"); 
                 }
          $err=OCIExecute($stmt);
-                if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+                if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                         $erra=OCIError($err);
                         $this->error("SQL Error: $erra[code] $erra[message]"); 
                 }
-                while (@OciFetchinto($stmt,&$row,OCI_ASSOC)) {
+                while (@OciFetchinto($stmt,$row,OCI_ASSOC)) {
                         $value[]=$row;
 
                 }
 
                 @OCIFreeStatement($stmt);
-                return $value;	//¹è¿­ÇüÅÂ·Î Àü¼Û
+                return $value;	//ï¿½è¿­ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        //ÇÑ°³ÀÇ °ª¸¸ Ãâ·Â
+        //ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         function queryone($query) {
                 if($this->debug) echo $query;
                 
                 //echo $query;
                 //exit;
                 $stmt = @OCIParse($this->db, $query);
-                if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+                if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                         $erra=OCIError($stmt);
                         $this->error("SQL Error: $erra[code] $erra[message]"); 
                 }
          $err=@OCIExecute($stmt);
-                if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+                if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                         $erra=OCIError($err);
                         $this->error("SQL Error: $erra[code] $erra[message]"); 
                 }
-                if(@OciFetchinto($stmt,&$value,OCI_NUM )) {
+                if(@OciFetchinto($stmt,$value,OCI_NUM )) {
                         @OCIFreeStatement($stmt);
                         return $value[0];
                 } else {
@@ -151,17 +151,17 @@ class ora11g {
                         return false;
                 }
         }
-        /***************************** Äû¸® ³¯¸®±â *******************************************/
+        /***************************** ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *******************************************/
 
 
 
-		/***************************** insert & update & delete Äõ¸® *******************************************/
-        //insert & update & delete ¿ë Äû¸®
+		/***************************** insert & update & delete ï¿½ï¿½ï¿½ï¿½ *******************************************/
+        //insert & update & delete ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         function squery($query) {
             if($this->debug) echo $query;
 
             $stmt = @OCIParse($this->db, $query);
-            if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -172,7 +172,7 @@ class ora11g {
              $err=@OCIExecute($stmt, OCI_DEFAULT);
             }
 
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($err);
                     $this->error("SQL Error: $erra[code] $erra[message]");
             }
@@ -182,9 +182,9 @@ class ora11g {
             return $count;
         }        
 
-        //¹è¿­ÇüÅÂ·Î ÀÎ¼³Æ®
+        //ï¿½è¿­ï¿½ï¿½ï¿½Â·ï¿½ ï¿½Î¼ï¿½Æ®
         function squery_inarr($dbname, $query_arr, $addcolumn="", $addvalue="") {
-            $arr_total=count($query_arr);	//ÀüÃ¼ ¹è¿­¼ö
+            $arr_total=count($query_arr);	//ï¿½ï¿½Ã¼ ï¿½è¿­ï¿½ï¿½
             foreach($query_arr as $key=>$val) {
                 $set.=$key;
                 $input.=$this->set_str($val);
@@ -199,13 +199,13 @@ class ora11g {
             if($addcolumn)	$addqryC = ",".$addcolumn;
             if($addvalue)	$addqryV = ", '".$addvalue."'";
             
-            //sql¹® »ý¼º
+            //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             $sql="insert into $dbname($set$addqryC) values($input$addqryV)";
             //echo $sql;
             //exit;
             if($this->debug) echo $sql;
             $stmt = @OCIParse($this->db, $sql);
-            if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -216,25 +216,25 @@ class ora11g {
             	$err=@OCIExecute($stmt, OCI_DEFAULT);
             }
 
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 $erra=OCIError($err);
                 $this->error("SQL Error: $erra[code] $erra[message]");
             }
             @OCIFreeStatement($stmt);
         }
 
-        //ÄÞ¸¶ ÇüÅÂ·Î ¾÷µ¥ÀÌÆ®
+        //ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         function squery_upcomma($dbname, $query_arr, $where) {
             
             $query = $query_arr;
                 
-            //sql¹® »ý¼º
+            //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             $sql="update $dbname set $query $where";
             //echo $sql;
             //exit;
             if($this->debug) echo $sql;
             $stmt = @OCIParse($this->db, $sql);
-            if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -245,7 +245,7 @@ class ora11g {
             	$err=@OCIExecute($stmt, OCI_DEFAULT);
             }
 
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 $erra=OCIError($err);
                 $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -255,9 +255,9 @@ class ora11g {
         }
         
         
-        //¹è¿­ÇüÅÂ·Î ¾÷µ¥ÀÌÆ®
+        //ï¿½è¿­ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         function squery_uparr($dbname, $query_arr, $where) {
-            $arr_total=count($query_arr);	//ÀüÃ¼ ¹è¿­¼ö
+            $arr_total=count($query_arr);	//ï¿½ï¿½Ã¼ ï¿½è¿­ï¿½ï¿½
             foreach($query_arr as $key=>$val) {
                 $query .= $key ."= ".$this->set_str($val)."";
 
@@ -267,12 +267,12 @@ class ora11g {
                 }
             }
                 
-            //sql¹® »ý¼º
+            //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             $sql="update $dbname set $query $where";
             
             if($this->debug) //echo $sql;
             $stmt = @OCIParse($this->db, $sql);
-            if (!$stmt) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -283,7 +283,7 @@ class ora11g {
             	$err=@OCIExecute($stmt, OCI_DEFAULT);
             }
 
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 $erra=OCIError($err);
                 $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -292,9 +292,9 @@ class ora11g {
             return $count;
         }
 
-        //clobÇü½Ä ÀÔ·Â Äû¸®(¹è¿­Çü)
+        //clobï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½è¿­ï¿½ï¿½)
         function squery_inclob($dbname, $query_arr, $lobname, $lobdata) {
-            $arr_total=count($query_arr);	//ÀüÃ¼ ¹è¿­¼ö
+            $arr_total=count($query_arr);	//ï¿½ï¿½Ã¼ ï¿½è¿­ï¿½ï¿½
             foreach($query_arr as $key=>$val) {
                     $set.=$key;
                     $input.=$this->set_str($val);
@@ -306,22 +306,22 @@ class ora11g {
                     }
             }
             
-            $sql="insert into $dbname($set, $lobname) values($input, empty_clob()) returning $lobname into :CONTB";        //sql¹® »ý¼º
+            $sql="insert into $dbname($set, $lobname) values($input, empty_clob()) returning $lobname into :CONTB";        //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if($this->debug) echo $sql;
 
             $clob = OCINewDescriptor($this->db, OCI_D_LOB); 
             $stmt = @OCIParse($this->db, $sql);
-            if (!$stmt) {                //¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
 
-            OCIBindByName ($stmt, ":CONTB", &$clob, -1, OCI_B_CLOB); 
+            OCIBindByName ($stmt, ":CONTB", $clob, -1, OCI_B_CLOB);
          	$err=@OCIExecute($stmt, OCI_DEFAULT);
             $clob->save($lobdata);
             $this->commit();
         
-            if (!$err) {	//¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($err);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -329,9 +329,9 @@ class ora11g {
             @OCIFreeStatement($stmt);
         }
 
-        //CLOB Çü½Ä ¾÷µ¥ÀÌÆ®¿ë
+        //CLOB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½
         function squery_upclob($dbname, $query_arr, $lobname, $lobdata, $where) {
-            $arr_total=count($query_arr);        //ÀüÃ¼ ¹è¿­¼ö
+            $arr_total=count($query_arr);        //ï¿½ï¿½Ã¼ ï¿½è¿­ï¿½ï¿½
             foreach($query_arr as $key=>$val) {
                 $query .= $key ."=".$this->set_str($val);
 
@@ -341,20 +341,20 @@ class ora11g {
                 }
             }
                 
-            //sql¹® »ý¼º
+            //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             $sql="update $dbname set $query, $lobname=empty_clob() $where returning $lobname into :CONTB ";
             if($this->debug) echo $sql;
 			//$stmt = @OCIParse($this->db, $sql);
 
             $clob = OCINewDescriptor($this->db, OCI_D_LOB); 
             $stmt = @OCIParse($this->db, $sql);
-            if (!$stmt) {                //¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$stmt) {                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($stmt);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
-            OCIBindByName ($stmt, ":CONTB", &$clob, -1, OCI_B_CLOB); 
+            OCIBindByName ($stmt, ":CONTB", $clob, -1, OCI_B_CLOB);
             $err=OCIExecute($stmt, OCI_DEFAULT); 
-            if (!$err) {                //¿¡·¯°¡ ³µÀ»°æ¿ì
+            if (!$err) {                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     $erra=OCIError($err);
                     $this->error("SQL Error: $erra[code] $erra[message]"); 
             }
@@ -366,12 +366,12 @@ class ora11g {
             return $count;
         }
 
-        /***************************** insert & update & delete Äõ¸® *******************************************/
-        function commit() {        //Ä¿¹Ô
+        /***************************** insert & update & delete ï¿½ï¿½ï¿½ï¿½ *******************************************/
+        function commit() {        //Ä¿ï¿½ï¿½
                 return @OCICommit($this->db);
         }
 
-        function rollback() {        //·Ñ¹é
+        function rollback() {        //ï¿½Ñ¹ï¿½
                 return @OCIRollback($this->db);
         }
 
@@ -380,25 +380,25 @@ class ora11g {
 
 
 
-/**************************  »ç¿ë¿¹Á¦ *****************************************************/
+/**************************  ï¿½ï¿½ë¿¹ï¿½ï¿½ *****************************************************/
 /*
-//ÃÊ±âÈ­ ¸¸¾à ´Ù¸¥ dbÁ¢¼Ó½Ã ora9('¾ÆÀÌµð','¾ÏÈ£','dns');
+//ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ dbï¿½ï¿½ï¿½Ó½ï¿½ ora9('ï¿½ï¿½ï¿½Ìµï¿½','ï¿½ï¿½È£','dns');
 $oradb=new ora11g();
-$oradb->con(); //Á¢¼Ó
-$sql="select count(id) from Å×ÀÌºí³×ÀÓ where id='aaa' ";
-$num=$oradb->queryone($sql);	//ÇÏ³ªÀÇ °ª¸¸ ¹Þ¾Æ¿Â´Ù ¾øÀ¸¸é false
+$oradb->con(); //ï¿½ï¿½ï¿½ï¿½
+$sql="select count(id) from ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ where id='aaa' ";
+$num=$oradb->queryone($sql);	//ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false
 
-$sql = "INSERT INTO Å×ÀÌºí³×ÀÓ(ÄÃ·³¸í1,ÄÃ·³¸í1,ÄÃ·³¸í3,ÄÃ·³¸í4) values(º§·ù°ª1§.nextval, º§·ù°ª2, º§·ù°ª3, º§·ù°ª4) ";
-$num=$oradb->squery($sql);	//¾÷µ¥ÀÌÆ®&ÀÎ¼³Æ®¿ë&delete Äû¸® return ¾÷µ¥ÀÌÆ®, ÀÎ¼³Æ® °¹¼ö
+$sql = "INSERT INTO ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½3,ï¿½Ã·ï¿½ï¿½ï¿½4) values(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½.nextval, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4) ";
+$num=$oradb->squery($sql);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®&ï¿½Î¼ï¿½Æ®ï¿½ï¿½&delete ï¿½ï¿½ï¿½ï¿½ return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®, ï¿½Î¼ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
-$sql="select ÄÃ·³¸í1,ÄÃ·³¸í1,ÄÃ·³¸í3,ÄÃ·³¸í4 from Å×ÀÌºí³×ÀÓ where ÄÃ·³¸í1='º§·ù°ª1' ";
-$val=$oradb->query($sql);	//ÀÏ¹Ý Äû¸® $val[ÄÃ·³¸í1] Çü½ÄÀ¸·Î ¹è¿­·Î °ªÀÌ ³¯¶ó¿Â´Ù. Å°°ªÀº ´ë¹®ÀÚÀÓ ¾øÀ¸¸é false
+$sql="select ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½3,ï¿½Ã·ï¿½ï¿½ï¿½4 from ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ where ï¿½Ã·ï¿½ï¿½ï¿½1='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1' ";
+$val=$oradb->query($sql);	//ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ï¿½ $val[ï¿½Ã·ï¿½ï¿½ï¿½1] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â´ï¿½. Å°ï¿½ï¿½ï¿½ï¿½ ï¿½ë¹®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false
 
-$sql="select ÄÃ·³¸í1,ÄÃ·³¸í1,ÄÃ·³¸í3,ÄÃ·³¸í4 from Å×ÀÌºí³×ÀÓ where ÄÃ·³¸í1='º§·ù°ª1' ";
-$val=$oradb->querys($sql);	//¿©·¯°³ °á°ú¿ë ÀÏ¹ÝÄû¸® $val[0][ÄÃ·³¸í1] ½ÄÀÇ ¹è¿­·Î ³¯¶ó¿Â´Ù ¾øÀ¸¸é false
+$sql="select ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½1,ï¿½Ã·ï¿½ï¿½ï¿½3,ï¿½Ã·ï¿½ï¿½ï¿½4 from ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ where ï¿½Ã·ï¿½ï¿½ï¿½1='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1' ";
+$val=$oradb->querys($sql);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ $val[0][ï¿½Ã·ï¿½ï¿½ï¿½1] ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false
 
 
-//¹è¿­ÇüÅÂ·Î Å°°ª=ÇÊµå¸íÀ¸·Î ÇØ¼­ ¸¸µç´Ù
+//ï¿½è¿­ï¿½ï¿½ï¿½Â·ï¿½ Å°ï¿½ï¿½=ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 $sql_data = Array (
         NO => $b_no,
         SubClass_Code => $cate,
@@ -415,13 +415,13 @@ $sql_data = Array (
         Pick_OpenFlag => 0
 );
 
-//db¸í°ú ¹è¿­À» ³Ö¾î¼­ ÀÎ¼³Æ®ÇÑ´Ù.
+//dbï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½Î¼ï¿½Æ®ï¿½Ñ´ï¿½.
 $oradb->squery_inarr('board', $sql_data);
 
 
 
-//À§¿¡²¨¿Í °°ÀÌ ¹è¿­·Î ¸¸µé¾î¼­ »ç¿ë. ¾÷µ¥ÀÌÆ®¿ë db¸í, ¹è¿­, Á¶°Ç
-$num=$oradb->squery_uparr('baord', $sql_data, " where no=10");//¾÷µ¥ÀÌÆ® °¹¼ö ¸®ÅÏ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ dbï¿½ï¿½, ï¿½è¿­, ï¿½ï¿½ï¿½ï¿½
+$num=$oradb->squery_uparr('baord', $sql_data, " where no=10");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 $sql_data = Array (
@@ -436,7 +436,7 @@ $sql_data = Array (
         Pick_Memo => '',
         HTML_Flag => $html,
 );
-//CLOBÇü½Ä µ¥ÀÌÅ¸¸¦ ÀÎ¼³Æ®ÇÏ±â À§ÇÑ Äû¸® db¸í, ¹è¿­, CLOBÇÊµå¸í, CLOBµ¥ÀÌÅ¸
+//CLOBï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Î¼ï¿½Æ®ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½, ï¿½è¿­, CLOBï¿½Êµï¿½ï¿½, CLOBï¿½ï¿½ï¿½ï¿½Å¸
 $oradb->squery_inclob('gggg', $sql_data, 'CONT', $cont);
 
 $sql_data = Array (
@@ -447,15 +447,15 @@ $sql_data = Array (
                 PICKFLAG => $popen,
                 HTML_Flag => $html
         );
-//clobÇü ¾÷µ¥ÀÌÆ® ÇÔ¼ö db¸í, ¹è¿­, clobÇÊµå¸í, clobµ¥ÀÌÅ¸, Á¶°Ç return ¾÷µ¥ÀÌÆ® °¹¼ö
+//clobï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ô¼ï¿½ dbï¿½ï¿½, ï¿½è¿­, clobï¿½Êµï¿½ï¿½, clobï¿½ï¿½ï¿½ï¿½Å¸, ï¿½ï¿½ï¿½ï¿½ return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 $num=$oradb->squery_upclob('gggg', $sql_data, 'CONT', $cont, " where no=$no");
 
 
-$oradb->discon(); //Á¢¼ÓÇØÁ¦
+$oradb->discon(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-///±âÅ¸
-$oradb->autocommit(true);	//commit() °ú rollback() À» »ç¿ëÇÒ ¼ö ÀÖ°ÔÇÑ´Ù. ±âº» false
-$oradb->debug=true;	//µð¹ö±×¸ðµå;; sql¹®ÀÌ Ãâ·ÂµÈ´Ù.
+///ï¿½ï¿½Å¸
+$oradb->autocommit(true);	//commit() ï¿½ï¿½ rollback() ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½Ñ´ï¿½. ï¿½âº» false
+$oradb->debug=true;	//ï¿½ï¿½ï¿½ï¿½×¸ï¿½ï¿½;; sqlï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÂµÈ´ï¿½.
 
 */
 

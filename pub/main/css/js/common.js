@@ -1,6 +1,5 @@
 /* menu on */
-// tttttttttttttttttttttttttttttt
-function menuOn(depth1, depth2, depth3, depth4) {
+function menuOn(depth1, depth2, depth3) {
     var topmenu = $(".topmenu" + depth1);
     topmenu.addClass("active");
 
@@ -12,9 +11,6 @@ function menuOn(depth1, depth2, depth3, depth4) {
 
     var totalmenuDepth3 = $(".topmenu" + depth1 + "-" + depth2 + "-" + depth3);
     totalmenuDepth3.addClass("active");
-
-	var totalmenuDepth4 = $(".topmenu" + depth1 + "-" + depth2 + "-" + depth3 + "-" + depth4);
-    totalmenuDepth4.addClass("active");
 
     /*
     if ($(".totalmenu-depth2-group").hasClass('active') && $(".totalmenu-depth3-group").hasClass('active') == true) {

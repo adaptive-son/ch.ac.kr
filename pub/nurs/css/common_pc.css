@@ -145,23 +145,6 @@ caption {
 	height: 38px;
 }
 
-/* 구글 번역 드롭다운 - nurs 흰색 gnb 배경에 맞게 조정 */
-.gnb-area .gnb-box > ul { float: left; }
-.custom-lang-dropdown button#langToggle {
-	height: 38px;
-	color: #555;
-	font-size: 12px;
-	border-right: 1px solid #edecea;
-	padding: 0 12px;
-}
-.custom-lang-dropdown button#langToggle:hover {
-	color: #222;
-	background-color: #edecea;
-}
-.custom-lang-dropdown button#langToggle::after {
-	border-top-color: rgba(0,0,0,0.4);
-}
-
 .gnb-area {
 	max-width: 1440px;
 	padding: 0 20px;

@@ -35,7 +35,7 @@ if($file1_size>0&&$file1) {
         if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("?à?©ÎêòÏßÄ ?ä?î ?å???ï?ù?Ö?à??"); }
         $temp1_name = $reg_date.'.'.$temp1[1];
 
-        $file1 = eregi_replace("\\\\","\\",$file1);
+        $file1 = preg_replace("/\\\\\\\\/","\\\\", $file1); // PHP7: eregi_replace removed
         $s_file_name1 = str_replace(" ","_",$s_file_name1);
         $s_file_name1 = str_replace("-","_",$s_file_name1);
 

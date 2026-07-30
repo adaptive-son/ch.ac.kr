@@ -422,7 +422,7 @@ class Sub_BBSStart {
 						WHERE idx > 0 AND del_yn='N' ".$Code_Que." ".$and_query."
 						)TB
 				";
-				if($configBBS['board_key']=="2610"){
+				if($configBBS['board_key']=="2610" || $configBBS['board_key']=="1210"){
 					$bbs_qry .= " ORDER BY ".$add_orderSql." top_yn DESC, writeday DESC LIMIT $offset,$LIMIT ";
 				} else {
 					$bbs_qry .= " ORDER BY ".$add_orderSql." top_yn DESC, ref DESC, re_step ASC, writeday DESC LIMIT $offset,$LIMIT ";

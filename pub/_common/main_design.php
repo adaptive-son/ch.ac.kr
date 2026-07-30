@@ -31,6 +31,7 @@
 <script type="text/javascript" src="/adframe/mng/js/basic.js?ver=<?php echo date("Ymd")?>"></script>
 <script type="text/javascript" src="/_common/js/swiper.min.js?ver=<?php echo date("Ymd")?>"></script>
 
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125881191-5"></script>
 <script>

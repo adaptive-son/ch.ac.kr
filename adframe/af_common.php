@@ -107,6 +107,7 @@ if(getcwd()=="/home/dev/adframe/mng"){
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"10.10.12.101") !== false){	//vpn용 가상IP
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"10.10.12.102") !== false){	//vpn용 가상IP
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"10.10.12.143") !== false){	//vpn용 가상IP
+	}elseif(strpos($_SERVER['REMOTE_ADDR'],"10.10.12.119") !== false){	//vpn용 가상IP
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"124.59.152.238") !== false){
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"172.50.1.") !== false){
 	}elseif(strpos($_SERVER['REMOTE_ADDR'],"172.50.2.") !== false){

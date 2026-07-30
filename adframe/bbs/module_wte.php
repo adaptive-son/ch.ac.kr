@@ -1,12 +1,15 @@
 <?
 @session_start();
-$_POST = array_map('mysql_escape_string', $_POST);
-$_GET = array_map('mysql_escape_string', $_GET);
 ini_set('max_input_vars', '1000000000000');
 
+// PHP7: mysql_* 호환 shim(_common.php -> af_common.php에서 로드)이 아래
+// mysql_escape_string() 호출보다 먼저 로드되어야 하므로 include를 앞으로 옮김
 include_once ("_common.php");
 // 메일 관련 함수 추가 ( 2017-03-03. By.Son )
 include_once ("../lib/lib.mail.function.php");
+
+$_POST = array_map('mysql_escape_string', $_POST);
+$_GET = array_map('mysql_escape_string', $_GET);
 
 $dataArr=Decode64($_POST['data']);
 $configBBS = DBarray("SELECT * FROM abbs_manager WHERE board_key='".$dataArr[Boardkey]."'"); //게시판 설정로드
@@ -136,8 +139,8 @@ if($_POST['Confirm']=="define"){
 	}
 	if(!$fm_notice){
 		$fm_notice = "N";
-        $fm_notice_start ="";
-        $fm_notice_end ="";
+        $fm_notice_start ="0000-00-00 00:00:00";
+        $fm_notice_end ="0000-00-00 00:00:00";
 	} else {
 		if($fm_notice_end) {
 			$fm_notice_end = $fm_notice_end . " 23:59:59";

@@ -10,6 +10,9 @@ define("CHAR_TYPE", "UTF-8");
 define("ADFRAME_BASIC_PATH", "/adframe");
 define("ADFRAME_ROOT_PATH", $_SERVER['DOCUMENT_ROOT'].ADFRAME_BASIC_PATH);
 
+// PHP7: ext/mysql 제거로 인한 mysql_* 전면 호출 오류 방지용 호환 shim
+require_once(ADFRAME_ROOT_PATH."/common/mysql_compat_shim.php");
+
 // 기본 상수 설정
 //define("SERVICE_DOMAIN", "dept.bist.ac.kr");
 

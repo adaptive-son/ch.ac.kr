@@ -296,8 +296,8 @@ function getThumb($param){
     imagedestroy($src['img']);
     // 썸네일 이미지 리소스 종료
     imagedestroy($dst['img']);
-    // curl 임시파일 삭제
-    if(file_exists($tmp['path'])) unlink($tmp['path']);
+    // curl 임시파일 삭제 ($tmp['path']는 외부 URL 원본일 때만 존재함)
+    if(isset($tmp['path']) && file_exists($tmp['path'])) unlink($tmp['path']);
 
     // 썸네일 파일경로 존재 여부 확인후 리턴
     return file_exists($dst['path']) ? array('bool' => true, 'src' => $dst['path']) : array('bool' => false, 'msg' => '파일 생성에 실패하였습니다.');

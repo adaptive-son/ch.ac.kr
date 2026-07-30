@@ -203,7 +203,7 @@ function get_ext($file_name) {
 // @param string $email - email address
 function is_email($email) {
     $url = trim($email);
-    if(eregi("^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$", $url)) return true;
+    if(preg_match("/^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$/i", $url)) return true; // PHP7: eregi removed -> preg_match
     else return false;
 }
 
@@ -706,7 +706,7 @@ function cutstr($msg, $cut_size, $tail="...") {
     // 계속이어쓰는 문자열을 자른다.
     $max_len = 100;
     if(strlen($msg) > $max_len)
-        if(!eregi(" ", $msg))
+        if(!preg_match("/ /", $msg)) // PHP7: eregi removed -> preg_match
             $msg = mb_substr($msg,0,$max_len,'UTF-8');
 
     for($i=0;$i<$cut_size;$i++)

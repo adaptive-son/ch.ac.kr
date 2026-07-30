@@ -1,24 +1,25 @@
 <?
 	session_start();
-	
-	$_POST = array_map('mysql_escape_string', $_POST);
-	$_GET = array_map('mysql_escape_string', $_GET);
+
+	// PHP7: mysql_escape_string() undefined here (no bootstrap include in this file,
+	// and $_POST/$_GET aren't used in any DB query below) -> array_map() silently
+	// warned and nulled out $_POST/$_GET, breaking $_GET["jsoncallback"] below. Removed.
 
 	header("Content-type: application/json");
     
-    //º¯Á¶¹æÁö
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     //if(strpos($_SERVER['HTTP_REFERER'], $_GET["SessionHost"]) == false)  exit;
 
 	/* 
-	 * ·£´ý ¹®ÀÚ¿­ »ý¼º(ÀÎ¼ö : ±æÀÌ, Å¸ÀÔ) 
-	 * ÁöÁ¤µÈ Å¸ÀÔÀÇ ¹®ÀÚ¿­·Î ÁöÁ¤µÈ ±æÀÌÀÇ ·£´ý ¹®ÀÚ¿­À» ¹ÝÈ¯ÇÑ´Ù. 
-	 * Å¸ÀÔ 0 : ¿µ¹® ´ë¼Ò¹®ÀÚ(A-Z,a-z), ¼ýÀÚ(0-9) 
-	 * Å¸ÀÔ 1 : ¿µ¹® ´ë¹®ÀÚ(A-Z), ¼ýÀÚ(0-9) 
-	 * Å¸ÀÔ 2 : ¿µ¹® ¼Ò¹®ÀÚ(a-z), ¼ýÀÚ(0-9) 
-	 * Å¸ÀÔ 3 : ¿µ¹® ´ë¹®ÀÚ(A-Z) 
-	 * Å¸ÀÔ 4 : ¿µ¹® ¼Ò¹®ÀÚ(a-z) 
-	 * Å¸ÀÔ 5 : ¼ýÀÚ(0-9) 
-	 * µðÆúÆ® : false ¹ÝÈ¯. 
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½Î¼ï¿½ : ï¿½ï¿½ï¿½ï¿½, Å¸ï¿½ï¿½) 
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½. 
+	 * Å¸ï¿½ï¿½ 0 : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½(A-Z,a-z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+	 * Å¸ï¿½ï¿½ 1 : ï¿½ï¿½ï¿½ï¿½ ï¿½ë¹®ï¿½ï¿½(A-Z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+	 * Å¸ï¿½ï¿½ 2 : ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¹ï¿½ï¿½ï¿½(a-z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+	 * Å¸ï¿½ï¿½ 3 : ï¿½ï¿½ï¿½ï¿½ ï¿½ë¹®ï¿½ï¿½(A-Z) 
+	 * Å¸ï¿½ï¿½ 4 : ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¹ï¿½ï¿½ï¿½(a-z) 
+	 * Å¸ï¿½ï¿½ 5 : ï¿½ï¿½ï¿½ï¿½(0-9) 
+	 * ï¿½ï¿½ï¿½ï¿½Æ® : false ï¿½ï¿½È¯. 
 	*/ 
 	function encode_rand_str($length, $type)
 	{
@@ -53,7 +54,7 @@
 	}
 
 
-    //¼¼¼Ç°ª ¾ÏÈ£È­
+    //ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½È£È­
     $Session_CallBack = "mem_group=".$_SESSION['MEMBER_GROUP']."&mem_uid=".$_SESSION['MEMBER_UID']."&mem_name=".$_SESSION['MEMBER_UNAME'];
     $Session_CallBack = encode_rand_str(7, 0).base64_encode($Session_CallBack).encode_rand_str(3, 0)."==".encode_rand_str(3, 0)."==".encode_rand_str(4, 0)."==".encode_rand_str(3, 0)."==||";
     //$Session_CallBack = base64_encode($Session_CallBack)."||";

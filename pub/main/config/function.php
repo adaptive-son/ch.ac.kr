@@ -7,7 +7,7 @@ function iconv8($string){
 //CMS function
 function cms_view($cms_id){
 	
-	if(empty($cms_id))	echo "<div style=' text-align:center; padding:100px 0; '>CMS ÄÚµå°¡ ¾ø½À´Ï´Ù.</div>";
+	if(empty($cms_id))	echo "<div style=' text-align:center; padding:100px 0; '>CMS ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</div>";
 
 	$CMSQue = " SELECT cms_name, damdang_name, damdang_tel, cms_text1, cms_text2, cms_text3, cms_text4, cms_text5, cms_text6, cms_date FROM cms_category WHERE cms_id='".$cms_id."' ";
 	$CMS = DBarray($CMSQue);	
@@ -29,18 +29,18 @@ function cms_view($cms_id){
 	
 	<div id="page_inc"> 
 		          <div class="page_com"> 
-		            <p class="page_h"><img src="/make_img/page/txt1.gif" width="115" height="22" alt="ÆäÀÌÁö´ã´çÀÚ ¾È³»ÀÔ´Ï´Ù."></p> 
+		            <p class="page_h"><img src="/make_img/page/txt1.gif" width="115" height="22" alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ô´Ï´ï¿½."></p> 
 		            <ul class="page_table"> 
-		              <li class="page_bn1"><img src="/make_img/page/o.gif" width="16" height="13"><strong>´ã´çÀÚ</strong> :
+		              <li class="page_bn1"><img src="/make_img/page/o.gif" width="16" height="13"><strong>ï¿½ï¿½ï¿½ï¿½ï¿½</strong> :
 		                 '.$damdang_name.'
 		              </li> 
-		              <li class="page_bn2"><img src="/make_img/page/o.gif" width="16" height="13"><strong>ÀüÈ­¹øÈ£</strong> :
+		              <li class="page_bn2"><img src="/make_img/page/o.gif" width="16" height="13"><strong>ï¿½ï¿½È­ï¿½ï¿½È£</strong> :
 		                 '.$damdang_tel.'
 		              </li> 
-		              <li class="page_bn3"><img src="/make_img/page/o.gif" width="16" height="13"><strong>ÃÖ±Ù¾÷µ¥ÀÌÆ®</strong> :
+		              <li class="page_bn3"><img src="/make_img/page/o.gif" width="16" height="13"><strong>ï¿½Ö±Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ®</strong> :
 		                '.$cms_date.'
 		              </li> 
-		              <li class="page_bn4"><a href="javascript:cms_bookmarksite()"><img src="/make_img/page/add_btn.gif" alt="Áñ°ÜÃ£±â" width="68" height="18"></a><a href="javascript:print();"><img src="../../make_img/page/print_btn.gif" alt="ÇÁ¸°Æ®" width="72" height="18"></a></li> 
+		              <li class="page_bn4"><a href="javascript:cms_bookmarksite()"><img src="/make_img/page/add_btn.gif" alt="ï¿½ï¿½ï¿½Ã£ï¿½ï¿½" width="68" height="18"></a><a href="javascript:print();"><img src="../../make_img/page/print_btn.gif" alt="ï¿½ï¿½ï¿½ï¿½Æ®" width="72" height="18"></a></li> 
 		            </ul> 
 		          </div> 
 		        </div> 
@@ -49,15 +49,15 @@ function cms_view($cms_id){
 	*/
 
 		$cms_copy = '
-				<!-- ÆäÀÌÁö ´ã´çÀÚ¾È³» -->
+				<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú¾È³ï¿½ -->
 				 <div class="fdata_wrap"> 
 		          <dl> 
-		             <dt><img src="/make_img/page/txt1.gif" alt="ÆäÀÌÁö´ã´çÀÚ ¾È³»ÀÔ´Ï´Ù."/></dt> 
+		             <dt><img src="/make_img/page/txt1.gif" alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ô´Ï´ï¿½."/></dt> 
 		             <dd> 
 		              <ul> 
-		                 <li><span class="ctit">´ã´çÀÚ : </span><span class="ctxt">'.$damdang_name.'</span></li> 
-		                 <li><span class="ctit">ÀüÈ­¹øÈ£ : </span><span class="ctxt">'.$damdang_tel.'</span></li> 
-		                 <li class="last"><span class="ctit">ÃÖ±Ù¾÷µ¥ÀÌÆ® : </span><span class="ctxt">'.$cms_date.'</span></li> 
+		                 <li><span class="ctit">ï¿½ï¿½ï¿½ï¿½ï¿½ : </span><span class="ctxt">'.$damdang_name.'</span></li> 
+		                 <li><span class="ctit">ï¿½ï¿½È­ï¿½ï¿½È£ : </span><span class="ctxt">'.$damdang_tel.'</span></li> 
+		                 <li class="last"><span class="ctit">ï¿½Ö±Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ® : </span><span class="ctxt">'.$cms_date.'</span></li> 
 		               </ul> 
 		              <div class="btn_print"><a href="#n" onclick="cms_bookmarksite()"/><img src="/make_img/page/add_btn.gif" alt="" /></a> <a href="#n" onclick="print();" ><img src="/make_img/page/print_btn.gif" alt=""/></a> </div> 
 		            </dd> 
@@ -71,7 +71,7 @@ function cms_view($cms_id){
 	  <script language="Javascript">
 		function cms_bookmarksite() {
 			var url = "http://'.$_SERVER["SERVER_NAME"].''.$_SERVER["REQUEST_URI"].'";
-			var title = "ÃáÇØº¸°Ç´ëÇÐ±³-'.$CMS[cms_name].'";
+			var title = "ï¿½ï¿½ï¿½Øºï¿½ï¿½Ç´ï¿½ï¿½Ð±ï¿½-'.$CMS[cms_name].'";
 		 
 			if (window.sidebar && window.sidebar.addPanel){
 				window.sidebar.addPanel(sidebartitle, sidebarurl,"");
@@ -83,14 +83,14 @@ function cms_view($cms_id){
 				
 			}
 			else if (navigator.appName=="Netscape") {
-				alert("<Ctrl+D>¸¦ ÀÔ·ÂÇÏ½Ã¸é Áñ°ÜÃ£±â¸¦ Ãß°¡ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.");
+				alert("<Ctrl+D>ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¸ï¿½ ï¿½ï¿½ï¿½Ã£ï¿½â¸¦ ï¿½ß°ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 		 }
 	  </script>
 	 ';
 	 
 	if(substr($cms_id,0,2) == "14"){
-		$cms_copy = ""; //ÀÔÇÐÃ³¿¡¼­ Ãâ·Â ÁßÁö ¿äÃ» 20131111
+		$cms_copy = ""; //ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» 20131111
 	}
 
 	 echo $cms_copy;
@@ -102,7 +102,7 @@ function cms_view($cms_id){
 //CMS function
 function cms_view_utf8($cms_id){
 	
-	if(empty($cms_id))	echo "<div style=' text-align:center; padding:100px 0; '>CMS ÄÚµå°¡ ¾ø½À´Ï´Ù.</div>";
+	if(empty($cms_id))	echo "<div style=' text-align:center; padding:100px 0; '>CMS ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</div>";
 
 	$CMSQue = " SELECT cms_name, damdang_name, damdang_tel, cms_text1, cms_text2, cms_text3, cms_text4, cms_text5, cms_text6, cms_date FROM cms_category WHERE cms_id='".$cms_id."' ";
 	$CMS = DBarray($CMSQue);	
@@ -128,21 +128,21 @@ function cms_view_utf8($cms_id){
 	
 
 		$cms_copy = '
-				<!-- ÆäÀÌÁö ´ã´çÀÚ¾È³» -->
+				<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú¾È³ï¿½ -->
 		         <div class="fdata_wrap"> 
 		          <dl> 
-		             <dt><img src="/make_img/page/txt1.gif" alt="ÆäÀÌÁö´ã´çÀÚ ¾È³»ÀÔ´Ï´Ù."/></dt> 
+		             <dt><img src="/make_img/page/txt1.gif" alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ô´Ï´ï¿½."/></dt> 
 		             <dd> 
 		              <ul> 
-		                 <li><span class="ctit">´ã´çÀÚ : </span><span class="ctxt">'.$damdang_name.'</span></li> 
-		                 <li><span class="ctit">ÀüÈ­¹øÈ£ : </span><span class="ctxt">'.$damdang_tel.'</span></li> 
-		                 <li class="last"><span class="ctit">ÃÖ±Ù¾÷µ¥ÀÌÆ® : </span><span class="ctxt">'.$cms_date.'</span></li> 
+		                 <li><span class="ctit">ï¿½ï¿½ï¿½ï¿½ï¿½ : </span><span class="ctxt">'.$damdang_name.'</span></li> 
+		                 <li><span class="ctit">ï¿½ï¿½È­ï¿½ï¿½È£ : </span><span class="ctxt">'.$damdang_tel.'</span></li> 
+		                 <li class="last"><span class="ctit">ï¿½Ö±Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ® : </span><span class="ctxt">'.$cms_date.'</span></li> 
 		               </ul> 
-		              <div class="btn_print"><a href="#n" onclick="cms_bookmarksite()"><img src="/make_img/page/add_btn.gif" alt="Áñ°ÜÃ£±â" /></a> <a href="#n" onclick="print();" /><img src="/make_img/page/print_btn.gif" alt="ÇÁ¸°Æ®" /></a> </div> 
+		              <div class="btn_print"><a href="#n" onclick="cms_bookmarksite()"><img src="/make_img/page/add_btn.gif" alt="ï¿½ï¿½ï¿½Ã£ï¿½ï¿½" /></a> <a href="#n" onclick="print();" /><img src="/make_img/page/print_btn.gif" alt="ï¿½ï¿½ï¿½ï¿½Æ®" /></a> </div> 
 		            </dd> 
 		           </dl> 
 		        </div> 
-				<!-- ÆäÀÌÁö ´ã´çÀÚ¾È³» -->
+				<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú¾È³ï¿½ -->
 		';
 		
 	
@@ -150,7 +150,7 @@ function cms_view_utf8($cms_id){
 	  <script language="Javascript">
 		function cms_bookmarksite() {
 			var url = "http://'.$_SERVER["SERVER_NAME"].''.$_SERVER["REQUEST_URI"].'";
-			var title = "ÃáÇØº¸°Ç´ëÇÐ±³-'.$CMS[cms_name].'";
+			var title = "ï¿½ï¿½ï¿½Øºï¿½ï¿½Ç´ï¿½ï¿½Ð±ï¿½-'.$CMS[cms_name].'";
 		 
 			if (window.sidebar && window.sidebar.addPanel){
 				window.sidebar.addPanel(sidebartitle, sidebarurl,"");
@@ -162,7 +162,7 @@ function cms_view_utf8($cms_id){
 				
 			}
 			else if (navigator.appName=="Netscape") {
-				alert("<Ctrl+D>¸¦ ÀÔ·ÂÇÏ½Ã¸é Áñ°ÜÃ£±â¸¦ Ãß°¡ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.");
+				alert("<Ctrl+D>ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¸ï¿½ ï¿½ï¿½ï¿½Ã£ï¿½â¸¦ ï¿½ß°ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 		 }
 	  </script>
@@ -173,7 +173,7 @@ function cms_view_utf8($cms_id){
 	
 }
 
-//°Ô½ÃÆÇ »ý¼º
+//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 function create_bbs($board_key, $category_no="0", $SecAdmin="0", $bbs_userqry="", $bbs_subqry="", $bbs_subcolumnqry="",$encode="euckr"){
 	global $bbs;
 	
@@ -184,29 +184,29 @@ function create_bbs($board_key, $category_no="0", $SecAdmin="0", $bbs_userqry=""
 
 
 
-//°Ô½ÃÆÇ ÃÖ±Ù°Ô½Ã¹° °ª ¹è¿­¿¡ ´ã±â
+//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ö±Ù°Ô½Ã¹ï¿½ ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½
 function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $cut_content=0, $debugmod=0){
 	mysql_select_db("ch_new");
-//BBS_GetList("°Ô½ÃÆÇ Å×ÀÌºí¸í(fullname)", "°Ô½ÃÆÇÄÚµå", º¸µåÅ¸ÀÔ, ¹è¿­¿¡ ´ãÀ» ÃÖ±Ù°Ô½Ã¹° ¼ö, ³»¿ë±Û ¼ö:htmlÇü½ÄÀÌ¶ó 300ÀÌ»óÀ¸·Î Àâ¾Æ¾ß...);
+//BBS_GetList("ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½(fullname)", "ï¿½Ô½ï¿½ï¿½ï¿½ï¿½Úµï¿½", ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½, ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±Ù°Ô½Ã¹ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½:htmlï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ 300ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾ï¿½...);
 /*
-	$board_type=0 : ÀÏ¹Ý
-	$board_type=1 : °¶·¯¸®
+	$board_type=0 : ï¿½Ï¹ï¿½
+	$board_type=1 : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	$board_type=2 : UCC
 
-	[»ç¿ë¹æ¹ý]
+	[ï¿½ï¿½ï¿½ï¿½ï¿½]
 	$newlist1 = BBS_GetList("bbs_com1", "3010", 0, 5, 300);
 	
 	for($i=0; $i < count($newlist1); $i++){
 		
-		//echo $newlist1[$i][title]."<br>"; //Á¦¸ñ
+		//echo $newlist1[$i][title]."<br>"; //ï¿½ï¿½ï¿½ï¿½
 		
-		//echo $newlist1[$i][content]."<br>"; //³»¿ë
+		//echo $newlist1[$i][content]."<br>"; //ï¿½ï¿½ï¿½ï¿½
 		
-		//echo $newlist1[$i][linkdata]."<br>"; //¸µÅ©µ¥ÀÌÅ¸  <a href='ÆÄÀÏ¸í?bbs=see&data=$newlist1[$i][linkdata]'>
-		//echo $newlist1[$i][file_src]."<br>"; //ÆÄÀÏ°æ·Î <img src='$newlist1[$i][file_src]'> width height´Â ÁöÁ¤
+		//echo $newlist1[$i][linkdata]."<br>"; //ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½Å¸  <a href='ï¿½ï¿½ï¿½Ï¸ï¿½?bbs=see&data=$newlist1[$i][linkdata]'>
+		//echo $newlist1[$i][file_src]."<br>"; //ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ <img src='$newlist1[$i][file_src]'> width heightï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
-		//echo $newlist1[$i][datetime]."<br>"; //µî·ÏÀÏÀÚ
-		//echo $newlist1[$i][newimg]."<br>"; //»õ±Û ¾ÆÀÌÄÜ
+		//echo $newlist1[$i][datetime]."<br>"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//echo $newlist1[$i][newimg]."<br>"; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	}
 
@@ -234,17 +234,17 @@ function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $c
 		
 		$bbslimit[$i][idx] = $row[idx];
 		
-		//°Ô½ÃÆÇ Á¦¸ñ
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		$bbslimit[$i][title] = $row[title];
 		
-		//°Ô½ÃÆÇ µî·ÏÀÏÀÚ
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$bbslimit[$i][datetime] = substr($row[writeday],0,10);
 		
-		//°Ô½ÃÆÇ »õ±Û
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(BetweenPeriod($row[writeday],"1") > 0) $bbslimit[$i][newimg] = "<img src='/bbs/images/new.gif' border='0' align='absmiddle' alt='' />";
 		else $bbslimit[$i][newimg] = "";
 		
-		//¸µÅ© µ¥ÀÌÅ¸
+		//ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½Å¸
 		$encode_str = "pagecnt=0&idx=".$row[idx]."&letter_no=&offset=";
 		$encode_str.= "&search=".$search."&searchstring=".$searchstring;
 		$encode_str.= "&Boardkey=".$row[code]."&Sub_No=".$row[sub_no]."&DBTable=".$board_table;
@@ -252,7 +252,7 @@ function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $c
 		
 		$bbslimit[$i][linkdata] = $list_data;
 		
-		//Å¸ÀÔº° ÀÌ¹ÌÁö°æ·Î
+		//Å¸ï¿½Ôºï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($board_type == 1){
 			$bbslimit[$i][file_idx] = $row[file_idx];
 			
@@ -272,7 +272,7 @@ function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $c
 		}
 		
 		
-		//³»¿ë Ãâ·Â½Ã
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â½ï¿½
 		if($cut_content > 0){
 			$bbs_content = str_replace("&nbsp;", "", $row[content]);
 			$bbs_content = StringCut(trim(strip_tags($bbs_content)), $cut_content);
@@ -286,9 +286,9 @@ function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $c
 }
 
 
-//°Ô½ÃÆÇ ÃÖ±Ù°Ô½Ã¹° °ª ¹è¿­¿¡ ´ã±â
+//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ö±Ù°Ô½Ã¹ï¿½ ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½
 function BBS_GetList2($board_table , $board_code, $board_type=0, $limit_num=5, $cut_content=0, $debugmod=0){
-	//DBº¯°æ
+	//DBï¿½ï¿½ï¿½ï¿½
 	mysql_select_db("chipsi");
 	if($board_type == 1)
 		//$bbs_subcolumnqry = ", (select idx from ".$board_table."_file where file_type > 0 and file_type < 4 and up_file_idx = A.up_file_idx limit 0,1) as file_idx";
@@ -312,17 +312,17 @@ function BBS_GetList2($board_table , $board_code, $board_type=0, $limit_num=5, $
 		
 		$bbslimit[$i][idx] = $row[idx];
 		
-		//°Ô½ÃÆÇ Á¦¸ñ
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		$bbslimit[$i][title] = $row[title];
 		
-		//°Ô½ÃÆÇ µî·ÏÀÏÀÚ
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$bbslimit[$i][datetime] = substr($row[writeday],0,10);
 		
-		//°Ô½ÃÆÇ »õ±Û
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(BetweenPeriod($row[writeday],"1") > 0) $bbslimit[$i][newimg] = "<img src='/bbs/images/new.gif' border='0' align='absmiddle' alt='' />";
 		else $bbslimit[$i][newimg] = "";
 		
-		//¸µÅ© µ¥ÀÌÅ¸
+		//ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½Å¸
 		$encode_str = "pagecnt=0&idx=".$row[idx]."&letter_no=&offset=";
 		$encode_str.= "&search=".$search."&searchstring=".$searchstring;
 		$encode_str.= "&Boardkey=".$row[code]."&Sub_No=".$row[sub_no]."&DBTable=".$board_table;
@@ -330,7 +330,7 @@ function BBS_GetList2($board_table , $board_code, $board_type=0, $limit_num=5, $
 		
 		$bbslimit[$i][linkdata] = $list_data;
 		
-		//Å¸ÀÔº° ÀÌ¹ÌÁö°æ·Î
+		//Å¸ï¿½Ôºï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($board_type == 1){
 			$bbslimit[$i][file_idx] = $row[file_idx];
 			
@@ -350,7 +350,7 @@ function BBS_GetList2($board_table , $board_code, $board_type=0, $limit_num=5, $
 		}
 		
 		
-		//³»¿ë Ãâ·Â½Ã
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â½ï¿½
 		if($cut_content > 0){
 			$bbs_content = str_replace("&nbsp;", "", $row[content]);
 			$bbs_content = StringCut(trim(strip_tags($bbs_content)), $cut_content);
@@ -378,13 +378,13 @@ function getSendMail($to, $from, $subject, $message, $html)
 
 	/*  your configuration here  */
 	
-	// ÃÖÁ¾ ¾÷µ¥ÀÌÆ® : 2011 07 04 : ¿¤Áö À¯ÇÃ·¯½º smtp ·Î º¯°æ (Æ÷Æ®, ¾ÆÀÌÇÇ ¿­À½)
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® : 2011 07 04 : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ smtp ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Æ®, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
-	$smtpServer = "¾ÆÀÌÇÇ"; //ip accepted as well
+	$smtpServer = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"; //ip accepted as well
 	$port = "25"; // should be 25 by default
 	$timeout = "30"; //typical timeout. try 45 for slow servers
-	$username = "¾ÆÀÌµð"; //the login for your smtp
-	$password = "ÆÐ½º¿öµå"; //the pass for your smtp
+	$username = "ï¿½ï¿½ï¿½Ìµï¿½"; //the login for your smtp
+	$password = "ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½"; //the pass for your smtp
 	$localhost = "127.0.0.1"; //this seems to work always
 	$newLine = "\r\n"; //var just for nelines in MS
 	$secure = 0; //change to 1 if you need a secure connect
@@ -400,7 +400,7 @@ function getSendMail($to, $from, $subject, $message, $html)
 	$newLine = "\r\n"; //var just for nelines in MS
 	$secure = 0; //change to 1 if you need a secure connect
 */
-//smtp ¹æ½Ä way_nam :: ±îÆä24ÀÇ smtp ¸¦ È°¿ëÇÏ¿© º¸³À´Ï´Ù. (´ë·®¸ÞÀÏ¿¡´Â »ç¿ëÇÏ¸é ¾È‰?ÇÏ·ç ¹ß¼ÛÁ¦ÇÑÀÖÀ½)
+//smtp ï¿½ï¿½ï¿½ way_nam :: ï¿½ï¿½ï¿½ï¿½24ï¿½ï¿½ smtp ï¿½ï¿½ È°ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. (ï¿½ë·®ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½È‰?ï¿½Ï·ï¿½ ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	
 	/*  you shouldn't need to mod anything else */
 	
@@ -486,11 +486,11 @@ function getSendMail($to, $from, $subject, $message, $html)
 	return($logArray);
 }
 
-//¿ÀÅä¸µÅ©
+//ï¿½ï¿½ï¿½ä¸µÅ©
 function url_auto_link($str)
 {
 
-    // ¼Óµµ Çâ»ó 031011
+    // ï¿½Óµï¿½ ï¿½ï¿½ï¿½ 031011
     $str = preg_replace("/&lt;/", "\t_lt_\t", $str);
     $str = preg_replace("/&gt;/", "\t_gt_\t", $str);
     $str = preg_replace("/&amp;/", "&", $str);
@@ -498,7 +498,7 @@ function url_auto_link($str)
     $str = preg_replace("/&nbsp;/", "\t_nbsp_\t", $str);
     $str = preg_replace("/([^(http:\/\/)]|\(|^)(www\.[^[:space:]]+)/i", "\\1<A HREF=\"http://\\2\" TARGET='_blank'>\\2</A>", $str);
     $str = preg_replace("/([^(HREF=\"?'?)|(SRC=\"?'?)]|\(|^)((http|https|ftp|telnet|news|mms):\/\/[a-zA-Z0-9\.-]+\.[\xA1-\xFEa-zA-Z0-9\.:&#=_\?\/~\+%@;\-\|\,]+)/i", "\\1<A HREF=\"\\2\" TARGET='_blank'>\\2</A>", $str);
-    // ÀÌ¸ÞÀÏ Á¤±ÔÇ¥Çö½Ä ¼öÁ¤ 061004
+    // ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 061004
     //$str = preg_replace("/(([a-z0-9_]|\-|\.)+@([^[:space:]]*)([[:alnum:]-]))/i", "<a href='mailto:\\1'>\\1</a>", $str);
     $str = preg_replace("/([0-9a-z]([-_\.]?[0-9a-z])*@[0-9a-z]([-_\.]?[0-9a-z])*\.[a-z]{2,4})/i", "<a href='mailto:\\1'>\\1</a>", $str);
     $str = preg_replace("/\t_nbsp_\t/", "&nbsp;" , $str);
@@ -509,7 +509,7 @@ function url_auto_link($str)
 }
 
 
-//ÆäÀÌÁö ÀÌµ¿ÇÔ¼ö
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ô¼ï¿½
 function ReFresh($href)
 {
    echo("<meta http-equiv='Refresh' content='0; URL=$href'>");
@@ -595,7 +595,7 @@ function OnlyMsgView($Msg)
 }
 
 
-//$n °³ÀÇ ¹®ÀÚ¿­°ú '...' ºÙÀÌ±â ÇÔ¼ö
+//$n ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ '...' ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½Ô¼ï¿½
 function StringCut($string,$n)  //$n : Cutting String Number
 {
 	if($n%2)
@@ -625,7 +625,7 @@ function StringCut($string,$n)  //$n : Cutting String Number
 }
 
 
-//$n °³ÀÇ ¹®ÀÚ¿­°ú '...' ¾ø´Â ÇÔ¼ö 
+//$n ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ '...' ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ 
 function OnlyCut($string,$n)  //$n : Cutting String Number
 {
 	if($n%2)
@@ -652,7 +652,7 @@ function OnlyCut($string,$n)  //$n : Cutting String Number
 	}
 }
 
-// µð·ºÅä¸®Á¤º¸ ·Îµå
+// ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½
 function get_dir_list($dir)
 {
     $result_array = array();
@@ -689,22 +689,22 @@ function get_file_list($path, $arr=array()){
     return $arr;
 }
 
-//Post, Get¹æ½ÄÀ¸·Î ³Ñ¾î¿Â °ª Äõ¸®·Î º¯È¯
+//Post, Getï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 function setQuery ($arr, $str) {
 	$r_str = '';
 
-	// $arr : $_POST È¤Àº $_GET, ¹è¿­ ¹Ýº¹
+	// $arr : $_POST È¤ï¿½ï¿½ $_GET, ï¿½è¿­ ï¿½Ýºï¿½
 	foreach ($arr as $key=>$val) {
 
-		// input name ÀÌ ÁöÁ¤ÇÑ ¹®ÀÚ¿­·Î ½ÃÀÛµÇ¸é Àû¿ë ÇÏ°í ±× ¹®ÀÚ¿­Àº »èÁ¦ 
-		//if (@ereg ("^$str", $key)) { // php 5.3ÀÌÈÄ µðÇÁ·¹ÄÉÀÌÆ® 6.0ºÎÅÍ»èÁ¦
+		// input name ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÇ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+		//if (@ereg ("^$str", $key)) { // php 5.3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® 6.0ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 		if(preg_match("/^$str/", $key)) {
 			
-			//$key = @ereg_replace ("^$str", "", $key);  // php 5.3ÀÌÈÄ µðÇÁ·¹ÄÉÀÌÆ® 6.0ºÎÅÍ»èÁ¦
+			//$key = @ereg_replace ("^$str", "", $key);  // php 5.3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® 6.0ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 			$key = preg_replace ("/^$str/", "", $key);
 
-			// ¹®ÀÚ¿­À» Á¦°ÅÇÑ Å°°ªÀÌ ¾ÆÁ÷ Á¸ÀçÇÏ¸é ¸®ÅÏÇØÁÙ ¹®ÀÚ¿­¿¡ ¿¬°áÇÕ´Ï´Ù.
-			// Ã³À½Àº xxx = 'xxx' ·Î µÎ¹øÂ° ºÎÅÍ´Â ,xxx = 'xxx'·Î ÀÌ¾îÁÝ´Ï´Ù.
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+			// Ã³ï¿½ï¿½ï¿½ï¿½ xxx = 'xxx' ï¿½ï¿½ ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½Í´ï¿½ ,xxx = 'xxx'ï¿½ï¿½ ï¿½Ì¾ï¿½ï¿½Ý´Ï´ï¿½.
 			if (!empty($key)) { 
 				if (!empty($r_str)) {
 					$r_str .= ', ';
@@ -718,8 +718,8 @@ function setQuery ($arr, $str) {
    return $r_str;
 }
 
-/********  2007.03. 14 Ãß°¡ ÇÔ¼ö End *****************/
-// ÆÄÀÏ »çÀÌÁî¸¦ kb, mb¿¡ ¸ÂÃß¾î¼­ º¯È¯ÇØ¼­ ¸®ÅÏ
+/********  2007.03. 14 ï¿½ß°ï¿½ ï¿½Ô¼ï¿½ End *****************/
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¸¦ kb, mbï¿½ï¿½ ï¿½ï¿½ï¿½ß¾î¼­ ï¿½ï¿½È¯ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 function getfilesize($size) {
     if(!$size) return "0 Byte";
 	if($size<1024) { 
@@ -786,7 +786,7 @@ function get_ext($file_name) {
 // @param string $email - email address
 function is_email($email) {
 	$url = trim($email);
-	if(eregi("^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$", $url)) return true;
+	if(preg_match("/^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$/i", $url)) return true; // PHP7: eregi removed -> preg_match
 	else return false;
 }
 
@@ -818,8 +818,8 @@ function cut_str($string, $cut, $jum='') {
 }
 
 
-/********  2007.03. 14 Ãß°¡ ÇÔ¼ö Start ***************/
-// Get ¹æ½Ä º¯¼ö ¾ÏÈ£È­ ÇÔ¼ö
+/********  2007.03. 14 ï¿½ß°ï¿½ ï¿½Ô¼ï¿½ Start ***************/
+// Get ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£È­ ï¿½Ô¼ï¿½
 function Encode64($data)
 {
 	//global $EncoderKey;
@@ -829,7 +829,7 @@ function Encode64($data)
 	return base64_encode($data)."||";
 }
 
-// Get¹æ½ÄÀ¸·Î ³Ñ¾î¿Â º¯¼ö¸¦ DecodeÇÏ´Â ÇÔ¼ö
+// Getï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Decodeï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 function Decode64($sending_data){
 	
 	//global $EncoderKey;
@@ -848,15 +848,15 @@ function Decode64($sending_data){
 
 
 /* 
- * ·£´ý ¹®ÀÚ¿­ »ý¼º(ÀÎ¼ö : ±æÀÌ, Å¸ÀÔ) 
- * ÁöÁ¤µÈ Å¸ÀÔÀÇ ¹®ÀÚ¿­·Î ÁöÁ¤µÈ ±æÀÌÀÇ ·£´ý ¹®ÀÚ¿­À» ¹ÝÈ¯ÇÑ´Ù. 
- * Å¸ÀÔ 0 : ¿µ¹® ´ë¼Ò¹®ÀÚ(A-Z,a-z), ¼ýÀÚ(0-9) 
- * Å¸ÀÔ 1 : ¿µ¹® ´ë¹®ÀÚ(A-Z), ¼ýÀÚ(0-9) 
- * Å¸ÀÔ 2 : ¿µ¹® ¼Ò¹®ÀÚ(a-z), ¼ýÀÚ(0-9) 
- * Å¸ÀÔ 3 : ¿µ¹® ´ë¹®ÀÚ(A-Z) 
- * Å¸ÀÔ 4 : ¿µ¹® ¼Ò¹®ÀÚ(a-z) 
- * Å¸ÀÔ 5 : ¼ýÀÚ(0-9) 
- * µðÆúÆ® : false ¹ÝÈ¯. 
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½Î¼ï¿½ : ï¿½ï¿½ï¿½ï¿½, Å¸ï¿½ï¿½) 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½. 
+ * Å¸ï¿½ï¿½ 0 : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½(A-Z,a-z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+ * Å¸ï¿½ï¿½ 1 : ï¿½ï¿½ï¿½ï¿½ ï¿½ë¹®ï¿½ï¿½(A-Z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+ * Å¸ï¿½ï¿½ 2 : ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¹ï¿½ï¿½ï¿½(a-z), ï¿½ï¿½ï¿½ï¿½(0-9) 
+ * Å¸ï¿½ï¿½ 3 : ï¿½ï¿½ï¿½ï¿½ ï¿½ë¹®ï¿½ï¿½(A-Z) 
+ * Å¸ï¿½ï¿½ 4 : ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¹ï¿½ï¿½ï¿½(a-z) 
+ * Å¸ï¿½ï¿½ 5 : ï¿½ï¿½ï¿½ï¿½(0-9) 
+ * ï¿½ï¿½ï¿½ï¿½Æ® : false ï¿½ï¿½È¯. 
 */ 
 function rand_str($length, $type)
 {
@@ -890,23 +890,23 @@ function rand_str($length, $type)
     return $string; 
 } 
 
-//====================== ÆäÀÌÁö ³ª´©±â ======================//
+//====================== ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ======================//
 function pageLink($args) {
 	//if($args['total_row'] == 0) $args['total_row'] = 1;
 	//print_r($args);
-	$tp = @floor(($args['total_row']-1)/$args['row_num'] +1 ); //(TotalPage)ÀüÃ¼ ÆäÀÌÁö ¼ö
+	$tp = @floor(($args['total_row']-1)/$args['row_num'] +1 ); //(TotalPage)ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	if($tp == 0) $tp = 1;
-	$sp = (floor(($args['p']-1)/$args['page'])) * $args['page'] + 1; //ÆäÀÌÁö ¼ýÀÚ Ç¥½Ã --> ½ÃÀÛ
-	$ep = $sp + $args['page']; //ÆäÀÌÁö ¼ýÀÚ Ç¥½Ã --> ³¡
+	$sp = (floor(($args['p']-1)/$args['page'])) * $args['page'] + 1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ --> ï¿½ï¿½ï¿½ï¿½
+	$ep = $sp + $args['page']; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ --> ï¿½ï¿½
 	//echo $tp;
 
-	if($tp < $ep) { //³ªÅ¸³¾ ¸®½ºÆ® ÆäÀÌÁö ¼ö°¡ ±âº» ÆäÀÌÁö Ç¥½Ã ¼öº¸´Ù ÀÛÀ» °æ¿ì
+	if($tp < $ep) { //ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		$ep = $tp + 1;	
 		$disable_next = 1;
 	}
 	//$prev ; 
 	//$prev = $sp - 1;
-	$prev = $sp - ($args['page']);	// ÀÌÀü ÆäÀÌÁö ¸®½ºÆ® Á¦ÀÏ Ã¹ÆäÀÌÁö·Î °¡µµ·Ï ¼öÁ¤(2005.05.18 ±èÃ¢±Ù)
+	$prev = $sp - ($args['page']);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(2005.05.18 ï¿½ï¿½Ã¢ï¿½ï¿½)
 	$next = $sp + $args['page'];
 	if($sp != 1) {
 		$_prev = $args['url'] . '?' .$args['param']."&p=".$prev;
@@ -950,7 +950,7 @@ function pageLink($args) {
 	return $page;
 }
 
-function script($script) {	// ÀÚ¹Ù½ºÅ©¸³Æ® ½ÇÇà, ¹è¿­ÀÌ µé¾î¿À¸é ÀÏÀÏÀÌ ½ÇÇà
+function script($script) {	// ï¿½Ú¹Ù½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½, ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	echo "<script>\n";
 	if(is_array($script)) {
 		for($i=0; $i<count($script); $i++) {
@@ -963,7 +963,7 @@ function script($script) {	// ÀÚ¹Ù½ºÅ©¸³Æ® ½ÇÇà, ¹è¿­ÀÌ µé¾î¿À¸é ÀÏÀÏÀÌ ½ÇÇà
 }
 
 
-//ÇöÀç½Ã°£°ú Æ¯Á¤ÀÏ »çÀÌÀÇ ±â°£
+//ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â°£
 function BetweenPeriod($datetime,$periodDay)
 {//2003-02-19 11:32:15
 	$now = time();
@@ -971,7 +971,7 @@ function BetweenPeriod($datetime,$periodDay)
 	$dayArr	= explode("-",substr($datetime,0,10));
 
 	$mktime = mktime($timeArr[0],$timeArr[1],$timeArr[2],$dayArr[1],$dayArr[2],$dayArr[0]);
-	$period	= $periodDay*24*60*60;		//±â°£°è»ê
+	$period	= $periodDay*24*60*60;		//ï¿½â°£ï¿½ï¿½ï¿½
 
 	if($now >$mktime && $now < ($mktime+$period))
 		return 1;
@@ -981,7 +981,7 @@ function BetweenPeriod($datetime,$periodDay)
 		return 0;
 }
 
-// °èÃþÇü Â÷Æ® ¸¸µé±â ÇÔ¼ö .. Àç±ÍÇÔ¼ö
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ .. ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½
 /*
 function mk_tree($chart_no='') {
 	global $xdb, $tree_table;
@@ -1011,11 +1011,11 @@ function mk_tree($chart_no='') {
 */
 
 #-----------------------------------------------------------------------------
-# @Function ¸í    : readHtml
-# @¿ªÇÒ           : HMTLÈ­ÀÏÀ» ÀÐ¾î º¯¼ö¿¡ ÇÒ´ç
+# @Function ï¿½ï¿½    : readHtml
+# @ï¿½ï¿½ï¿½ï¿½           : HMTLÈ­ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½
 # @parameter
-#		$readfile   	: ÀÐÀ» È­ÀÏ¸í
-# @Return         : ÀÐÀº È­ÀÏÀÇ ¹®ÀÚ¿­
+#		$readfile   	: ï¿½ï¿½ï¿½ï¿½ È­ï¿½Ï¸ï¿½
+# @Return         : ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
 #-----------------------------------------------------------------------------
 function readHtml($readfile)
 {
@@ -1028,20 +1028,20 @@ function readHtml($readfile)
 	}
 	else
 	{
-		$rtStr = "<h1>Warning</h1><hr>ÀÐÀ» È­ÀÏÀÌ ¾ø°Å³ª È­ÀÏ¸íÀÌ Àß¸ø ÁöÁ¤µÇ¾ú½À´Ï´Ù.";
-		$rtStr .= "<br>È­ÀÏ¸íÀ» È®ÀÎÇÏ½Ê½Ã¿À!";
+		$rtStr = "<h1>Warning</h1><hr>ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½ È­ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
+		$rtStr .= "<br>È­ï¿½Ï¸ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï½Ê½Ã¿ï¿½!";
 		$rtStr .= "<hr><font color=red>$readfile</font>";
 		return $rtStr;
 	}
 }
 #-----------------------------------------------------------------------------
-# @Function ¸í    : tag2str
-# @¿ªÇÒ           : tag¸¦ »ý¼ºÇÑ ¹®ÀÚ¿­·Î Ä¡È¯
+# @Function ï¿½ï¿½    : tag2str
+# @ï¿½ï¿½ï¿½ï¿½           : tagï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Ä¡È¯
 # @parameter
-#		$srcStr   	  : ¿øº» ¹®ÀÚ¿­
-#		$tagStr   	  : º¯È¯ÇÒ tag ¸í
-#		$changeStr   	: º¯È¯ÇÒ ¹®ÀÚ¿­
-# @Return         : º¯È¯ÇÑ ¹®ÀÚ¿­
+#		$srcStr   	  : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+#		$tagStr   	  : ï¿½ï¿½È¯ï¿½ï¿½ tag ï¿½ï¿½
+#		$changeStr   	: ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+# @Return         : ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
 #-----------------------------------------------------------------------------
 function tag2str_1($srcStr,$tagStr,$changeStr)
 {
@@ -1060,13 +1060,13 @@ function tag2str_1($srcStr,$tagStr,$changeStr)
 	}
 }
 #-----------------------------------------------------------------------------
-# @Function ¸í    : tag2str
-# @¿ªÇÒ           : tag¸¦ »ý¼ºÇÑ ¹®ÀÚ¿­·Î Ä¡È¯
+# @Function ï¿½ï¿½    : tag2str
+# @ï¿½ï¿½ï¿½ï¿½           : tagï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Ä¡È¯
 # @parameter
-#		$srcStr   	  : ¿øº» ¹®ÀÚ¿­
-#		$tagStr   	  : º¯È¯ÇÒ tag ¸í
-#		$changeStr   	: º¯È¯ÇÒ ¹®ÀÚ¿­
-# @Return         : º¯È¯ÇÑ ¹®ÀÚ¿­
+#		$srcStr   	  : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+#		$tagStr   	  : ï¿½ï¿½È¯ï¿½ï¿½ tag ï¿½ï¿½
+#		$changeStr   	: ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+# @Return         : ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
 #-----------------------------------------------------------------------------
 function tag2str($srcStr,$tagStr,$changeStr)
 {
@@ -1086,11 +1086,11 @@ function tag2str($srcStr,$tagStr,$changeStr)
 	return $srcStr;
 }
 #-----------------------------------------------------------------------------
-# @Function ¸í    : initHtmlTable
-# @¿ªÇÒ           : HTMLÀÇ Å×ÀÌºíÀ» ÃÊ±âÈ­
+# @Function ï¿½ï¿½    : initHtmlTable
+# @ï¿½ï¿½ï¿½ï¿½           : HTMLï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 # @parameter
-#		$html_ini   	: ÃÊ±âÈ­ÇÒ Å×ÀÌºí¼³Á¤È­ÀÏ
-# @Return         : html_table,html_t1,html_2¸¦ Àü¿ªº¯¼ö·Î ÇÒ´ç
+#		$html_ini   	: ï¿½Ê±ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½
+# @Return         : html_table,html_t1,html_2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½
 #-----------------------------------------------------------------------------
 function initHtmlTable($html_ini)
 {
@@ -1123,10 +1123,10 @@ function initHtmlTable($html_ini)
 	}
 }
 #-----------------------------------------------------------------------------
-# @Function ¸í    : Thumnail
-# @¿ªÇÒ           : ½æ³×ÀÏ ÀÌ¹ÌÁö ¸¸µé±â
+# @Function ï¿½ï¿½    : Thumnail
+# @ï¿½ï¿½ï¿½ï¿½           : ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 #-----------------------------------------------------------------------------
-//½æ³×ÀÏ function
+//ï¿½ï¿½ï¿½ï¿½ï¿½ function
 function Thumnail($file, $save_filename, $save_path, $max_width, $max_height)
 {
        $img_info = getImageSize($file);
@@ -1228,7 +1228,7 @@ function imgResize($file_path,$file,$max_w,$max_h){
 	return $img;
 }
 
-// ¸ÞÀÏÀü¼ÛÇÔ¼ö
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½
 function mailsend($fromname,$frommail,$tomail,$subject,$msg){
 	$headers = "Return-Path: <".$frommail.">\n"; 
 	$headers .= "From: ".$fromname." <".$frommail.">\n";
@@ -1236,7 +1236,7 @@ function mailsend($fromname,$frommail,$tomail,$subject,$msg){
 	$headers .= "X-Mailer: PHP\n"; // mailer
 	$headers .= "X-Priority: 1\n"; // Urgent message!
 
-	// ¿¡·¯ ¹ß»ý½Ã ¹Ý¼Û ÁÖ¼Ò
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½Ý¼ï¿½ ï¿½Ö¼ï¿½
 	$headers .= "Reply-To: ".$fromname." <".$frommail.">\n";
 	$headers .= "MIME-Version: 1.0\n";
 
@@ -1257,17 +1257,19 @@ function mailsend24($fromname,$frommail,$toname,$tomail,$subject,$msg,$mode){
 		$header = "POST /sendmail_html.asp HTTP/1.1\r\n";
 	$header.= "Host: intra.adbank.co.kr\r\n";
 	$header .= 'Content-Type: application/x-www-form-urlencoded'."\r\n";
-	$header .= 'Connection: close'."\r\n";	// KeepAlive¸¦ Çã¿ëÇÏÁö ¾ÊÀ½
+	$header .= 'Connection: close'."\r\n";	// KeepAliveï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	$header .= 'Content-Length: ' . strlen($post_data) . "\r\n\r\n";
 	$header = $header.$post_data;
 
-	$client_socket = fsockopen("211.175.207.24", 80, &$errno, &$errmsg);
+	$errno = 0;
+	$errmsg = "";
+	$client_socket = fsockopen("211.175.207.24", 80, $errno, $errmsg); // PHP7: call-time pass-by-reference(&) ì œê±°ë¨
 	fwrite($client_socket, $header);
 	fclose($client_socket);	
 }
 
-/********  2007.03. 14 Ãß°¡ ÇÔ¼ö End *****************/
-// ÆÄÀÏ »çÀÌÁî¸¦ kb, mb¿¡ ¸ÂÃß¾î¼­ º¯È¯ÇØ¼­ ¸®ÅÏ
+/********  2007.03. 14 ï¿½ß°ï¿½ ï¿½Ô¼ï¿½ End *****************/
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¸¦ kb, mbï¿½ï¿½ ï¿½ï¿½ï¿½ß¾î¼­ ï¿½ï¿½È¯ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 function get_filesize_size($size) {
 	if(!$size) return "0 Byte";
 	
@@ -1285,29 +1287,29 @@ function get_filesize_size($size) {
 }
 
 
-// ÆäÀÌÁö ÄÆ¢¸ 1 [2][3][4][5] ¢º				
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¢ï¿½ 1 [2][3][4][5] ï¿½ï¿½				
 class PList
 {
-	var $g_pageName;		//¼³Á¤ÆÄÀÏ¸í ex) ****.php, OOOO.php
+	var $g_pageName;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ex) ****.php, OOOO.php
 
-	var $g_pageCnt;			//ÇöÀçÆäÀÌÁö ¹øÈ£
-	var $g_offset;			//µ¥ÀÌÅ¸º£ÀÌ½º ½ÃÀÛ Æ÷ÀÎÆ® ¹øÈ£
-	var $g_numRows;			//ÃÑ°Ô½Ã¹° ¼ö
-	var $g_pageBlock;		//ºí·°´ç ÆäÀÌÁö ¼ö ex) 5 : [1][2][3][4][5]
-	var $g_limit;			//ÆäÀÌÁö´ç Ãâ·Â °Ô½Ã¹° ¼ö
-	var $g_search;			//°Ë»ö ÄÃ·³ ex)name,title,...
-	var $g_searchstring;	//°Ë»ö¾î
+	var $g_pageCnt;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	var $g_offset;			//ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È£
+	var $g_numRows;			//ï¿½Ñ°Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_pageBlock;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex) 5 : [1][2][3][4][5]
+	var $g_limit;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_search;			//ï¿½Ë»ï¿½ ï¿½Ã·ï¿½ ex)name,title,...
+	var $g_searchstring;	//ï¿½Ë»ï¿½ï¿½ï¿½
 
-	var $g_option;			//Ãß°¡ get °ª  ex) &part=$part
+	var $g_option;			//ï¿½ß°ï¿½ get ï¿½ï¿½  ex) &part=$part
 			
-	var $g_pniView;			//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ ex) true,1 : Ç¥½Ã  false,0 : ¹ÌÇ¥½Ã
-	var $g_pIcon;			//ÀÌÀü ¾ÆÀÌÄÜ
-	var $g_nIcon;			//´ÙÀ½ ¾ÆÀÌÄÜ
+	var $g_pniView;			//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) true,1 : Ç¥ï¿½ï¿½  false,0 : ï¿½ï¿½Ç¥ï¿½ï¿½
+	var $g_pIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	var $g_nIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// CList( char* pagename, int pagecnt, int offset, int numrows, int pageblock, int limit, char* search, char* searchstring, char* option)
-	// CList(ÆäÀÌÁö¸í, ÇöÀçÆäÀÌÁö¹øÈ£, DB½ÃÀÛoffset, ÃÑ°Ô½Ã¹°¼ö, ºí·°´çÆäÀÌÁö¼ö, ÆäÀÌÁö´ç°Ô½Ã¹°¼ö, °Ë»öÄÃ·³, °Ë»ö¾î, Ãß°¡get°ª)
+	// CList(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£, DBï¿½ï¿½ï¿½ï¿½offset, ï¿½Ñ°Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ï¿½Ã·ï¿½, ï¿½Ë»ï¿½ï¿½ï¿½, ï¿½ß°ï¿½getï¿½ï¿½)
 	//
 	function PList($pagename,$pagecnt,$offset,$numrows,$pageblock,$limit,$search,$searchstring,$option){
 		
@@ -1322,35 +1324,35 @@ class PList
 		$this->g_option			= $option;
 	}
 	//
-	// ¾ÆÀÌÄÜ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// putList( BOOL pniView, char* pre_icon, char* next_icon)
-	// putList( ¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ, ÀÌÀü¾ÆÀÌÄÜ, ´ÙÀ½¾ÆÀÌÄÜ, Ã³À½, ¸¶Áö¸·, ÇÑÄ­ÀÌÀü, ÇÑÄ­´ÙÀ½
+	// putList( ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Ã³ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½
 	//
 	function putList($pniView,$pre_icon,$next_icon,$first_icon,$last_icon,$pre1_icon,$next1_icon){
-		$this->g_pniView=$pniView;					//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ
-		if(empty($pre_icon))	$this->g_pIcon="<<";			//ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		$this->g_pniView=$pniView;					//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(empty($pre_icon))	$this->g_pIcon="<<";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_pIcon=$pre_icon;
 
-		if(empty($next_icon))	$this->g_nIcon=">>";			//´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next_icon))	$this->g_nIcon=">>";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_nIcon=$next_icon;
 		
-		if(empty($first_icon))	$this->g_fIcon="Ã³À½À¸·Î";		//Ã³À½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($first_icon))	$this->g_fIcon="Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";		//Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_fIcon=$first_icon;
 
-		if(empty($last_icon))	$this->g_lIcon="¸¶Áö¸·À¸·Î";	//¸¶Áö¸· ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($last_icon))	$this->g_lIcon="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_lIcon=$last_icon;
 		
 		
-		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ÇÑÄ­ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_p1Icon=$pre1_icon;
 
-		if(empty($next1_icon))	$this->g_n1Icon=">";			//ÇÑÄ­´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next1_icon))	$this->g_n1Icon=">";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_n1Icon=$next1_icon;
 
-		$this->pniPrint(); //È­¸é Ãâ·Â
+		$this->pniPrint(); //È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 	//
-	// È­¸é Ãâ·Â
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//
 	function pniPrint(){
 
@@ -1360,10 +1362,10 @@ class PList
 			$offset_separate = "?";
 		}
 
-		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ÇöÁ¦ÆäÀÌÁö Ã¼Å©
+		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
-	    if($chekpage==$this->g_pageCnt){  //¸¶Áö¸· ºí·°ÀÏ °æ¿ì....
-			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //¸¶Áö¸· ºí·° ÆäÀÌÁö¼ö °è»ê
+	    if($chekpage==$this->g_pageCnt){  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½....
+			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(!($this->g_numRows%($this->g_limit))){
 	 			$pCnt--;
 			}
@@ -1380,27 +1382,27 @@ class PList
 		$lastletter_no=$this->g_numRows-(($lastt-1)*$this->g_limit);
 		
 
-		/*   Ã³À½   */
+		/*   Ã³ï¿½ï¿½   */
 		$data="search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 		if($this->g_pniView)
 			echo "<a href=".$this->g_pageName.$offset_separate.$data.">".$this->g_fIcon."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 		
 		
 					
-		/*    ÀÌÀü   */
-		if($this->g_pageCnt>0){				//ÀÌÀüÆäÀÌÁö ÀÖÀ½
-			$prepage=$this->g_pageCnt-1;	//ÀÌÀüºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤.
-			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ÀÌÀüºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt>0){				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$prepage=$this->g_pageCnt-1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $data="pagecnt=".$prepage."&letter_no=".$pre_letter_no."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 
 	        $pre_str ="<a href='".$this->g_pageName.$offset_separate.$data."'>".$this->g_pIcon."</a>&nbsp;";
 
-		    echo "$pre_str"; 	//ÀÌÀü¾ÆÀÌÄÜ ¸µÅ©
-		}else{					//ÀÌÀüÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)//¾ÆÀÌÄÜ Ç¥½Ã
+		    echo "$pre_str"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				$empty_pre_str = $this->g_pIcon."&nbsp;";
 				
-		    else				//¾ÆÀÌÄÜ ºñÇ¥½Ã
+		    else				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 			    $empty_pre_str = "&nbsp;";
 	   
 		    echo "$empty_pre_str";
@@ -1409,7 +1411,7 @@ class PList
 		
 		
 
-		/*    1°³ ÀÌÀü   */
+		/*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$p1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)-$this->g_limit;
 		$p1letter_no=$this->g_numRows-$p1offset;
 		
@@ -1430,13 +1432,13 @@ class PList
 		/* 1 [2][3][4][5] */
 		$l=0;
 		while($l<$pCnt){
-			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//½ÃÀÛ±Û ÁöÁ¤
-		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ÆäÀÌÁö ¹øÈ£ ¼³Á¤
-			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//½ÃÀÛ±Û ¹øÈ£ ÁöÁ¤
+			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $en_str = "offset=".$loffset."&letter_no=".$cu_letter_no."&pagecnt=".$this->g_pageCnt;
 		    $en_str.= "&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$data=$en_str;
-			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ÇöÀç ÆäÀÌÁö ÀÏ °æ¿ì
+			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 				echo " <font size='2'><b>$lnum</b></font> ";
 			}else{
 				$mid_str = " <span class='nort'>[<a href='".$this->g_pageName.$offset_separate.$data."'>".$lnum."</a>]</span> ";
@@ -1449,7 +1451,7 @@ class PList
 	    
 	    
 	    
-	    /*    1°³ ´ÙÀ½   */
+	    /*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$n1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)+$this->g_limit;
 		$n1letter_no=$this->g_numRows+$n1offset;
 		
@@ -1468,26 +1470,26 @@ class PList
 
 
 
-		/*    ´ÙÀ½   */
-		if($this->g_pageCnt!=$chekpage){		//´ÙÀ½ÆäÀÌÁö ÀÖÀ½
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt!=$chekpage){		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			echo "&nbsp;";
-			$newpagecnt=$this->g_pageCnt+1;		//´ÙÀ½ ºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤
-			$newt=$cu_letter_no-$this->g_limit;	//´ÙÀ½ ºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+			$newpagecnt=$this->g_pageCnt+1;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$newt=$cu_letter_no-$this->g_limit;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 			$data="pagecnt=".$newpagecnt."&letter_no=".$newt."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$next_str="<a href='".$this->g_pageName.$offset_separate.$data."'>".$this->g_nIcon."</a>";
 
-			echo $next_str;			//´ÙÀ½ ¾ÆÀÌÄÜ ¸µÅ©
-		}else{						//´ÙÀ½ÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)	//¾ÆÀÌÄÜ Ç¥½Ã
+			echo $next_str;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				echo"&nbsp;".$this->g_nIcon;
 				//echo"&nbsp;";
 				
-			else					//¾ÆÀÌÄÜ ºñÇ¥½Ã
+			else					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 				echo"&nbsp;";
 		}
 		
 		
-		/*   ¸¶Áö¸·   */
+		/*   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   */
 		$data="pagecnt=".$lastpagecnt."&letter_no=".$lastletter_no."&offset=".$lastoffset."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 		
 		if($this->g_pniView) echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='".$this->g_pageName.$offset_separate.$data."&".$this->g_option."'>".$this->g_lIcon."</a>";
@@ -1497,29 +1499,29 @@ class PList
 
 
 
-// ÆäÀÌÁö ÄÆ¢¸ 1 [2][3][4][5] ¢º				
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¢ï¿½ 1 [2][3][4][5] ï¿½ï¿½				
 class SList
 {
-	var $g_pageName;		//¼³Á¤ÆÄÀÏ¸í ex) ****.php, OOOO.php
+	var $g_pageName;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ex) ****.php, OOOO.php
 
-	var $g_pageCnt;			//ÇöÀçÆäÀÌÁö ¹øÈ£
-	var $g_offset;			//µ¥ÀÌÅ¸º£ÀÌ½º ½ÃÀÛ Æ÷ÀÎÆ® ¹øÈ£
-	var $g_numRows;			//ÃÑ°Ô½Ã¹° ¼ö
-	var $g_pageBlock;		//ºí·°´ç ÆäÀÌÁö ¼ö ex) 5 : [1][2][3][4][5]
-	var $g_limit;			//ÆäÀÌÁö´ç Ãâ·Â °Ô½Ã¹° ¼ö
-	var $g_search;			//°Ë»ö ÄÃ·³ ex)name,title,...
-	var $g_searchstring;	//°Ë»ö¾î
+	var $g_pageCnt;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	var $g_offset;			//ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È£
+	var $g_numRows;			//ï¿½Ñ°Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_pageBlock;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex) 5 : [1][2][3][4][5]
+	var $g_limit;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_search;			//ï¿½Ë»ï¿½ ï¿½Ã·ï¿½ ex)name,title,...
+	var $g_searchstring;	//ï¿½Ë»ï¿½ï¿½ï¿½
 
-	var $g_option;			//Ãß°¡ get °ª  ex) &part=$part
+	var $g_option;			//ï¿½ß°ï¿½ get ï¿½ï¿½  ex) &part=$part
 			
-	var $g_pniView;			//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ ex) true,1 : Ç¥½Ã  false,0 : ¹ÌÇ¥½Ã
-	var $g_pIcon;			//ÀÌÀü ¾ÆÀÌÄÜ
-	var $g_nIcon;			//´ÙÀ½ ¾ÆÀÌÄÜ
+	var $g_pniView;			//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) true,1 : Ç¥ï¿½ï¿½  false,0 : ï¿½ï¿½Ç¥ï¿½ï¿½
+	var $g_pIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	var $g_nIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// SList( char* pagename, int pagecnt, int offset, int numrows, int pageblock, int limit, char* search, char* searchstring, char* option)
-	// SList(ÆäÀÌÁö¸í, ÇöÀçÆäÀÌÁö¹øÈ£, DB½ÃÀÛoffset, ÃÑ°Ô½Ã¹°¼ö, ºí·°´çÆäÀÌÁö¼ö, ÆäÀÌÁö´ç°Ô½Ã¹°¼ö, °Ë»öÄÃ·³, °Ë»ö¾î, Ãß°¡get°ª)
+	// SList(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£, DBï¿½ï¿½ï¿½ï¿½offset, ï¿½Ñ°Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ï¿½Ã·ï¿½, ï¿½Ë»ï¿½ï¿½ï¿½, ï¿½ß°ï¿½getï¿½ï¿½)
 	//
 	function SList($pagename,$pagecnt,$offset,$numrows,$pageblock,$limit,$search,$searchstring,$option){
 		$this->g_pageName		= $pagename;
@@ -1533,28 +1535,28 @@ class SList
 		$this->g_option			= $option;
 	}
 	//
-	// ¾ÆÀÌÄÜ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// putList( BOOL pniView, char* pre_icon, char* next_icon)
-	// putList( ¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ, ÀÌÀü¾ÆÀÌÄÜ, ´ÙÀ½¾ÆÀÌÄÜ
+	// putList( ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//
 	function putList($pniView,$pre_icon,$next_icon){
-		$this->g_pniView=$pniView;					//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ
-		if(empty($pre_icon))	$this->g_pIcon="[ÀÌÀü ".$this->g_pageBlock."°³]";			//ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		$this->g_pniView=$pniView;					//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(empty($pre_icon))	$this->g_pIcon="[ï¿½ï¿½ï¿½ï¿½ ".$this->g_pageBlock."ï¿½ï¿½]";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else			$this->g_pIcon=$pre_icon;
 
-		if(empty($next_icon))	$this->g_nIcon="[´ÙÀ½ ".$this->g_pageBlock."°³]";			//´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next_icon))	$this->g_nIcon="[ï¿½ï¿½ï¿½ï¿½ ".$this->g_pageBlock."ï¿½ï¿½]";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else			$this->g_nIcon=$next_icon;
 
-		$this->pniPrint(); //È­¸é Ãâ·Â
+		$this->pniPrint(); //È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 	//
-	// È­¸é Ãâ·Â
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//
 	function pniPrint(){
-		/*    ÀÌÀü   */
-		if($this->g_pageCnt>0){				//ÀÌÀüÆäÀÌÁö ÀÖÀ½
-			$prepage=$this->g_pageCnt-1;	//ÀÌÀüºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤.
-			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ÀÌÀüºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt>0){				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$prepage=$this->g_pageCnt-1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $data="pagecnt=".$prepage."&letter_no=".$pre_letter_no."&search=".$this->g_search."&searchstring=".$this->g_searchstring;
 
 	        $pre_str ="<a href='".$this->g_pageName."?".$data;
@@ -1562,21 +1564,21 @@ class SList
 				$pre_str.="&".$this->g_option;
 		    $pre_str.="'>".$this->g_pIcon."</a>&nbsp;&nbsp;&nbsp;";
 
-		    echo "$pre_str"; 	//ÀÌÀü¾ÆÀÌÄÜ ¸µÅ©
-		}else{					//ÀÌÀüÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)//¾ÆÀÌÄÜ Ç¥½Ã
+		    echo "$pre_str"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				$empty_pre_str = $this->g_pIcon."&nbsp;&nbsp;";
-		    else				//¾ÆÀÌÄÜ ºñÇ¥½Ã
+		    else				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 			    $empty_pre_str = "&nbsp;&nbsp;";
 	   
 		    echo "$empty_pre_str";
 		}
 
 		/* 1 [2][3][4][5] */
-		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ÇöÁ¦ÆäÀÌÁö Ã¼Å©
+		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
-	    if($chekpage==$this->g_pageCnt){  //¸¶Áö¸· ºí·°ÀÏ °æ¿ì....
-			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //¸¶Áö¸· ºí·° ÆäÀÌÁö¼ö °è»ê
+	    if($chekpage==$this->g_pageCnt){  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½....
+			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(!($this->g_numRows%($this->g_limit))){
 	 			$pCnt--;
 			}
@@ -1586,16 +1588,16 @@ class SList
 
 		$l=0;
 		while($l<$pCnt){
-			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//½ÃÀÛ±Û ÁöÁ¤
-		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ÆäÀÌÁö ¹øÈ£ ¼³Á¤
-			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//½ÃÀÛ±Û ¹øÈ£ ÁöÁ¤
+			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $en_str = "offset=".$loffset."&letter_no=".$cu_letter_no."&pagecnt=".$this->g_pageCnt;
 		    $en_str.= "&search=".$this->g_search."&searchstring=".$this->g_searchstring;
 			$data=$en_str;
 			
 			if($l != 0 ) echo " | ";
 			
-			if($lnum==(($this->g_offset/$this->g_limit)+1))	//ÇöÀç ÆäÀÌÁö ÀÏ °æ¿ì
+			if($lnum==(($this->g_offset/$this->g_limit)+1))	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 				echo" <font size='2' color='#FF9900'><b>$lnum</b></font> ";
 			else{
 				$mid_str = " <a href='".$this->g_pageName."?".$data;
@@ -1608,50 +1610,50 @@ class SList
 			$l++;
 	    }
 
-		/*    ´ÙÀ½   */
-		if($this->g_pageCnt!=$chekpage){		//´ÙÀ½ÆäÀÌÁö ÀÖÀ½
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt!=$chekpage){		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			echo "&nbsp;&nbsp;&nbsp;";
-			$newpagecnt=$this->g_pageCnt+1;		//´ÙÀ½ ºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤
-			$newt=$cu_letter_no-$this->g_limit;	//´ÙÀ½ ºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+			$newpagecnt=$this->g_pageCnt+1;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$newt=$cu_letter_no-$this->g_limit;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 			$data="pagecnt=".$newpagecnt."&letter_no=".$newt."&search=".$this->g_search."&searchstring=".$this->g_searchstring;
 			$next_str="<a href='".$this->g_pageName."?".$data;
 			if(!empty($this->g_option))
 				$next_str.="&".$this->g_option;
 			$next_str.="'>".$this->g_nIcon."</a>";
 
-			echo $next_str;			//´ÙÀ½ ¾ÆÀÌÄÜ ¸µÅ©
-		}else{						//´ÙÀ½ÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)	//¾ÆÀÌÄÜ Ç¥½Ã
+			echo $next_str;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				echo"&nbsp;&nbsp;".$this->g_nIcon;
-			else					//¾ÆÀÌÄÜ ºñÇ¥½Ã
+			else					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 				echo"&nbsp;&nbsp;";
 		}
 	}//function putList()
 }//class
 
-// ÆäÀÌÁö ÄÆ¢¸ 1 [2][3][4][5] ¢º				
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¢ï¿½ 1 [2][3][4][5] ï¿½ï¿½				
 class RList
 {
-	var $g_pageName;		//¼³Á¤ÆÄÀÏ¸í ex) ****.php, OOOO.php
+	var $g_pageName;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ex) ****.php, OOOO.php
 
-	var $g_pageCnt;			//ÇöÀçÆäÀÌÁö ¹øÈ£
-	var $g_offset;			//µ¥ÀÌÅ¸º£ÀÌ½º ½ÃÀÛ Æ÷ÀÎÆ® ¹øÈ£
-	var $g_numRows;			//ÃÑ°Ô½Ã¹° ¼ö
-	var $g_pageBlock;		//ºí·°´ç ÆäÀÌÁö ¼ö ex) 5 : [1][2][3][4][5]
-	var $g_limit;			//ÆäÀÌÁö´ç Ãâ·Â °Ô½Ã¹° ¼ö
-	var $g_search;			//°Ë»ö ÄÃ·³ ex)name,title,...
-	var $g_searchstring;	//°Ë»ö¾î
+	var $g_pageCnt;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	var $g_offset;			//ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È£
+	var $g_numRows;			//ï¿½Ñ°Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_pageBlock;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex) 5 : [1][2][3][4][5]
+	var $g_limit;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_search;			//ï¿½Ë»ï¿½ ï¿½Ã·ï¿½ ex)name,title,...
+	var $g_searchstring;	//ï¿½Ë»ï¿½ï¿½ï¿½
 
-	var $g_option;			//Ãß°¡ get °ª  ex) &part=$part
+	var $g_option;			//ï¿½ß°ï¿½ get ï¿½ï¿½  ex) &part=$part
 			
-	var $g_pniView;			//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ ex) true,1 : Ç¥½Ã  false,0 : ¹ÌÇ¥½Ã
-	var $g_pIcon;			//ÀÌÀü ¾ÆÀÌÄÜ
-	var $g_nIcon;			//´ÙÀ½ ¾ÆÀÌÄÜ
+	var $g_pniView;			//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) true,1 : Ç¥ï¿½ï¿½  false,0 : ï¿½ï¿½Ç¥ï¿½ï¿½
+	var $g_pIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	var $g_nIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// CList( char* pagename, int pagecnt, int offset, int numrows, int pageblock, int limit, char* search, char* searchstring, char* option)
-	// CList(ÆäÀÌÁö¸í, ÇöÀçÆäÀÌÁö¹øÈ£, DB½ÃÀÛoffset, ÃÑ°Ô½Ã¹°¼ö, ºí·°´çÆäÀÌÁö¼ö, ÆäÀÌÁö´ç°Ô½Ã¹°¼ö, °Ë»öÄÃ·³, °Ë»ö¾î, Ãß°¡get°ª)
+	// CList(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£, DBï¿½ï¿½ï¿½ï¿½offset, ï¿½Ñ°Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ï¿½Ã·ï¿½, ï¿½Ë»ï¿½ï¿½ï¿½, ï¿½ß°ï¿½getï¿½ï¿½)
 	//
 	function RList($pagename,$pagecnt,$offset,$numrows,$pageblock,$limit,$search,$searchstring,$option,$search_major){
 		
@@ -1667,35 +1669,35 @@ class RList
 		$this->g_search_major = $search_major;
 	}
 	//
-	// ¾ÆÀÌÄÜ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// putList( BOOL pniView, char* pre_icon, char* next_icon)
-	// putList( ¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ, ÀÌÀü¾ÆÀÌÄÜ, ´ÙÀ½¾ÆÀÌÄÜ, Ã³À½, ¸¶Áö¸·, ÇÑÄ­ÀÌÀü, ÇÑÄ­´ÙÀ½
+	// putList( ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Ã³ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½
 	//
 	function putList($pniView,$pre_icon,$next_icon,$first_icon,$last_icon,$pre1_icon,$next1_icon){
-		$this->g_pniView=$pniView;					//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ
-		if(empty($pre_icon))	$this->g_pIcon="<<";			//ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		$this->g_pniView=$pniView;					//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(empty($pre_icon))	$this->g_pIcon="<<";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_pIcon=$pre_icon;
 
-		if(empty($next_icon))	$this->g_nIcon=">>";			//´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next_icon))	$this->g_nIcon=">>";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_nIcon=$next_icon;
 		
-		if(empty($first_icon))	$this->g_fIcon="Ã³À½À¸·Î";		//Ã³À½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($first_icon))	$this->g_fIcon="Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";		//Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_fIcon=$first_icon;
 
-		if(empty($last_icon))	$this->g_lIcon="¸¶Áö¸·À¸·Î";	//¸¶Áö¸· ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($last_icon))	$this->g_lIcon="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_lIcon=$last_icon;
 		
 		
-		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ÇÑÄ­ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_p1Icon=$pre1_icon;
 
-		if(empty($next1_icon))	$this->g_n1Icon=">";			//ÇÑÄ­´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next1_icon))	$this->g_n1Icon=">";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_n1Icon=$next1_icon;
 
-		$this->pniPrint(); //È­¸é Ãâ·Â
+		$this->pniPrint(); //È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 	//
-	// È­¸é Ãâ·Â
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//
 	function pniPrint(){
 
@@ -1705,10 +1707,10 @@ class RList
 			$offset_separate = "?";
 		}
 
-		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ÇöÁ¦ÆäÀÌÁö Ã¼Å©
+		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
-	    if($chekpage==$this->g_pageCnt){  //¸¶Áö¸· ºí·°ÀÏ °æ¿ì....
-			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //¸¶Áö¸· ºí·° ÆäÀÌÁö¼ö °è»ê
+	    if($chekpage==$this->g_pageCnt){  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½....
+			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(!($this->g_numRows%($this->g_limit))){
 	 			$pCnt--;
 			}
@@ -1725,27 +1727,27 @@ class RList
 		$lastletter_no=$this->g_numRows-(($lastt-1)*$this->g_limit);
 		
 
-		/*   Ã³À½   */
+		/*   Ã³ï¿½ï¿½   */
 		$data="search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 		if($this->g_pniView)
 			echo "<a href=".$this->g_pageName.$offset_separate.$data.">".$this->g_fIcon."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 		
 		
 					
-		/*    ÀÌÀü   */
-		if($this->g_pageCnt>0){				//ÀÌÀüÆäÀÌÁö ÀÖÀ½
-			$prepage=$this->g_pageCnt-1;	//ÀÌÀüºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤.
-			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ÀÌÀüºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt>0){				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$prepage=$this->g_pageCnt-1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $data="pagecnt=".$prepage."&letter_no=".$pre_letter_no."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 
 	        $pre_str ="<a href='".$this->g_pageName.$offset_separate.$data."&apply_major=".$this->g_search_major."'>".$this->g_pIcon."</a>&nbsp;";
 
-		    echo "$pre_str"; 	//ÀÌÀü¾ÆÀÌÄÜ ¸µÅ©
-		}else{					//ÀÌÀüÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)//¾ÆÀÌÄÜ Ç¥½Ã
+		    echo "$pre_str"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				$empty_pre_str = $this->g_pIcon."&nbsp;";
 				
-		    else				//¾ÆÀÌÄÜ ºñÇ¥½Ã
+		    else				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 			    $empty_pre_str = "&nbsp;";
 	   
 		    echo "$empty_pre_str";
@@ -1754,7 +1756,7 @@ class RList
 		
 		
 
-		/*    1°³ ÀÌÀü   */
+		/*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$p1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)-$this->g_limit;
 		$p1letter_no=$this->g_numRows-$p1offset;
 		
@@ -1775,13 +1777,13 @@ class RList
 		/* 1 [2][3][4][5] */
 		$l=0;
 		while($l<$pCnt){
-			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//½ÃÀÛ±Û ÁöÁ¤
-		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ÆäÀÌÁö ¹øÈ£ ¼³Á¤
-			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//½ÃÀÛ±Û ¹øÈ£ ÁöÁ¤
+			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $en_str = "offset=".$loffset."&letter_no=".$cu_letter_no."&pagecnt=".$this->g_pageCnt;
 		    $en_str.= "&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$data=$en_str;
-			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ÇöÀç ÆäÀÌÁö ÀÏ °æ¿ì
+			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 				echo " <font size='2'><b>$lnum</b></font> ";
 			}else{
 				$mid_str = " <span class='nort'>[<a href='".$this->g_pageName.$offset_separate.$data."&apply_major=".$this->g_search_major."'>".$lnum."</a>]</span> ";
@@ -1794,7 +1796,7 @@ class RList
 	    
 	    
 	    
-	    /*    1°³ ´ÙÀ½   */
+	    /*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$n1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)+$this->g_limit;
 		$n1letter_no=$this->g_numRows+$n1offset;
 		
@@ -1813,26 +1815,26 @@ class RList
 
 
 
-		/*    ´ÙÀ½   */
-		if($this->g_pageCnt!=$chekpage){		//´ÙÀ½ÆäÀÌÁö ÀÖÀ½
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt!=$chekpage){		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			echo "&nbsp;";
-			$newpagecnt=$this->g_pageCnt+1;		//´ÙÀ½ ºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤
-			$newt=$cu_letter_no-$this->g_limit;	//´ÙÀ½ ºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+			$newpagecnt=$this->g_pageCnt+1;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$newt=$cu_letter_no-$this->g_limit;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 			$data="pagecnt=".$newpagecnt."&letter_no=".$newt."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$next_str="<a href='".$this->g_pageName.$offset_separate.$data."'>".$this->g_nIcon."</a>";
 
-			echo $next_str;			//´ÙÀ½ ¾ÆÀÌÄÜ ¸µÅ©
-		}else{						//´ÙÀ½ÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)	//¾ÆÀÌÄÜ Ç¥½Ã
+			echo $next_str;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				echo"&nbsp;".$this->g_nIcon;
 				//echo"&nbsp;";
 				
-			else					//¾ÆÀÌÄÜ ºñÇ¥½Ã
+			else					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 				echo"&nbsp;";
 		}
 		
 		
-		/*   ¸¶Áö¸·   */
+		/*   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   */
 		$data="pagecnt=".$lastpagecnt."&letter_no=".$lastletter_no."&offset=".$lastoffset."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 		
 		if($this->g_pniView) echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='".$this->g_pageName.$offset_separate.$data."&".$this->g_option."'>".$this->g_lIcon."</a>";
@@ -1852,14 +1854,14 @@ function show_data($colu){
 
 	
 
-// ÄíÅ°º¯¼ö »ý¼º
+// ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 function set_cookie($cookie_name, $value, $expire)
 {
     setcookie(md5($cookie_name), base64_encode($value), time() + $expire, '/', $way['cookie_domain']);
 }
 
 
-// ÄíÅ°º¯¼ö°ª ¾òÀ½
+// ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 function get_cookie($cookie_name)
 {
     return base64_decode($_COOKIE[md5($cookie_name)]);

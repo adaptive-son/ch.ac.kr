@@ -786,7 +786,7 @@ function get_ext($file_name) {
 // @param string $email - email address
 function is_email($email) {
     $url = trim($email);
-    if(eregi("^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$", $url)) return true;
+    if(preg_match("/^[\xA1-\xFEa-z0-9._-]+@[\xA1-\xFEa-z0-9_-]+\.[a-z0-9._-]+$/i", $url)) return true; // PHP7: eregi removed -> preg_match
     else return false;
 }
 
@@ -1261,7 +1261,9 @@ function mailsend24($fromname,$frommail,$toname,$tomail,$subject,$msg,$mode){
     $header .= 'Content-Length: ' . strlen($post_data) . "\r\n\r\n";
     $header = $header.$post_data;
 
-    $client_socket = fsockopen("211.175.207.24", 80, &$errno, &$errmsg);
+    $errno = 0;
+    $errmsg = "";
+    $client_socket = fsockopen("211.175.207.24", 80, $errno, $errmsg); // PHP7: call-time pass-by-reference(&) 제거됨
     fwrite($client_socket, $header);
     fclose($client_socket);
 }

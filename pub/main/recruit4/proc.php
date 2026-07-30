@@ -35,7 +35,7 @@
 			if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
 			$temp1_name = $reg_date.'.'.$temp1[1];
 
-			$file1 = eregi_replace("\\\\","\\",$file1);
+			$file1 = preg_replace("/\\\\\\\\/","\\\\", $file1); // PHP7: eregi_replace removed
 			$s_file_name1 = str_replace(" ","_",$s_file_name1);
 			$s_file_name1 = str_replace("-","_",$s_file_name1);
 
@@ -80,7 +80,7 @@
 			if (!in_array(strtolower(end($temp2)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
 			$temp2_name = $reg_date.'.'.$temp2[1];
 
-			$file2 = eregi_replace("\\\\","\\",$file2);
+			$file2 = preg_replace("/\\\\\\\\/","\\\\", $file2); // PHP7: eregi_replace removed
 			$s_file_name2 = str_replace(" ","_",$s_file_name2);
 			$s_file_name2 = str_replace("-","_",$s_file_name2);
 

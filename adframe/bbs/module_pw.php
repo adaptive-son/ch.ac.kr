@@ -96,7 +96,7 @@ if($BBS_PWD!=$bbs_row[pwd]) {
         }
     } elseif($_GET['edit'] == "ok") {
 
-        @session_register("_BBS_PASS_LOGIN") or die("session_register err");
+        // PHP7: session_register() removed; $_SESSION[...] assigned directly below.
         $_BBS_PASS_LOGIN = $_SESSION["_BBS_PASS_LOGIN"] = $BBS_PWD;
 
         $go_url = "$BURL?site_id=".$site_id."&TREE_NO=$TREE_NO&DEPTH=$DEPTH";

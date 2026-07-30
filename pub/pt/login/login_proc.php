@@ -11,10 +11,12 @@ extract($_POST);
 extract($_GET);
 */
 
+header('Content-Type: text/html; charset=UTF-8');
+$site = "pt";
 include $_SERVER["DOCUMENT_ROOT"]."/config/config.php";
 
-$_POST = array_map('mysql_escape_string', $_POST);
-$_GET = array_map('mysql_escape_string', $_GET);
+//$_POST = array_map('mysql_escape_string', $_POST); // PHP7: replaced by parameterized queries below
+//$_GET = array_map('mysql_escape_string', $_GET);
 
 include $_SERVER["DOCUMENT_ROOT"]."/config/function.php";
 include $_SERVER["DOCUMENT_ROOT"]."/config/ora11g_conn.php";
@@ -41,13 +43,20 @@ switch($Confirm)
 
     case "login":
 
-        @session_unregister("MEMBER_GROUP");
-        @session_unregister("ID");
-        @session_unregister("MEMBER_UNAME");
-        @session_unregister("MEMBER_GUBUN");
+        // PHP7: session_unregister removed
+        unset($_SESSION['MEMBER_GROUP']);
+        unset($_SESSION['ID']);
+        unset($_SESSION['MEMBER_UNAME']);
+        unset($_SESSION['MEMBER_GUBUN']);
 
-        $ms_con =  mssql_connect($ms_tds, $ms_id, $ms_pw) or die("Couldn't connect to SQL Server on $myServer");
-        mssql_select_db($ms_db, $ms_con);
+        // PHP7: mssql_connect/mssql_select_db removed -> sqlsrv
+        $ms_con = sqlsrv_connect($ms_tds, array(
+            "Database" => $ms_db,
+            "UID" => $ms_id,
+            "PWD" => $ms_pw,
+            "CharacterSet" => "UTF-8",
+            "TrustServerCertificate" => true,
+        )) or die("Couldn't connect to SQL Server on $ms_tds");
 
         //if($LogRows >= 5){go_back("로그인 정보가 5회이상 잘못되었습니다. 관리자에게 문의하세요.");exit;}
         $time = time();
@@ -83,22 +92,20 @@ switch($Confirm)
 						$db_divide = $row['user_type'];
 					}
 			}else{
-				$loginQue = "SELECT [dbo].[SF_IS_AUTH_SHA256]('".$_POST['login_id']."','".$_POST['login_pw']."')";
-
-				$rs= mssql_query($loginQue, $ms_con);
+				$rs = sqlsrv_query($ms_con, "SELECT [dbo].[SF_IS_AUTH_SHA256](?,?)", array($_POST['login_id'], $_POST['login_pw']));
 
 
 				if (!$rs) {
 					echo "DB 연결이 실패되었습니다.";
 					//echo 'Error: ', mssql_get_last_message(), "\n";
-					mssql_close ($ms_con);
+					sqlsrv_close($ms_con);
 					exit;
 				}
 
 
-				$result = mssql_fetch_array($rs);
+				$result = sqlsrv_fetch_array($rs, SQLSRV_FETCH_NUMERIC);
 				if ($result[0] < 1) {
-					mssql_close ($ms_con);
+					sqlsrv_close($ms_con);
 					$ErrorSql = "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".$_POST['login_id']."','".$_SERVER['REMOTE_ADDR']."','".$time."')";
 					mysql_query($ErrorSql);
 					mysql_close($conn);
@@ -108,54 +115,54 @@ switch($Confirm)
 				} else {
 					$loginQue1 = "SELECT korename, schoolno, email, userpass as passwd, laststat FROM V_ADB_STUDMAST WHERE schoolno='".$_POST['login_id']."' ";
 
-					$rs1= mssql_query($loginQue1, $ms_con);
+					$rs1 = sqlsrv_query($ms_con, $loginQue1);
+                $row1 = sqlsrv_fetch_array($rs1, SQLSRV_FETCH_ASSOC);
 
-					$db_id = trim(mssql_result($rs1, 0, 'SCHOOLNO'));
-					$db_pw = trim(mssql_result($rs1, 0, 'PASSWD'));
+					$db_id = trim($row1['schoolno']);
+					$db_pw = trim($row1['passwd']);
 
-					$db_name = trim(mssql_result($rs1, 0, 'KORENAME'));
-					$db_divide = trim(mssql_result($rs1, 0, 'LASTSTAT'));
+					$db_name = trim($row1['korename']);
+					$db_divide = trim($row1['laststat']);
 					
 				}
 			}
             //교직원 로그인
         }else if($_POST['divide'] == "employee"){
 
-            $loginQue = "SELECT [dbo].[SF_IS_AUTH_SHA256]('".$_POST['login_id']."','".$_POST['login_pw']."')";
-            //echo $loginQue;exit;
-            $rs= mssql_query($loginQue, $ms_con);
+            $rs = sqlsrv_query($ms_con, "SELECT [dbo].[SF_IS_AUTH_SHA256](?,?)", array($_POST['login_id'], $_POST['login_pw']));
 
 
             if (!$rs) {
                 echo "DB 연결이 실패되었습니다.";
                 //echo 'Error: ', mssql_get_last_message(), "\n";
-                mssql_close ($ms_con);
+                sqlsrv_close($ms_con);
                 exit;
             }
-            $result = mssql_fetch_array($rs);
+            $result = sqlsrv_fetch_array($rs, SQLSRV_FETCH_NUMERIC);
             //$rs=$oradb->query($loginQue);
             if ($result[0] < 1) {
-                mssql_close ($ms_con);
+                sqlsrv_close($ms_con);
                 go_back("로그인 정보가 잘못되었습니다.");
                 exit;
             } else {
 
                 $loginQue1 = "select emplnamk, emplnumb, substring(postcode,5,8) as postcode, homephon, callphon, passnumb, emptype from V_ADB_EMPLOYEE WHERE emplnumb ='".$_POST['login_id']."'";
-                $rs1= mssql_query($loginQue1, $ms_con);
+                $rs1 = sqlsrv_query($ms_con, $loginQue1);
+                $row1 = sqlsrv_fetch_array($rs1, SQLSRV_FETCH_ASSOC);
 
 
-                $db_id = trim(mssql_result($rs1, 0, 'emplnumb'));
-                $db_pw = trim(mssql_result($rs1, 0, 'passnumb'));
+                $db_id = trim($row1['emplnumb']);
+                $db_pw = trim($row1['passnumb']);
 
-                $db_name = trim(mssql_result($rs1, 0, 'emplnamk'));
-                $db_divide = trim(mssql_result($rs1, 0, 'emptype'));
+                $db_name = trim($row1['emplnamk']);
+                $db_divide = trim($row1['emptype']);
             }
            
         } else {
 
         }
 
-        mssql_close($ms_con);
+        sqlsrv_close($ms_con);
         //$oradb->discon();
         if(  $_POST['login_id'] == "" || $_POST['login_pw'] == "")
         {
@@ -165,10 +172,7 @@ switch($Confirm)
         else
         {
 
-            @session_register("MEMBER_GROUP");
-            @session_register("ID");
-            @session_register("MEMBER_UNAME");
-            @session_register("MEMBER_GUBUN");
+            // PHP7: session_register removed. $_SESSION[...] assigned directly below.
 
 
             /*
@@ -243,14 +247,17 @@ switch($Confirm)
             //session_unregister("MEMBER_UID");
             //session_unregister("MEMBER_UNAME");
 
-            session_unset("MEMBER_GROUP");
-			session_unset("ADMIN_GROUP");
-            session_unset("MEMBER_ID");
-			session_unset("ID");
-            session_unset("MEMBER_UNAME");
-            session_unset("MEMBER_GUBUN");
-			session_unset("S_CHECK");
-			session_unset("sel_site_id");
+            // PHP7: session_unset() takes no args and clears the whole session;
+            // session_unset("KEY") was silently ignored, so logout never actually
+            // cleared the session -> replaced with unset($_SESSION[...])
+            unset($_SESSION['MEMBER_GROUP']);
+			unset($_SESSION['ADMIN_GROUP']);
+            unset($_SESSION['MEMBER_ID']);
+			unset($_SESSION['ID']);
+            unset($_SESSION['MEMBER_UNAME']);
+            unset($_SESSION['MEMBER_GUBUN']);
+			unset($_SESSION['S_CHECK']);
+			unset($_SESSION['sel_site_id']);
 
             if($_SESSION['MEMBER_ID']){
                 go_back("로그아웃에 실패하였습니다.");

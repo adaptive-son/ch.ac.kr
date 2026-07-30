@@ -90,6 +90,10 @@ if($Confirm=="define" && $_SESSION["_BBS_WRITE_CONN"] == $dataArr[idx]){
 	// fm_notice is null => 'N'
 	if(!$fm_notice){
 		$fm_notice = "N";
+        $fm_notice_start = "0000-00-00 00:00:00";
+        $fm_notice_end = "0000-00-00 00:00:00";
+	} else if($fm_notice_end) {
+		$fm_notice_end = $fm_notice_end." 23:59:59";
 	}
 
 	//업로드 모듈 로딩
@@ -109,15 +113,28 @@ if($Confirm=="define" && $_SESSION["_BBS_WRITE_CONN"] == $dataArr[idx]){
         $view_secret = "N";
     }
 
+	// setQuery() below builds its SET clause straight from $_POST, so notice/pwd were
+	// being written twice in the same UPDATE: once with the raw (possibly empty) POST
+	// value via setQuery(), and again below with the properly defaulted/hashed value.
+	// Since notice is enum('Y','N') NOT NULL, the empty-string assignment from
+	// setQuery() tripped STRICT_TRANS_TABLES ("Data truncated for column 'notice'")
+	// and the whole UPDATE failed. Normalize/remove them from $_POST first so
+	// setQuery() doesn't emit a conflicting duplicate assignment.
+	$fm_pwd_hash = md5($_POST[fm_pwd]);
+	$_POST['fm_notice'] = $fm_notice;
+	$_POST['fm_notice_start'] = $fm_notice_start;
+	$_POST['fm_notice_end'] = $fm_notice_end;
+	unset($_POST['fm_pwd']);
+
 	$set_sql = setQuery ($_POST, "fm_");
-	$set_sql .= ", userIp='$REMOTE_ADDR', userid='$bbs_userid', adminid='$bbs_adminid', notice='$fm_notice', view_secret='$view_secret',pwd='".md5($_POST[fm_pwd])."' ";
+	$set_sql .= ", userIp='$REMOTE_ADDR', userid='$bbs_userid', adminid='$bbs_adminid', notice='$fm_notice', view_secret='$view_secret',pwd='".$fm_pwd_hash."' ";
 	if($filei > 0) $set_sql .= ", up_file= up_file+".$filei;
 
 
 	$qry = "update ".$dataArr[DBTable]." set ".$set_sql." where idx='".$dataArr[idx]."'";
 
 
-    $_SESSION["_BBS_PASS_LOGIN"] =  md5($_POST[fm_pwd]);
+    $_SESSION["_BBS_PASS_LOGIN"] =  $fm_pwd_hash;
 	if(DBquery($qry)){
 
 		//이미지 업로드가 완료되었다면 디비처리

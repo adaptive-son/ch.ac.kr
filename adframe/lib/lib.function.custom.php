@@ -256,7 +256,7 @@ function BetweenPeriod($datetime,$periodDay)
  * param 4 : 문자열 인코딩 셋. utf-8이 기본이다. 다른 인코딩 사용하지 말것.
  * param 5 : 덧붙일 문자열
  */
-function StringCut($string,$start=0,$length,$charset,$addString="...") {
+function StringCut($string,$start=0,$length=0,$charset=NULL,$addString="...") {
 
     if($charset==NULL) {
         $charset='UTF-8';
@@ -328,7 +328,7 @@ function setQuery ($arr, $str) {
 
 
 //게시판 최근게시물 값 배열에 담기
-function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $cut_content=0, $debugmod=0, $category){
+function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $cut_content=0, $debugmod=0, $category=""){
 //BBS_GetList("게시판 테이블명(fullname)", "게시판코드", 보드타입, 배열에 담을 최근게시물 수, 내용글 수:html형식이라 300이상으로 잡아야...);
     /*
      *
@@ -377,8 +377,8 @@ function BBS_GetList($board_table , $board_code, $board_type=0, $limit_num=5, $c
 
 	//카테고리가 존재할 경우 해당 카테고리에 해당하는 글만 들고옴 -shlee
 	if($category!="") {
-		$bbs_qry .="AND category = '$category'";
-	} 
+		$bbs_qry .=" AND category = '$category'";
+	}
 
     // TODO :: 기존 게시판 통합 설정 - $board_code가 배열형태일때와 아닐때로 구분 ( 2016-07-11 By.Son )
     if ( strtolower(gettype($board_code)) == "array" ) {

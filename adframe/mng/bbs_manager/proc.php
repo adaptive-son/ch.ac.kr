@@ -81,15 +81,29 @@ if($Confirm=="insert"){
             );
 	";
 
+    // auth.php에서 나중에 설정되는 권한 컬럼들. add.php 폼에는 입력란이 없어 비어있으면
+    // abbs_manager의 NOT NULL(기본값 없음) 제약에 걸려 INSERT 자체가 실패한다.
+    if(!isset($_POST['fm_auth_list']))     $_POST['fm_auth_list']     = "";
+    if(!isset($_POST['fm_auth_read']))     $_POST['fm_auth_read']     = "";
+    if(!isset($_POST['fm_auth_write']))    $_POST['fm_auth_write']    = "";
+    if(!isset($_POST['fm_auth_reply']))    $_POST['fm_auth_reply']    = "";
+    if(!isset($_POST['fm_auth_comment']))  $_POST['fm_auth_comment']  = "";
+    if(!isset($_POST['fm_auth_upload']))   $_POST['fm_auth_upload']   = "";
+    if(!isset($_POST['fm_auth_download'])) $_POST['fm_auth_download'] = "";
+
     $set_sql = setQuery ($_POST, "fm_");
     $sql = "insert into ".TABLE_BOARD_MNG." set ".$set_sql;
 
-    if($adb->query($sql)){
-        if(strlen($_POST['fm_board_key']) == 2){
-            $adb->query($bbs_table_sql); //게시판 메인테이블
-            $adb->query($bbs_file_sql); //게시판 파일테이블
-            $adb->query($bbs_comment_sql); //게시판 코멘트테이블
-        }
+    $result = $adb->query($sql);
+
+    if(PEAR::isError($result)){
+        alert_back("게시판 등록에 실패하였습니다.\\n\\n".$result->getMessage()."\\n\\n".$result->getDebugInfo());
+    }
+
+    if(strlen($_POST['fm_board_key']) == 2){
+        $adb->query($bbs_table_sql); //게시판 메인테이블
+        $adb->query($bbs_file_sql); //게시판 파일테이블
+        $adb->query($bbs_comment_sql); //게시판 코멘트테이블
     }
 
     include_once("../include/__footer.php");

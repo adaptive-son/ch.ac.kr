@@ -1,7 +1,7 @@
 <?
 
 /******************************************************************************************************
- //»ç¿ë¿¹Á¦
+ //ï¿½ï¿½ë¿¹ï¿½ï¿½
  $Obj=new Sub_BBSStart();
  $Obj->makebbs($bbs,1,1,"iuk_board_6","iuk_bbs",20,1);
 
@@ -9,31 +9,31 @@
  $Obj=new Sub_BBSStart();
 
  $bbs		- Default
- $BoardKey	- IntÇü ±¸ºÐÀÚ
- $sub_No	- IntÇü ±¸ºÐÀÚ
- DB			- Database Table¸í
- SKIN		- ½ºÅ²¸í
- LISTNUM	- ¸®½ºÆ® °¹¼ö
+ $BoardKey	- Intï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ $sub_No	- Intï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ DB			- Database Tableï¿½ï¿½
+ SKIN		- ï¿½ï¿½Å²ï¿½ï¿½
+ LISTNUM	- ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
- ADMIN		- INTÇü (0:ÀÏ¹Ý , 1:°ü¸®¸ðµå)
+ ADMIN		- INTï¿½ï¿½ (0:ï¿½Ï¹ï¿½ , 1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
  $Obj->makebbs(
-	 $bbs(ÇöÀçµ¿ÀÛ»óÅÂÇ¥½Ã),
+	 $bbs(ï¿½ï¿½ï¿½çµ¿ï¿½Û»ï¿½ï¿½ï¿½Ç¥ï¿½ï¿½),
 	 $BoardKey(int),
 	 $sub_No(int),
-	 "µ¥ÀÌÅÍº£ÀÌ½º",
-	 °Ô½ÃÆÇ½ºÅ²,
-	 ¸®½ºÆ®°¹¼ö(int),
-	 ¾îµå¹Î±ÇÇÑ(int)
+	 "ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½",
+	 ï¿½Ô½ï¿½ï¿½Ç½ï¿½Å²,
+	 ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½(int),
+	 ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½(int)
 
-	 $bbs_userqry(userid¿¡¼­ ¾ÆÀÌµð°ª °Ë»ö)
-	 bbs_subqry (and Àý·Î dbÃß°¡°Ë»ö)
+	 $bbs_userqry(useridï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ë»ï¿½)
+	 bbs_subqry (and ï¿½ï¿½ï¿½ï¿½ dbï¿½ß°ï¿½ï¿½Ë»ï¿½)
  );
 
 
- ¼­ºêÄÃ·³Äõ¸® ¿¹Á¦
- °¶·¯¸®°Ô½ÃÆÇ ¸®½ºÆ®ÀÌ¹ÌÁö : , (select idx from [[BBSDBTABLE]]_file where file_type > 0 and file_type < 4 and up_file_idx = A.up_file_idx limit 0,1) as file_idx
- UCC°Ô½ÃÆÇ ¸®½ºÆ®ÀÌ¹ÌÁö : , (select up_filename from [[BBSDBTABLE]]_file where file_type = 10 and up_file_idx = A.up_file_idx limit 0,1) as up_filename
+ ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ì¹ï¿½ï¿½ï¿½ : , (select idx from [[BBSDBTABLE]]_file where file_type > 0 and file_type < 4 and up_file_idx = A.up_file_idx limit 0,1) as file_idx
+ UCCï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ì¹ï¿½ï¿½ï¿½ : , (select up_filename from [[BBSDBTABLE]]_file where file_type = 10 and up_file_idx = A.up_file_idx limit 0,1) as up_filename
 
 *******************************************************************************************************/
 
@@ -60,54 +60,54 @@ class Sub_BBSStart {
 
 		$this->c_SecAdmin	= $SecAdmin;
 
-		$configBBS = DBarray("SELECT * FROM abbs_manager WHERE board_key='".$BoardKey."'"); //°Ô½ÃÆÇ ¼³Á¤·Îµå
+		$configBBS = DBarray("SELECT * FROM abbs_manager WHERE board_key='".$BoardKey."'"); //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½
 		if($_SESSION[s_id]=="admin"){$SecAdmin=1;}
 		//function makebbs($bbs, $BoardKey, $Sub_No, $DBTable, $bbspart, $Listcount, $SecAdmin, $bbs_userqry="", $bbs_subqry="") {
 
 		/*
-		$configBBS[board_id];	//µðºñÅ×ÀÌºí
-		$configBBS[board_name];	//°Ô½ÃÆÇ ÀÌ¸§
+		$configBBS[board_id];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½
+		$configBBS[board_name];	//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 
-		$configBBS[board_skin];	//°Ô½ÃÆÇ½ºÅ²
-		$configBBS[module_editor];	//°Ô½ÃÆÇ ¿¡Æ¼ÅÍ ¸ðµâ
-		$configBBS[module_uploader]; //°Ô½ÃÆÇ ¾÷·Îµå ¸ðµâ
+		$configBBS[board_skin];	//ï¿½Ô½ï¿½ï¿½Ç½ï¿½Å²
+		$configBBS[module_editor];	//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½
+		$configBBS[module_uploader]; //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½
 
-		$configBBS[board_category]; //Ä«Å×°í¸® »ç¿ë¿©ºÎ
+		$configBBS[board_category]; //Ä«ï¿½×°ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
 
-		$configBBS[board_commentuse]; //´ñ±Û »ç¿ë¿©ºÎ
+		$configBBS[board_commentuse]; //ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
 
-		$configBBS[board_listnum]; //ÆäÀÌÁö´ç Ãâ·Â¼ö
-		$configBBS[board_listview]; //°Ô½ÃÆÇ º¸±â¿¡¼­ ¸®½ºÆ®·Îµù
+		$configBBS[board_listnum]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¼ï¿½
+		$configBBS[board_listview]; //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Îµï¿½
 
-		$configBBS[board_width]; //°Ô½ÃÆÇ °¡·ÎÆø
-		$configBBS[board_titlecut]; //¸®½ºÆ® Á¦¸ñ±æÀÌ
-
-
-		$configBBS[board_checkcolumn]; //µî·Ï&¼öÁ¤½Ã ÇÊ¼öÃ¼Å©
-		$configBBS[board_checktitle]; //µî·Ï&¼öÁ¤½Ã ÇÊ¼öÃ¼Å©
-
-		$configBBS[board_secure]; //ºñ¹Ð±Û ÀÛ¼º
+		$configBBS[board_width]; //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		$configBBS[board_titlecut]; //ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-		$configBBS[board_viewimg]; //º¸±âÆäÀÌÁö ÀÌ¹ÌÁö ÀÚµ¿º¸±â
-		$configBBS[board_viewimgwidth]; //º¸±âÆäÀÌÁö ÀÌ¹ÌÁö°¡·ÎÅ©±â
+		$configBBS[board_checkcolumn]; //ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½Ã¼Å©
+		$configBBS[board_checktitle]; //ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½Ã¼Å©
+
+		$configBBS[board_secure]; //ï¿½ï¿½Ð±ï¿½ ï¿½Û¼ï¿½
 
 
-		$configBBS[board_upfile]; //¾÷·Îµå ÆÄÀÏ°¹¼ö
-		$configBBS[board_upfilesize]; //¾÷·Îµå °³´ç ÆÄÀÏ»çÀÌÁî
+		$configBBS[board_viewimg]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
+		$configBBS[board_viewimgwidth]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½
 
-		$configBBS[board_topinclude]; //»ó´Ü ÀÎÅ©·çµå
-		$configBBS[board_bottominclude]; //ÇÏ´Ü ÀÎÅ©·çµå
+
+		$configBBS[board_upfile]; //ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½
+		$configBBS[board_upfilesize]; //ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï»ï¿½ï¿½ï¿½ï¿½ï¿½
+
+		$configBBS[board_topinclude]; //ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½
+		$configBBS[board_bottominclude]; //ï¿½Ï´ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½
 		*/
 
-		//±ÇÇÑ¸ÅÇÎ ¼³Á¤
+		//ï¿½ï¿½ï¿½Ñ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		include $_SERVER["DOCUMENT_ROOT"]."/bbs/auth_config.php";
 
 
-		//±Û¾²±â½Ã ÀÚµ¿ ÀÌ¸§, ÆÐ½º¿öµå ÀÚµ¿Ãâ·Â
-		// $auto_bbs_input °ªÀÌ
-		// true  ÀÏ °æ¿ì inputÀÌ textÅ¸ÀÔÀ¸·Î Ãâ·Â
-		// false ÀÏ °æ¿ì inputÀÌ hiddenÅ¸ÀÔ & $auto_bbs_usernameÃâ·Â
+		//ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½Ì¸ï¿½, ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½
+		// $auto_bbs_input ï¿½ï¿½ï¿½ï¿½
+		// true  ï¿½ï¿½ ï¿½ï¿½ï¿½ inputï¿½ï¿½ textÅ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		// false ï¿½ï¿½ ï¿½ï¿½ï¿½ inputï¿½ï¿½ hiddenÅ¸ï¿½ï¿½ & $auto_bbs_usernameï¿½ï¿½ï¿½
 		if($SecAdmin == 1){
 
 			$auto_bbs_input = "true";
@@ -131,46 +131,46 @@ class Sub_BBSStart {
 
 
 		/*
-		$configBBS[auth_admin];	//ÀÌ ±ÇÇÑÀÌ YÀÏ °æ¿ì °øÁö°Ô½ÃÆÇ (°ü¸®ÀÚ¸¸ ±ÛÀÛ¼ºÀÌ °¡´ÉÇÔ)
+		$configBBS[auth_admin];	//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Yï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
-		$configBBS[auth_list_use];	//¸®½ºÆ®±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_read_use];	//º¸±â±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_write_use];	//¾²±â±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_reply_use];	//´ä±Û±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_comment_use];	//´ñ±Û±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_upload_use];	//¾÷·Îµå±ÇÇÑ »ç¿ë¿©ºÎ
-		$configBBS[auth_download_use];	//´Ù¿î·Îµå±ÇÇÑ »ç¿ë¿©ºÎ
+		$configBBS[auth_list_use];	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_read_use];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_write_use];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_reply_use];	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_comment_use];	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_upload_use];	//ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+		$configBBS[auth_download_use];	//ï¿½Ù¿ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
 
 
 
-		$configBBS[auth_list];	//¸®½ºÆ®±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_read];	//º¸±â±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_write];	//¾²±â±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_reply];	//´ä±Û±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_comment];	//´ñ±Û±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_upload];	//¾÷·Îµå±ÇÇÑ ¼¼¼Çºñ±³°ª
-		$configBBS[auth_download];	//´Ù¿î·Îµå±ÇÇÑ ¼¼¼Çºñ±³°ª
+		$configBBS[auth_list];	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_read];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_write];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_reply];	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_comment];	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_upload];	//ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+		$configBBS[auth_download];	//ï¿½Ù¿ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
 		*/
 
-		//°ü¸®ÀÚ ±ÇÇÑÀÏ °æ¿ì ´Ù¸¥ ¼³Á¤°ª ¹«½ÃÇÏ°í °øÁö»çÇ×Çü½ÄÀ¸·Î
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($configBBS[auth_admin] == "Y"){
-			$configBBS[auth_list_use] = "N";	//¸®½ºÆ®±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_read_use] = "N";	//º¸±â±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_write_use] = "Y";	//¾²±â±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_reply_use] = "Y";	//´ä±Û±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_comment_use] = "Y";	//´ñ±Û±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_upload_use] = "Y";	//¾÷·Îµå±ÇÇÑ »ç¿ë¿©ºÎ
-			$configBBS[auth_download_use] = "N";	//´Ù¿î·Îµå±ÇÇÑ »ç¿ë¿©ºÎ
+			$configBBS[auth_list_use] = "N";	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_read_use] = "N";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_write_use] = "Y";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_reply_use] = "Y";	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_comment_use] = "Y";	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_upload_use] = "Y";	//ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
+			$configBBS[auth_download_use] = "N";	//ï¿½Ù¿ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿©ï¿½ï¿½
 
 
 
-			$configBBS[auth_list] = "";	//¸®½ºÆ®±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_read] = "";	//º¸±â±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_write] = "OnlyAdmin";	//¾²±â±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_reply] = "OnlyAdmin";	//´ä±Û±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_comment] = "OnlyAdmin";	//´ñ±Û±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_upload] = "OnlyAdmin";	//¾÷·Îµå±ÇÇÑ ¼¼¼Çºñ±³°ª
-			$configBBS[auth_download] = "";	//´Ù¿î·Îµå±ÇÇÑ ¼¼¼Çºñ±³°ª
+			$configBBS[auth_list] = "";	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_read] = "";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_write] = "OnlyAdmin";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_reply] = "OnlyAdmin";	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_comment] = "OnlyAdmin";	//ï¿½ï¿½Û±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_upload] = "OnlyAdmin";	//ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
+			$configBBS[auth_download] = "";	//ï¿½Ù¿ï¿½Îµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çºñ±³°ï¿½
 		}
 
 		if($_SESSION["ID"]=="2049" || $_SESSION["ID"]=="2071"){
@@ -178,7 +178,7 @@ class Sub_BBSStart {
 			$SecAdmin = "1";
 		}
 
-		//°ü¸®ÀÚÀÏ °æ¿ì »ó´Ü¿¡ °Ô½ÃÆÇ ÀÌ¸§ Ãâ·Â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ü¿ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½
 		if($SecAdmin == 1){
 
 			echo "
@@ -194,7 +194,7 @@ class Sub_BBSStart {
 
 
 
-		//¼³Ä¡ ¿¡µðÅÍ ¼³Á¤»çÇ×
+		//ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($configBBS[module_editor] == "PureEditer.php"){
 
 			$ScrpitBodyCheck = " var content = edt.getHtml(); ";
@@ -222,7 +222,7 @@ class Sub_BBSStart {
 		}
 
 
-		//¾÷·Îµå ¼³Á¤»çÇ×
+		//ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($configBBS[module_uploader] == "InnoAP.php"){
 
 			$ScrpitUploadCheck = " if(InnoAPSubmit(form)) form.submit(); ";
@@ -230,7 +230,7 @@ class Sub_BBSStart {
 
 		}else if($configBBS[module_uploader] == "MakeUCC.php"){
 
-			//MAKE UCC¸ðµâ ·Îµù
+			//MAKE UCCï¿½ï¿½ï¿½ ï¿½Îµï¿½
 			if($bbs == "compose" || $bbs == "repair")
 				include $_SERVER["DOCUMENT_ROOT"]."/bbs/Extention/Uploader/MakeUCC/module/script_module.php";
 
@@ -254,25 +254,25 @@ class Sub_BBSStart {
 
 		//echo $ScrpitUploadCheck;
 
-		//°Ô½ÃÆÇ °¡·ÎÅ©±â°è»ê
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½
 		if($configBBS[board_width] > 100)	$configBBS[board_width] = $configBBS[board_width]."px";
 		else								$configBBS[board_width] = $configBBS[board_width]."%";
 
 
-		//Ä«Å×°í¸®°¡ ÀÖÀ» °æ¿ì º¯¼ö¿¡ ¹è¿­·Î ´ã±â
+		//Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½
       	if($configBBS[board_category])	$board_category = explode("|", $configBBS[board_category]);
       	//print_R($board_category);
-      	//ºñ¹Ð±ÛÀÌ ¼³Á¤ µÈ °æ¿ì
+      	//ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
       	if($configBBS[board_secure] != "N")	$board_secure = $configBBS[board_secure];
       	if($board_secure == "E") $board_secure_style = " style='display:none'";
 
 
-		//°Ô½ÃÆÇ ¾×¼Ç º¯¼ö°¡ ¾øÀ»¶§ ¸®½ºÆ®·Î
+		//ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½
 	    if(!$bbs) $bbs = "list";
 
 
 
-		// °Ô½ÃÆÇ Depth ¼³Á¤¿©ºÎ
+		// ï¿½Ô½ï¿½ï¿½ï¿½ Depth ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		/*
 		if(!$Sub_No) $Sub_Que = "";
 		else		 $Sub_Que = "Sub_No='$Sub_No' AND ";
@@ -284,13 +284,13 @@ class Sub_BBSStart {
 		else	$Code_Que = "";
 
 
-		//Ãß°¡Äõ¸® Ã³¸®
+		//ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		if($bbs_userqry)	$Code_Que .= $Code_Que." and userid='$bbs_userqry' and re_step = '0' and re_level = '0' ";
 		if($bbs_subqry)		$Code_Que .= $Code_Que." ".$bbs_subqry;
 
 		if($bbs_subcolumnqry)	$bbs_subcolumnqry = str_replace("[[BBSDBTABLE]]", $configBBS[board_id], $bbs_subcolumnqry);
 
-///*** ±Û¾²±â °ü·Ã ±ÇÇÑ Á¤¸® by jhko 2018-09-07
+///*** ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ by jhko 2018-09-07
 		$division = "NN";
 		/*
 		if($_SESSION['USER_KIND']=="3"){
@@ -308,11 +308,11 @@ class Sub_BBSStart {
 			$division = "HS";
 		}
 		$_SESSION['MEMBER_GROUP'] = $division;
-		///*** ±Û¾²±â °ü·Ã ±ÇÇÑ Á¤¸® by jhko 2018-09-07
+		///*** ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ by jhko 2018-09-07
 
 	if($bbs=="list") {
 
-			@session_unregister("_BBS_DELETE_CONN") or die("session_unregister err");
+			unset($_SESSION["_BBS_DELETE_CONN"]); // PHP7: session_unregister removed
 
 			$dataArr=Decode64($data);
 
@@ -320,43 +320,43 @@ class Sub_BBSStart {
             $letter_no=$dataArr[letter_no];
             $offset=$dataArr[offset];
 
-            if(!$searchstring){ //°Ë»ö
+            if(!$searchstring){ //ï¿½Ë»ï¿½
           	  $search=$dataArr[search];
           	  $searchstring=$dataArr[searchstring];
             }
 
-            if($searchstring) $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." AND $search LIKE '%$searchstring%'"); //°Ë»ö
+            if($searchstring) $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." AND $search LIKE '%$searchstring%'"); //ï¿½Ë»ï¿½
             else $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." ");
 //print_R("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." ");
 
-            //ÃÑ ·¹ÄÚµå¼ö
+            //ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ï¿½
 			$numrows=mysql_num_rows($numresults);
 
-            //ÆäÀÌÁö´ç ±Û ¼ö
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 			$LIMIT = $configBBS[board_listnum];
 
-			//ºí·°´ç ÆäÀÌÁö ¼ö
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			$PAGEBLOCK	= 10;
 
-            //ÆäÀÌÁö ¹øÈ£
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 			if($pagecnt==""){$pagecnt=0;}
 
-			//°¢ ÆäÀÌÁöÀÇ ½ÃÀÛ ±Û
+			//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			if(!$offset){$offset=$pagecnt*$LIMIT*$PAGEBLOCK;}
 
-			//±Û¹øÈ£
+			//ï¿½Û¹ï¿½È£
 			if(!$letter_no) $letter_no=$numrows;
 			else			$letter_no=$letter_no;
 
-			//ÀüÃ¼ÆäÀÌÁö ¼ö
+			//ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			$TotalPage = ceil($numrows / $LIMIT);
 
-			//ÇöÀçÆäÀÌÁö
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			$NowPage = ($offset/$LIMIT)+1;
 
 
 
-            //°Ë»ö½Ã ¸®½ºÆ®Äõ¸®
+            //ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
             if($searchstring){
           	  $bbs_qry = "SELECT ";
           	  $bbs_qry .= " * ";
@@ -370,9 +370,9 @@ class Sub_BBSStart {
           	  $bbs_qry = "SELECT * ";
           	  $bbs_qry .= $bbs_subcolumnqry;
           	  //$bbs_qry .= " FROM ".$configBBS[board_id]." A WHERE idx > 0 ".$Code_Que." ORDER BY  notice ASC, writeday DESC, ref DESC,re_step ASC LIMIT $offset,$LIMIT";
-			  //´ä±Û Á¤·Ä ¶§¹®¿¡ writeday desc »èÁ¦ ( 2016-11-07 )
+			  //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ writeday desc ï¿½ï¿½ï¿½ï¿½ ( 2016-11-07 )
 			  $bbs_qry .= " FROM ".$configBBS[board_id]." A WHERE idx > 0 ".$Code_Que;
-			  if($configBBS['board_id']=="bbs_ipsi6" && $BoardKey=="1515"){ //¼öÁ¤
+			  if($configBBS['board_id']=="bbs_ipsi6" && $BoardKey=="1515"){ //ï¿½ï¿½ï¿½ï¿½
 				  $bbs_qry .= " AND idx !='58608' ";
 			  }
 			  $bbs_qry .= " ORDER BY  notice ASC, ref DESC,re_step ASC LIMIT $offset,$LIMIT";
@@ -385,14 +385,14 @@ class Sub_BBSStart {
 				//print_R($_SESSION);
 				//print_R($bbs_qry);
 			}
-			//±Û½º±â ±ÇÇÑÁ¦¾î
-			if($configBBS[auth_write_use] = 'Y' && !$_SESSION['division']){ //·Î±×ÀÎÀ» ÇÏÁö ¾ÊÀ¸¸é °Ô½ÃÆÇ »ç¿ë ±ÝÁö
+			//ï¿½Û½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if($configBBS[auth_write_use] = 'Y' && !$_SESSION['division']){ //ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				echo $_BBS_Written = "";
 			}else{
 				if($SecAdmin != 1 && $configBBS[auth_write] && @strpos(",".$configBBS[auth_write], $bbs_authgroup) == false){
 					$_BBS_Written = "";
 				}else{
-					//±Û¾²±â ¸µÅ©
+					//ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
 					$encode_data = "Sub_No=$Sub_No&Boardkey=$BoardKey&DBTable=$configBBS[board_id]";
 					$data    = Encode64($encode_data);
 					if($major){
@@ -406,7 +406,7 @@ class Sub_BBSStart {
 
 
 
-		   // °Ë»ö½Ã ½ºÅ©¸³Æ® Ãß°¡
+		   // ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ß°ï¿½
 		   echo "
                   <SCRIPT Language=\"JavaScript\">
                   function XSS_Check(strTemp, level) {
@@ -424,7 +424,7 @@ class Sub_BBSStart {
                   	var form=document.searchForm;
 
                   	if(form.searchstring.value==\"\"){
-                  		alert(\"°Ë»ö ³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+                  		alert(\"ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
                   		form.searchstring.focus();
                   		return false;
                   	}else{
@@ -441,14 +441,12 @@ class Sub_BBSStart {
 
       	$dataArr=Decode64($data);
       	//print_R($dataArr);
-      	@session_unregister("_BBS_DELETE_CONN") or die("session_unregister err");
-      	@session_register("_BBS_WRITE_CONN") or die("session_register err");
-	    $_BBS_WRITE_CONN = $_SESSION["_BBS_WRITE_CONN"] = $BoardKey;
+      	unset($_SESSION["_BBS_DELETE_CONN"]); // PHP7: session_unregister removed
+	    $_BBS_WRITE_CONN = $_SESSION["_BBS_WRITE_CONN"] = $BoardKey; // PHP7: session_register removed, $_SESSION assign above is sufficient
 
-	    //°ü¸®¼¼¼Ç ±Á±â
+	    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	    if($SecAdmin == 1){
-	    	@session_register("_BBS_SecAdmin") or die("session_register err");
-	    	$_BBS_SecAdmin = $_SESSION["_BBS_SecAdmin"] = $SecAdmin;
+	    	$_BBS_SecAdmin = $_SESSION["_BBS_SecAdmin"] = $SecAdmin; // PHP7: session_register removed
 	    }
 
       	if(!empty($dataArr[idx]))
@@ -459,28 +457,28 @@ class Sub_BBSStart {
       	}
 
 
-      	//´ä±Û ±ÇÇÑÁ¦¾î
+      	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       	if($bbs_row[idx]) {
 
 			if($SecAdmin != 1 && $configBBS[auth_reply_use] == "Y" && $configBBS[auth_reply] && @strpos(",".$configBBS[auth_reply], $bbs_authgroup) == false){
-				go_back("´ä±Û¾²±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.");
+				go_back("ï¿½ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				exit;
 			}
 
-		//±Û¾²±â ±ÇÇÑÁ¦¾î
+		//ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       	}else{
 			if($SecAdmin != 1 && $configBBS[auth_write_use] == "Y" && $configBBS[auth_write] && @strpos(",".$configBBS[auth_write], $bbs_authgroup) == false){
-				go_back("±Û¾²±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.");
+				go_back("ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				exit;
 			}
       	}
 
 
-      	//µî·Ï½Ã Ã¼Å©±¸¹® ¹è¿­·Î »ý¼º
+      	//ï¿½ï¿½Ï½ï¿½ Ã¼Å©ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		$checkcolumn = explode(",",$configBBS[board_checkcolumn]);
 		$checktitle = explode(",",$configBBS[board_checktitle]);
 
-		// µî·Ï½Ã ½ºÅ©¸³Æ® Ãß°¡
+		// ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ß°ï¿½
 		echo "
 		<SCRIPT LANGUAGE=\"JavaScript\">
 
@@ -492,39 +490,39 @@ class Sub_BBSStart {
        if($BoardKey=="1419"){
 				 echo "
 				if(form.agreement.checked==false){
-					alert('°³ÀÎÁ¤º¸Ãë±Þ¹æÄ§¿¡ µ¿ÀÇÇØ ÁÖ½Ê½Ã¿À');
+					alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ä§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 					form.agreement.focus();
 			 }
 				 else if(form.fm_name.value==''){
-					 alert('ÀÛ¼ºÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+					 alert('ï¿½Û¼ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 					 form.fm_name.focus();
 					}
 					else if(form._mail.value==''){
-						alert('ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._mail.focus();
 					}
 					else if(form._tel.value==''){
-						alert('¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._tel.focus();
 					}
 					else if(form._zip.value==''){
-						alert('ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._zip.focus();
 					}
 					else if(form._addr2.value==''){
-						alert('ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._addr2.focus();
 					}
 					else if(form.fm_title.value==''){
-						alert('Á¦¸ñÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form.fm_title.focus();
 					}
 					else if(form.fm_pwd.value==''){
-						alert('ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form.fm_pwd.focus();
 					}
 					else if(content==''){
-						alert('³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						edt.focus();
 					}else{
 					form.submit();
@@ -541,13 +539,13 @@ class Sub_BBSStart {
 
 			if($checkcolumn[$i] == "content"){
 				echo $checkaddcon."if(content==\"\"){
-		       			alert(\"".$input_title."À»(¸¦) ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+		       			alert(\"".$input_title."ï¿½ï¿½(ï¿½ï¿½) ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
 		       			edt.focus();
 					}
 				";
 			}else{
 				echo $checkaddcon."if(form.$input_column.value==\"\"){
-		       			alert(\"".$input_title."À»(¸¦) ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+		       			alert(\"".$input_title."ï¿½ï¿½(ï¿½ï¿½) ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
 		       			form.$input_column.focus();
 					}
 				";
@@ -567,40 +565,38 @@ class Sub_BBSStart {
 	} elseif($bbs=="see") {
 
 
-		//°ü¸®¼¼¼Ç ±Á±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	    if($SecAdmin == 1){
-	    	@session_register("_BBS_SecAdmin") or die("session_register err");
-	    	$_BBS_SecAdmin = $_SESSION["_BBS_SecAdmin"] = $SecAdmin;
+	    	$_BBS_SecAdmin = $_SESSION["_BBS_SecAdmin"] = $SecAdmin; // PHP7: session_register removed
 	    }
 
-		//³»¿ëº¸±â ±ÇÇÑÁ¦¾î
+		//ï¿½ï¿½ï¿½ëº¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if($SecAdmin != 1 && $configBBS[auth_read_use] == "Y" && $configBBS[auth_read] && @strpos(",".$configBBS[auth_read], $bbs_authgroup) == false){
-			go_back("³»¿ëº¸±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.");
+			go_back("ï¿½ï¿½ï¿½ëº¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			exit;
 		}
 			  $dataArr = Decode64($data);
 
-			  @session_register("_BBS_DELETE_CONN") or die("session_register err");
-	      	  $_BBS_DELETE_CONN = $_SESSION["_BBS_DELETE_CONN"] = $dataArr[idx];
+			  $_BBS_DELETE_CONN = $_SESSION["_BBS_DELETE_CONN"] = $dataArr[idx]; // PHP7: session_register removed
 
               //$check=DBarray("SELECT COUNT(*) FROM ".$configBBS[board_id]." WHERE code='".$BoardKey."' AND idx='".$dataArr[idx]."'");
               $check=DBarray("SELECT COUNT(*) FROM ".$configBBS[board_id]." WHERE idx='".$dataArr[idx]."'");
 
-			  if($check[0]<1) go_back("°Ô½Ã¹°ÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. ");
+			  if($check[0]<1) go_back("ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½. ");
 
-			  //$view_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE code='".$BoardKey."' AND idx='".$dataArr[idx]."'"); //°Ô½ÃÆÇ Á¤º¸
-			  $view_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE idx='".$dataArr[idx]."'"); //°Ô½ÃÆÇ Á¤º¸
+			  //$view_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE code='".$BoardKey."' AND idx='".$dataArr[idx]."'"); //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			  $view_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE idx='".$dataArr[idx]."'"); //ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			  //ºñ¹Ð±Û º¸±âÁ¦ÇÑ
+			  //ï¿½ï¿½Ð±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			  if($view_row[view_secret] == "Y" && $SecAdmin != 1){
 
 			  	if($bbs_userid){
-			  		if($view_row[userid] != $bbs_userid)	go_back("ºñ¹Ð±ÛÀº º»ÀÎ ÀÌ¿Ü¿¡´Â º¸½Ç ¼ö ¾ø½À´Ï´Ù. ");
+			  		if($view_row[userid] != $bbs_userid)	go_back("ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ");
 			  	}else if($bbs_adminid){
-			  		if($view_row[adminid] != $bbs_adminid)	go_back("ºñ¹Ð±ÛÀº º»ÀÎ ÀÌ¿Ü¿¡´Â º¸½Ç ¼ö ¾ø½À´Ï´Ù. ");
+			  		if($view_row[adminid] != $bbs_adminid)	go_back("ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ");
 			  	}else{
 			  		if($_SESSION["_BBS_VIEW_LOGIN"] != $view_row[pwd]){
-			  			go_back("ºñ¹Ð±ÛÀº ±ÛÀ» ÀÛ¼ºÇÏ½Å ºÐ ÀÌ¿Ü¿¡´Â º¸½Ç ¼ö ¾ø½À´Ï´Ù.");
+			  			go_back("ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½Ì¿Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			  		}
 			  	}
 			  }
@@ -609,8 +605,7 @@ class Sub_BBSStart {
           	// count overlapping check
           	if($_SESSION[_BBS_COUNT_VIEW] != $view_row[idx]) {
 
-          		@session_register("_BBS_COUNT_VIEW") or die("session_register err");
-          	    $_SESSION["_BBS_COUNT_VIEW"] = $view_row[idx];
+          	    $_SESSION["_BBS_COUNT_VIEW"] = $view_row[idx]; // PHP7: session_register removed
 
           	    @DBquery("update ".$configBBS[board_id]." set readnum=readnum+1 where idx=$dataArr[idx]");
           	    $readnum = $view_row[readnum]+1;
@@ -619,7 +614,7 @@ class Sub_BBSStart {
           		$readnum = $view_row[readnum];
           	}
 
-			// º¯¼ö°¡°ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($configBBS[module_editor] == "None.php" || $configBBS[module_editor] == ""){
 				$content = str_replace("\n","<br>", $view_row[content]);
 			}else{
@@ -633,17 +628,17 @@ class Sub_BBSStart {
 	      	$up_file_idx = $view_row[up_file_idx];
 
 
-		    //Ã·ºÎÆÄÀÏÀÌ ÀÖÀ»¶§
+		    //Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		    if($up_file_count > 0){
 
 			    $filev = 0;
-				// 2019.07.10 By.Son Ã·ºÎÆÄÀÏ Á¤·Ä Ãß°¡
+				// 2019.07.10 By.Son Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 				$file_sql = "SELECT * FROM ".$configBBS[board_id]."_file WHERE up_file_idx='".$up_file_idx."'";
 				$file_sql .= " order by up_filename asc ";
 			    $file_result = DBquery($file_sql);
 			    while($file_row=mysql_fetch_array($file_result)){
 
-					//ÀÏ¹Ý Ã·ºÎÆÄÀÏ ÀÏ °æ¿ì
+					//ï¿½Ï¹ï¿½ Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 					if ($file_row[up_filepath] && $file_row[file_type] < 10){
 
 						$encode_str = "Boardkey=".$BoardKey."&DBTable=".$configBBS[board_id]."&idx=".$file_row[idx]."&download=ok";
@@ -652,12 +647,12 @@ class Sub_BBSStart {
 						//$upfile_link[$filev] .=  $file_row[up_filepath];
 						//$upfile_link[$filev] .=  "<a href='/bbs/download.php?data=".$down_data."'>".$file_row[up_filename]."</a> ";
 
-						//ÆÄÀÏÃ¼Å© ½ÃÀÛ
+						//ï¿½ï¿½ï¿½ï¿½Ã¼Å© ï¿½ï¿½ï¿½ï¿½
 						if(file_exists($_SERVER["DOCUMENT_ROOT"]."/bbs/".$file_row[up_filepath])){
-							//´ëÇÐÂÊ¿¡¼­ ¿Ã¸° ÆÄÀÏ ÀÖÀ¸¸é.
+							//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 							$upfile_link[$filev] .=  "<a href='/bbs/download.php?data=".$down_data."'>".$file_row[up_filename]."</a>";
 						}else{
-							//´ëÇÐ¿¡ ¾øÀ¸¸é ÇÐ°úÂÊ ÆÄÀÏ
+							//ï¿½ï¿½ï¿½Ð¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 							$upfile_link[$filev] .=  "<a href='http://nurs.ch.ac.kr/bbs/download.php?data=".$down_data."'>".$file_row[up_filename]."</a> ";
 						}
 
@@ -668,7 +663,7 @@ class Sub_BBSStart {
 						}
 					}
 
-					//UCCÀÏ °æ¿ì
+					//UCCï¿½ï¿½ ï¿½ï¿½ï¿½
 					if($file_row[up_filepath] && $file_row[file_type] == 10) {
 						$upfile_uccview .= "<embed src='http://".$_SERVER['HTTP_HOST']."/bbs/Extention/Uploader/MakeUCC/makeucc.swf' quality='high' wmode='transparent' devicefont='true' bgcolor='#ffffff' width='".$UCC_SIZE_WIDTH."' height='".$UCC_SIZE_HEIGHT."' id='bbsucc_".time()."' name='bbsucc_".time()."' align='middle' allowScriptAccess='always' allowfullscreen='true' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' ";
 						$upfile_uccview .= " flashvars='ComURL=http://".$_SERVER['HTTP_HOST']."/bbs/Extention/Uploader/MakeUCC/&ComSrv_ID=iuk&MovieID=".$file_row[idx]."&playicon=null&WatermarkURL=null&BannerURL=null&ComSrv_AdText=null&ViewerParam1=".$configBBS[board_id]."&ViewerParam2=' /> ";
@@ -678,31 +673,31 @@ class Sub_BBSStart {
 
 			    }
 
-				//±Ûº¸±â¿¡¼­ ÀÌ¹ÌÁö»ç¿ë
+				//ï¿½Ûºï¿½ï¿½â¿¡ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				$content = $upfile_uccview.$upfile_imgview.$content;
 			}
 
 			//$content = url_auto_link($content);
 
-			//´Ù¿î·Îµå ±ÇÇÑÁ¦¾î
+			//ï¿½Ù¿ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($SecAdmin != 1 && $configBBS[auth_download_use] == "Y" && $configBBS[auth_download] && @strpos(",".$configBBS[auth_download], $bbs_authgroup) == false){
 
-				$upfile_view = "<span style='font-size:11px; color:#BBBBBB;'>´Ù¿î·Îµå ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.</span>";
+				$upfile_view = "<span style='font-size:11px; color:#BBBBBB;'>ï¿½Ù¿ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</span>";
 
 			}else{
 
 				if($filev > 0){
 					$upfile_view = "<div onclick=\"DisplayDetail('div_filedown',1)\" style='cursor:hand'>";
-					$upfile_view .= "<span style='font-size:11px; color:#8c8b8b;'>Ã·ºÎÆÄÀÏ</span><span style='font-size:11px; color:#005D79;'>(".$up_file_count.")</span> <img src='/bbs/skin/".$configBBS[board_skin]."/images/filedown.gif' align='absmiddle' alt='filedown' />";
+					$upfile_view .= "<span style='font-size:11px; color:#8c8b8b;'>Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span><span style='font-size:11px; color:#005D79;'>(".$up_file_count.")</span> <img src='/bbs/skin/".$configBBS[board_skin]."/images/filedown.gif' align='absmiddle' alt='filedown' />";
 					$upfile_view .= "</div>";
 				}else{
 
-					$upfile_view = "<span style='font-size:11px; color:#BBBBBB;'>Ã·ºÎÆÄÀÏÀÌ ¾ø½À´Ï´Ù.</span>";
+					$upfile_view = "<span style='font-size:11px; color:#BBBBBB;'>Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</span>";
 				}
 			}
 
 
-			//ÄÚ¸àÆ® ±ÇÇÑÁ¦¾î
+			//ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($SecAdmin != 1 && $configBBS[auth_comment] && @strpos(",".$configBBS[auth_comment], $bbs_authgroup) == false){
 				$_BBS_commented = "";
 			}else{
@@ -710,7 +705,7 @@ class Sub_BBSStart {
 			}
 
 
-			//±Û¾²±â ±ÇÇÑÁ¦¾î
+			//ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($SecAdmin != 1 && $configBBS[auth_write] && @strpos(",".$configBBS[auth_write], $bbs_authgroup) == false){
 				$_BBS_Written = "";
 
@@ -720,7 +715,7 @@ class Sub_BBSStart {
 				$_BBS_Password = "";
 
 			}else{
-				//º¸±â¿¡¼­ ±Û¾²±â ¸µÅ©
+				//ï¿½ï¿½ï¿½â¿¡ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
 				$wencode_data = "Boardkey=$dataArr[Boardkey]&Sub_No=$dataArr[Sub_No]&DBTable=$dataArr[DBTable]";
   			  	$wdata    = Encode64($wencode_data);
   			  if($major){
@@ -732,7 +727,7 @@ class Sub_BBSStart {
 				$_BBS_Deleted = "javascript:bbsDel();";
 
 
-				//ÆÐ½º¿öµå ÀÚµ¿Ç¥½Ã ¿©ºÎ
+				//ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				if($SecAdmin == 1){
 					$_BBS_Password = "<input type='hidden' name='pwd' value='".$view_row[pwd]."'>";
 				}else if($view_row[userid] != "" && $view_row[userid] == $bbs_userid){
@@ -749,7 +744,7 @@ class Sub_BBSStart {
 			}
 
 
-			//´äº¯¾²±â ±ÇÇÑÁ¦¾î
+			//ï¿½äº¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($SecAdmin != 1 && $configBBS[auth_reply] && @strpos(",".$configBBS[auth_reply], $bbs_authgroup) == false){
 				$_BBS_Replied = "";
 			}else{
@@ -758,10 +753,10 @@ class Sub_BBSStart {
 
 			//var_dump($configBBS);
 
-			$list_link = "$PHP_SELF?bbs=list&data=$data"; //¸ñ·Ï¸µÅ©
+			$list_link = "$PHP_SELF?bbs=list&data=$data"; //ï¿½ï¿½Ï¸ï¿½Å©
 
 
-			  // ½ºÅ©¸³Æ® Ãß°¡
+			  // ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ß°ï¿½
               echo "
               <SCRIPT Language=\"JavaScript\">
 
@@ -769,7 +764,7 @@ class Sub_BBSStart {
               {
               	var form=document.pwdForm;
               	if(form.pwd.value==\"\"){
-              		alert(\"ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+              		alert(\"ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
               		form.pwd.focus();
               	}else{
               		form.action=\"/bbs/module_pw.php?data=$data&BURL=$PHP_SELF&edit=ok\";
@@ -781,7 +776,7 @@ class Sub_BBSStart {
               {
               	var form=document.pwdForm;
               	if(form.pwd.value==\"\"){
-              		alert(\"ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+              		alert(\"ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
               		form.pwd.focus();
               	}else{
               		form.action=\"/bbs/module_pw.php?data=$data&BURL=$PHP_SELF&del=ok\";
@@ -796,28 +791,27 @@ class Sub_BBSStart {
 
 	      $dataArr=Decode64($data);
 
-	        @session_unregister("_BBS_DELETE_CONN") or die("session_unregister err");
-	        @session_register("_BBS_WRITE_CONN") or die("session_register err");
-	      	$_BBS_WRITE_CONN = $_SESSION["_BBS_WRITE_CONN"] = $dataArr[idx];
+	        unset($_SESSION["_BBS_DELETE_CONN"]); // PHP7: session_unregister removed
+	      	$_BBS_WRITE_CONN = $_SESSION["_BBS_WRITE_CONN"] = $dataArr[idx]; // PHP7: session_register removed
 
 	      	if($dataArr[idx]) {
 
 	      		$bbs_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE idx='".$dataArr[idx]."'");
 
-	      	    if($_SESSION[_BBS_PASS_LOGIN]!=$bbs_row[pwd]) go_back("\\n Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù. \\n");
+	      	    if($_SESSION[_BBS_PASS_LOGIN]!=$bbs_row[pwd]) go_back("\\n ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \\n");
 	      	}else{
-	      		go_back("\\n Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù. \\n");
+	      		go_back("\\n ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \\n");
 	      	}
 
 	      	$up_file_count = $bbs_row[up_file];
 	      	$up_file_idx = $bbs_row[up_file_idx];
 
 
-	      	//µî·Ï½Ã Ã¼Å©±¸¹® ¹è¿­·Î »ý¼º
+	      	//ï¿½ï¿½Ï½ï¿½ Ã¼Å©ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			$checkcolumn = explode(",",$configBBS[board_checkcolumn]);
 			$checktitle = explode(",",$configBBS[board_checktitle]);
 
-			// µî·Ï½Ã ½ºÅ©¸³Æ® Ãß°¡
+			// ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ß°ï¿½
 			echo "
 			<SCRIPT LANGUAGE=\"JavaScript\">
 
@@ -829,35 +823,35 @@ class Sub_BBSStart {
 	       if($BoardKey=="1419"){
 				 echo "
 				 if(form.fm_name.value==''){
-					 alert('ÀÛ¼ºÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+					 alert('ï¿½Û¼ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 					 form.fm_name.focus();
 					}
 					else if(form._mail.value==''){
-						alert('ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._mail.focus();
 					}
 					else if(form._tel.value==''){
-						alert('¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._tel.focus();
 					}
 					else if(form._zip.value==''){
-						alert('ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._zip.focus();
 					}
 					else if(form._addr2.value==''){
-						alert('ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form._addr2.focus();
 					}
 					else if(form.fm_title.value==''){
-						alert('Á¦¸ñÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form.fm_title.focus();
 					}
 					else if(form.fm_pwd.value==''){
-						alert('ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						form.fm_pwd.focus();
 					}
 					else if(content==''){
-						alert('³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À');
+						alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½');
 						edt.focus();
 					}
 				 ";
@@ -872,13 +866,13 @@ class Sub_BBSStart {
 
 				if($checkcolumn[$i] == "content"){
 					echo $checkaddcon."if(content==\"\"){
-			       			alert(\"".$input_title."À»(¸¦) ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+			       			alert(\"".$input_title."ï¿½ï¿½(ï¿½ï¿½) ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
 			       			edt.focus();
 						}
 					";
 				}else{
 					echo $checkaddcon."if(form.$input_column.value==\"\"){
-			       			alert(\"".$input_title."À»(¸¦) ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.\");
+			       			alert(\"".$input_title."ï¿½ï¿½(ï¿½ï¿½) ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.\");
 			       			form.$input_column.focus();
 						}
 					";
@@ -896,22 +890,22 @@ class Sub_BBSStart {
 
 	} else {
 
-		//$bbs ¾×¼ÇÀÌ ¾ø´Â°æ¿ì
+		//$bbs ï¿½×¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ï¿½
 
 	}
 
 
 
-	   if($configBBS[board_topinclude]) include $_SERVER["DOCUMENT_ROOT"].$configBBS[board_topinclude];	//»ó´Ü ÀÎÅ¬·çµå
+	   if($configBBS[board_topinclude]) include $_SERVER["DOCUMENT_ROOT"].$configBBS[board_topinclude];	//ï¿½ï¿½ï¿½ ï¿½ï¿½Å¬ï¿½ï¿½ï¿½
 
 	   switch($bbs){
 
 		case 'list' :
 
-			//¸®½ºÆ® ±ÇÇÑÁ¦¾î
+			//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if($SecAdmin != 1 && $configBBS[auth_list_use] == "Y" && $configBBS[auth_list] && @strpos(",".$configBBS[auth_list], $bbs_authgroup) == false){
 
-				echo "¸®½ºÆ® º¸±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.";
+				echo "ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 
 			}else{
 
@@ -952,41 +946,41 @@ class Sub_BBSStart {
 	            $letter_no=$dataArr[letter_no];
 	            $offset=$dataArr[offset];
 
-	            if(!$searchstring){ //°Ë»ö
+	            if(!$searchstring){ //ï¿½Ë»ï¿½
 	          	  $search=$dataArr[search];
 	          	  $searchstring=$dataArr[searchstring];
 	            }
 
-	            if($searchstring) $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." AND $search LIKE '%$searchstring%'"); //°Ë»ö
+	            if($searchstring) $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." AND $search LIKE '%$searchstring%'"); //ï¿½Ë»ï¿½
 	            else $numresults=DBquery("SELECT idx FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." ");
 
 
-	            //ÃÑ ·¹ÄÚµå¼ö
+	            //ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ï¿½
 				$numrows=mysql_num_rows($numresults);
 
-	            //ÆäÀÌÁö´ç ±Û ¼ö
+	            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 				$LIMIT = $configBBS[board_listnum];
 
-				//ºí·°´ç ÆäÀÌÁö ¼ö
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 				$PAGEBLOCK	= 10;
 
-	            //ÆäÀÌÁö ¹øÈ£
+	            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 				if($pagecnt==""){$pagecnt=0;}
 
-				//°¢ ÆäÀÌÁöÀÇ ½ÃÀÛ ±Û
+				//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 				if(!$offset){$offset=$pagecnt*$LIMIT*$PAGEBLOCK;}
 
-				//±Û¹øÈ£
+				//ï¿½Û¹ï¿½È£
 				if(!$letter_no) $letter_no=$numrows;
 				else			$letter_no=$letter_no;
 
-				//ÀüÃ¼ÆäÀÌÁö ¼ö
+				//ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 				$TotalPage = ceil($numrows / $LIMIT);
 
-				//ÇöÀçÆäÀÌÁö
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				$NowPage = ($offset/$LIMIT)+1;
 
-	            //°Ë»ö½Ã ¸®½ºÆ®Äõ¸®
+	            //ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
 	            if($searchstring){
 	          	  $bbs_qry = "SELECT * FROM ".$configBBS[board_id]." WHERE idx > 0 ".$Code_Que." AND $search LIKE '%$searchstring%' ";
 	          	  $bbs_qry.= " ORDER BY ref DESC,re_step ASC LIMIT $offset,$LIMIT";
@@ -999,7 +993,7 @@ class Sub_BBSStart {
 				$encode_data = "Sub_No=$Sub_No&Boardkey=$BoardKey&DBTable=$configBBS[board_id]";
 	  			$data    = Encode64($encode_data);
 
-				//±Û¾²±â ¹öÆ°
+				//ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
 				if($major){
 					$_BBS_Written	=	"$PHP_SELF?bbs=compose&major=$major&data=$data";
 				}else{
@@ -1038,7 +1032,7 @@ class Sub_BBSStart {
 		break;
 
 	   }
-	   if($configBBS[board_bottominclude]) include $_SERVER["DOCUMENT_ROOT"].$configBBS[board_bottominclude];	//ÇÏ´Ü ÀÎÅ¬·çµå
+	   if($configBBS[board_bottominclude]) include $_SERVER["DOCUMENT_ROOT"].$configBBS[board_bottominclude];	//ï¿½Ï´ï¿½ ï¿½ï¿½Å¬ï¿½ï¿½ï¿½
 
 	}
 
@@ -1048,29 +1042,29 @@ class Sub_BBSStart {
 
 
 
-// ÆäÀÌÁö ÄÆ¢¸ 1 [2][3][4][5] ¢º
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¢ï¿½ 1 [2][3][4][5] ï¿½ï¿½
 class BList
 {
-	var $g_pageName;		//¼³Á¤ÆÄÀÏ¸í ex) ****.php, OOOO.php
+	var $g_pageName;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ex) ****.php, OOOO.php
 
-	var $g_pageCnt;			//ÇöÀçÆäÀÌÁö ¹øÈ£
-	var $g_offset;			//µ¥ÀÌÅ¸º£ÀÌ½º ½ÃÀÛ Æ÷ÀÎÆ® ¹øÈ£
-	var $g_numRows;			//ÃÑ°Ô½Ã¹° ¼ö
-	var $g_pageBlock;		//ºí·°´ç ÆäÀÌÁö ¼ö ex) 5 : [1][2][3][4][5]
-	var $g_limit;			//ÆäÀÌÁö´ç Ãâ·Â °Ô½Ã¹° ¼ö
-	var $g_search;			//°Ë»ö ÄÃ·³ ex)name,title,...
-	var $g_searchstring;	//°Ë»ö¾î
+	var $g_pageCnt;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	var $g_offset;			//ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È£
+	var $g_numRows;			//ï¿½Ñ°Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_pageBlock;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex) 5 : [1][2][3][4][5]
+	var $g_limit;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_search;			//ï¿½Ë»ï¿½ ï¿½Ã·ï¿½ ex)name,title,...
+	var $g_searchstring;	//ï¿½Ë»ï¿½ï¿½ï¿½
 
-	var $g_option;			//Ãß°¡ get °ª  ex) &getdata=$getdata
+	var $g_option;			//ï¿½ß°ï¿½ get ï¿½ï¿½  ex) &getdata=$getdata
 
-	var $g_pniView;			//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ ex) true,1 : Ç¥½Ã  false,0 : ¹ÌÇ¥½Ã
-	var $g_pIcon;			//ÀÌÀü ¾ÆÀÌÄÜ
-	var $g_nIcon;			//´ÙÀ½ ¾ÆÀÌÄÜ
+	var $g_pniView;			//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) true,1 : Ç¥ï¿½ï¿½  false,0 : ï¿½ï¿½Ç¥ï¿½ï¿½
+	var $g_pIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	var $g_nIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// BList( char* pagename, int pagecnt, int offset, int numrows, int pageblock, int limit, char* search, char* searchstring, char* option)
-	// BList(ÆäÀÌÁö¸í, ÇöÀçÆäÀÌÁö¹øÈ£, DB½ÃÀÛoffset, ÃÑ°Ô½Ã¹°¼ö, ºí·°´çÆäÀÌÁö¼ö, ÆäÀÌÁö´ç°Ô½Ã¹°¼ö, °Ë»öÄÃ·³, °Ë»ö¾î, Ãß°¡get°ª)
+	// BList(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£, DBï¿½ï¿½ï¿½ï¿½offset, ï¿½Ñ°Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ï¿½Ã·ï¿½, ï¿½Ë»ï¿½ï¿½ï¿½, ï¿½ß°ï¿½getï¿½ï¿½)
 	//
 	function BList($pagename,$pagecnt,$offset,$numrows,$pageblock,$limit,$search,$searchstring,$option){
 
@@ -1085,45 +1079,45 @@ class BList
 		$this->g_option			= $option;
 	}
 	//
-	// ¾ÆÀÌÄÜ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// putList( BOOL pniView, char* pre_icon, char* next_icon)
-	// putList( ¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ, ÀÌÀü¾ÆÀÌÄÜ, ´ÙÀ½¾ÆÀÌÄÜ, Ã³À½, ¸¶Áö¸·, ÇÑÄ­ÀÌÀü, ÇÑÄ­´ÙÀ½
+	// putList( ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Ã³ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½
 	//
 	function putList($pniView,$pre_icon,$next_icon,$first_icon,$last_icon,$pre1_icon,$next1_icon){
-		$this->g_pniView=$pniView;					//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ
-		if(empty($pre_icon))	$this->g_pIcon="<<";			//ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		$this->g_pniView=$pniView;					//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(empty($pre_icon))	$this->g_pIcon="<<";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_pIcon=$pre_icon;
 
-		if(empty($next_icon))	$this->g_nIcon=">>";			//´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next_icon))	$this->g_nIcon=">>";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_nIcon=$next_icon;
 
-		if(empty($first_icon))	$this->g_fIcon="Ã³À½À¸·Î";		//Ã³À½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($first_icon))	$this->g_fIcon="Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";		//Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_fIcon=$first_icon;
 
-		if(empty($last_icon))	$this->g_lIcon="¸¶Áö¸·À¸·Î";	//¸¶Áö¸· ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($last_icon))	$this->g_lIcon="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_lIcon=$last_icon;
 
 
-		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ÇÑÄ­ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($pre1_icon))	$this->g_p1Icon="<";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_p1Icon=$pre1_icon;
 
-		if(empty($next1_icon))	$this->g_n1Icon=">";			//ÇÑÄ­´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next1_icon))	$this->g_n1Icon=">";			//ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_n1Icon=$next1_icon;
 
-		$this->pniPrint(); //È­¸é Ãâ·Â
+		$this->pniPrint(); //È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 
 
 	//
-	// È­¸é Ãâ·Â
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//
 	function pniPrint(){
 		global $category;
 
-		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ÇöÁ¦ÆäÀÌÁö Ã¼Å©
+		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
-	    if($chekpage==$this->g_pageCnt){  //¸¶Áö¸· ºí·°ÀÏ °æ¿ì....
-			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //¸¶Áö¸· ºí·° ÆäÀÌÁö¼ö °è»ê
+	    if($chekpage==$this->g_pageCnt){  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½....
+			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(!($this->g_numRows%($this->g_limit))){
 	 			$pCnt--;
 			}
@@ -1140,27 +1134,27 @@ class BList
 		$lastletter_no=$this->g_numRows-(($lastt-1)*$this->g_limit);
 
 
-		/*   Ã³À½   */
+		/*   Ã³ï¿½ï¿½   */
 		$data=Encode64("search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 		echo "<a href=".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option.">".$this->g_fIcon."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
 
 
-		/*    ÀÌÀü   */
-		if($this->g_pageCnt>0){				//ÀÌÀüÆäÀÌÁö ÀÖÀ½
-			$prepage=$this->g_pageCnt-1;	//ÀÌÀüºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤.
-			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ÀÌÀüºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt>0){				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$prepage=$this->g_pageCnt-1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $data=Encode64("pagecnt=".$prepage."&letter_no=".$pre_letter_no."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 
 	        $pre_str ="<a href='".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option."'>".$this->g_pIcon."</a>&nbsp;";
 
-		    echo "$pre_str"; 	//ÀÌÀü¾ÆÀÌÄÜ ¸µÅ©
-		}else{					//ÀÌÀüÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)//¾ÆÀÌÄÜ Ç¥½Ã
+		    echo "$pre_str"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				$empty_pre_str = $this->g_pIcon."&nbsp;";
 				//$empty_pre_str = "&nbsp;";
 
-		    else				//¾ÆÀÌÄÜ ºñÇ¥½Ã
+		    else				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 			    $empty_pre_str = "&nbsp;";
 
 		    echo "$empty_pre_str";
@@ -1169,7 +1163,7 @@ class BList
 
 
 
-		/*    1°³ ÀÌÀü   */
+		/*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$p1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)-$this->g_limit;
 		$p1letter_no=$this->g_numRows-$p1offset;
 
@@ -1191,13 +1185,13 @@ class BList
 		/* 1 [2][3][4][5] */
 		$l=0;
 		while($l<$pCnt){
-			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//½ÃÀÛ±Û ÁöÁ¤
-		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ÆäÀÌÁö ¹øÈ£ ¼³Á¤
-			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//½ÃÀÛ±Û ¹øÈ£ ÁöÁ¤
+			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $en_str = "offset=".$loffset."&letter_no=".$cu_letter_no."&pagecnt=".$this->g_pageCnt;
 		    $en_str.= "&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$data=Encode64($en_str);
-			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ÇöÀç ÆäÀÌÁö ÀÏ °æ¿ì
+			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 				echo " <font size='2'><b>$lnum</b></font> ";
 				//echo $en_str;
 			}else{
@@ -1213,7 +1207,7 @@ class BList
 
 
 
-	    /*    1°³ ´ÙÀ½   */
+	    /*    1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   */
 		$n1offset=(($this->g_offset/$this->g_limit)*$this->g_limit)+$this->g_limit;
 		$n1letter_no=$this->g_numRows+$n1offset;
 
@@ -1232,26 +1226,26 @@ class BList
 
 
 
-		/*    ´ÙÀ½   */
-		if($this->g_pageCnt!=$chekpage){		//´ÙÀ½ÆäÀÌÁö ÀÖÀ½
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt!=$chekpage){		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			echo "&nbsp;";
-			$newpagecnt=$this->g_pageCnt+1;		//´ÙÀ½ ºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤
-			$newt=$cu_letter_no-$this->g_limit;	//´ÙÀ½ ºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+			$newpagecnt=$this->g_pageCnt+1;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$newt=$cu_letter_no-$this->g_limit;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 			$data=Encode64("pagecnt=".$newpagecnt."&letter_no=".$newt."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 			$next_str="<a href='".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option."'>".$this->g_nIcon."</a>";
 
-			echo $next_str;			//´ÙÀ½ ¾ÆÀÌÄÜ ¸µÅ©
-		}else{						//´ÙÀ½ÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)	//¾ÆÀÌÄÜ Ç¥½Ã
+			echo $next_str;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				echo"&nbsp;".$this->g_nIcon;
 				//echo"&nbsp;";
 
-			else					//¾ÆÀÌÄÜ ºñÇ¥½Ã
+			else					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 				echo"&nbsp;";
 		}
 
 
-		/*   ¸¶Áö¸·   */
+		/*   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   */
 		$data=Encode64("pagecnt=".$lastpagecnt."&letter_no=".$lastletter_no."&offset=".$lastoffset."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 
 		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option."&".$this->g_option."'>".$this->g_lIcon."</a>";
@@ -1261,29 +1255,29 @@ class BList
 
 
 
-// ÆäÀÌÁö ÄÆ¢¸ 1 [2][3][4][5] ¢º
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¢ï¿½ 1 [2][3][4][5] ï¿½ï¿½
 class CList
 {
-	var $g_pageName;		//¼³Á¤ÆÄÀÏ¸í ex) ****.php, OOOO.php
+	var $g_pageName;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ex) ****.php, OOOO.php
 
-	var $g_pageCnt;			//ÇöÀçÆäÀÌÁö ¹øÈ£
-	var $g_offset;			//µ¥ÀÌÅ¸º£ÀÌ½º ½ÃÀÛ Æ÷ÀÎÆ® ¹øÈ£
-	var $g_numRows;			//ÃÑ°Ô½Ã¹° ¼ö
-	var $g_pageBlock;		//ºí·°´ç ÆäÀÌÁö ¼ö ex) 5 : [1][2][3][4][5]
-	var $g_limit;			//ÆäÀÌÁö´ç Ãâ·Â °Ô½Ã¹° ¼ö
-	var $g_search;			//°Ë»ö ÄÃ·³ ex)name,title,...
-	var $g_searchstring;	//°Ë»ö¾î
+	var $g_pageCnt;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	var $g_offset;			//ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È£
+	var $g_numRows;			//ï¿½Ñ°Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_pageBlock;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex) 5 : [1][2][3][4][5]
+	var $g_limit;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+	var $g_search;			//ï¿½Ë»ï¿½ ï¿½Ã·ï¿½ ex)name,title,...
+	var $g_searchstring;	//ï¿½Ë»ï¿½ï¿½ï¿½
 
-	var $g_option;			//Ãß°¡ get °ª  ex) &getdata=$getdata
+	var $g_option;			//ï¿½ß°ï¿½ get ï¿½ï¿½  ex) &getdata=$getdata
 
-	var $g_pniView;			//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ ex) true,1 : Ç¥½Ã  false,0 : ¹ÌÇ¥½Ã
-	var $g_pIcon;			//ÀÌÀü ¾ÆÀÌÄÜ
-	var $g_nIcon;			//´ÙÀ½ ¾ÆÀÌÄÜ
+	var $g_pniView;			//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) true,1 : Ç¥ï¿½ï¿½  false,0 : ï¿½ï¿½Ç¥ï¿½ï¿½
+	var $g_pIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	var $g_nIcon;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	//
-	// »ý¼ºÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// CList( char* pagename, int pagecnt, int offset, int numrows, int pageblock, int limit, char* search, char* searchstring, char* option)
-	// CList(ÆäÀÌÁö¸í, ÇöÀçÆäÀÌÁö¹øÈ£, DB½ÃÀÛoffset, ÃÑ°Ô½Ã¹°¼ö, ºí·°´çÆäÀÌÁö¼ö, ÆäÀÌÁö´ç°Ô½Ã¹°¼ö, °Ë»öÄÃ·³, °Ë»ö¾î, Ãß°¡get°ª)
+	// CList(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£, DBï¿½ï¿½ï¿½ï¿½offset, ï¿½Ñ°Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½Ã¹ï¿½ï¿½ï¿½, ï¿½Ë»ï¿½ï¿½Ã·ï¿½, ï¿½Ë»ï¿½ï¿½ï¿½, ï¿½ß°ï¿½getï¿½ï¿½)
 	//
 	function CList($pagename,$pagecnt,$offset,$numrows,$pageblock,$limit,$search,$searchstring,$option){
 
@@ -1298,32 +1292,32 @@ class CList
 		$this->g_option			= $option;
 	}
 	//
-	// ¾ÆÀÌÄÜ ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// putList( BOOL pniView, char* pre_icon, char* next_icon)
-	// putList( ¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ, ÀÌÀü¾ÆÀÌÄÜ, ´ÙÀ½¾ÆÀÌÄÜ, Ã³À½, ¸¶Áö¸·, ÇÑÄ­ÀÌÀü, ÇÑÄ­´ÙÀ½
+	// putList( ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Ã³ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½
 	//
 	function putList($pniView,$pre_icon,$next_icon){
-		$this->g_pniView=$pniView;					//¸µÅ©µÇÁö ¾ÊÀº ¾ÆÀÌÄÜ Ç¥½Ã ¿©ºÎ
-		if(empty($pre_icon))	$this->g_pIcon="<<";			//ÀÌÀü ¾ÆÀÌÄÜ ¼³Á¤
+		$this->g_pniView=$pniView;					//ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(empty($pre_icon))	$this->g_pIcon="<<";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_pIcon=$pre_icon;
 
-		if(empty($next_icon))	$this->g_nIcon=">>";			//´ÙÀ½ ¾ÆÀÌÄÜ ¼³Á¤
+		if(empty($next_icon))	$this->g_nIcon=">>";			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		else					$this->g_nIcon=$next_icon;
 
-		$this->pniPrint(); //È­¸é Ãâ·Â
+		$this->pniPrint(); //È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 
 
 	//
-	// È­¸é Ãâ·Â
+	// È­ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//
 	function pniPrint(){
 		global $category;
 
-		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ÇöÁ¦ÆäÀÌÁö Ã¼Å©
+		$chekpage=intval($this->g_numRows/($this->g_limit*$this->g_pageBlock)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
-	    if($chekpage==$this->g_pageCnt){  //¸¶Áö¸· ºí·°ÀÏ °æ¿ì....
-			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //¸¶Áö¸· ºí·° ÆäÀÌÁö¼ö °è»ê
+	    if($chekpage==$this->g_pageCnt){  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½....
+			$pCnt=(intval($this->g_numRows/$this->g_limit)%$this->g_pageBlock)+1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if(!($this->g_numRows%($this->g_limit))){
 	 			$pCnt--;
 			}
@@ -1336,21 +1330,21 @@ class CList
 
 
 
-		/*    ÀÌÀü   */
-		if($this->g_pageCnt>0){				//ÀÌÀüÆäÀÌÁö ÀÖÀ½
-			$prepage=$this->g_pageCnt-1;	//ÀÌÀüºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤.
-			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ÀÌÀüºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt>0){				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$prepage=$this->g_pageCnt-1;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+			$pre_letter_no=$this->g_numRows-($this->g_pageCnt-1)*($this->g_pageBlock*$this->g_limit);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $data=Encode64("pagecnt=".$prepage."&letter_no=".$pre_letter_no."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 
 	        $pre_str ="<a href='".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option."'>".$this->g_pIcon."</a>&nbsp;";
 
-		    echo "$pre_str"; 	//ÀÌÀü¾ÆÀÌÄÜ ¸µÅ©
-		}else{					//ÀÌÀüÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)//¾ÆÀÌÄÜ Ç¥½Ã
+		    echo "$pre_str"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				$empty_pre_str = $this->g_pIcon."&nbsp;";
 				//$empty_pre_str = "&nbsp;";
 
-		    else				//¾ÆÀÌÄÜ ºñÇ¥½Ã
+		    else				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 			    $empty_pre_str = "&nbsp;";
 
 		    echo "$empty_pre_str";
@@ -1360,13 +1354,13 @@ class CList
 		/* 1 [2][3][4][5] */
 		$l=0;
 		while($l<$pCnt){
-			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//½ÃÀÛ±Û ÁöÁ¤
-		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ÆäÀÌÁö ¹øÈ£ ¼³Á¤
-			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//½ÃÀÛ±Û ¹øÈ£ ÁöÁ¤
+			$loffset=$l*($this->g_limit)+($this->g_pageCnt*$this->g_limit*$this->g_pageBlock);	//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		    $lnum=$l+( ($this->g_pageCnt)*$this->g_pageBlock)+1;					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
+			$cu_letter_no=$this->g_numRows-(($lnum-1)*$this->g_limit);		  		//ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 		    $en_str = "offset=".$loffset."&letter_no=".$cu_letter_no."&pagecnt=".$this->g_pageCnt;
 		    $en_str.= "&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option;
 			$data=Encode64($en_str);
-			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ÇöÀç ÆäÀÌÁö ÀÏ °æ¿ì
+			if($lnum==(($this->g_offset/$this->g_limit)+1))	{//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 				echo " <font size='2'><b>$lnum</b></font> ";
 				//echo $en_str;
 			}else{
@@ -1381,21 +1375,21 @@ class CList
 
 
 
-		/*    ´ÙÀ½   */
-		if($this->g_pageCnt!=$chekpage){		//´ÙÀ½ÆäÀÌÁö ÀÖÀ½
+		/*    ï¿½ï¿½ï¿½ï¿½   */
+		if($this->g_pageCnt!=$chekpage){		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			echo "&nbsp;";
-			$newpagecnt=$this->g_pageCnt+1;		//´ÙÀ½ ºí·° ½ÃÀÛÆäÀÌÁö ¼³Á¤
-			$newt=$cu_letter_no-$this->g_limit;	//´ÙÀ½ ºí·° ½ÃÀÛ±Û ¹øÈ£ ¼³Á¤
+			$newpagecnt=$this->g_pageCnt+1;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			$newt=$cu_letter_no-$this->g_limit;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û±ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 			$data=Encode64("pagecnt=".$newpagecnt."&letter_no=".$newt."&search=".$this->g_search."&searchstring=".$this->g_searchstring."&".$this->g_option);
 			$next_str="<a href='".$this->g_pageName."?data=".$data."&category=".$category."&".$this->g_option."'>".$this->g_nIcon."</a>";
 
-			echo $next_str;			//´ÙÀ½ ¾ÆÀÌÄÜ ¸µÅ©
-		}else{						//´ÙÀ½ÆäÀÌÁö ¾øÀ½
-			if($this->g_pniView)	//¾ÆÀÌÄÜ Ç¥½Ã
+			echo $next_str;			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
+		}else{						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if($this->g_pniView)	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 				echo"&nbsp;".$this->g_nIcon;
 				//echo"&nbsp;";
 
-			else					//¾ÆÀÌÄÜ ºñÇ¥½Ã
+			else					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½
 				echo"&nbsp;";
 		}
 
@@ -1403,10 +1397,10 @@ class CList
 }//class
 
 
-//°Ô½ÃÆÇ¿¡ ¸µÅ©»ý¼º
+//ï¿½Ô½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½
 function BBSButtonLink($BLINK, $BSRC, $VIEWOPT=""){
 
-	// $VIEWOPT ±ÇÇÑÀÌ ¾øÀ»¶§ $BSRC ³»¿ëÀÌ º¸ÀÏ°ÇÁö ¿©ºÎ 1ÀÌ¸é º¸ÀÌ±â
+	// $VIEWOPT ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ $BSRC ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½
 
 	if($BLINK){
 		$ButtonLink = "<a href=\"".$BLINK."\">".$BSRC."</a>";

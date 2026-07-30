@@ -13,10 +13,11 @@ extract($_GET);
 
 include $_SERVER["DOCUMENT_ROOT"]."/config/config.php";
 
-$_POST = array_map('mysql_escape_string', $_POST);
-$_GET = array_map('mysql_escape_string', $_GET);
+//$_POST = array_map('mysql_escape_string', $_POST); // PHP7: mysql_escape_string ì œê±°ë¨. ì•„ë˜ì—ì„œ íŒŒë¼ë¯¸í„° ë°”ì¸ë”©ìœ¼ë¡œ ëŒ€ì²´
+//$_GET = array_map('mysql_escape_string', $_GET);
 
 include $_SERVER["DOCUMENT_ROOT"]."/config/function.php";
+include $_SERVER["DOCUMENT_ROOT"]."/config/dbconn.php";
 include $_SERVER["DOCUMENT_ROOT"]."/config/ora11g_conn.php";
 include $_SERVER["DOCUMENT_ROOT"]."/config/mssql_conn.php";
 
@@ -27,7 +28,7 @@ $_POST['login_pw'] = $_POST['pw'];
 
 
 if (!$Confirm) {
-    go_back("Àß¸øµÈ Á¢±ÙÀÔ´Ï´Ù.");
+    go_back("ì˜ëª»ëœ ì ‘ê·¼ì…ë‹ˆë‹¤.");
     exit;
 }
 
@@ -36,65 +37,64 @@ switch($Confirm)
 
     case "":
 
-        go_back("·Î±×ÀÎ Á¤º¸°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+        go_back("ë¡œê·¸ì¸ ì •ë³´ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
         break;
 
     case "login":
 
-        @session_unregister("MEMBER_GROUP");
-        @session_unregister("ID");
-        @session_unregister("MEMBER_UNAME");
-        @session_unregister("MEMBER_GUBUN");
+        unset($_SESSION['MEMBER_GROUP']); // PHP7: session_unregister ì œê±°ë¨
+        unset($_SESSION['ID']);
+        unset($_SESSION['MEMBER_UNAME']);
+        unset($_SESSION['MEMBER_GUBUN']);
 
-        $ms_con =  mssql_connect($ms_tds, $ms_id, $ms_pw) or die("Couldn't connect to SQL Server on $myServer");
-        mssql_select_db($ms_db, $ms_con);
+        // PHP7: mssql_connect/mssql_select_db ì œê±°ë¨(mssql í™•ì¥ ì—†ìŒ) -> sqlsrvë¡œ ëŒ€ì²´
+        $ms_con = sqlsrv_connect($ms_tds, array(
+            "Database" => $ms_db,
+            "UID" => $ms_id,
+            "PWD" => $ms_pw,
+            "CharacterSet" => "UTF-8",
+            "TrustServerCertificate" => true,
+        )) or die("Couldn't connect to SQL Server on $ms_tds");
 
         $time = time();
 
 
-        //ÇĞ»ı·Î±×ÀÎ
+        //í•™ìƒë¡œê·¸ì¸
         if($_POST['divide'] == "student"){
 
-            $loginQue = "SELECT [dbo].[SF_IS_AUTH_SHA256]('".$_POST['login_id']."','".$_POST['login_pw']."')";
-
-            $rs= mssql_query($loginQue, $ms_con);
+            $rs = sqlsrv_query($ms_con, "SELECT [dbo].[SF_IS_AUTH_SHA256](?,?)", array($_POST['login_id'], $_POST['login_pw']));
 
 
             if (!$rs) {
-                echo "DB ¿¬°áÀÌ ½ÇÆĞµÇ¾ú½À´Ï´Ù.";
-                //echo 'Error: ', mssql_get_last_message(), "\n";
-                mssql_close ($ms_con);
+                echo "DB ì—°ê²°ì´ ì‹¤íŒ¨ë˜ì—ˆìŠµë‹ˆë‹¤.";
+                sqlsrv_close($ms_con);
                 exit;
             }
 
 
-            $result = mssql_fetch_array($rs);
+            $result = sqlsrv_fetch_array($rs, SQLSRV_FETCH_NUMERIC);
             if ($result[0] < 1) {
-                mssql_close ($ms_con);
-                $ErrorSql = "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".$_POST['login_id']."','".$_SERVER['REMOTE_ADDR']."','".$time."')";
-                mysql_query($ErrorSql);
-                mysql_close($conn);
+                sqlsrv_close($ms_con);
+                mysqli_query($conn, "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".mysqli_real_escape_string($conn, $_POST['login_id'])."','".$_SERVER['REMOTE_ADDR']."','".$time."')");
+                mysqli_close($conn);
 
-                go_back("·Î±×ÀÎ Á¤º¸°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+                go_back("ë¡œê·¸ì¸ ì •ë³´ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
                 exit;
             } else {
-                $loginQue1 = "SELECT korename, schoolno, email, userpass as passwd, laststat FROM V_ADB_STUDMAST WHERE schoolno='".$_POST['login_id']."' ";
+                $rs1 = sqlsrv_query($ms_con, "SELECT korename, schoolno, email, userpass as passwd, laststat FROM V_ADB_STUDMAST WHERE schoolno=?", array($_POST['login_id']));
+                $row1 = sqlsrv_fetch_array($rs1, SQLSRV_FETCH_ASSOC);
 
-                $rs1= mssql_query($loginQue1, $ms_con);
+                $db_id = trim($row1['schoolno']);
+                $db_pw = trim($row1['passwd']);
 
-                $db_id = trim(mssql_result($rs1, 0, 'SCHOOLNO'));
-                $db_pw = trim(mssql_result($rs1, 0, 'PASSWD'));
-
-                $db_name = trim(mssql_result($rs1, 0, 'KORENAME'));
-                $db_divide = trim(mssql_result($rs1, 0, 'LASTSTAT'));
+                $db_name = trim($row1['korename']);
+                $db_divide = trim($row1['laststat']);
 
             }
-            //±³Á÷¿ø ·Î±×ÀÎ
+            //êµì§ì› ë¡œê·¸ì¸
         }else if($_POST['divide'] == "employee"){
 
-            $loginQue = "SELECT [dbo].[SF_IS_AUTH_SHA256]('".$_POST['login_id']."','".$_POST['login_pw']."')";
-            //echo $loginQue;exit;
-            $rs= mssql_query($loginQue, $ms_con);
+            $rs = sqlsrv_query($ms_con, "SELECT [dbo].[SF_IS_AUTH_SHA256](?,?)", array($_POST['login_id'], $_POST['login_pw']));
 
             if($_SERVER['REMOTE_ADDR']=="112.217.216.250"){
               /*
@@ -111,15 +111,14 @@ switch($Confirm)
 
 
             if (!$rs) {
-                echo "DB ¿¬°áÀÌ ½ÇÆĞµÇ¾ú½À´Ï´Ù.";
-                //echo 'Error: ', mssql_get_last_message(), "\n";
-                mssql_close ($ms_con);
+                echo "DB ì—°ê²°ì´ ì‹¤íŒ¨ë˜ì—ˆìŠµë‹ˆë‹¤.";
+                sqlsrv_close($ms_con);
                 exit;
             }
-            $result = mssql_fetch_array($rs);
+            $result = sqlsrv_fetch_array($rs, SQLSRV_FETCH_NUMERIC);
             //$rs=$oradb->query($loginQue);
 
-            //¾Ö¹ğ¹«Á¶°Ç Æ¯Á¤Á÷¿ø ·Î±×ÀÎ cyhwang
+            //ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ cyhwang
             if($_SERVER['REMOTE_ADDR']=="112.217.216.250"){
 
               if($_POST['login_id'] == "2826" ){
@@ -129,55 +128,51 @@ switch($Confirm)
 
             }
             if ($result[0] < 1) {
-                mssql_close ($ms_con);
-                go_back("·Î±×ÀÎ Á¤º¸°¡ Àß¸øµÇ¾ú½À´Ï´Ù.".$result[0]);
+                sqlsrv_close($ms_con);
+                go_back("ë¡œê·¸ì¸ ì •ë³´ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.".$result[0]);
                 exit;
             } else {
 
-                $loginQue1 = "select emplnamk, emplnumb, postcode, postname, homephon, callphon, passnumb, emptype from V_ADB_EMPLOYEE WHERE emplnumb ='".$_POST['login_id']."'";
-                $rs1= mssql_query($loginQue1, $ms_con);
+                $rs1 = sqlsrv_query($ms_con, "select emplnamk, emplnumb, postcode, postname, homephon, callphon, passnumb, emptype from V_ADB_EMPLOYEE WHERE emplnumb = ?", array($_POST['login_id']));
+                $row1 = sqlsrv_fetch_array($rs1, SQLSRV_FETCH_ASSOC);
 
-                $db_id = trim(mssql_result($rs1, 0, 'emplnumb'));
-                $db_pw = trim(mssql_result($rs1, 0, 'passnumb'));
+                $db_id = trim($row1['emplnumb']);
+                $db_pw = trim($row1['passnumb']);
 
-                $db_name = trim(mssql_result($rs1, 0, 'emplnamk'));
-                $db_divide = trim(mssql_result($rs1, 0, 'emptype'));
-				$site_id = trim(mssql_result($rs1,0,'postname'));
+                $db_name = trim($row1['emplnamk']);
+                $db_divide = trim($row1['emptype']);
+				$site_id = trim($row1['postname']);
             }
 
         } else {
 
         }
 
-        mssql_close($ms_con);
+        sqlsrv_close($ms_con);
         //$oradb->discon();
         if(  $_POST['login_id'] == "" || $_POST['login_pw'] == "")
         {
-            go_back("·Î±×ÀÎ Á¤º¸°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+            go_back("ë¡œê·¸ì¸ ì •ë³´ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
             exit;
         }
         else
         {
 
-            @session_register("MEMBER_GROUP");
-            @session_register("ID");
-            @session_register("MEMBER_UNAME");
-            @session_register("MEMBER_GUBUN");
-			@session_register("site_id");
-
+            // PHP7: session_register ì œê±°ë¨. ì•„ë˜ì—ì„œ $_SESSION[...] ì§ì ‘ ëŒ€ì…ìœ¼ë¡œ ëŒ€ì²´ë¨
+			
 
             /*
-            "±³¿ø(±³¼ö)"=>"GS",
-            "Á÷¿ø"=>"JW",
-            "Á¶±³"=>"JK",
-            "½Ã°£°­»ç"=>"SK",
+            "êµì›(êµìˆ˜)"=>"GS",
+            "ì§ì›"=>"JW",
+            "ì¡°êµ"=>"JK",
+            "ì‹œê°„ê°•ì‚¬"=>"SK",
 
-            "ÀçÇĞ»ı"=>"HS",
-            "Á¹¾÷»ı"=>"JS",
-            "ÈŞÇĞ»ı"=>"HK"
+            "ì¬í•™ìƒ"=>"HS",
+            "ì¡¸ì—…ìƒ"=>"JS",
+            "íœ´í•™ìƒ"=>"HK"
             */
 
-            //µğ¹ÙÀÌµå ¼¼¼Ç ±Á±â(ÇĞ»ı)
+            //ë””ë°”ì´ë“œ ì„¸ì…˜ êµ½ê¸°(í•™ìƒ)
             if($_POST['divide'] == "student"){
                 if($db_divide == "1"){
                     $division = "HS";
@@ -190,42 +185,42 @@ switch($Confirm)
                 }
             }
 
-            //µğ¹ÙÀÌµå ¼¼¼Ç ±Á±â(±³Á÷¿ø)
+            //ë””ë°”ì´ë“œ ì„¸ì…˜ êµ½ê¸°(êµì§ì›)
             if($_POST['divide'] == "employee"){
-                if(strpos(",".$db_divide, "½Ã°£") == true){
+                if(strpos(",".$db_divide, "ì‹œê°„") == true){
                     $division = "A";
-                }else if(strpos(",".$db_divide, "±³¼ö") == true){
+                }else if(strpos(",".$db_divide, "êµìˆ˜") == true){
                     $division = "F";
-                }else if(strpos(",".$db_divide, "Á¶±³") == true){
+                }else if(strpos(",".$db_divide, "ì¡°êµ") == true){
                     $division = "F";
                 }else{
                     $division = "E";
                 }
             }
 
-			if($site_id=="°£È£ÇĞ°ú"){
+			if($site_id=="ï¿½ï¿½È£ï¿½Ğ°ï¿½"){
 				$deptcode='nurs';
-			}else if($site_id=="Ä¡À§»ı°ú"){
+			}else if($site_id=="Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"){
 				$deptcode = 'dent';
-			}else if($site_id=="ÀÛ¾÷Ä¡·á°ú"){
+			}else if($site_id=="ï¿½Û¾ï¿½Ä¡ï¿½ï¿½ï¿½"){
 				$deptcode = 'ot';
-			}else if($site_id=="ÀÀ±Ş±¸Á¶°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½Ş±ï¿½ï¿½ï¿½ï¿½ï¿½"){
 				$deptcode = 'op';
-			}else if($site_id=="¾È°æ±¤ÇĞ°ú"){
+			}else if($site_id=="ï¿½È°æ±¤ï¿½Ğ°ï¿½"){
 				$deptcode = 'yoga';
-			}else if($site_id=="¹æ»ç°Ç°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½Ç°ï¿½"){
 				$deptcode = 'radi';
-			}else if($site_id=="¹°¸®Ä¡·á°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½"){
 				$deptcode = 'pt';
-			}else if($site_id=="¾ğ¾îÄ¡·á°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½"){
 				$deptcode = 'slt';
-			}else if($site_id=="À¯¾Æ±³À°°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½ï¿½"){
 				$deptcode = 'child';
-			}else if($site_id=="º¸°ÇÇàÁ¤°ú"){
+			}else if($site_id=="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"){
 				$deptcode = 'hadm';
-			}else if($site_id=="»çÈ¸º¹Áö°ú"){
+			}else if($site_id=="ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"){
 				$deptcode = 'welf';
-			}else if($site_id=="¿ä°¡°ú"){
+			}else if($site_id=="ï¿½ä°¡ï¿½ï¿½"){
 				$deptcode = 'yoga';
 			}
 
@@ -244,11 +239,12 @@ switch($Confirm)
 			}
 
             if(empty($_SESSION['MEMBER_ID'])){
-                go_back("·Î±×ÀÎÀÌ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+                go_back("ë¡œê·¸ì¸ì´ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
             }else{
 
-
-              script(" location.href = 'https://www.ch.ac.kr/main/index.php'; ");
+              $target_site = !empty($_SESSION['sel_site_id']) ? $_SESSION['sel_site_id'] : "main";
+              $target_host = ($target_site == "main") ? "www.ch.ac.kr" : $target_site.".ch.ac.kr";
+              script(" location.href = 'https://".$target_host."/main/index.php'; ");
 
             }
             exit;
@@ -264,17 +260,20 @@ switch($Confirm)
             //session_unregister("MEMBER_UID");
             //session_unregister("MEMBER_UNAME");
 
-            session_unset("MEMBER_GROUP");
-			session_unset("ADMIN_GROUP");
-            session_unset("MEMBER_ID");
-			session_unset("ID");
-            session_unset("MEMBER_UNAME");
-            session_unset("MEMBER_GUBUN");
-			session_unset("S_CHECK");
-			session_unset("sel_site_id");
+            // PHP7: session_unset()ëŠ” ì¸ìë¥¼ ë°›ì§€ ì•Šê³  ì„¸ì…˜ ì „ì²´ë¥¼ ì§€ìš°ëŠ” í•¨ìˆ˜ë¼
+            // session_unset("KEY") í˜•íƒœ í˜¸ì¶œì€ ì¡°ìš©íˆ ë¬´ì‹œë˜ì–´ ì„¸ì…˜ì´ ì „í˜€ ì§€ì›Œì§€ì§€
+            // ì•Šì•˜ìŒ(ë¡œê·¸ì•„ì›ƒì´ í•­ìƒ ì‹¤íŒ¨ë¡œ í‘œì‹œë˜ë˜ ì›ì¸) -> unset($_SESSION[...])ë¡œ êµì²´
+            unset($_SESSION['MEMBER_GROUP']);
+			unset($_SESSION['ADMIN_GROUP']);
+            unset($_SESSION['MEMBER_ID']);
+			unset($_SESSION['ID']);
+            unset($_SESSION['MEMBER_UNAME']);
+            unset($_SESSION['MEMBER_GUBUN']);
+			unset($_SESSION['S_CHECK']);
+			unset($_SESSION['sel_site_id']);
 
             if($_SESSION['MEMBER_ID']){
-                go_back("·Î±×¾Æ¿ô¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+                go_back("ë¡œê·¸ì•„ì›ƒì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
             }else{
 				script(" location.href = 'https://www.ch.ac.kr/'; ");
             }

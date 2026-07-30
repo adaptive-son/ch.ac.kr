@@ -26,7 +26,7 @@
 /**
  * Obtain the DB_common class so it can be extended from
  */
-require_once 'DB/adframe_common.php';
+require_once 'af_db_common.php';
 
 /**
  * The methods PEAR DB uses to interact with PHP's mysqli extension

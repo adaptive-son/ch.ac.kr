@@ -1,7 +1,10 @@
 <?
+// PHP7: ext/mysql 제거로 인한 mysql_* 전면 호출 오류 방지용 호환 shim
+require_once($_SERVER["DOCUMENT_ROOT"]."/adframe/common/mysql_compat_shim.php");
+
 //header('P3P: CP="ALL CURa ADMa DEVa TAIa OUR BUS IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC OTC"');
 //header('P3P: CP="ALL CURa ADMa DEVa TAIa OUR BUS IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC OTC"');
-@header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV INT DEM PRE"'); 
+@header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV INT DEM PRE"');
 
 ini_set('register_globals','1'); 
 ini_set('session.bug_compat_42','0'); 

@@ -12,7 +12,15 @@ $patterns = "<link rel=\"stylesheet\" href=\"/page/css/common.css\"><link rel=\"
 switch ( $mode ) {
     // 추가
     case 'insert':
+        // PARENT/TEMPLATE/WRITER/STAFF/STAFF_TEL 는 NOT NULL(기본값 없음) 컬럼인데
+        // "글쓰기"(contents) 폼에는 입력란이 없어 누락되면 INSERT가 strict mode에서 거부된다.
+        // 안전한 기본값을 먼저 넣어두고, 아래 foreach에서 폼값이 있으면 덮어쓴다.
         $sql_sub = " REGDATE = '".date("Y-m-d H:i:s")."' ".$sql_file; //, WRITER = '".$_SESSION[mb_id]."' ";  // 로그인 기능 구현 후 적용
+        $sql_sub .= ", PARENT = '0' ";
+        $sql_sub .= ", TEMPLATE = '' ";
+        $sql_sub .= ", WRITER = '".addslashes($_SESSION['MEMBER_ID'])."' ";
+        $sql_sub .= ", STAFF = '' ";
+        $sql_sub .= ", STAFF_TEL = '' ";
         foreach ( $_POST as $k => $v ) {
             if ( in_array($k, $cols) > 0 && $v != "" ) {
                 if ( $k == "CONTENTS" ) {
@@ -23,7 +31,10 @@ switch ( $mode ) {
             }
         }
         $sql = " INSERT INTO ".TABLE_CMS_CONTENTS." SET ".$sql_sub;
-        $adb->query($sql);
+        $result = $adb->query($sql);
+        if ( PEAR::isError($result) ) {
+            alert_back("내용 등록에 실패하였습니다.\\n\\n".$result->getMessage()."\\n\\n".$result->getDebugInfo());
+        }
         break;
 
     // 수정
@@ -45,7 +56,10 @@ switch ( $mode ) {
         if ( $sql_sub != "" ) $sql_file = $sql_file;
         else $sql_file = substr($sql_file, 1);
         $sql = " UPDATE ".TABLE_CMS_CONTENTS." SET ".$sql_sub." ".$sql_file." WHERE ".$sql_where;
-        $adb->query($sql);
+        $result = $adb->query($sql);
+        if ( PEAR::isError($result) ) {
+            alert_back("내용 수정에 실패하였습니다.\\n\\n".$result->getMessage()."\\n\\n".$result->getDebugInfo());
+        }
         break;
 
     default:

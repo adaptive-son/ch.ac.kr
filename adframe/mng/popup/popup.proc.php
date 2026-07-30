@@ -157,7 +157,8 @@ if($Confirm == "delete"){
         if($file_size >0 && file_size <= 10240 ){
 
             //이미지 파일만 업로드
-            if (@ereg($extName, "png|gif|jpg|jpeg")) {
+            // PHP7: ereg removed -> preg_match (extName from upload, quoted since it's used as pattern text)
+            if (@preg_match('/'.preg_quote($extName, '/').'/', "png|gif|jpg|jpeg")) {
                 //echo ADFRAME_ROOT_PATH.$file_path."/".$orgFileName; exit;
                                // 사진업로드
                 upload_file($_FILES[b_file][tmp_name], $renameFileName, $file_path);

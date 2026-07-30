@@ -34,20 +34,22 @@ function is_ie() {
 ?>
 <?
 
-	$_POST = array_map('mysql_escape_string', $_POST);
-	$_GET = array_map('mysql_escape_string', $_GET);
-
-	if(strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) == false)  exit;
-
 	/*
 	 *	HEADER() 설정 차이로 인해 기본 라이브러리를 별도로 설정
 	*/
+	// PHP7: mysql_* 호환 shim(inc.constant.php에서 로드)이 아래 mysql_escape_string() 호출보다
+	// 먼저 로드되어야 하므로 include 순서를 앞으로 옮김
 	include($_SERVER['DOCUMENT_ROOT'] . "/adframe/common/inc.constant.php");
 	// Pear 라이브러리 디렉토리 설정
 	ini_set("include_path", ADFRAME_ROOT_PATH."/lib/Pear");
 	require_once(ADFRAME_ROOT_PATH . "/common/dsn.ini.php");
 	require_once("DB.php");
 	$adb = DB::connect($dsn);
+
+	$_POST = array_map('mysql_escape_string', $_POST);
+	$_GET = array_map('mysql_escape_string', $_GET);
+
+	if(strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) == false)  exit;
 
 	mysql_query("set session character_set_connection=utf8;");
 	mysql_query("set session character_set_results=utf8;");

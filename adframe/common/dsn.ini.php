@@ -1,8 +1,8 @@
 <?
 	$dsn = array(
-		"phptype" => "mysql",
+		"phptype" => "mysqli",
 		"username" => "root",
-		"password" => "",
+		"password" => "se130901",
 		"hostspec" => "localhost",
 		"database" => "ch_2020"
 	);

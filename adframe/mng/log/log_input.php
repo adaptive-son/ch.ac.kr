@@ -98,25 +98,26 @@ if(mysql_num_rows($result_005) < 1) {
 $result_005_in = mysql_query($sql_005_in) or die(mysql_error());
 
 //검색엔진
-if(eregi('daum.net', $DR)) {
+// PHP7: eregi removed -> preg_match with /i (pattern text unchanged, so '.' still matches any char like eregi did)
+if(preg_match('/daum.net/i', $DR)) {
     $se_engine = "다음";
-} elseif(eregi('naver.com', $DR)) {
+} elseif(preg_match('/naver.com/i', $DR)) {
     $se_engine = "네이버";
-} elseif(eregi('yahoo.com', $DR)) {
+} elseif(preg_match('/yahoo.com/i', $DR)) {
     $se_engine = "야후";
-} elseif(eregi('empas.com', $DR)) {
+} elseif(preg_match('/empas.com/i', $DR)) {
     $se_engine = "엠파스";
-} elseif(eregi('lycos.co.kr', $DR)) {
+} elseif(preg_match('/lycos.co.kr/i', $DR)) {
     $se_engine = "라이코스";
-} elseif(eregi('paran.com', $DR)) {
+} elseif(preg_match('/paran.com/i', $DR)) {
     $se_engine = "파란닷컴";
-} elseif(eregi('nate.com', $DR)) {
+} elseif(preg_match('/nate.com/i', $DR)) {
     $se_engine = "네이트";
-} elseif(eregi('msn', $DR)) {
+} elseif(preg_match('/msn/i', $DR)) {
     $se_engine = "MSN";
-} elseif(eregi('google', $DR)) {
+} elseif(preg_match('/google/i', $DR)) {
     $se_engine = "구글";
-} elseif(eregi('allblog.net', $DR)) {
+} elseif(preg_match('/allblog.net/i', $DR)) {
     $se_engine = "알블로그";
 } else {
     $se_engine = "기타";
