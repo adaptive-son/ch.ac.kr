@@ -5,7 +5,6 @@
 if($mode=="" || $mode=="u") {
     // 추가, 수정
     $sql_common = "
-		schedule_no = '$schedule_no',
         schedule_start_date = '$schedule_start_date',
         schedule_end_date	= '$schedule_end_date',
         schedule_memo		= '$schedule_memo',

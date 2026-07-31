@@ -30,7 +30,7 @@ if($_REQUEST['CHILD']){
 //$_delParam = array_map('mysql_escape_string', $_POST["up_file_del"]);
 $_delParam = $_POST["up_file_del"];
 
-//$_POST = array_map('mysql_escape_string', $_POST);
+$_POST = array_map('mysql_escape_string', $_POST);
 //$_GET = array_map('mysql_escape_string', $_GET);
 
 //include $_SERVER["DOCUMENT_ROOT"]."/config/config.php";
