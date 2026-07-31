@@ -3,6 +3,9 @@
 define("__AF__", TRUE);
 // adframe 템플릿 페이지 설정.
 include($_SERVER["DOCUMENT_ROOT"] . "/adframe/af_common.php");
+// PHP7 compatibility: $HTTP_POST_FILES superglobal removed as of PHP 5.4, causing
+// the file-upload block below to always be skipped ($HTTP_POST_FILES[file1] always empty).
+if (!isset($HTTP_POST_FILES) || !is_array($HTTP_POST_FILES)) { $HTTP_POST_FILES = $_FILES; }
 
 function Error( $msg ) {
     echo "<script> alert('".$msg."'); history.back(); </script>";
@@ -40,9 +43,12 @@ if($file1_size>0&&$file1) {
         $s_file_name1 = str_replace("-","_",$s_file_name1);
 
         // 디렉토리를 검사함
+        // apache 계정이 ch 그룹에도 속해있어(/etc/group), 소유자가 ch인 디렉토리/파일은
+        // "그룹" 권한으로 검사된다(더 널널한 "기타" 권한은 적용 안 됨). 그룹 권한을 비워두던
+        // 기존 0706/0707 로는 apache가 쓰기(및 접근) 자체가 막혀 업로드가 항상 실패했다.
         if(!is_dir("./file_data/".$id)) {
             @mkdir("./file_data/".$id,0777);
-            @chmod("./file_data/".$id,0706);
+            @chmod("./file_data/".$id,0777);
         }
 
         // 중복파일이 있을때;;
@@ -50,12 +56,12 @@ if($file1_size>0&&$file1) {
             @mkdir("./file_data/$id/".$reg_date,0777);
             if(!move_uploaded_file($file1,"./file_data/$id/".$reg_date."/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
             $file_name1 = "/recruit5/file_data/$id/".$reg_date."/".$temp1_name;
-            @chmod($file_name1,0706);
-            @chmod("./file_data/$id/".$reg_date,0707);
+            @chmod($file_name1,0777);
+            @chmod("./file_data/$id/".$reg_date,0777);
         } else {
             if(!move_uploaded_file($file1,"./file_data/$id/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
             $file_name1 = "/recruit5/file_data/$id/".$temp1_name;
-            @chmod($file_name1,0706);
+            @chmod($file_name1,0777);
         }
     }
 }
