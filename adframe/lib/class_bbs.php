@@ -833,7 +833,10 @@ class Sub_BBSStart {
             if($dataArr[idx]) {
                 $bbs_row = DBarray("SELECT * FROM ".$configBBS[board_id]." WHERE idx='".$dataArr[idx]."'");
 
-                if($_SESSION[_BBS_PASS_LOGIN]!=$bbs_row[pwd]) go_back("\\n 잘못된 접근입니다. \\n");
+                // 관리자(SecAdmin)는 관리게시판에서 비밀번호 확인 단계 없이 바로
+                // 수정(repair) 진입이 가능해야 하므로 비밀번호 검사를 우회한다.
+                // (글쓰기 권한 검사에 이미 적용된 SecAdmin 우회와 동일한 패턴)
+                if($SecAdmin != 1 && $_SESSION[_BBS_PASS_LOGIN]!=$bbs_row[pwd]) go_back("\\n 잘못된 접근입니다. \\n");
             }else{
                 go_back("\\n 잘못된 접근입니다. \\n");
             }

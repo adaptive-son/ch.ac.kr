@@ -29,6 +29,13 @@ if($mode=="" || $mode=="u") {
 
     $career_tmp = addslashes($career); //경력사항에 ' 들어간 경우 db에러 처리
 
+    // 체크박스라 체크 안하면 $_POST에 아예 안 넘어와 빈 문자열이 되는데,
+    // researchresult_s는 tinyint라 빈 문자열은 strict mode에서 거부된다.
+    if($researchresult_s == "") $researchresult_s = 0;
+    // sort는 int NOT NULL(기본값 없음)인데 폼에 필수(required) 지정이 없어
+    // 비워두고 등록하면 빈 문자열이 들어가 마찬가지로 거부된다.
+    if($sort == "") $sort = 0;
+
     $sql_common = "
         name = '$name',
         position	= '$position',
@@ -51,7 +58,7 @@ if($mode=="" || $mode=="u") {
 
 if($mode=="") {
     //sort = (select max(sort)+1 from ".TABLE_PROFESSOR."a WHERE site_id = '$_SESSION[sel_site_id]' )
-    $sql_insert =", regi_date=now()";
+    $sql_insert =", regi_date=now(), modi_date=now()";
     $sql = " insert into ".TABLE_PROFESSOR." set ".$sql_common.$sql_file_sub.$sql_insert;
     //$sql = " update ".TABLE_PROFESSOR." set sort='$sort' WHERE idx ='$idx'";
 } else if ($mode=="u") {

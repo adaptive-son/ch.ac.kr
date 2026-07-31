@@ -1,7 +1,7 @@
 <?php
-	// 개별 ?�?��? ?�행 방�?. ?��?문자?�은 inc.constant.php?� ?�?�?�??
+	// 개별 페이지 실행 방지. 해당 문자열은 inc.constant.php에 정의된다.
 	define("__AF__", TRUE);
-	// adframe ?�?��??�?��? ?�정.
+	// adframe 템플릿 페이지 설정.
 	include($_SERVER["DOCUMENT_ROOT"] . "/adframe/af_common.php");
 	// PHP7 compatibility: mysql_* shim using PEAR DB
 	if (!isset($HTTP_POST_FILES) || !is_array($HTTP_POST_FILES)) { $HTTP_POST_FILES = $_FILES; }
@@ -33,38 +33,41 @@
 
 	if($file1_size>0&&$file1) {
 
-		if(!is_uploaded_file($file1)) Error("?�?�?�??방�??��? ?�로?� ?�주?�요");
+		if(!is_uploaded_file($file1)) Error("정상적인 방법으로 업로드 해주세요");
 		$file1_size=filesize($file1);
 
-		// ?�로?� 금지
+		// 업로드 금지
 		if($file1_size>0) {
 			$s_file_name1 = $file1_name;
 			$temp1=explode(".",$file1_name);
 			$allowed_ext = array('jpg','jpeg','png','gif','pdf','doc','docx','hwp');
-			if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("?�?�되지 ?�?� ?�???�?�?�?�??"); }
+			if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
 			$temp1_name = $reg_date.'.'.$temp1[1];
 
 			$file1 = preg_replace("/\\\\\\\\/","\\\\", $file1);
 			$s_file_name1 = str_replace(" ","_",$s_file_name1);
 			$s_file_name1 = str_replace("-","_",$s_file_name1);
 
-			// ?�?�?�리�? 검?��?
+			// 디렉토리를 검사함
+			// apache 계정이 ch 그룹에도 속해있어(/etc/group), 소유자가 ch인 디렉토리/파일은
+			// "그룹" 권한으로 검사된다(더 널널한 "기타" 권한은 적용 안 됨). 그룹 권한을 비워두던
+			// 기존 0706/0707 로는 apache가 쓰기(및 접근) 자체가 막혀 업로드가 항상 실패했다.
 			if(!is_dir("./file_data/".$id)) {
 				@mkdir("./file_data/".$id,0777);
-				@chmod("./file_data/".$id,0706);
+				@chmod("./file_data/".$id,0777);
 			}
 
-			// 중복파?��??�?�?�;;
+			// 중복파일이 있을때;;
 			if(file_exists("./file_data/$id/".$temp1_name)) {
 				@mkdir("./file_data/$id/".$reg_date,0777);
-				if(!move_uploaded_file($file1,"./file_data/$id/".$reg_date."/".$temp1_name)) Error("���Ͼ��ε尡 �ùٷ� ���� �ʾҽ��ϴ�");
+				if(!move_uploaded_file($file1,"./file_data/$id/".$reg_date."/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
 				$file_name1 = "/recruit/file_data/$id/".$reg_date."/".$temp1_name;
-				@chmod($file_name1,0706);
-				@chmod("./file_data/$id/".$reg_date,0707);
+				@chmod($file_name1,0777);
+				@chmod("./file_data/$id/".$reg_date,0777);
 			} else {
-				if(!move_uploaded_file($file1,"./file_data/$id/".$temp1_name)) Error("���Ͼ��ε尡 �ùٷ� ���� �ʾҽ��ϴ�");
+				if(!move_uploaded_file($file1,"./file_data/$id/".$temp1_name)) Error("파일업로드가 제대로 되지 않았습니다");
 				$file_name1 = "/recruit/file_data/$id/".$temp1_name;
-				@chmod($file_name1,0706);
+				@chmod($file_name1,0777);
 			}
 		}
 	}
@@ -73,8 +76,8 @@
 	if($apply_major == "간호학과"){
 		$apply_num_1 = "간호";
 		$apply_num_etcIdx = "02";
-	}elseif($apply_major=="?�?�치료�?"){
-		$apply_num_1 = "?�치";
+	}elseif($apply_major=="작업치료과"){
+		$apply_num_1 = "작치";
 		$apply_num_etcIdx = "";
 	}else{
 		$apply_num_1 = str_replace("과","",$apply_major);
@@ -82,7 +85,7 @@
 	}
 
 //################################################
-// ?�?�번???�?�?��?
+// 접수번호 수정내용
 $apply_num_2 = "(2019-1)";
 
 
@@ -90,18 +93,18 @@ $apply_num_2 = "(2019-1)";
 //################################################
 
 /*
-	if($gubun=="?�?�과정"){
-		$apply_num_2 = "(?�)";
-	}elseif($gubun=="비?�?�과정"){
+	if($gubun=="정년과정"){
+		$apply_num_2 = "(정)";
+	}elseif($gubun=="비정년과정"){
 		$apply_num_2 = "(비)";
 	}
 
 */
 /*
-	if($type_gubun == "?�?�간?�학"){
-		$apply_num_3 = "-?�?�-";
+	if($type_gubun == "정신간호학"){
+		$apply_num_3 = "-정신-";
 	}else{
-		$apply_num_3 = "-간??";
+		$apply_num_3 = "-간호-";
 	}
 */
 	$apply_count=mysql_num_rows(mysql_query("SELECT * FROM recruit_copy WHERE resume_num='$resume_num'"));
@@ -607,9 +610,9 @@ $apply_num_2 = "(2019-1)";
 		mysql_query($sql2);
 		if($result){
 
-			echo "<script>alert('이력서가 정상적으로 접수되었습니다');location.href='./'</script>";
+			echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./'</script>";
 		}else{
-			echo "<script>alert('오류가 발생하였습니다');history.back();</script>";
+			echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
 		}
 	}else if($j=="u"){
 
@@ -627,9 +630,9 @@ $apply_num_2 = "(2019-1)";
 		mysql_query($sql2);
 		if($result){
 
-			echo "<script>alert('이력서가 정상적으로 수정되었습니다');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
+			echo "<script>alert('이력서가 정상적으로 수정되었습니다.');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
 		}else{
-			echo "<script>alert('오류가 발생하였습니다');history.back();</script>";
+			echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
 		}
 	}
 ?>

@@ -93,7 +93,9 @@ if($Confirm=="define" && $_SESSION["_BBS_WRITE_CONN"] == $dataArr[idx]){
         $fm_notice_start = "0000-00-00 00:00:00";
         $fm_notice_end = "0000-00-00 00:00:00";
 	} else if($fm_notice_end) {
-		$fm_notice_end = $fm_notice_end." 23:59:59";
+		// 수정화면은 기존 저장값(시간 포함)을 그대로 채워서 넘기므로, 날짜 부분만
+		// 취해서 시간을 다시 붙여야 "23:59:59 23:59:59"처럼 중복되지 않는다.
+		$fm_notice_end = substr($fm_notice_end, 0, 10)." 23:59:59";
 	}
 
 	//업로드 모듈 로딩
