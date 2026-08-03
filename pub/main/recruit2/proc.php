@@ -408,6 +408,7 @@ $query1 = "	apply_major = '$apply_major',
 							,company_auth = '$company_auth'
 	";
 $query2 = "profile = '$profile',
+							resume_num = '$resume_num',
 							sub_title= '$sub_title',
 							thesis1_school = '$thesis1_school',
 							thesis1_postgraduate = '$thesis1_postgraduate',
