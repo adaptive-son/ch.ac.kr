@@ -1553,7 +1553,7 @@ if(!$apply_major) $apply_major="간호학과";
                                             </table>
                                             <div class="btns-area">
 												<button type="submit" class="btns-color01 btn-m02">
-													확인
+													저장
 												</button>
 												<button type="button" class="btns-color02 btn-m02" onclick="history.back();">
 													취소
