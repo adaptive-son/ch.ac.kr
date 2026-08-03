@@ -26,10 +26,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.menu_subMenuDelay = 0; // 메뉴 클릭 할 때 딜레이 값
 	config.autoParagraph = false;
 	config.protectedSource.push(/<\?[\s\S]*?\?>?/g);
-	// 커스텀 디자인 공지 등에서 본문에 직접 넣는 <style>/<link> 태그가
-	// CKEditor의 기본 콘텐츠 필터(ACF)에 의해 로드/저장 시 삭제되는 것을 방지
-	config.protectedSource.push(/<style[\s\S]*?<\/style>/gi);
-	config.protectedSource.push(/<link\b[^>]*>/gi);
 	config.height = 400;
 	//config.startupFocus = true; // 글쓰기 시작시 포커스 사용여부
 };
