@@ -162,7 +162,6 @@
 				uPeriod2 = '$uPeriod2',
 				univ = '$univ',
 				uMajor = '$uMajor',
-				uEndYN = '$uEndYN',
 				uDegree = '$uDegree',
 				uScore = '$uScore',
 				uTotal = '$uTotal',
