@@ -54,6 +54,13 @@
 						
 						<div class="swiper-slide visual1">
 							<div class="main-visual-box">
+								<img src="../img02/main/main_visual37_pc.jpg" class="bg pc" alt="" />
+								<img src="../img02/main/main_visual37_mobile.jpg" class="bg mobile" alt="" />
+							</div>
+						</div>
+						
+						<div class="swiper-slide visual1">
+							<div class="main-visual-box">
 								<a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2&bbs=see&data=cGFnZWNudD0wJmlkeD0xMzAxMCZsZXR0ZXJfbm89MjQ4NSZvZmZzZXQ9MCZzZWFyY2g9JnNlYXJjaHN0cmluZz0mQm9hcmRrZXk9MjYxMSZTdWJfTm89MCZEQlRhYmxlPWJic19tYWlu||">
 									<img src="../img02/main/main_visual36_pc.jpg" class="bg pc" alt="" />
 									<img src="../img02/main/main_visual36_mobile.jpg" class="bg mobile" alt="" />
