@@ -87,8 +87,13 @@ if($Confirm=="define" && $_SESSION["_BBS_WRITE_CONN"] == $dataArr[idx]){
 	}
 	else			$content = $content;
 */
-	// fm_notice is null => 'N'
-	if(!$fm_notice){
+	// fm_notice가 없거나(체크박스 미체크시 미전송) 'N'인 경우 모두 공지 해제로 처리.
+	// adm_board 스킨은 체크박스에 name이 없고 별도 hidden(name=fm_notice)을 JS로
+	// "N" 문자열로 채워 넘기므로(미체크 시 필드 자체가 사라지는 게 아님), !$fm_notice만
+	// 검사하면 이 경우를 놓쳐 날짜 필드가 빈 문자열인 채로 아래 UPDATE에 들어가
+	// notice_start/notice_end가 datetime NOT NULL인 구형 게시판에서 strict mode
+	// 오류("Incorrect datetime value")로 수정이 실패했다.
+	if($fm_notice != "Y"){
 		$fm_notice = "N";
         $fm_notice_start = "0000-00-00 00:00:00";
         $fm_notice_end = "0000-00-00 00:00:00";

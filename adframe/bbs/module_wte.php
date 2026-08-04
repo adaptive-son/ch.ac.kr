@@ -137,7 +137,11 @@ if($_POST['Confirm']=="define"){
 	if($_POST[fm_category]){
 		$set_sql .=", category = '$_POST[fm_category]'";
 	}
-	if(!$fm_notice){
+	// adm_board 스킨은 체크박스 미체크시 fm_notice 필드 자체가 사라지는 게 아니라
+	// hidden(name=fm_notice)이 JS로 "N" 문자열로 채워져 넘어오므로, !$fm_notice만
+	// 검사하면 이를 놓쳐 빈 문자열 날짜가 그대로 저장되어 strict mode 오류가 난다.
+	// (module_edt.php와 동일한 패턴)
+	if($fm_notice != "Y"){
 		$fm_notice = "N";
         $fm_notice_start ="0000-00-00 00:00:00";
         $fm_notice_end ="0000-00-00 00:00:00";
