@@ -457,7 +457,8 @@
         $('#use_notice').bind('click', function() {
             if ($('#use_notice').is(":checked")) {
 
-                // 공지글 5개 이상 못쓰게 설정
+                // 공지글 5개 이상 못쓰게 설정 (2026-08-04 일단 해제)
+                /*
                 <?php if($_SERVER["REMOTE_ADDR"]=="112.217.216.250"){ ?>
                     $.ajax({
                         url: "/adframe/bbs/notice.count.ajax.php",
@@ -479,6 +480,7 @@
                         }
                     });
                 <? }; ?>
+                */
 
                 $('#fm_notice').val('Y');
             } else {
