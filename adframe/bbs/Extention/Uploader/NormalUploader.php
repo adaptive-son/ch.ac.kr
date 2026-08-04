@@ -54,6 +54,15 @@ $Config_FileLimitExt = array("jpg","jpge","png","gif","JPG","hwp","hwpx","xls","
 			$file_temp = $_FILES['up_file']['tmp_name'][$i];
 			$file_name = $_FILES['up_file']['name'][$i];
 			$file_size = $_FILES['up_file']['size'][$i];
+			$file_error = $_FILES['up_file']['error'][$i];
+
+			// 서버의 upload_max_filesize/post_max_size 제한에 걸리면 tmp_name이 비고
+			// size=0으로 넘어와 아래 용량 체크에서 그냥 조용히 건너뛰어졌다. 그 결과
+			// 글은 저장되는데 첨부파일만 빠지는 것처럼 보였으므로 여기서 명시적으로
+			// 걸러 안내 메시지를 띄운다.
+			if ($file_error == UPLOAD_ERR_INI_SIZE || $file_error == UPLOAD_ERR_FORM_SIZE) {
+				go_back("파일이 너무 커서 업로드에 실패했습니다. (서버 업로드 제한: ".ini_get('upload_max_filesize').")");
+			}
 
 			$file_save_text = ${"up_file_text$i"};
 
