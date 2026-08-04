@@ -146,8 +146,15 @@ if($_POST['Confirm']=="define"){
         $fm_notice_start ="0000-00-00 00:00:00";
         $fm_notice_end ="0000-00-00 00:00:00";
 	} else {
+		// adm_board 스킨의 공지 기간 필수입력 검증(JS)이 주석처리되어 있어, 공지를
+		// 체크하고도 기간을 비워서 넘길 수 있다. notice_start/notice_end는 datetime
+		// 컬럼이라 빈 문자열이 그대로 들어가면 strict mode 오류로 등록 자체가
+		// 실패하므로 비어있으면 안전한 기본값을 채운다.
+		if(!$fm_notice_start) $fm_notice_start = "0000-00-00 00:00:00";
 		if($fm_notice_end) {
 			$fm_notice_end = $fm_notice_end . " 23:59:59";
+		} else {
+			$fm_notice_end = "0000-00-00 00:00:00";
 		}
 	}
 	if(!$view_secret){

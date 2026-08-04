@@ -91,16 +91,24 @@ if($Confirm=="define" && $_SESSION["_BBS_WRITE_CONN"] == $dataArr[idx]){
 	// adm_board 스킨은 체크박스에 name이 없고 별도 hidden(name=fm_notice)을 JS로
 	// "N" 문자열로 채워 넘기므로(미체크 시 필드 자체가 사라지는 게 아님), !$fm_notice만
 	// 검사하면 이 경우를 놓쳐 날짜 필드가 빈 문자열인 채로 아래 UPDATE에 들어가
-	// notice_start/notice_end가 datetime NOT NULL인 구형 게시판에서 strict mode
+	// notice_start/notice_end가 datetime인 게시판(예: bbs_main)에서 strict mode
 	// 오류("Incorrect datetime value")로 수정이 실패했다.
 	if($fm_notice != "Y"){
 		$fm_notice = "N";
         $fm_notice_start = "0000-00-00 00:00:00";
         $fm_notice_end = "0000-00-00 00:00:00";
-	} else if($fm_notice_end) {
-		// 수정화면은 기존 저장값(시간 포함)을 그대로 채워서 넘기므로, 날짜 부분만
-		// 취해서 시간을 다시 붙여야 "23:59:59 23:59:59"처럼 중복되지 않는다.
-		$fm_notice_end = substr($fm_notice_end, 0, 10)." 23:59:59";
+	} else {
+		// adm_board 스킨의 공지 기간 필수입력 검증(JS)이 주석처리되어 있어, 공지를
+		// 체크하고도 기간을 비워서 넘길 수 있다. 위와 같은 이유로 빈 문자열을
+		// 그대로 두면 strict mode 오류가 나므로 안전한 기본값을 채운다.
+		if(!$fm_notice_start) $fm_notice_start = "0000-00-00 00:00:00";
+		if($fm_notice_end) {
+			// 수정화면은 기존 저장값(시간 포함)을 그대로 채워서 넘기므로, 날짜 부분만
+			// 취해서 시간을 다시 붙여야 "23:59:59 23:59:59"처럼 중복되지 않는다.
+			$fm_notice_end = substr($fm_notice_end, 0, 10)." 23:59:59";
+		} else {
+			$fm_notice_end = "0000-00-00 00:00:00";
+		}
 	}
 
 	//업로드 모듈 로딩
