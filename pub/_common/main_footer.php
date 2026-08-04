@@ -109,7 +109,7 @@
 							</li>
 							<li>
 								<a href="/contents/contents_view.php?site_id=main&TREE_NO=16221&DEPTH=2">
-									영상정보처리기기 운영관리 방침
+									고정형 영상정보처리기기 운영관리 방침
 								</a>
 							</li>
 							<li>
