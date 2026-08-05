@@ -123,6 +123,21 @@
 	$phone = $phone1."-".$phone2."-".$phone3;
 	$zip = $zip1."-".$zip2;
 
+	// 중복 지원 방지: 이름+전화번호+resume_num이 일치하는 지원서가 이미 있으면
+	// 새로 만들지 않고 그 지원서를 수정(UPDATE)하도록 전환한다.
+	// (private.php의 사전 중복확인을 못 거치고 곧장 들어온 경우를 위한 안전장치)
+	if ( $j == "" ) {
+		$dup_check_sql = " select wr_id, apply_num from employment where kor_name = '".addslashes($kor_name)."' and phone = '".addslashes($phone)."' and resume_num = '".addslashes($resume_num)."' ";
+		$dup_check_rs = mysql_query($dup_check_sql);
+		if ( $dup_check_rs && mysql_num_rows($dup_check_rs) > 0 ) {
+			$dup_row = mysql_fetch_assoc($dup_check_rs);
+			$wr_id = $dup_row['wr_id'];
+			$apply_num = $dup_row['apply_num']; // employment은 update시에도 apply_num을 그대로 SET하므로 기존값 보존
+			$j = "u";
+			$dup_redirect_to_list = true;
+		}
+	}
+
 	$department = addslashes($department);
 	$careerYN = addslashes($careerYN);
 	$kor_name = addslashes($kor_name);
@@ -387,8 +402,13 @@
 
 		$result = mysql_query($sql);
 		if($result){
-
-			echo "<script>alert('이력서가 정상적으로 수정되었습니다.');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
+			// 신규 지원 시도였다가 중복 감지로 수정 처리된 경우, pass_check 값이 없으므로
+			// 비밀번호 확인이 필요한 수정화면 대신 목록으로 보낸다.
+			if ( isset($dup_redirect_to_list) && $dup_redirect_to_list ) {
+				echo "<script>alert('이미 접수된 지원서가 있어 기존 지원서를 수정 처리했습니다.');location.href='./'</script>";
+			} else {
+				echo "<script>alert('이력서가 정상적으로 수정되었습니다.');location.href='./resume.php?j=u&wr_id=$wr_id&pass=$pass_check'</script>";
+			}
 		}else{
 			echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
 		}
