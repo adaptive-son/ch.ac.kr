@@ -12,7 +12,7 @@ extract($_GET);
 */
 
 header('Content-Type: text/html; charset=EUC-KR');
-$site = "nurs";
+$site = "qba";
 include $_SERVER["DOCUMENT_ROOT"]."/config/config.php";
 
 //$_POST = array_map('mysql_escape_string', $_POST); // PHP7: replaced by parameterized queries below
@@ -66,7 +66,7 @@ switch($Confirm)
         //학생로그인
         //학생로그인
         if($_POST['divide'] == "student"){
-			if($_POST['login_id']=="chad_nurs"){
+			if($_POST['login_id']=="chad_qba"){
 				
 				$sql = "select member.id, member.name, member.password as pwd,  adm.adm_group, member.user_type from admember member 
 					INNER JOIN adadmin adm ON adm.id = member.id
@@ -81,8 +81,8 @@ switch($Confirm)
 					}
 					if(!$isValid){
 						$ErrorSql = "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".$_POST['login_id']."','".$_SERVER['REMOTE_ADDR']."','".$time."')";
-						mysql_query($ErrorSql);
-						mysql_close($conn);
+						mysqli_query($conn, $ErrorSql);
+						mysqli_close($conn);
 
 						go_back("로그인 정보가 잘못되었습니다.");
 						exit;
@@ -109,8 +109,8 @@ switch($Confirm)
 				if ($result[0] < 1) {
 					sqlsrv_close($ms_con);
 					$ErrorSql = "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".$_POST['login_id']."','".$_SERVER['REMOTE_ADDR']."','".$time."')";
-					mysql_query($ErrorSql);
-					mysql_close($conn);
+					mysqli_query($conn, $ErrorSql);
+					mysqli_close($conn);
 
 					go_back("로그인 정보가 잘못되었습니다.");
 					exit;
