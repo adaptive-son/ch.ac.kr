@@ -6,9 +6,9 @@ include_once( dirname(__FILE__)."/lib/log.access.forPrivate.php" );
 $DBTable = "recruit_index";
 
 $idx = $_POST['idx'];
-$subject = $_POST['subject'];
-$start_date = $_POST['start_date'];
-$end_date = $_POST['end_date'];
+$subject = addslashes($_POST['subject']);
+$start_date = addslashes($_POST['start_date']);
+$end_date = addslashes($_POST['end_date']);
 
 $query = " subject = '".$subject."',";
 $query .= " start_date = '".$start_date."',";
@@ -21,11 +21,15 @@ if($idx){ //업데이트
     $url = "./recruit_write.php?idx=".$idx;
     if ( $pgidx > 0 ) log_Access_ForPrivate("recruit-categorywrite-update");
 }else{
-    $sql = "INSERT INTO ".$DBTable." SET ".$query.", aq_datetime=now()";
+    $sql = "INSERT INTO ".$DBTable." SET ".$query.", gubun='', aq_datetime=now()";
     $result = DBquery($sql);
     $msg = "등록";
     $url = "./";
     if ( $pgidx > 0 ) log_Access_ForPrivate("recruit-categorywrite-newinsert");
 }
-echo "<script type='text/javascript'>alert('".$msg." 되었습니다.'); location.href='".$url."'</script>"
+if ( $result ) {
+    echo "<script type='text/javascript'>alert('".$msg." 되었습니다.'); location.href='".$url."'</script>";
+} else {
+    echo "<script type='text/javascript'>alert('오류가 발생하였습니다. ".$msg."되지 않았습니다.'); history.back();</script>";
+}
 ?>
