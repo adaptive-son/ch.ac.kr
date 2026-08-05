@@ -20,7 +20,14 @@ if(empty($configBBS[idx]))	go_back("존재하지 않는 게시판입니다.");
 // magic_quotes_gpc가 이미 한 번 이스케이프한 상태에서 위 3번째 줄의
 // mysql_escape_string()이 또 한 번 이스케이프해서 두 겹이 걸리던 것을,
 // 여기서 한 겹만 벗겨내어 원래 magic_quotes_gpc가 만든 한 겹만 남도록 되돌린다.
-if(isset($_POST['fm_content'])){
+// 2026-08-05: 이 서버의 PHP7에서는 magic_quotes_gpc가 이미 꺼져있어(get_magic_quotes_gpc()===false)
+// 위 가정이 성립하지 않는다. 답글(dataArr[idx] 有)은 기존 content를 그대로 재제출하며 그 안의
+// 따옴표가 실제로 이중 이스케이프될 수 있어 여기서 한 겹 벗겨내는 게 맞지만, 새 글(dataArr[idx] 無)은
+// 애초에 재제출되는 기존 content가 없어 이중 이스케이프될 게 없다. 그런데도 여기서 무조건
+// stripslashes를 적용해 위 mysql_escape_string()이 만든 유일한 이스케이프까지 지워버려서,
+// 본문에 홑따옴표(')가 하나라도 있으면 INSERT 문이 깨져 등록이 조용히 실패하고 있었다.
+// 답글일 때만 적용하도록 범위를 좁힌다.
+if(isset($_POST['fm_content']) && $dataArr[idx]){
 	$_POST['fm_content'] = stripslashes($_POST['fm_content']);
 }
 
@@ -231,6 +238,8 @@ if($_POST['Confirm']=="define"){
 
 		//멀티업로더 콜백처리
 		if($configBBS[module_uploader] != "InnoAP.php"){
+			// 등록 실패시 안내 없이 조용히 목록으로 돌아가서 성공과 구분이 안 되던 문제 조치 (2026-08-05)
+			echo "<script>alert('등록시 오류가 발생 하였습니다.');</script>";
 			ReFresh_parent("$BURL?$param_MENU&data=$data");
 		}else{
 			echo "

@@ -981,7 +981,7 @@ $apply_num_2 = "(2019-1)";
 		mysql_query($sql2);
 		if($result){
 
-			echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./'</script>";
+			echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./resume.php?j=u&wr_id=$wr_ins_id&pass=$pass_check'</script>";
 		}else{
 			echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
 		}
