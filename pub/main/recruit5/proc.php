@@ -753,7 +753,7 @@ if($j==""){
     if($result && $result1){
         echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./'</script>";
     }else{
-        echo "<script>alert('이력서 접수 중 초빙분야·자기소개서·학위논문·연구실적·비밀번호 저장에 실패했습니다. 접수번호 $wr_ins_id 를 채용 담당자에게 알려주세요.');history.back();</script>";
+        echo "<script>alert('이력서 접수 중 오류가 발생했습니다.');history.back();</script>";
     }
 }else if($j=="u"){
 
