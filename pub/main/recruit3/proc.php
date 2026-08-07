@@ -923,14 +923,16 @@ if($j==""){
     $result = mysql_query($sql);
     $wr_ins_id = mysql_insert_id();
     $sql1 = "INSERT recruit_te SET parent = '$wr_ins_id',wr_datetime=now(),type_gubun='$type_gubun',$query2";
-    mysql_query($sql1);
+    $result1 = mysql_query($sql1);
+    if(!$result1) error_log("recruit3/proc.php INSERT recruit_te 실패 (wr_id=$wr_ins_id): ".mysql_error());
     $sql2 = "INSERT recruit_te_school_addr SET parent = '$wr_ins_id',$query3";
-    mysql_query($sql2);
-    if($result){
+    $result2 = mysql_query($sql2);
+    if(!$result2) error_log("recruit3/proc.php INSERT recruit_te_school_addr 실패 (wr_id=$wr_ins_id): ".mysql_error());
+    if($result && $result1 && $result2){
 
         echo "<script>alert('이력서가 정상적으로 접수되었습니다.');location.href='./'</script>";
     }else{
-        echo "<script>alert('오류가 발생하였습니다.');history.back();</script>";
+        echo "<script>alert('이력서 접수 중 초빙분야·자기소개서·학위논문·연구실적·비밀번호 저장에 실패했습니다. 접수번호 $wr_ins_id 를 채용 담당자에게 알려주세요.');history.back();</script>";
     }
 }else if($j=="u"){
 
@@ -942,11 +944,13 @@ if($j==""){
 
     $result = mysql_query($sql);
     $sql1 = "UPDATE recruit_te SET type_gubun='$type_gubun',$query2 WHERE parent='$wr_id'";
-    mysql_query($sql1);
+    $result1 = mysql_query($sql1);
+    if(!$result1) error_log("recruit3/proc.php UPDATE recruit_te 실패 (wr_id=$wr_id): ".mysql_error());
     $sql2 = "UPDATE recruit_te_school_addr SET $query3 WHERE parent='$wr_id'";
     //print_R($sql2);exit;
-    mysql_query($sql2);
-    if($result){
+    $result2 = mysql_query($sql2);
+    if(!$result2) error_log("recruit3/proc.php UPDATE recruit_te_school_addr 실패 (wr_id=$wr_id): ".mysql_error());
+    if($result && $result1 && $result2){
         // 신규 지원 시도였다가 중복 감지로 수정 처리된 경우, pass_check 값이 없으므로
         // 비밀번호 확인이 필요한 수정화면 대신 목록으로 보낸다.
         if ( isset($dup_redirect_to_list) && $dup_redirect_to_list ) {
