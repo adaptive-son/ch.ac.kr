@@ -5,13 +5,6 @@ define("__AF__", TRUE);
 include($_SERVER["DOCUMENT_ROOT"] . "/adframe/af_common.php");
 require_once (ADFRAME_ROOT_PATH."/lib/class_bbs.php");
 
-if($_SERVER["REMOTE_ADDR"] == "112.217.216.250"){
-  //print_r($rs_infoContents);
-  //print_r($menu_3depth['16002'][3]);
-
-
-}
-
 //통학버스안내 임시처리 : 2022-02-10
 //통학버스안내 임시처리 삭제 : 2022-02-18
 /*
@@ -65,7 +58,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 <div class="wrapper" id="wrapper">
     <!-- header -->
     <?
-        if($TREE_ID=="main") include("../".$TREE_ID."/include/header.php");
+        if($TREE_ID=="main" || $TREE_ID=="global2") include("../".$TREE_ID."/include/header.php");
         else include("../".$TREE_ID."/../_common/header.php");
     ?>
     <!-- //header -->
