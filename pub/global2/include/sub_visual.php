@@ -2,16 +2,17 @@
 		<div class="sub-visual">
 			<img src="../img/sub01/img_subvisual_pc.jpg" alt="" class="pc" />
 			<img src="../img/sub01/img_subvisual_mobile.jpg" alt="" class="mobile" />
+			<?php
+			$pageName1 = $PAGENAME1 ? str_replace("&lt;", "", $PAGENAME1) : "국제교류처";
+			$pageName2 = str_replace("&lt;", "", $PAGENAME2);
+			?>
 			<div class="word-slogan-wrapper">
 				<p class="title">
-					국제교류처
+					<?php echo $pageName1 ?>
 				</p>
 				<div class="contents-navigation-wrapper">
 					<div class="contents-navigation">
-						<?php
-						$pageName1 = str_replace("&lt;", "", $PAGENAME1);
-						$pageName2 = str_replace("&lt;", "", $PAGENAME2);
-						?>
+						<?php ?>
 						<span class="icon-home">
 							Home
 						</span>

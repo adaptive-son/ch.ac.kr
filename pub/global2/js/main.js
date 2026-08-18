@@ -9,21 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 		slidesPerView: 1,
 		spaceBetween: 0,
-		pagination: {
-			el: '#main-visual-pagination',
-			type: 'fraction',
-			formatFractionCurrent: function(number) {
-				return ('0' + number).slice(-2);
-			},
-			formatFractionTotal: function(number) {
-				return ('0' + number).slice(-2);
-			},
-			renderFraction: function(currentClass, totalClass) {
-				return '<span class="' + currentClass + '"></span>' +
-					' / ' +
-					'<span class="' + totalClass + '"></span>';
-			}
-		},
 		navigation: {
 			nextEl: '.main-visual-next01',
 			prevEl: '.main-visual-prev01',
@@ -63,55 +48,57 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
-	/* 학과 소개 슬라이드 */
-	var deptSwiper = new Swiper('.main-dept-swiper', {
-		loop: true,
-		slidesPerView: 1,
-		autoplay: {
-			delay: 10000,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: '.dept-pagination',
-			clickable: true,
-		},
-		a11y: {
-			enabled: true,
-			prevSlideMessage: '이전 학과',
-			nextSlideMessage: '다음 학과',
-			paginationBulletMessage: '{{index}}번째 슬라이드로 이동',
-		},
-	});
+	/* 학과 소개 슬라이드 (외국인 전담학과 고정 노출로 전환되어 슬라이더가 없는 경우 건너뜀) */
+	if (document.querySelector('.main-dept-swiper')) {
+		var deptSwiper = new Swiper('.main-dept-swiper', {
+			loop: true,
+			slidesPerView: 1,
+			autoplay: {
+				delay: 10000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.dept-pagination',
+				clickable: true,
+			},
+			a11y: {
+				enabled: true,
+				prevSlideMessage: '이전 학과',
+				nextSlideMessage: '다음 학과',
+				paginationBulletMessage: '{{index}}번째 슬라이드로 이동',
+			},
+		});
 
-	function updateDeptA11y() {
-		document.querySelectorAll('.main-dept-swiper .swiper-slide').forEach(function(slide) {
-			var isActive = slide.classList.contains('swiper-slide-active');
-			var isDup = slide.classList.contains('swiper-slide-duplicate');
-			if (!isActive || isDup) {
-				slide.setAttribute('aria-hidden', 'true');
-			} else {
-				slide.removeAttribute('aria-hidden');
+		function updateDeptA11y() {
+			document.querySelectorAll('.main-dept-swiper .swiper-slide').forEach(function(slide) {
+				var isActive = slide.classList.contains('swiper-slide-active');
+				var isDup = slide.classList.contains('swiper-slide-duplicate');
+				if (!isActive || isDup) {
+					slide.setAttribute('aria-hidden', 'true');
+				} else {
+					slide.removeAttribute('aria-hidden');
+				}
+			});
+		}
+
+		deptSwiper.on('slideChange', updateDeptA11y);
+		updateDeptA11y();
+
+		document.querySelector('.dept-card').addEventListener('click', function(e) {
+			if (e.target.closest('.dept-btn-pause')) {
+				deptSwiper.autoplay.stop();
+				document.querySelector('.dept-card').classList.add('dept-paused');
+				document.querySelector('.main-dept-swiper .swiper-wrapper').setAttribute('aria-live', 'off');
+				return;
+			}
+			if (e.target.closest('.dept-btn-play')) {
+				deptSwiper.autoplay.start();
+				document.querySelector('.dept-card').classList.remove('dept-paused');
+				document.querySelector('.main-dept-swiper .swiper-wrapper').setAttribute('aria-live', 'polite');
+				return;
 			}
 		});
 	}
-
-	deptSwiper.on('slideChange', updateDeptA11y);
-	updateDeptA11y();
-
-	document.querySelector('.dept-card').addEventListener('click', function(e) {
-		if (e.target.closest('.dept-btn-pause')) {
-			deptSwiper.autoplay.stop();
-			document.querySelector('.dept-card').classList.add('dept-paused');
-			document.querySelector('.main-dept-swiper .swiper-wrapper').setAttribute('aria-live', 'off');
-			return;
-		}
-		if (e.target.closest('.dept-btn-play')) {
-			deptSwiper.autoplay.start();
-			document.querySelector('.dept-card').classList.remove('dept-paused');
-			document.querySelector('.main-dept-swiper .swiper-wrapper').setAttribute('aria-live', 'polite');
-			return;
-		}
-	});
 
 	/* 섹션 스크롤 진입 애니메이션 */
 	var observer = new IntersectionObserver(function(entries) {

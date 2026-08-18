@@ -127,8 +127,8 @@ $letter_no= ( $numrows+$LIMIT ) - ( $LIMIT*$NowPage );
                                     </td>-->
                                     <td>
                                         <?
-                                        $arr_selectLocation = array("1"=>"메인배너", "2"=>"서브메인배너(좌)", "3"=>"서브메인배너(우)", "4"=>"하단배너(좌)", "5"=>"하단배너1(우)", "6"=>"하단배너2(우)");
-                                        echo $arr_selectLocation[$pg_row[location]];
+                                        $arr_selectLocation = array("1"=>"메인배너", "2"=>"서브메인배너(좌)", "3"=>"서브메인배너(우)", "4"=>"하단배너(좌)", "5"=>"하단배너1(우)", "6"=>"하단배너2(우)", "7"=>"배너존");
+                                        echo ( $arr_selectLocation[$pg_row[location]] ) ? $arr_selectLocation[$pg_row[location]] : $arr_selectLocation["1"];
                                         ?>
                                     </td>
                                     <td>

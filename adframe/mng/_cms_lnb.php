@@ -204,14 +204,28 @@
                                 <a href="/adframe/mng/schedule/schedule.inc.php" target="ifrm_index">일정관리</a>
                             </li>
 							<?
+								if($_SESSION[sel_site_id]=="main" || $_SESSION[sel_site_id]=="global2") {
+							?>
+							<li class="noDepth">
+                                <a href="/adframe/mng/banner/banner.list.php" target="ifrm_index">배너관리</a>
+                            </li>
+							<? } ?>
+							<?
+								if($_SESSION[sel_site_id]=="global2") {
+							?>
+							<li class="noDepth">
+                                <a href="/adframe/mng/guide/list.php" target="ifrm_index">한국어교육센터 PDF 메뉴 관리</a>
+                            </li>
+							<li class="noDepth">
+                                <a href="/adframe/mng/guide/admission.php" target="ifrm_index">정규과정 입학 PDF 관리</a>
+                            </li>
+							<? } ?>
+							<?
 								if($_SESSION[sel_site_id]=="main") {
 							?>
 							<li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
                                 <a href="/adframe/mng/category/tree.manage.php" target="ifrm_index">규정집 카테고리 관리</a>
-                            </li>
-							<li class="noDepth">
-                                <a href="/adframe/mng/banner/banner.list.php" target="ifrm_index">배너관리</a>
                             </li>
 							<li class="noDepth">
                                 <a href="/adframe/mng/toppopup/toppopup.list.php" target="ifrm_index">상단 팝업 관리</a>

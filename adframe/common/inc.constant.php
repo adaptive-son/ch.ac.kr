@@ -27,12 +27,14 @@ define("POPUP_FILE_PATH", $_SERVER['DOCUMENT_ROOT']."/data/popup");
 define("TOPPOPUP_FILE_PATH", $_SERVER['DOCUMENT_ROOT']."/data/toppopup");
 define("BBS_FILE_PATH", $_SERVER['DOCUMENT_ROOT']."/data/bbs_upload");
 define("PROFESSOR_FILE_PATH", $_SERVER['DOCUMENT_ROOT']."/data/professor");
+define("GUIDE_FILE_PATH", $_SERVER['DOCUMENT_ROOT']."/data/guide");
 // 파일로딩 경로
 define("BANNER_LOAD_PATH", "/data/banner");
 define("POPUP_LOAD_PATH", "/data/popup");
 define("TOPPOPUP_LOAD_PATH", "/data/toppopup");
 define("BBS_LOAD_PATH", "/data/bbs_upload");
 define("PROFESSOR_LOAD_PATH", "/data/professor");
+define("GUIDE_LOAD_PATH", "/data/guide");
 
 // 기본정보 테이블
 define("TABLE_PREF", str_replace("_", "", ADFRAME_PREFIX)."_");

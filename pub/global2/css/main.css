@@ -327,6 +327,20 @@
         font-size: 0.8173rem;
         word-break: keep-all
     }
+
+    .main-dept-inner--flat {
+        flex-direction: column;
+        gap: 1.1538rem;
+    }
+    .dept-card--flat {
+        width: 100%;
+        padding: 3.5385rem 1.1538rem 1.7308rem;
+    }
+    .dept-link {
+        padding: 0.6154rem 1.5385rem;
+        font-size: 0.7692rem;
+    }
+
     .dept-bottom-nav {
         gap: 0.3846rem;
         padding: 0 1.1538rem 1.7308rem 1.1538rem;

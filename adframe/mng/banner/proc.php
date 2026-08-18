@@ -47,9 +47,11 @@ if ( $Confirm == "delete" ) {
         gigan1      = '$gigan1',
 		gigan2      = '$gigan2',
         title		= '$title',
+        slogan		= '".addslashes($slogan)."',
         target	= '$target',
         useyn = '$useyn',
 		sort = '$sort',
+        location = '".( $location ? $location : "1" )."',
         site_id = '$_SESSION[sel_site_id]'
     ";
     if ( $no == "" ) {

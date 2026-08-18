@@ -1,0 +1,550 @@
+@charset "UTF-8";
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+	font-weight:100;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+	font-weight:200;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+	font-weight:300;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+	font-weight:400;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+	font-weight:500;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+	font-weight:600;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+	font-weight:700;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+	font-weight:800;
+	font-display:swap;
+}
+@font-face {
+	font-family:'Pretendard';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+	font-weight:900;
+	font-display: swap;
+}
+
+a {
+  &::after {
+    content: "";
+    display: inline;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+  }
+
+  /* hover 포인터 지원 디바이스 제한 적용 */
+  @media (hover: hover) {
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+*,*::before,*::after {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+html,
+body {
+	width:100%;
+	height:100%;
+	font-family:'Pretendard', sans-serif;
+	-webkit-text-size-adjust:none;
+}
+body.intro {
+	overflow: hidden;
+	background-image: url(../img/intro/bg_intro01_2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.intro-wrapper {
+	position:relative;
+	width:100%;
+	min-height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding: 50px 30px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.intro-area {
+	display: block;
+	text-align: center;
+	width: 100%;
+	max-width: 1480px;
+	margin:  0 auto;
+}
+
+.intro-area > h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto 70px auto;
+	text-align: center;
+}
+
+.intro-area > h1 > a {
+	display: inline-flex;
+	vertical-align: bottom;
+}
+
+.intro-area > h1 > a > img {
+	display: block;
+	width: 403px;
+}
+
+.intro-area > h1 > a > strong {
+	display: block;
+	font-size: 48px;
+	line-height: 54px;
+	font-weight: 700;
+	color: #fff;
+/*	margin-left: 12px;*/
+}
+
+/* 카드 그리드 */
+.intro-cards {
+	position:relative;
+	z-index:1;
+	display: flex;
+	gap: 30px;
+	width: 100%;
+	align-items: stretch;
+	margin: 0 auto;
+}
+/* 카드 공통 — 컬러 배경 전체 */
+.intro-card {
+	display:flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 380px;
+	padding: 30px 20px 20px 20px;
+	box-shadow:0 6px 28px rgba(0,0,0,0.22);
+/*	border-radius: 50px;*/
+	border-top-right-radius: 0;
+	text-align: left;
+}
+/* 카드 헤더 (컬러 영역) */
+.card-head {
+/*	padding: 0 0 0 30px;*/
+	margin-bottom: 20px;
+	display:flex;
+	flex-direction:column;
+	gap:4px;
+/*	width: calc(100% + 20px);*/
+}
+.card-title {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	color:#fff;
+	line-height: 32px;
+	letter-spacing:-0.03em;
+}
+
+.card-title:hover {
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+.card-title > a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap:5px;
+}
+
+.card-title > a:before {
+	content: "";
+	display: inline-block;
+	width: 38px;
+	height: 28px;
+	background-image: url(../img/intro/logo_w.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	transition: all 0.2s ease;
+}
+
+.card-title-en {
+	text-align: center;
+	height: 40px;
+	font-size: 16px;
+	font-weight: 600;
+	color:rgba(255,255,255,0.67);
+	line-height: 1.3333;
+}
+/* 흰 카드 바디 — 컬러 배경 안에 둥근 카드 */
+.card-body {
+	position:relative;
+	background: #fff;
+	padding: 23px 25px 23px 30px;
+	overflow:hidden;
+	flex: 1;
+}
+/* 메뉴 리스트 */
+.card-menu {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	gap: 5px;
+}
+.card-menu li {
+	display: block;
+}
+.card-menu a {
+	position: relative;
+	display: block;
+	font-size: 18px;
+	line-height: 1.5;
+	color: #222;
+	font-weight: 600;
+	transition: all 0.2s ease;
+	padding-right: 20px;
+}
+
+.card-menu a:before {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 10px;
+	height: 18px;
+	content: "";
+	display: block;
+	margin-top: -4px;
+	background-image: url(../img/intro/icon_arrow_right01.png);
+	background-repeat: no-repeat;
+	background-size: 5px 9px;
+	background-position: 0 0;
+	transition: all 0.2s ease;
+}
+
+/* 워터마크 아이콘 */
+.card-icon {
+	position: absolute;
+	bottom: 27px;
+	right: 28px;
+}
+.card-icon img {
+	width: 126px;
+}
+/* ===== 카드 색상 ===== */
+.card--blue {
+	background:linear-gradient(160deg,#028d4e,#006019);
+}
+.card--teal {
+	background:linear-gradient(160deg,#004ea1,#003166);
+}
+.card--sky {
+/*	background:linear-gradient(160deg,#090059,#080049);*/
+	background:linear-gradient(160deg,#a13535,#992222);
+}
+.card--purple {
+/*	background: linear-gradient(160deg,#e52c68,#c71e55);*/
+	background: linear-gradient(160deg,#b3985f,#9b7a33);
+}
+
+.card--blue > a:hover {
+	color: #006019
+}
+.card--teal > a:hover {
+	color: #003166
+}
+.card--sky > a:hover {
+/*	color: #080049*/
+	color: #992222
+}
+.card--purple > a:hover {
+/*	color: #c71e55*/
+	color: #9b7a33
+}
+
+@media only all and (max-width: 1679px) {
+	.intro-wrapper {
+		padding: 50px 20px;
+	}
+
+	/* 카드 그리드 */
+	.intro-cards {
+		gap: 30px;
+	}
+	/* 흰 카드 바디 — 컬러 배경 안에 둥근 카드 */
+	.card-body {
+		position:relative;
+		background: #fff;
+		padding: 23px 25px 23px 30px;
+		overflow:hidden;
+		flex: 1;
+	}
+	/* 메뉴 리스트 */
+	.card-menu {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		gap: 5px;
+	}
+	.card-menu li {
+		display: block;
+	}
+}
+
+@media only all and (max-width: 1439px) {
+	.intro-cards {
+		gap: 20px;
+	}
+
+	.card-head {
+		width: 100%;
+	}
+
+    .card-menu a {
+		font-size: 15px;
+	}
+}
+
+
+/* ===== 2열 그리드 (768px ~ 1279px) ===== */
+@media only all and (max-width: 1279px) {
+    .intro-wrapper {
+		padding: 0 20px;
+	}
+
+	.intro-area > h1 {
+		margin-bottom: 35px;
+	}
+
+	.intro-area > h1 > a > img {
+		width: 268px;
+	}
+
+
+	.intro-area > h1 > a > strong {
+		font-size: 2.769rem;
+		line-height: 1.5;
+	}
+
+	.intro-cards {
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	.intro-card {
+		width: calc(50% - 8px);
+		flex: none;
+		max-width: none;
+	}
+
+	.card-menu {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 30px;
+	}
+
+	.card-title-en {
+		height: auto;
+	}
+
+	.card-icon {
+		bottom: 18px;
+		right: 18px;
+	}
+
+	.card-icon img {
+		width: 84px;
+	}
+}
+
+@media only all and (max-width: 1197px) {
+    .card-menu a {
+        font-size: 14px;
+		padding-right: 15px;
+    }
+}
+
+/* ===== MOBILE (~ 767px) ===== */
+@media only all and (max-width: 1023px) {
+	html {
+		font-size: 1.625rem;
+		line-height: 1.625rem;
+	}
+
+	body.intro {
+		overflow: initial;
+	}
+
+	.intro-wrapper {
+		padding: 1.9231rem 1.1538rem;
+		overflow: initial;
+	}
+
+	.intro-area {
+		width: 100%;
+		max-width: 100%;
+		margin:  0;
+	}
+
+	.intro-area > h1 {
+		width: 100%;
+		margin-bottom: 1.346rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.intro-area > h1 > a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.intro-area > h1 > a > img {
+		width: 15.5rem;
+		flex-shrink: 0;
+	}
+
+	.intro-area > h1 > a > strong {
+		font-size: 1.846rem;
+		line-height: 2.0769rem;
+		flex-shrink: 0;
+	}
+
+	/* 카드 그리드 */
+	.intro-cards {
+		gap: 1.154rem;
+		margin: 0;
+	}
+	/* 카드 공통 — 컬러 배경 전체 */
+	.intro-card {
+		width: 100%;
+		max-width: 100%;
+		padding: 1.7307rem 1.1538rem 1.1538rem 1.1538rem;
+	}
+	/* 카드 헤더 (컬러 영역) */
+	.card-head {
+		margin-bottom: 1.1538rem;
+		gap: 0.2308rem;
+	}
+	.card-title {
+		font-size: 1.385rem;
+		line-height: 1.692rem;
+	}
+
+	.card-title > a {
+		gap:0.231rem;
+	}
+
+	.card-title > a:before {
+		width: 2rem; /*52*/
+		height: 1.462rem; /*38*/
+	}
+	
+	.card-title-en {
+		height: initial;
+		font-size: 0.923rem;
+	}
+	/* 흰 카드 바디 — 컬러 배경 안에 둥근 카드 */
+	.card-body {
+		padding: 1.3269rem 1.4423rem 1.3269rem 1.7308rem;
+		overflow:hidden;
+		flex: 1;
+	}
+	/* 메뉴 리스트 */
+	.card-menu {
+		display: flex;
+		gap: 0.385rem;
+	}
+
+	.card-menu a {
+		font-size: 1.1538rem;
+		padding-right: 1.1538rem;
+	}
+
+	.card-menu a:before {
+		width: 0.385rem;
+		height: 0.692rem;
+		background-size: 0.385rem 0.692rem;
+	}
+
+	.card-menu a:hover:before {
+		right: -0.3077rem;
+	}
+
+	/* 워터마크 아이콘 */
+	.card-icon {
+		bottom: 1.5rem;
+		right: 2.5rem;
+	}
+	.card-icon img {
+		width: 4.8462rem;
+	}
+}
+
+@media only all and (max-width: 767px) {
+	html {
+		font-size: 1.125rem;
+		line-height: 1.125rem;
+	}
+}
+
+
+@media only all and (max-width: 600px) {
+	html {
+		font-size: 0.9375rem;
+		line-height: 0.9375rem;
+	}
+}
+
+
+@media only all and (max-width: 475px) {
+	html {
+		font-size: 0.8125rem;
+		line-height: 0.8125rem;
+	}
+}
+
+@media only all and (max-width: 359px) {
+	html {
+		font-size: 0.6875rem;
+		line-height: 0.6875rem;
+	}
+}
+

@@ -1,3 +1,17 @@
+<?php
+// 상위 카테고리가 숨김(MENU_ON=N) 처리되어 있으면 표준 메뉴 배열($lnb_no)에서 못 찾으므로
+// PARENT를 직접 타고 올라가서 최상위(DEPTH=0) 카테고리를 찾는 보정 로직
+if ( !$lnb_no && $TREE_NO ) {
+    $lnb_fallback_row = $adb->getRow("SELECT * FROM af_tree WHERE TREE_NO='".$TREE_NO."'", DB_FETCHMODE_ASSOC);
+    while ( $lnb_fallback_row && $lnb_fallback_row[DEPTH] > 0 ) {
+        $lnb_fallback_row = $adb->getRow("SELECT * FROM af_tree WHERE TREE_NO='".$lnb_fallback_row[PARENT]."'", DB_FETCHMODE_ASSOC);
+    }
+    if ( $lnb_fallback_row ) {
+        $lnb_no = $lnb_fallback_row[TREE_NO];
+        if ( trim(str_replace("&lt;", "", $PAGENAME1)) == "" ) $PAGENAME1 = $lnb_fallback_row[NAME]." &lt; ";
+    }
+}
+?>
 <div class="lnb-wrapper">
     <!-- lnb menu -->
     <div class="lnb-area">
@@ -21,7 +35,7 @@
                 }else{ $lnb_href = "#lnb-menu-depth1";}
                 ?>
                 <li>
-                    <a href="<?=$lnb_href?>" class="topmenu<?=$PAGEINDEX1?>-<?=($k+1)?>" <?if($v[cnt] ==0) echo $v[LINK_TARGET];?>>
+                    <a href="<?=$lnb_href?>" class="topmenu<?=$PAGEINDEX1?>-<?=($k+1)?><?=($v[TREE_NO]==$TREE_NO)?' active':''?>" <?if($v[cnt] ==0) echo $v[LINK_TARGET];?>>
                         <span><?=$v[NAME]?></span>
                         <span class="bg"></span>
                         <? if ( $v[cnt] > 0 ) { ?> <span class="arrow"></span> <? } ?>

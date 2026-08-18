@@ -19,7 +19,10 @@
 	<!-- wrapper -->
 	<div class="wrapper" id="wrapper">
 		<!-- header -->
-		<? include("../".$TREE_ID."/../_common/header.php");?>
+		<?
+			if($TREE_ID=="global2") include("../".$TREE_ID."/include/header.php");
+			else include("../".$TREE_ID."/../_common/header.php");
+		?>
 		<!-- //header -->
 
 		<!-- sub visual -->

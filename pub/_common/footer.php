@@ -170,3 +170,7 @@
         <!-- //상단으로 이동 -->
     </div>
 </footer>
+
+<?php if ($_REQUEST['site_id'] == "global2" && $_REQUEST['TREE_NO'] == "16615") { ?>
+    <?php include($_SERVER["DOCUMENT_ROOT"]."/include/kakaoApi.php"); ?>
+<?php } ?>

@@ -28,43 +28,108 @@
 	overflow: hidden;
 }
 
-.main-visual-wrapper > img {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	animation: visualZoomIn 2s ease forwards;
-}
-@keyframes visualZoomIn {
-	from { transform: scale(1.1); }
-	to   { transform: scale(1); }
+#main-visual-slider,
+#main-visual-slider .swiper-wrapper,
+#main-visual-slider .swiper-slide {
+	width: 100%;
+	height: 100%;
 }
 
-.main-visual-wrapper .pc {
+#main-visual-slider .swiper-slide img {
 	display: block;
-	width: 1920px;
-	margin-left: -960px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	filter: brightness(1.15);
+	animation: visualZoomIn 6s ease forwards;
+}
+@keyframes visualZoomIn {
+	from { transform: scale(1.08); }
+	to   { transform: scale(1); }
 }
 
 .main-visual-wrapper .mobile {
 	display: none;
 }
 
+/* 메인 비주얼 이전/다음 버튼 */
+.main-visual-prev01,
+.main-visual-next01 {
+	position: absolute;
+	top: 50%;
+	z-index: 3;
+	width: 44px;
+	height: 44px;
+	transform: translateY(-50%);
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.main-visual-prev01:hover,
+.main-visual-next01:hover {
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.main-visual-prev01 {
+	left: 40px;
+}
+
+.main-visual-next01 {
+	right: 170px;
+}
+
+@media only all and (max-width: 1679px) {
+	.main-visual-next01 {
+		right: 70px;
+	}
+}
+
+.main-visual-prev01::before,
+.main-visual-next01::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
+
+.main-visual-prev01::before {
+	transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.main-visual-next01::before {
+	transform: translate(-70%, -50%) rotate(45deg);
+}
 
 .main-slogan-wrapper {
 	position: absolute;
 	top: 247px;
 	left: 0;
 	width: 100%;
+	z-index: 2;
 }
 
 .main-slogan-area {
 	display: flex;
-	width: 100%;
+	width: fit-content;
+	max-width: 90%;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	text-align: center;
 	color: #fff;
-	margin-bottom: 33px;
+	margin: 0 auto 33px auto;
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.8),
+		0 4px 12px rgba(0, 0, 0, 0.6),
+		0 0 30px rgba(0, 0, 0, 0.4);
 }
 
 .main-slogan-area > span {
@@ -588,6 +653,39 @@
 	line-height: 1.64705;
 	color: #cfd9de;
 }
+
+/* 외국인 전담학과 고정 노출 (슬라이더 없이 2개 카드 나란히 배치) */
+.main-dept-inner--flat {
+	gap: 30px;
+	flex-wrap: wrap;
+}
+.dept-card--flat {
+	width: 460px;
+	padding: 74px 30px 34px;
+	box-sizing: border-box;
+}
+.dept-card--flat .dept-desc {
+	margin-bottom: 22px;
+}
+.dept-link {
+	display: inline-block;
+	padding: 11px 28px;
+	border-radius: 22px;
+	background-color: #fff;
+	color: #1266ac;
+	font-size: 15px;
+	line-height: 1;
+	text-decoration: none;
+	transition: background-color 0.2s ease-in-out;
+}
+.dept-link:hover,
+.dept-link:focus-visible {
+	background-color: #f8c632;
+}
+.dept-link > strong {
+	font-weight: 700;
+}
+
 .dept-bottom-nav {
 	display: flex;
 	align-items: center;

@@ -55,6 +55,13 @@ if ( $no != "" ) {
                 }
             });
             $("#select00").trigger("change");
+
+            // 입력창에서 엔터키로 폼이 바로 제출되는 것을 방지
+            $("form[name='writeform'] input[type='text']").on("keydown", function(e) {
+                if ( e.key === "Enter" || e.keyCode === 13 ) {
+                    e.preventDefault();
+                }
+            });
         });
     </script>
 
@@ -78,20 +85,20 @@ if ( $no != "" ) {
                     <div class="block-content collapse in">
                         <div class="span12">
                             <fieldset>
-                                <!--<div class="control-group">
+                                <div class="control-group">
                                     <label class="control-label" for="typeahead">배너 위치</label>
                                     <div class="controls">
                                         <select id="select00" class="span6" name="location" class="chzn-select">
                                             <?
-                                            $arr_selectLocation = array("메인배너", "서브메인배너(좌)", "서브메인배너(우)", "하단배너(좌)", "하단배너1(우)", "하단배너2(우)");
-                                            foreach ( $arr_selectLocation as $k => $v ) {
-                                                $location_keyVal = $k+1;
+                                            $arr_selectLocation = array("1"=>"메인배너", "7"=>"배너존");
+                                            foreach ( $arr_selectLocation as $location_keyVal => $v ) {
+                                                $view_location = ( $view[location] ) ? $view[location] : "1";
                                             ?>
-                                            <option value="<?=$location_keyVal?>" <? if ( $location_keyVal == $view[location] ) echo "selected"; ?>> <?=$v?> </option>
+                                            <option value="<?=$location_keyVal?>" <? if ( $location_keyVal == $view_location ) echo "selected"; ?>> <?=$v?> </option>
                                             <? } ?>
                                         </select>
                                     </div>
-                                </div>-->
+                                </div>
                                 <div class="control-group">
                                     <label class="control-label" for="typeahead">배너 사용여부</label>
                                     <div class="controls">
@@ -106,9 +113,15 @@ if ( $no != "" ) {
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="typeahead">배너 제목</label>
+                                    <label class="control-label" for="typeahead">배너 제목 (슬로건 위 작은 한 줄 문구)</label>
                                     <div class="controls">
                                         <input type="text" class="span6" id="title" name="title" value="<?= $view['title'] ?>" >
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="typeahead">슬로건 (메인 비주얼에 노출되는 문구, 줄바꿈 가능)</label>
+                                    <div class="controls">
+                                        <textarea class="span6" id="slogan" name="slogan" rows="4"><?= $view['slogan'] ?></textarea>
                                     </div>
                                 </div>
                                 <div class="control-group">

@@ -29,6 +29,9 @@ pub/*/pdfjs/
 # 가상투어 (대용량)
 pub/vtour/
 
+# 구축 자료 (참고용 원본 자료, 배포 대상 아님)
+pub/*/구축 자료/
+
 # DB 접속 정보 (비밀번호 포함)
 pub/main/config/dbconn.php
 

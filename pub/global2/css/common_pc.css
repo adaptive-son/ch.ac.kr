@@ -791,7 +791,10 @@ caption {
 	font-size: 48px;
 	line-height: 56px;
 	font-weight: 700;
-	text-shadow: 2px 2px 5px rgba(0,0,0, 0.2);
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.8),
+		0 4px 12px rgba(0, 0, 0, 0.6),
+		0 0 30px rgba(0, 0, 0, 0.4);
 }
 
 .sub-visual .contents-navigation-wrapper {
@@ -837,9 +840,15 @@ caption {
 	float: left;
 	font-size: 12px;
 	line-height: 32px;
-	color: #bfbfbf;
+	color: #f0f0f0;
 	font-weight: 700;
 	letter-spacing: -1px;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.sub-visual .contents-navigation .icon-home,
+.sub-visual .contents-navigation .icon-gt {
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
 }
 
 
@@ -884,14 +893,14 @@ caption {
 	top: 50%;
 	left: 0;
 	width: 100%;
-	padding: 0 30px;
+	padding: 0 20px;
 	text-align: center;
 	color: #ffffff;
-	font-size: 36px;
-	line-height: 36px;
+	font-size: 26px;
+	line-height: 1.3;
 	font-weight: 500;
 	transform: translate(0, -50%);
-	word-break: kee-all;
+	word-break: keep-all;
 	pointer-events: none;
 }
 
@@ -1068,13 +1077,387 @@ caption {
 }
 
 .contents-title {
+	position: relative;
 	clear: both;
 	display: block;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+	padding-left: 20px;
+	border-left: 4px solid #025faf;
 	color: #3c3c3c;
 	font-size: 40px;
-	line-height: 33px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.contents-title::before {
+	content: "INTERNATIONAL AFFAIRS OFFICE";
+	display: block;
+	margin-bottom: 10px;
+	color: #025faf;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+}
+
+/* 게시판 목록 디자인 보강 */
+.board-area .search-wrapper {
+	float: none;
+	width: 100%;
+}
+
+.board-area .search-area {
+	float: right;
+}
+
+.board-area .search-wrapper > .total {
+	font-size: 15px;
+	line-height: 40px;
+}
+
+.board-area .search-wrapper > .total > strong {
+	color: #025faf;
+}
+
+.board-area .search-area select {
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+	border-color: #dcdcdc;
+}
+
+.board-area .search-area .search-box input[type="search"] {
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+	border-color: #dcdcdc;
+}
+
+.board-area .search-area .search-box input[type="submit"] {
+	height: 40px;
+	line-height: 40px;
+	width: 70px;
+	background: #025faf;
+	border-radius: 4px;
+}
+
+.board-list01 {
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.board-list01 table thead th {
+	background: #025faf;
+	color: #fff;
+}
+
+.board-list01 table thead th:first-child {
+	background: #025faf;
+}
+
+.board-list01 tr.notice {
+	background: #eaf3fb;
+}
+
+.board-list01 table tbody tr:hover {
+	background: #f5f9fd;
+}
+
+.board-list01 table tbody td {
+	padding: 18px 10px;
+}
+
+.paging-navigation a:hover,
+.paging-navigation strong {
+	border-color: #025faf;
+	background: #025faf;
+}
+
+/* 한국어교육센터 PDF 뷰어 */
+.mobile-only {
+	display: none;
+}
+
+.btns-area.btns-pdf {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 16px;
+}
+
+.btns-area.btns-pdf .btns-right {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-pdf-download {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	height: 44px;
+	padding: 0 22px;
+	border-radius: 22px;
+	background: #025faf;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	transition: background 0.2s ease;
+}
+
+.btn-pdf-download:hover {
+	background: #014a89;
+	color: #fff;
+}
+
+.lnb-area > h2 > a.guide-title {
+	font-size: 24px;
+	line-height: 30px;
+	word-break: keep-all;
+}
+
+.btn-pdf-download img {
+	display: block;
+	width: 16px;
+	height: 16px;
+	filter: brightness(0) invert(1);
+}
+
+/* 학과 안내 (메인 사이트 학과안내 CSS 원본 그대로, 이미지 경로만 변경) */
+.major-wrapper {
+	display: block;
+}
+
+.major-wrapper:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.major-area {
+	float: left;
+	width: 24.25%;
+	margin-left: 1%;
+}
+
+.major-area:first-child {
+	margin-left: 0;
+}
+
+.major-area > h4 {
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 70px;
+	color: #fff;
+	padding: 0 0 0 26px;
+	background-size: 90px 56px;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+.major-area > h4 > strong {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	word-break: keep-all;
+}
+
+.major-area:nth-of-type(1) > h4 {
+	background-color: #076be6;
+	background-image: url(../img/common/icon_class01.png);
+}
+.major-area:nth-of-type(2) > h4 {
+	background-color: #1C8831;
+	background-image: url(../img/common/icon_class02.png);
+}
+.major-area:nth-of-type(3) > h4 {
+	background-color: #474ea2;
+	background-image: url(../img/common/icon_class03.png);
+}
+.major-area:nth-of-type(4) > h4 {
+	background-color: #C9438B;
+	background-image: url(../img/common/icon_class04.png);
+}
+
+.major-area > h4:before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 7px;
+}
+
+.major-area:nth-of-type(1) > h4:before {
+	background-color: #83b5f2;
+}
+.major-area:nth-of-type(2) > h4:before {
+	background-color: #8dc398;
+}
+.major-area:nth-of-type(3) > h4:before {
+	background-color: #6b83d7
+}
+.major-area:nth-of-type(4) > h4:before {
+	background-color: #f972bb
+}
+
+.major-box {
+	padding: 8px 16px 14px 30px;
+	background-color: #f7f9fa;
+	border-bottom: 1px solid #bed7d3;
+}
+
+.major-box:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.major-box > h5 {
+	display: table;
+	width: 100%;
+	height: 42px;
+}
+
+.major-box > h5 > strong {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 17px;
+	line-height: 21px;
 	font-weight: 500;
+	letter-spacing: -1px;
+	word-break: keep-all;
+}
+
+.major-box > h5 > strong > sub {
+	vertical-align: middle;
+	font-size: 12px;
+	line-height: 21px;
+}
+
+.major-area:nth-of-type(1) > .major-box > h5 {
+	color: #0d86d1
+}
+.major-area:nth-of-type(2) > .major-box > h5 {
+	color: #349708
+}
+.major-area:nth-of-type(3) > .major-box > h5 {
+	color: #0070af
+}
+.major-area:nth-of-type(4) > .major-box > h5 {
+	color: #e7398e
+}
+
+.major-box > ul {
+	display: block;
+	margin-bottom: 13px;
+}
+
+.major-box > ul > li {
+	position: relative;
+	padding-left: 20px;
+	color: #333333;
+	font-size: 13px;
+	line-height: 22px;
+}
+
+.major-box > ul > li:before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	content: "";
+	display: block;
+	width: 14px;
+	height: 15px;
+	margin-top: -7.5px;
+	background-repeat: no-repeat;
+	background-size: 14px 15px;
+	background-position: 0 0;
+}
+
+.major-box > ul > li:nth-of-type(1):before {
+	background-image: url(../img/common/icon_location04.png);
+}
+
+.major-box > ul > li:nth-of-type(2):before {
+	background-image: url(../img/common/icon_phone04.png);
+}
+
+.major-box > a {
+	position: relative;
+	float: right;
+	min-width: auto;
+	width: 80px;
+	height: 22px;
+	border-radius: 11px;
+	padding: 0 10px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.11);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.11);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.11);
+}
+
+.major-box > a > strong {
+	position: relative;
+	float: left;
+	font-size: 11px;
+	line-height: 13px;
+	font-weight: 500;
+	padding-top: 5px;
+	color: #666666 !important;
+	z-index: 5;
+}
+
+.major-box > a > img {
+	position: relative;
+	float: right;
+	width: 10px;
+	padding-top: 6px;
+	z-index: 5;
+}
+
+.major-box > a:before {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 22px;
+	border-radius: 11px;
+	background-color: rgba(185, 251, 255, 0);
+	transition: all 0.2s ease-in-out;
+}
+
+.major-box > a:hover:before,
+.major-box > a:focus:before {
+	left: 0;
+	width: 100%;
+	background-color: rgba(185, 251, 255, 1);
+}
+
+/* 타이틀(h4) 없이 major-box를 가로로 나열하는 변형 (예: 외국인 전담학과) */
+.major-wrapper--flat .major-area {
+	width: 49.5%;
+	margin-left: 0;
+}
+
+.major-wrapper--flat .major-area + .major-area {
+	margin-left: 1%;
+}
+
+.major-wrapper--flat .major-box {
+	height: 100%;
+	border: 1px solid #bed7d3;
+	border-bottom: 1px solid #bed7d3;
+	box-sizing: border-box;
+}
+
+.major-wrapper--flat .major-box > h5 {
+	color: #076be6;
 }
 
 
@@ -1084,7 +1467,8 @@ caption {
 	position: relative;
 	padding: 35px 0 45px 0;
 	z-index: 10;
-	background: #fff;
+	background: #f5f6f8;
+	border-top: 1px solid #e5e5e5;
 }
 
 .footer-wrapper {

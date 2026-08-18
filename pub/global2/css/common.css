@@ -1,6 +1,44 @@
 @import url("common_pc.css");
 
 @media only all and (max-width: 1023px) {
+	.pc-only {
+		display: none;
+	}
+	.mobile-only {
+		display: block;
+	}
+
+	/* 한국어교육센터 PDF 페이지 : 상단 고정바는 유지하되 긴 제목이 넘치지 않도록 크기 조정 */
+	.contents-title.guide-contents-title {
+		height: auto;
+		min-height: auto;
+		font-size: 0.95rem;
+		line-height: 1.25rem;
+		padding: 0.55rem 2.4rem;
+		word-break: keep-all;
+	}
+	.guide-contents-title::before {
+		color: #fff;
+		opacity: 0.85;
+		margin-bottom: 2px;
+		font-size: 0.55rem;
+	}
+	.guide-contents-title .arrow {
+		top: 50% !important;
+		right: 1.1rem !important;
+		background: none !important;
+		width: 0 !important;
+		height: 0 !important;
+		margin-top: 0 !important;
+		border: 0.3rem solid transparent !important;
+		border-top: 0.35rem solid #fff !important;
+		border-bottom: 0 !important;
+		transform: translateY(-50%) !important;
+	}
+	.contents-title.active.guide-contents-title .arrow {
+		transform: translateY(-50%) rotate(180deg) !important;
+	}
+
 	html {
 		font-size: 1.625rem; /* 기본베이스 폰트사이즈 26px */
 		line-height: 1.625rem; /* 기본베이스 line-height 사이즈 26px */
