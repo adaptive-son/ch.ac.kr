@@ -1099,6 +1099,230 @@ caption {
 	letter-spacing: 0.15em;
 }
 
+/* CMS 컨텐츠 본문 타이포그래피 (title-type0x / word-type01 / ul-list0x / ol-list01) */
+.contents-area {
+	margin-bottom: 60px;
+}
+.contents-area:last-child {
+	margin-bottom: 0;
+}
+
+.contents-box {
+	padding-left: 16px;
+	padding-bottom: 10px;
+}
+.contents-box:last-child {
+	padding-bottom: 0;
+}
+.contents-box.pl0 {
+	padding-left: 0;
+}
+
+.contents-box02 {
+	padding-left: 13px;
+}
+
+.title-type01 {
+	padding-left: 28px;
+	margin-bottom: 14px;
+	color: #333333;
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 700;
+	background: url(../img/bul/bul_title01_2x.png) no-repeat left 4px;
+	background-size: 18px 18px;
+	word-break: keep-all;
+}
+
+.title-type02 {
+	padding-left: 13px;
+	color: #333333;
+	font-size: 17px;
+	line-height: 164%;
+	font-weight: 600;
+	background: url(../img/bul/bul_circle_type04.png) no-repeat left 10px;
+	background-size: 5px 5px;
+	word-break: keep-all;
+}
+
+.title-type03 {
+	padding: 18px 15px;
+	color: #424242;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 500;
+	background-color: #f0f0f0;
+	border: 1px solid #dddddd;
+	text-align: center;
+}
+
+.title-type04 {
+	color: #333333;
+	font-size: 16px;
+	line-height: 26px;
+	font-weight: 500;
+}
+
+div + .title-type01,
+p + .title-type01,
+ul + .title-type01,
+ol + .title-type01,
+dl + .title-type01,
+div + .title-type02,
+p + .title-type02,
+ul + .title-type02,
+ol + .title-type02,
+dl + .title-type02,
+.contents-box + .contents-box,
+.contents-box02 + .contents-box02 {
+	margin-top: 20px;
+}
+
+h4 + h5,
+h5 + h5,
+h5 + h6,
+p + h6,
+div + h6,
+ul + h6,
+ol + h6 {
+	margin-top: 20px;
+}
+
+.word-type01 {
+	color: #777777;
+	font-size: 17px;
+	line-height: 164%;
+	font-weight: 400;
+	word-break: keep-all;
+	letter-spacing: -0.25px;
+}
+
+.word-type01 + div,
+.word-type01 + p,
+.word-type01 + ul,
+.word-type01 + ol,
+.word-type01 + dl,
+.word-type01 + ul + ol,
+.word-type01 + ul + ul,
+.word-type01 + ol + ol,
+.word-type01 + ol + ul {
+	margin-top: 20px;
+}
+
+.word-type01 + .ul-list02 {
+	margin-top: 4px;
+}
+
+/* ul list */
+.ul-list01 {
+	display: block;
+	word-break: keep-all;
+}
+.ul-list01 > li {
+	padding-left: 13px;
+	margin-bottom: 6px;
+	color: #333333;
+	font-size: 17px;
+	line-height: 28px;
+	font-weight: 300;
+	background: url(../img/bul/bul_circle_type02_2x.png) no-repeat left 12px;
+	background-size: 3px 3px;
+	letter-spacing: -0.25px;
+}
+.ul-list01 > li:last-child {
+	margin-bottom: 0;
+}
+.ul-list01.type02 > li {
+	padding-left: 13px;
+	margin-bottom: 6px;
+	color: #333333;
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 300;
+	background-position: left 15px;
+}
+
+.ul-list02 {
+	display: block;
+	word-break: keep-all;
+}
+.ul-list02 > li {
+	padding-left: 16px;
+	color: #777777;
+	font-size: 17px;
+	line-height: 28px;
+	font-weight: 400;
+	background: url(../img/bul/bul_circle_type02_2x.png) no-repeat left 12px;
+	background-size: 3px 3px;
+	letter-spacing: -0.25px;
+}
+.ul-list02 > li:last-child {
+	margin-bottom: 0;
+}
+.ul-list02.type02 > li {
+	padding-left: 13px;
+	color: #333333;
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 300;
+	background-position: left 15px;
+}
+
+.ol-list01 {
+	display: block;
+}
+.ol-list01 > li {
+	position: relative;
+	padding-left: 25px;
+	font-size: 16px;
+	line-height: 26px;
+	color: #666666;
+	font-weight: 300;
+}
+.ol-list01 > li > .number {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.ol-list01 > li > li {
+	padding-left: 13px;
+	color: #666666;
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 300;
+	background: url(../img/bul/bul_circle_type02_2x.png) no-repeat left 15px;
+	background-size: 3px 3px;
+	word-break: keep-all;
+}
+
+h4 + ol, h4 + ul, h4 + dl,
+h5 + ol, h5 + ul, h5 + dl,
+h5 + p, h5 + div,
+h5 + p + ol, h5 + p + ul, h5 + p + dl,
+ul + p, ol + p, dl + p,
+p + ul + ul, p + ul + ol, p + ol + ul, p + ol + ol {
+	margin-top: 8px;
+	margin-left: 13px;
+}
+
+.ul-list01 > li > ul > li,
+.ol-list01 > li > ul > li,
+.ul-list02 > li > ul > li {
+	position: relative;
+	padding-left: 10px;
+	color: #666666;
+	font-weight: 300;
+}
+
+.ul-list01 > li > ul > li:after,
+.ol-list01 > li > ul > li:after,
+.ul-list02 > li > ul > li::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "-";
+}
+
 /* 게시판 목록 디자인 보강 */
 .board-area .search-wrapper {
 	float: none;
