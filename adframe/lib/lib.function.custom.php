@@ -653,7 +653,7 @@ function get_site_id(){
 function get_site_info($col,$site_id){
     if($site_id=="")  $site_id = get_site_id();
 
-    $sql = "SELECT * FROM ".TABLE_SITE_MNG." WHERE site_id ='".$site_id."'";
+    $sql = "SELECT * FROM ".TABLE_SITE_MNG." WHERE site_id ='".mysql_escape_string($site_id)."'";
     $row = mysql_fetch_array(mysql_query($sql));
     return $row[$col];
 }

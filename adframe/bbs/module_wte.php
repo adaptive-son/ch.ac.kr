@@ -12,8 +12,19 @@ $_POST = array_map('mysql_escape_string', $_POST);
 $_GET = array_map('mysql_escape_string', $_GET);
 
 $dataArr=Decode64($_POST['data']);
+// data 파라미터는 base64 디코딩 후에 값이 나오므로 위 11~12번째 줄의 escape가
+// 적용되지 않는다. board_key로 설정을 조회하기 전에 별도로 이스케이프한다.
+$dataArr[Boardkey] = mysql_escape_string($dataArr[Boardkey]);
 $configBBS = DBarray("SELECT * FROM abbs_manager WHERE board_key='".$dataArr[Boardkey]."'"); //게시판 설정로드
 if(empty($configBBS[idx]))	go_back("존재하지 않는 게시판입니다.");
+
+// dataArr[DBTable]은 클라이언트가 임의로 조작해 보낼 수 있는 값이라 그대로 테이블명으로
+// 쓰면 안 된다. board_key로 조회된 서버측 설정값(board_id)을 실제 테이블명으로 사용한다.
+$dataArr[DBTable] = $configBBS[board_id];
+if ( isset($dataArr[idx]) ) $dataArr[idx] = (int)$dataArr[idx];
+if ( isset($dataArr[Sub_No]) ) $dataArr[Sub_No] = mysql_escape_string($dataArr[Sub_No]);
+$ref = (int)$ref;
+$re_step = (int)$re_step;
 
 // 2026-07-24 글쓰기 시 이미지 태그(따옴표)가 이중 이스케이프되어 저장되던 문제 조치.
 // bbs_welf에서 먼저 확인 후 전체 게시판으로 적용범위 확대함 (2026-07-24).

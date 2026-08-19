@@ -3,7 +3,7 @@
 include_once "../_common.php";
 include_once "auth_config.php";
 
-$auth_row = $adb->getRow("SELECT * FROM ".TABLE_BOARD_MNG." WHERE idx='".$_GET[idx]."'"); //게시판 정보
+$auth_row = $adb->getRow("SELECT * FROM ".TABLE_BOARD_MNG." WHERE idx='".(int)$_GET[idx]."'"); //게시판 정보
 
 ?>
 <!DOCTYPE HTML>

@@ -3,6 +3,7 @@ include "../_common.php";
 // 업로드 파일 경로
 $file_path = BANNER_FILE_PATH;
 if ( $Confirm == "delete" ) {
+    $no = (int)$no;
     // 파일 삭제
     $sql = " select * from ".TABLE_BANNER." where no = '".$no."' ";
     $row = $adb->getRow($sql);
@@ -41,20 +42,26 @@ if ( $Confirm == "delete" ) {
         $sql_file_sub2 = ", banner_name2 = '".$renameFileName2."', org_banner_name2 = '".$orgFileName2."' ";
     }
 
+    // useyn/location은 정해진 값만 허용하는 화이트리스트로 검증
+    $useyn = ( $useyn == "Y" ) ? "Y" : "N";
+    $arr_allowedLocation = array("1", "2", "3", "4", "5", "6", "7");
+    $location = ( in_array($location, $arr_allowedLocation) ) ? $location : "1";
+
     $sql_common = "
-        link_url	= '$link_url',
-        link_url2	= '$link_url2',
-        gigan1      = '$gigan1',
-		gigan2      = '$gigan2',
-        title		= '$title',
+        link_url	= '".addslashes($link_url)."',
+        link_url2	= '".addslashes($link_url2)."',
+        gigan1      = '".addslashes($gigan1)."',
+		gigan2      = '".addslashes($gigan2)."',
+        title		= '".addslashes($title)."',
         slogan		= '".addslashes($slogan)."',
-        target	= '$target',
+        target	= '".addslashes($target)."',
         useyn = '$useyn',
-		sort = '$sort',
-        location = '".( $location ? $location : "1" )."',
-        site_id = '$_SESSION[sel_site_id]'
+		sort = '".(int)$sort."',
+        location = '$location',
+        site_id = '".addslashes($_SESSION[sel_site_id])."'
     ";
-    if ( $no == "" ) {
+    $no = (int)$no;
+    if ( $no == "" || !$no ) {
         // 추가
         $sql = " insert into ".TABLE_BANNER." set ".$sql_common.$sql_file_sub.$sql_file_sub2;
     } else {

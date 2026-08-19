@@ -26,6 +26,8 @@ switch ( $mode ) {
                 if ( $k == "CONTENTS" ) {
                     $v = str_replace($patterns, "", $v);
                     $v = addslashes($v);      // 따옴표 처리
+                } else {
+                    $v = addslashes($v);      // 따옴표 처리
                 }
                 $sql_sub .= ", ".$k." = '".$v."' ";
             }
@@ -45,12 +47,14 @@ switch ( $mode ) {
                 if ( $k == CONTENTS ) {
                     $v = str_replace($patterns, "", $v);
                     $v = addslashes(htmlspecialchars($v));      // 태그 치환, 따옴표 처리
+                } else {
+                    $v = addslashes($v);      // 따옴표 처리
                 }
                 $sql_sub .= $k." = '".$v."' ";
             }
             if ( $k == "TREE_NO" || $k == "TREE_ID" ) {
                 if ( $sql_where != "" ) $sql_where .= " and ";
-                $sql_where .= $k." = '".$v."' ";
+                $sql_where .= $k." = '".addslashes($v)."' ";
             }
         }
         if ( $sql_sub != "" ) $sql_file = $sql_file;

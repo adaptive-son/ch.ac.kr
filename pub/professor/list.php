@@ -55,14 +55,14 @@
                                 // 교수 조회
 								$subQry = "";
 								if ( !empty($_GET["etc1"]) ) {
-									$ETC1 = $_GET["etc1"];
+									$ETC1 = addslashes($_GET["etc1"]);
 									if ( $ETC1 == "4" ) {
 									  $subQry = " AND (ETC1 = '".$ETC1."' OR ETC1 = '5') ";
 									} else {
 									  $subQry = " AND ETC1 = '".$ETC1."' ";
 									}
 								}
-				                $proQuery = "select * from ".TABLE_PROFESSOR." WHERE site_id='".$site_id."' AND del_yn='N' ".$subQry." ORDER BY sort asc ";
+				                $proQuery = "select * from ".TABLE_PROFESSOR." WHERE site_id='".addslashes($site_id)."' AND del_yn='N' ".$subQry." ORDER BY sort asc ";
                                 $result = DBquery($proQuery);
                                 for($i=0; $row=@mysql_fetch_array($result); $i++) {
 									//교수 이미지 경로

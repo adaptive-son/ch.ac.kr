@@ -1,17 +1,26 @@
-<?php  
-	include_once("../_common.php"); 
-	
+<?php
+	include_once("../_common.php");
+
+	// 아래 코드 대부분이 $_POST 값(중첩 배열 포함)을 이스케이프 없이 그대로 SQL 문자열에
+	// 삽입하므로, 여기서 한 번에 재귀적으로 이스케이프 처리한다. (기존에 개별 addslashes()가
+	// 걸려있던 "w" 케이스는 이중 이스케이프를 피하기 위해 개별 addslashes()를 제거했다.)
+	function _teamjang_escape_recursive($v) {
+		if ( is_array($v) ) return array_map('_teamjang_escape_recursive', $v);
+		return addslashes($v);
+	}
+	$_POST = _teamjang_escape_recursive($_POST);
+
 	$mode = $_POST['mode'];
 	switch($mode){
 		case "w": //회의 오픈
 				if($_POST['idx']){ //수정
 					$sql = "UPDATE teamjang_meeting SET
-										m_gubun = '".addslashes($_POST['m_gubun'])."'
-										,m_date = '".addslashes($_POST['m_date'])."'
-										,m_place = '".addslashes($_POST['m_place'])."'
-										,m_record = '".addslashes($_POST['m_record'])."'
-										,m_memo = '".addslashes($_POST['m_memo'])."'
-										,m_member = '".addslashes($_POST['m_member'])."'
+										m_gubun = '".$_POST['m_gubun']."'
+										,m_date = '".$_POST['m_date']."'
+										,m_place = '".$_POST['m_place']."'
+										,m_record = '".$_POST['m_record']."'
+										,m_memo = '".$_POST['m_memo']."'
+										,m_member = '".$_POST['m_member']."'
 									WHERE idx='{$_POST['idx']}'
 					";
 					$result = mysql_query($sql) or die(mysql_error());
@@ -28,13 +37,13 @@
 										,m_member
 										,m_write_date
 									) values (
-										'".addslashes($_POST['m_gubun'])."'
-										,'".addslashes($_POST['m_date'])."'
-										,'".addslashes($_POST['m_place'])."'
-										,'".addslashes($_POST['m_record'])."'
-										,'".addslashes($_POST['m_writer'])."'
-										,'".addslashes($_POST['m_memo'])."'
-										,'".addslashes($_POST['m_member'])."'
+										'".$_POST['m_gubun']."'
+										,'".$_POST['m_date']."'
+										,'".$_POST['m_place']."'
+										,'".$_POST['m_record']."'
+										,'".$_POST['m_writer']."'
+										,'".$_POST['m_memo']."'
+										,'".$_POST['m_member']."'
 										,now()
 									)
 					";

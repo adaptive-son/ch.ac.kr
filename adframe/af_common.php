@@ -38,6 +38,27 @@ session_set_cookie_params(0, "/home/dev/data/session.cookie", SERVICE_DOMAIN);
 @extract($_POST);
 @extract($_SERVER);
 
+// 2026-08-19 취약점 조치: site_id/TREE_ID는 코드 전반에서
+// include("../".$TREE_ID."/include/header.php") 형태로 파일 경로에 그대로 쓰인다.
+// 값 검증이 없으면 "../" 등 경로 순회나 "http://"를 이용한 원격 파일 포함(RFI)이
+// 가능해지므로, 영문/숫자/언더스코어만 허용하는 화이트리스트로 전역 차단한다.
+// (사이트 폴더가 새로 추가되어도 전부 이 형식이라 별도 유지보수가 필요 없다.)
+// af_common.php는 페이지에서 직접 include된 후, meta.php 등을 거쳐 다시 한 번
+// include되는 경우가 많아(include_once가 아님) 이 파일이 한 요청 안에서 두 번
+// 실행될 수 있다. 그래서 함수 재선언으로 인한 fatal error를 피하기 위해 감싼다.
+if ( !function_exists('_af_valid_site_id') ) {
+	function _af_valid_site_id($v) {
+		return preg_match('/^[a-zA-Z0-9_]+$/', $v) === 1;
+	}
+}
+foreach ( array('site_id', 'TREE_ID') as $_afSiteIdKey ) {
+	if ( isset($_GET[$_afSiteIdKey]) && !_af_valid_site_id($_GET[$_afSiteIdKey]) ) $_GET[$_afSiteIdKey] = "";
+	if ( isset($_POST[$_afSiteIdKey]) && !_af_valid_site_id($_POST[$_afSiteIdKey]) ) $_POST[$_afSiteIdKey] = "";
+	if ( isset($_REQUEST[$_afSiteIdKey]) && !_af_valid_site_id($_REQUEST[$_afSiteIdKey]) ) $_REQUEST[$_afSiteIdKey] = "";
+}
+if ( isset($site_id) && !_af_valid_site_id($site_id) ) $site_id = "";
+if ( isset($TREE_ID) && !_af_valid_site_id($TREE_ID) ) $TREE_ID = "";
+
 // Pear 라이브러리 디렉토리 설정
 ini_set("include_path", ADFRAME_ROOT_PATH."/lib/Pear");
 

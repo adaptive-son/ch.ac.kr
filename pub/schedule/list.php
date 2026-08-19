@@ -52,7 +52,7 @@
 
 							<div class="contents-wrapper">
 							<?
-							$targetYear = $_GET['targetYear'];
+							$targetYear = (int)$_GET['targetYear'];
 							if ( $targetYear == "" || !$targetYear ) $targetYear = date("Y");
 
 							// 기간 설정
@@ -65,7 +65,7 @@
 							//학과 홈페이지 학과 일정은 대표 일정과 학과 일정이 같이 노출됨 -20.11.02 shlee
 							//대표 홈페이지 일정은 대표 일정만 노출됨 -20.11.02 shlee
 							if ($site_id!="main") {
-								$sql = " SELECT * FROM ".TABLE_SCHEDULE." WHERE del_yn='N' AND (site_id='".$site_id."' OR site_id='main') AND schedule_start_date BETWEEN '".$qry_BeginDay."' AND '".$qry_EndDay."' ORDER BY schedule_start_date, schedule_end_date ";
+								$sql = " SELECT * FROM ".TABLE_SCHEDULE." WHERE del_yn='N' AND (site_id='".addslashes($site_id)."' OR site_id='main') AND schedule_start_date BETWEEN '".$qry_BeginDay."' AND '".$qry_EndDay."' ORDER BY schedule_start_date, schedule_end_date ";
 							} else if ($site_id=="main") {
 								$sql = " SELECT * FROM ".TABLE_SCHEDULE." WHERE del_yn='N' AND site_id='main' AND schedule_start_date BETWEEN '".$qry_BeginDay."' AND '".$qry_EndDay."' ORDER BY schedule_start_date, schedule_end_date ";
 							}

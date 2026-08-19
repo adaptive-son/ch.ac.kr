@@ -24,7 +24,7 @@ switch ( $command ) {
 
         // 세션 초기화
         session_unset();
-        $sql = "select id, name, password as pwd, user_type from admember where del_yn='N' AND id = '".$id ."'".$user_type;
+        $sql = "select id, name, password as pwd, user_type from admember where del_yn='N' AND id = '".addslashes($id)."'".$user_type;
         $row = $adb->getRow($sql);
 
         $isValid = false;

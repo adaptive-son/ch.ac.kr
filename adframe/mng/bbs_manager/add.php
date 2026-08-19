@@ -66,7 +66,7 @@ if ($w == "") {
     $view[board_checktitle] = "제목,이름,비밀번호,내용";
     /*********************** 기본 설정값 *********************************/
 }else{
-    $sql = " select * from abbs_manager where idx = '$idx' ";
+    $sql = " select * from abbs_manager where idx = '".(int)$idx."' ";
     $view = $adb->getRow($sql);
     $board_key = $view[board_key];
     $view[board_id] = $view[board_id];
@@ -288,7 +288,7 @@ if ($w == "") {
 
                                         $selected_site = $_SESSION['sel_site_id'];
                                         if($sublen > 2 ){
-                                            $sql = " select site_id  from ".TABLE_BOARD_MNG." where SUBSTRING(board_key,1,$len) = '$_GET[board_key]' ";
+                                            $sql = " select site_id  from ".TABLE_BOARD_MNG." where SUBSTRING(board_key,1,".(int)$len.") = '".addslashes($_GET[board_key])."' ";
                                             $row = $adb->getRow($sql);
                                             $selected_site = $row[site_id];
                                         }

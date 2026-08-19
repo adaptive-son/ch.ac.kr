@@ -4,9 +4,12 @@ include_once("../include/header.bootstrap.php");
 
 // 검색
 if ( $searchstring ) {
-    $search_qry = " AND $search LIKE '%".$searchstring."%' ";
+    // $search는 검색 대상 컬럼명으로 SQL에 그대로 들어가므로 화이트리스트로 제한한다.
+    $arr_allowedSearchCol = array("title");
+    if ( !in_array($search, $arr_allowedSearchCol) ) $search = "title";
+    $search_qry = " AND $search LIKE '%".addslashes($searchstring)."%' ";
 }
-$sql = " select * from ".TABLE_BANNER." where no > 0 AND site_id='$_SESSION[sel_site_id]' ".$search_qry;
+$sql = " select * from ".TABLE_BANNER." where no > 0 AND site_id='".addslashes($_SESSION[sel_site_id])."' ".$search_qry;
 $rs = $adb->query($sql);
 // 총 레코드 수
 $numrows = $rs->numRows();

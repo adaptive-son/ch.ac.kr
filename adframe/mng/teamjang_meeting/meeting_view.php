@@ -1,7 +1,8 @@
 <?php
 	include_once("../_common.php");
 
-	$parent = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting WHERE idx='{$_GET['idx']}'"));
+	$_idx = (int)$_GET['idx'];
+	$parent = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting WHERE idx='{$_idx}'"));
 
 
 	$sql = "SELECT
@@ -9,7 +10,7 @@
 					FROM
 						teamjang_meeting_content_new
 					WHERE
-						m_idx='{$_GET['idx']}' order by m_order asc";
+						m_idx='{$_idx}' order by m_order asc";
 	$res = mysql_query($sql);
 
 	$rows = mysql_num_rows($res);

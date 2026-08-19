@@ -115,7 +115,7 @@ if($_SERVER["REMOTE_ADDR"] == "112.217.216.250"){
 					?>
 					<div class="tabmenu-wrapper ratio no-mobile-title">
 						<?
-							$sql_tabContents2 = " SELECT * FROM af_tree WHERE TREE_ID = '".TREE_ID."' AND PARENT = '".$PARENT."' ORDER BY ORDER_NO ASC";
+							$sql_tabContents2 = " SELECT * FROM af_tree WHERE TREE_ID = '".addslashes(TREE_ID)."' AND PARENT = '".(int)$PARENT."' ORDER BY ORDER_NO ASC";
 							$rs = DBquery($sql_tabContents2);
 							$tabdepth = mysql_num_rows($rs);
 							if ($tabdepth >= 6) $tabdepth = "6";

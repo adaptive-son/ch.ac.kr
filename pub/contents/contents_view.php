@@ -27,7 +27,8 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 
     if ( $TREE_NO == "" || !$TREE_NO ) go_back("페이지를 찾을 수 없습니다.");
     else {
-        $sql_infoContents = " SELECT * FROM ".TABLE_CMS_CONTENTS." WHERE TREE_ID = '".TREE_ID."' AND TREE_NO = '".$TREE_NO."' ";
+        $TREE_NO = (int)$TREE_NO;
+        $sql_infoContents = " SELECT * FROM ".TABLE_CMS_CONTENTS." WHERE TREE_ID = '".addslashes(TREE_ID)."' AND TREE_NO = '".$TREE_NO."' ";
 		//echo $sql_infoContents;
         $rs_infoContents = $adb->getRow($sql_infoContents, DB_FETCHMODE_ASSOC);
 

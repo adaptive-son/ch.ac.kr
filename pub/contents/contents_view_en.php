@@ -15,7 +15,8 @@ require_once (ADFRAME_ROOT_PATH."/lib/class_bbs.php");
 
     if ( $TREE_NO == "" || !$TREE_NO ) go_back("페이지를 찾을 수 없습니다.");
     else {
-        $sql_infoContents = " SELECT * FROM ".TABLE_CMS_CONTENTS." WHERE TREE_ID = '".TREE_ID."' AND TREE_NO = '".$TREE_NO."' ";
+        $TREE_NO = (int)$TREE_NO;
+        $sql_infoContents = " SELECT * FROM ".TABLE_CMS_CONTENTS." WHERE TREE_ID = '".addslashes(TREE_ID)."' AND TREE_NO = '".$TREE_NO."' ";
         $rs_infoContents = $adb->getRow($sql_infoContents, DB_FETCHMODE_ASSOC);
     }
     ?>
