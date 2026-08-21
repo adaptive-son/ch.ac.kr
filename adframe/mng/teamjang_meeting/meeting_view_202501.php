@@ -288,6 +288,27 @@
 		</td>
 	</tr>
 	<tr height="34" bgcolor="FAFAFA">
+		<th colspan="2">AID 전환중점지원사업단</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="57" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][57]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th colspan="2">청년도약 인재양성 부트캠프사업단</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="58" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][58]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th colspan="2">AID 30+집중캠프사업단</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="59" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][59]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
 		<th rowspan="4">평생교육원</th>
 		<th style="padding:0px 10px;">울주군사업</th>
 		<td style="padding:5px">

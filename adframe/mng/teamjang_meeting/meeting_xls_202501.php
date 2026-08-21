@@ -185,11 +185,32 @@
 	<tr>
 		<th colspan="3" style="border:1px solid #000;">앵커사업단</th>
 		<td colspan="7" style="border:1px solid #000;">
-			<?php 
+			<?php
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][43])))?>
 		</td>
 	</tr>
-	
+	<tr>
+		<th colspan="3" style="border:1px solid #000;">AID 전환중점지원사업단</th>
+		<td colspan="7" style="border:1px solid #000;">
+			<?php
+				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][57])))?>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="3" style="border:1px solid #000;">청년도약 인재양성 부트캠프사업단</th>
+		<td colspan="7" style="border:1px solid #000;">
+			<?php
+				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][58])))?>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="3" style="border:1px solid #000;">AID 30+집중캠프사업단</th>
+		<td colspan="7" style="border:1px solid #000;">
+			<?php
+				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][59])))?>
+		</td>
+	</tr>
+
 	<tr>
 		<th rowspan="4" style="border:1px solid #000;">평<br/>생<br/>교<br />육<br />원</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">울주군사업</td>
