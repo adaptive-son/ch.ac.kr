@@ -290,8 +290,8 @@
 			</td>
 		</tr>
 		<?php } ?>
-		<?php if(in_array($_SESSION['ID'],$RISE사업단['member'])==true){	?>
-		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$RISE사업단['member'])==false){ ?>style="display:none"<?php }?>>
+		<?php if(in_array($_SESSION['ID'],$앵커사업단['member'])==true){	?>
+		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$앵커사업단['member'])==false){ ?>style="display:none"<?php }?>>
 			<th colspan="2">앵커사업단</th>
 			<td style="padding:5px">
 				<input type="hidden" name="m_order[]" value="43" />
