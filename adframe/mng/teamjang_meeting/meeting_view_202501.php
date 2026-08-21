@@ -245,35 +245,6 @@
 		</td>
 	</tr>
 	<tr height="34" bgcolor="FAFAFA">
-		<th rowspan="4">국제교류처</th>
-		<th style="padding:0px 10px;">공통</th>
-		<td style="padding:5px">
-			<input type="hidden" name="m_order[]" value="38" />
-			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][38]?></textarea>
-		</td>
-	</tr>
-	<tr height="34" bgcolor="FAFAFA">
-		<th style="padding:0px 10px;">한국어교육센터</th>
-		<td style="padding:5px">
-			<input type="hidden" name="m_order[]" value="39" />
-			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][39]?></textarea>
-		</td>
-	</tr>
-	<tr height="34" bgcolor="FAFAFA">
-		<th style="padding:0px 10px;">국제개발협력센터</th>
-		<td style="padding:5px">
-			<input type="hidden" name="m_order[]" value="40" />
-			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][40]?></textarea>
-		</td>
-	</tr>
-	<tr height="34" bgcolor="FAFAFA">
-		<th style="padding:0px 10px;">글로벌센터</th>
-		<td style="padding:5px">
-			<input type="hidden" name="m_order[]" value="41" />
-			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][41]?></textarea>
-		</td>
-	</tr>
-	<tr height="34" bgcolor="FAFAFA">
 		<th colspan="2">혁신지원사업단</th>
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="31" />
@@ -306,6 +277,35 @@
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="59" />
 			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][59]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th rowspan="4">국제교류처</th>
+		<th style="padding:0px 10px;">공통</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="38" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][38]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th style="padding:0px 10px;">한국어교육센터</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="39" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][39]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th style="padding:0px 10px;">국제개발협력센터</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="40" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][40]?></textarea>
+		</td>
+	</tr>
+	<tr height="34" bgcolor="FAFAFA">
+		<th style="padding:0px 10px;">글로벌센터</th>
+		<td style="padding:5px">
+			<input type="hidden" name="m_order[]" value="41" />
+			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][41]?></textarea>
 		</td>
 	</tr>
 	<tr height="34" bgcolor="FAFAFA">
