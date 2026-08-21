@@ -1,7 +1,5 @@
 <?php
-	//include "../_common.php";
-	$conn=mysql_connect('localhost', 'root', 'se130901'); //db 연결부분
-	$db=mysql_select_db("ch_2020", $conn);
+	include_once("../_common.php");
 
 	$parent = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting WHERE idx='{$_GET['idx']}'"));
 
