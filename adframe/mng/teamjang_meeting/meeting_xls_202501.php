@@ -1,189 +1,189 @@
 	<tr>
-		<th rowspan="6" style="border:1px solid #000;">±³<br/>¹«<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±³¿øÀÎ»ç/ÇÐ¼ú/Àü°ø½ÉÈ­°úÁ¤</td>
+		<th rowspan="6" style="border:1px solid #000;">êµ<br/>ë¬´<br/>ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">êµì›ì¸ì‚¬/í•™ìˆ /ì „ê³µì‹¬í™”ê³¼ì •</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][1])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÐÀû</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í•™ì </td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][2])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">¼ö¾÷/±³¹«</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìˆ˜ì—…/êµë¬´</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][3])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±³¼öÇÐ½À Áö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">êµìˆ˜í•™ìŠµ ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][4])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±³À°Çõ½Å Áö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">êµìœ¡í˜ì‹  ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][5])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±³¾ç±³À° Áö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">êµì–‘êµìœ¡ ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][47])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">ÀÔ<br/>ÇÐ<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÔ½Ã</td>
+		<th rowspan="3" style="border:1px solid #000;">ìž…<br/>í•™<br/>ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìž…ì‹œ</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][6])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÔ½ÃÈ«º¸</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìž…ì‹œí™ë³´</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][7])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">Áø·ÎÀÔÇÐÁö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì§„ë¡œìž…í•™ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][48])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="8" style="border:1px solid #000;">ÇÐ<br/>»ý<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀåÇÐ</td>
+		<th rowspan="8" style="border:1px solid #000;">í•™<br/>ìƒ<br/>ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìž¥í•™</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][9])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÐ»ý</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í•™ìƒ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][10])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">»ýÈ°°ü</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìƒí™œê´€</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][11])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÐ»ý»ó´ã¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í•™ìƒìƒë‹´ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][12])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÎ±Ç¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì¸ê¶Œì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][13])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">»çÈ¸°øÇå¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì‚¬íšŒê³µí—Œì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][14])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">Àå¾ÖÇÐ»ýÁö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìž¥ì• í•™ìƒì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][15])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">º¸°Ç½Ç</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ë³´ê±´ì‹¤</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][16])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">±â<br/>È¹<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±âÈ¹,ÀÎ»ç</td>
+		<th rowspan="3" style="border:1px solid #000;">ê¸°<br/>íš<br/>ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ê¸°íš,ì¸ì‚¬</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][17])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">È«º¸</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í™ë³´</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][18])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">IR¼º°ú°ü¸®¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">IRì„±ê³¼ê´€ë¦¬ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][19])))?></td>
 	</tr>
 	<tr>
-		<th style="border:1px solid #000;" colspan="3">ÇàÁ¤Ã³</th>
+		<th style="border:1px solid #000;" colspan="3">í–‰ì •ì²˜</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][20])))?>
 		</td>
 	</tr>
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">»ê<br/>ÇÐ<br/>Çù<br />·Â<br />Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">º»ºÎ</td>
+		<th rowspan="3" style="border:1px solid #000;">ì‚°<br/>í•™<br/>í˜‘<br />ë ¥<br />ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ë³¸ë¶€</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][21])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÇöÀå½Ç½ÀÁö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í˜„ìž¥ì‹¤ìŠµì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][22])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÃëÃ¢¾÷Áø·ÎÁö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì·¨ì°½ì—…ì§„ë¡œì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][23])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="9" style="border:1px solid #000;">»ê<br/>ÇÐ<br/>Çù<br />·Â<br />´Ü</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÓ»ó½Ã¹Ä·¹ÀÌ¼Ç¼¾ÅÍ</td>
+		<th rowspan="9" style="border:1px solid #000;">ì‚°<br/>í•™<br/>í˜‘<br />ë ¥<br />ë‹¨</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìž„ìƒì‹œë®¬ë ˆì´ì…˜ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][24])))?></td>
 	</tr>
 
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±â¾÷Çù¾÷Áö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ê¸°ì—…í˜‘ì—…ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][25])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">°Ç°­¾ÈÀüÁö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ê±´ê°•ì•ˆì „ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][26])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">¼ö¸ñÁø´Ü¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìˆ˜ëª©ì§„ë‹¨ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][27])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">´Ãµ¹º½Áö¿ø¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ëŠ˜ëŒë´„ì§€ì›ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][28])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">À£´Ï½º¹®È­°ü±¤¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì›°ë‹ˆìŠ¤ë¬¸í™”ê´€ê´‘ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][29])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">¾ð¾îÄ¡·á¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì–¸ì–´ì¹˜ë£Œì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][30])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">AI-DX¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">AI-DXì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][45])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">AIÇï½ºÄÉ¾îºòµ¥ÀÌÅÍ¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">AIí—¬ìŠ¤ì¼€ì–´ë¹…ë°ì´í„°ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][46])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="4" style="border:1px solid #000;">±¹<br/>Á¦<br/>±³<br />·ù<br />Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">°øÅë</td>
+		<th rowspan="4" style="border:1px solid #000;">êµ­<br/>ì œ<br/>êµ<br />ë¥˜<br />ì²˜</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ê³µí†µ</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][38])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÑ±¹¾î±³À°¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í•œêµ­ì–´êµìœ¡ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][39])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±¹Á¦°³¹ßÇù·Â¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">êµ­ì œê°œë°œí˜‘ë ¥ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][40])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">±Û·Î¹ú¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ê¸€ë¡œë²Œì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][41])))?></td>
 	</tr>
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">Çõ½ÅÁö¿ø»ç¾÷´Ü</th>
+		<th colspan="3" style="border:1px solid #000;">í˜ì‹ ì§€ì›ì‚¬ì—…ë‹¨</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][31])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">¾ÞÄ¿»ç¾÷´Ü</th>
+		<th colspan="3" style="border:1px solid #000;">ì•µì»¤ì‚¬ì—…ë‹¨</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][43])))?>
@@ -191,40 +191,40 @@
 	</tr>
 	
 	<tr>
-		<th rowspan="4" style="border:1px solid #000;">Æò<br/>»ý<br/>±³<br />À°<br />¿ø</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">¿ïÁÖ±º»ç¾÷</td>
+		<th rowspan="4" style="border:1px solid #000;">í‰<br/>ìƒ<br/>êµ<br />ìœ¡<br />ì›</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìš¸ì£¼êµ°ì‚¬ì—…</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][33])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">¿ï»ê¿¬±¸¿ø »ç¾÷(Æò»ý±³À°¿¬±¸½Ç)</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìš¸ì‚°ì—°êµ¬ì› ì‚¬ì—…(í‰ìƒêµìœ¡ì—°êµ¬ì‹¤)</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][35])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">»ê¸²±³À°Àü¹®°¡(»ê¸²Ã»)</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì‚°ë¦¼êµìœ¡ì „ë¬¸ê°€(ì‚°ë¦¼ì²­)</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][44])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">Æò»ýÇÐ½ÀÁö¿ø(U-RUN)¼¾ÅÍ</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">í‰ìƒí•™ìŠµì§€ì›(U-RUN)ì„¼í„°</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][34])))?></td>
 	</tr>
 	
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÏ¹Ý¾÷¹«</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ì¼ë°˜ì—…ë¬´</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][36])))?></td>
 	</tr>
 	
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">Á¤º¸Àü»ê¿ø</th>
+		<th colspan="3" style="border:1px solid #000;">ì •ë³´ì „ì‚°ì›</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][37])))?>
 		</td>
 	</tr>
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">µµ¼­°ü</th>
+		<th colspan="3" style="border:1px solid #000;">ë„ì„œê´€</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][32])))?>
@@ -232,7 +232,7 @@
 	</tr>
 	<tr>
 		<th style="border:1px solid #000;">-</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">»ý¸íÀ±¸®À§¿øÈ¸</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ìƒëª…ìœ¤ë¦¬ìœ„ì›íšŒ</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][42])))?>
