@@ -1,24 +1,23 @@
 <?php
 	//include "../_common.php";
-	$conn=mysql_connect('localhost', 'root', 'se130901'); //db ï¿½ï¿½ï¿½ï¿½Îºï¿½
+	$conn=mysql_connect('localhost', 'root', 'se130901'); //db ¿¬°áºÎºÐ
 	$db=mysql_select_db("ch_2020", $conn);
 
-	$_idx = (int)$_GET['idx'];
-	$parent = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting WHERE idx='{$_idx}'"));
+	$parent = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting WHERE idx='{$_GET['idx']}'"));
 
 	$sql = "SELECT
 						*
 					FROM
 						teamjang_meeting_content_new
 					WHERE
-						m_idx='{$_idx}'";
+						m_idx='{$_GET['idx']}'";
 	$res = mysql_query($sql);
 	while($row = mysql_fetch_array($res)){
 		$result['m_content'][$row['m_order']] = $row['m_content'];
 	}
 
 
-$title = $row['m_gubun']." ï¿½Ö°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+$title = $row['m_gubun']." ÁÖ°£¾÷¹«º¸°í";
 //if($_SERVER['REMOTE_ADDR']!="112.217.216.250"){
 header( "Content-type: application/vnd.ms-excel; charset=euc-kr");
 header( "Content-Disposition: attachment; filename = ".$title."_".date("Y-m-d").".xls" );
@@ -44,7 +43,7 @@ header( "Content-Description: PHP4 Generated Data" );
 	<tr>
 		<td style="text-align:center;max-height:50px"></td>
 		<td><img src="https://www.ch.ac.kr/adframe/mng/teamjang_meeting/logo.png" style="margin:0;padding0"/></td>
-		<td colspan="6" style="text-align:center;"><h1>ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ È¸ ï¿½ï¿½ ï¿½ï¿½</h1></td>
+		<td colspan="6" style="text-align:center;"><h1>ÇÐ °ú Àå È¸ ÀÇ ·Ï</h1></td>
 		<td><img src="https://www.ch.ac.kr/adframe/mng/teamjang_meeting/logo.png" style="margin:0;padding0"/></td>
 		<td ></td>
 	</tr>
@@ -61,239 +60,239 @@ header( "Content-Description: PHP4 Generated Data" );
 		<td style="width:80px;"></td>
 	</tr>
 	<tr>
-		<th style="height:30px; line-height:30px; border-top:2px solid #000;border-left:2px solid #000;">ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:2px solid #000;border-left:2px solid #000;">Â÷¼ö</th>
 		<td colspan="9" style="border-left:1px solid #000;border-top:2px solid #000;border-right:2px solid #000"><?php echo $parent['m_gubun']?></td>
 	</tr>
 	<tr>
-		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">ï¿½Ï½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">ÀÏ½Ã</th>
 		<td colspan="9" style="border-left:1px solid #000;border-top:1px solid #000;border-right:2px solid #000"><?php echo $parent['m_date']?></td>
 	</tr>
 	<tr>
-		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">ï¿½ï¿½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">Àå¼Ò</th>
 		<td colspan="4" style="border-left:1px solid #000;border-top:1px solid #000;border-right:1px solid #000"><?php echo $parent['m_place']?></td>
-		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:1px solid #000;">ï¿½ï¿½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:1px solid #000;">±â·Ï</th>
 		<td colspan="4" style="border-left:1px solid #000;border-top:1px solid #000;border-right:2px solid #000"><?php echo $parent['m_record']?></td>
 	</tr>
 	<tr>
-		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;">³»¿ë</th>
 		<td colspan="9" style="border-left:1px solid #000;border-top:1px solid #000;border-right:2px solid #000"><?php echo $parent['m_memo']?></td>
 	</tr>
 	<tr>
-		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;border-bottom:2px solid #000">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="height:30px; line-height:30px; border-top:1px solid #000;border-left:2px solid #000;border-bottom:2px solid #000">Âü¼®´ë»ó</th>
 		<td colspan="9" style="border-left:1px solid #000;border-top:1px solid #000;border-right:2px solid #000;border-bottom:2px solid #000"><?php echo $parent['m_member']?></td>
 	</tr>
 	<tr>
 		<td colspan="10"></td>
 	</tr>
 	<tr>
-		<td colspan="4" style="height:30px;line-height:30px;background:#D0EAED;text-align:center;padding:0;"><div style="border:1px solid #000">ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Þ»ï¿½ï¿½ï¿½</div></td>
+		<td colspan="4" style="height:30px;line-height:30px;background:#D0EAED;text-align:center;padding:0;"><div style="border:1px solid #000">ºÎ¼­º° Àü´Þ»çÇ×</div></td>
 		<td colspan="6" style="border-top:0;">&nbsp;</td>
 	</tr>
 	<tr>
 		<td colspan="10"></td>
 	</tr>
 	<tr>
-		<th colspan="3" style="height:30xp;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</th>
-		<td colspan="7" style="text-align:center;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="3" style="height:30xp;border:1px solid #000;">±¸ºÐ</th>
+		<td colspan="7" style="text-align:center;border:1px solid #000;">¾÷¹«³»¿ë</td>
 	</tr>
 	<?php 
 	if($_GET['idx']<165){
 	?>
 	<tr>
-		<th rowspan="5" style="border:1px solid #000;">ï¿½ï¿½<br/>ï¿½ï¿½<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½/ï¿½Ð¼ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½</td>
+		<th rowspan="5" style="border:1px solid #000;">±³<br/>¹«<br/>Ã³</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±³¿øÀÎ»ç/ÇÐ¼ú/Àü°ø½ÉÈ­°úÁ¤</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][1])))?>
 		</td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Àü°ø½ÉÈ­°úÁ¤</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][2])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÐÀû</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][3])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">¼ö¾÷/±³¹«</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][4])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±³¼öÇÐ½ÀÁö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][5])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">¿ø°Ý±³À°Áö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][39])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">Ã¢ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Ã¢ÀÇ±³¾ç¿äÀ°¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][38])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±³À°Çõ½ÅÁö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][6])))?></td>
 	</tr>
 	<tr>
-		<th style="border:1px solid #000;" rowspan="3">ï¿½ï¿½<br/>ï¿½ï¿½<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ï¹ï¿½</td>
+		<th style="border:1px solid #000;" rowspan="3">ÀÔ<br/>ÇÐ<br/>Ã³</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÏ¹Ý</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][7])))?></td>
 	</tr>
 
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ô½ï¿½È«ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÔ½ÃÈ«º¸</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][42])?></td>
 	</tr>
 
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ô½ï¿½ï¿½Ï¹ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÔ½ÃÀÏ¹Ý</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][42])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Çõ½ÅÁö¿ø»ç¾÷</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][41])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="9" style="border:1px solid #000;">ï¿½ï¿½<br/>ï¿½ï¿½<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</td>
+		<th rowspan="9" style="border:1px solid #000;">ÇÐ<br/>»ý<br/>Ã³</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀåÇÐ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][8])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ð»ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÇÐ»ý</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][9])))?></td>
 	</tr>
     <tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½È°ï¿½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">»ýÈ°°ü</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][53])))?></td>
     </tr>
     <tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½Æ®ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">ÇÇÆ®´Ï½º ¼¾ÅÍ</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][54])))?></td>
     </tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±¹Á¦°³¹ßÇù·Â¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][12])?></td>
 	</tr-->
     <tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½Ç½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">º¸°Ç½Ç</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][36])))?></td>
     </tr>
     
     <tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ð»ï¿½ï¿½ï¿½ã¼¾ï¿½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">ÇÐ»ý»ó´ã¼¾ÅÍ</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][50])))?></td>
     </tr>
 	<tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Î±Ç¼ï¿½ï¿½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">ÀÎ±Ç¼¾ÅÍ</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][50])))?></td>
     </tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½È¸ï¿½ï¿½ï¿½å¼¾ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">»çÈ¸°øÇå¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][11])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Àå¾ÖÇÐ»ýÁö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][44])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">ï¿½ï¿½<br/>È¹<br/>Ã³</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½È¹,ï¿½Î»ï¿½</td>
+		<th rowspan="3" style="border:1px solid #000;">±â<br/>È¹<br/>Ã³</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±âÈ¹,ÀÎ»ç</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][13])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ï»ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÏ»óÈ¸º¹Áö¿øÆÀ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][10])?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Î±Ç¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÎ±Ç¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][36])?></td>
 	</tr>
 
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Î»ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÎ»ç</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][14])?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ô½ï¿½È«ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÔ½ÃÈ«º¸</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][15])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">IRï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">IR¼º°ú°ü¸®¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][16])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Û·Î¹ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±Û·Î¹ú¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][17])?></td>
 	</tr-->
 	<tr>
-		<th style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½Ã³</th>
+		<th style="border:1px solid #000;">ÇàÁ¤Ã³</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][18])))?></td>
 	</tr>
 	<tr>
-		<th rowspan="8" style="border:1px solid #000;">ï¿½ï¿½<br/>ï¿½ï¿½<br/>ï¿½ï¿½<br/>ï¿½ï¿½<br />(Ã³)<br />ï¿½ï¿½</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</td>
+		<th rowspan="8" style="border:1px solid #000;">»ê<br/>ÇÐ<br/>Çù<br/>·Â<br />(Ã³)<br />´Ü</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">º»ºÎ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][19])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">LINC 3.0ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">LINC 3.0»ç¾÷´Ü</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][21])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÇöÀå½Ç½ÀÁö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][22])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÃëÃ¢¾÷Áø·ÎÁö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][23])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½Ã¹Ä·ï¿½ï¿½Ì¼Ç¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">´Ù¸ñÀû½Ã¹Ä·¹ÀÌ¼Ç¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][24])))?></td>
 	</tr-->
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ó»ï¿½Ã¹Ä·ï¿½ï¿½Ì¼Ç¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÓ»ó½Ã¹Ä·¹ÀÌ¼Ç¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][25])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±â¾÷Çù¾÷Áö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][26])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">°Ç°­¾ÈÀü Áö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][46])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">¼ö¸ñÁø´Ü¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][47])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">´Ãµ¹º½ Áö¿ø¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][48])))?></td>
 	</tr>
 
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+		<th colspan="3" style="border:1px solid #000;">Çõ½ÅÁö¿ø»ç¾÷´Ü</th>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][20])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="3" style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(HiVE)ï¿½ï¿½</th>
+		<th colspan="3" style="border:1px solid #000;">°íµæÁ÷¾÷±³À°°ÅÁ¡Áö±¸»ç¾÷(HiVE)´Ü</th>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][43])))?></td>
 	</tr-->
 	<tr>
-		<th style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="border:1px solid #000;">µµ¼­°ü</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][34])))?></td>
 	</tr>
 	<!--tr>
-        <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Î±Ç¼ï¿½ï¿½ï¿½</td>
+        <th colspan="2" style="height:30px;border:1px solid #000;">ÀÎ±Ç¼¾ÅÍ</td>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
         <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][36])))?></td>
     </tr-->
 	<tr>
-		<th rowspan="<?php if ( $_GET["idx"] > 133 ) {echo "5";}else{echo "5";}?>" style="border:1px solid #000;">ï¿½ï¿½<br/>ï¿½ï¿½<br/>ï¿½ï¿½<br/>ï¿½ï¿½<br />ï¿½ï¿½</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½</td>
+		<th rowspan="<?php if ( $_GET["idx"] > 133 ) {echo "5";}else{echo "5";}?>" style="border:1px solid #000;">Æò<br/>»ý<br/>±³<br/>À°<br />¿ø</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">¿ïÁÖ±º»ç¾÷</td>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				$content = $result['m_content'][29];
@@ -303,90 +302,90 @@ header( "Content-Description: PHP4 Generated Data" );
 				//echo nl2br(str_replace("(","<",$result['m_content'][29]))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">·ÎÄÃÅ©¸®¿¡ÀÌÅÍ 2±Þ ±³À° ½Ã¹ü»ç¾÷(Çõ½ÅÁö¿ø»ç¾÷)</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][45])?></td>
 	</tr-->
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½Ã» ï¿½ï¿½ï¿½<br />(ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¿¬ï¿½ï¿½)</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±³À°Ã» »ç¾÷<br />(ÇÐ±³¾ÈÀüºÎÀå¿¬¼ö)</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][45])?></td>
 	</tr-->
     <!--
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç½ï¿½ ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Æò»ý±³À° ½Ç½À »ç¾÷</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][30])?></td>
 	</tr>
     -->
     <?
-    // 20204.02.17 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ³»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ :: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Å±ï¿½ï¿½×¸ï¿½ ï¿½ß°ï¿½
+    // 20204.02.17 ÀÌÈÄ º¯°æ³»¿ë Àû¿ë :: ¼ø¼­º¯°æ ¹× ½Å±ÔÇ×¸ñ Ãß°¡
     if ( $_GET["idx"] > 133 ) {
     ?>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">LiFE 2.0 ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">LiFE 2.0 »ç¾÷(¼ºÀÎÇÐ½ÀÀÚÁö¿ø¼¾ÅÍ)</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][28])))?></td>
         </tr>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ê¿¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">¿ï»ê¿¬±¸¿ø »ç¾÷(Æò»ý±³À°¿¬±¸½Ç)</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][27])))?></td>
         </tr>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ñ¹ï¿½ç¼±ï¿½ï¿½ï¿½ï¿½È¸)</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">½ÉÀåÃÊÀ½ÆÄ ¿¬¼ö°úÁ¤(´ëÇÑ¹æ»ç¼±»çÇùÈ¸)</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][52])?></td>
         </tr>
     <? } else { ?>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ê¿¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">¿ï»ê¿¬±¸¿ø »ç¾÷(ÀÎÀçÆò»ý±³À°¼¾ÅÍ)</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][27])))?></td>
         </tr>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">LiFE 2.0 ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">LiFE 2.0 »ç¾÷(¼ºÀÎÇÐ½ÀÀÚÁö¿ø¼¾ÅÍ)</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][28])))?></td>
         </tr>
         <tr>
-            <th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ê±¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã» ï¿½ï¿½ï¿½</td>
+            <th colspan="2" style="height:30px;border:1px solid #000;">¿ï»ê±¤¿ª½Ã ±³À°Ã» »ç¾÷</td>
             <td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][51])))?></td>
         </tr>
     <? } ?>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Ï¹Ý¾ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ÀÏ¹Ý¾÷¹«</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][31])))?></td>
 	</tr>
 
 	<tr>
-		<th style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="border:1px solid #000;">Á¤º¸Àü»ê¿ø</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][32])))?></td>
 	</tr>
 	<!--tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">ºòµ¥ÀÌÅÍ¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][33])))?></td>
 	</tr-->
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</td>
+		<th rowspan="3" style="border:1px solid #000;">±¹Á¦±³·ù¿ø</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">°øÅë</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][49])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±¹Á¦°³¹ßÇù·Â¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][12])))?></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½Û·Î¹ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">±Û·Î¹ú¼¾ÅÍ</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][17])))?></td>
 	</tr>
 
 	<!--tr>
-		<th style="border:1px solid #000;">ï¿½Ð»ï¿½<br/>ï¿½ï¿½ï¿½<br />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="border:1px solid #000;">ÇÐ»ý<br/>»ó´ã<br />¿¬±¸¼Ò</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][35])?></td>
 	</tr>
 	<tr>
-		<th style="border:1px solid #000;">ï¿½Î±ï¿½<br/>ï¿½ï¿½ï¿½ï¿½</th>
+		<th style="border:1px solid #000;">ÀÎ±Ç<br/>¼¾ÅÍ</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">-</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br($result['m_content'][36])?></td>
 	</tr-->
 	<tr>
-		<th style="border:1px solid #000;">ï¿½ï¿½Å¸</th>
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸</td>
+		<th style="border:1px solid #000;">±âÅ¸</th>
+		<th colspan="2" style="height:30px;border:1px solid #000;">»ý¸íÀ±¸®À§¿øÈ¸</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][37])))?></td>
 	</tr>
 	<?php 
@@ -398,37 +397,37 @@ header( "Content-Description: PHP4 Generated Data" );
 		<td colspan="10"></td>
 	</tr>
 	<tr>
-		<td colspan="4" style="height:30px;line-height:30px;background:#D0EAED;text-align:center;padding:0;"><div style="border:1px solid #000">ï¿½Ð°ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ï¿½</div></td>
+		<td colspan="4" style="height:30px;line-height:30px;background:#D0EAED;text-align:center;padding:0;"><div style="border:1px solid #000">ÇÐ°úº° ÁÖ°£Çà»ç</div></td>
 		<td colspan="6" style="border-top:0;">&nbsp;</td>
 	</tr>
 	<tr>
 		<td colspan="10"></td>
 	</tr>
 	<tr>
-		<th colspan="2" style="border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½</th>
+		<th colspan="2" style="border:1px solid #000;">±¸ºÐ</th>
 <!--
-		<th colspan="2" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</td>
-		<th colspan="3" style="height:30px;border:1px solid #000;">ï¿½Ì¹ï¿½ ï¿½ï¿½ ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</td>
-		<th colspan="3" style="height:30px;border:1px solid #000;">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="2" style="height:30px;border:1px solid #000;">Áö³­ ÁÖ ÇÐ°úÇà»ç</td>
+		<th colspan="3" style="height:30px;border:1px solid #000;">ÀÌ¹ø ÁÖ ÇÐ°úÇà»ç</td>
+		<th colspan="3" style="height:30px;border:1px solid #000;">´ÙÀ½ ÁÖ ÇÐ°úÇà»ç</td>
 -->
-		<th colspan="8" style="height:30px;border:1px solid #000;">ï¿½Ð°ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</td>
+		<th colspan="8" style="height:30px;border:1px solid #000;">ÇÐ°ú ÁÖ°£Çà»ç ¹× ºÎ¼­¾÷¹« ³»¿ë</td>
 	</tr>
 	<?php
 	$part2_member_sql = "SELECT * FROM teamjang_meeting_member where m_part_gubun='2' order By idx asc";
 	$part2_member_res = mysql_query($part2_member_sql);
 	$num = 32;
 	WHILE($part2_member=mysql_fetch_array($part2_member_res)){
-	    // 2024.02.17 ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-	    if ( $_idx > 133 && $part2_member["idx"] == 22 ) continue;
+	    // 2024.02.17 ÀÌÈÄ, »çÈ¸º¹Áö°ú Á¦¿Ü
+	    if ( $_GET["idx"] > 133 && $part2_member["idx"] == 22 ) continue;
 		$part2_member_data = $part2_member['m_member'];
 		$part2_member_data_array = explode(",",$part2_member_data);
-		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_idx}' and m_part='".addslashes($part2_member['m_part'])."'"));
+		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_GET['idx']}' and m_part='{$part2_member['m_part']}'"));
 	?>
 	
 <!--
 		<tr height="34" bgcolor="FAFAFA">
 			<th rowspan="3" style="border:1px solid #000"><?php echo $part2_member['m_part']?></th>
-			<th style="border:1px solid #000">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½<br />ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</th>
+			<th style="border:1px solid #000">Áö³­ ÁÖ<br />ÇÐ°úÇà»ç</th>
 			<td colspan="8" style="height:100;padding:5px;border:1px solid #000"><?php echo nl2br($part_data['m_content_past'])?></td>
 		</tr>
 			<?
@@ -438,14 +437,14 @@ header( "Content-Description: PHP4 Generated Data" );
 -->
 		<tr height="34" bgcolor="FAFAFA">
 			<th rowspan="2" style="border:1px solid #000"><?php echo $part2_member['m_part']?></th>
-			<th style="border:1px solid #000">ï¿½Ì¹ï¿½ ï¿½ï¿½<br />ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</th>
+			<th style="border:1px solid #000">ÀÌ¹ø ÁÖ<br />ÇÐ°úÇà»ç</th>
 			<td colspan="8" style="height:100;padding:5px;border:1px solid #000"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$part_data['m_content_this'])))?></td>
 			<?
 				$num++;
 			?>
 		</tr>
 		<tr height="34" bgcolor="FAFAFA">
-			<th style="border:1px solid #000">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½<br />ï¿½Ð°ï¿½ï¿½ï¿½ï¿½</th>
+			<th style="border:1px solid #000">´ÙÀ½ ÁÖ<br />ÇÐ°úÇà»ç</th>
 			<td colspan="8" style="height:100;padding:5px;border:1px solid #000"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$part_data['m_content_next'])))?></td>
 			<?
 				$num++;
