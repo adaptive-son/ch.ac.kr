@@ -65,6 +65,7 @@
 			break;
 			case "p_w":
 				for($i=0; $i< count($_POST['m_content']);$i++){
+					$m_gubun = isset($_POST['m_gubun'][$i]) && $_POST['m_gubun'][$i] !== '' ? $_POST['m_gubun'][$i] : 0;
 					$sql = "insert into teamjang_meeting_content_new (
 						m_idx
 						,m_gubun
@@ -74,7 +75,7 @@
 						,m_write_date
 					) VALUES (
 						'{$_POST['m_idx']}'
-						,'{$_POST['m_gubun'][$i]}'
+						,'{$m_gubun}'
 						,'{$_POST['m_order'][$i]}'
 						,'{$_POST['m_write']}'
 						,'{$_POST['m_content'][$i]}'
@@ -123,6 +124,7 @@
 						";
 						
 					}else{
+						$m_gubun = isset($_POST['m_gubun'][$i]) && $_POST['m_gubun'][$i] !== '' ? $_POST['m_gubun'][$i] : 0;
 						$sql = "insert into teamjang_meeting_content_new (
 								m_idx
 								,m_gubun
@@ -132,7 +134,7 @@
 								,m_write_date
 							) VALUES (
 								'{$_POST['m_idx']}'
-								,'{$_POST['m_gubun'][$i]}'
+								,'{$m_gubun}'
 								,'{$_POST['m_order'][$i]}'
 								,'{$_POST['m_write']}'
 								,'{$_POST['m_content'][$i]}'
@@ -183,8 +185,9 @@
 				
 			break;
 	
-		case "p_w_1":			
+		case "p_w_1":
 			for($i=0; $i< count($_POST['m_content']);$i++){
+				$m_gubun = isset($_POST['m_gubun'][$i]) && $_POST['m_gubun'][$i] !== '' ? $_POST['m_gubun'][$i] : 0;
 				$sql = "insert into teamjang_meeting_content_new (
 					m_idx
 					,m_gubun
@@ -194,7 +197,7 @@
 					,m_write_date
 				) VALUES (
 					'{$_POST['m_idx']}'
-					,'{$_POST['m_gubun'][$i]}'
+					,'{$m_gubun}'
 					,'{$_POST['m_order'][$i]}'
 					,'{$_POST['m_write']}'
 					,'{$_POST['m_content'][$i]}'
