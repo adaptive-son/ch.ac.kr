@@ -183,7 +183,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th colspan="3" style="border:1px solid #000;">RISE사업단</th>
+		<th colspan="3" style="border:1px solid #000;">앵커사업단</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php 
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][43])))?>

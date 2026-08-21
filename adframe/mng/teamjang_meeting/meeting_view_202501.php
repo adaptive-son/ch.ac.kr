@@ -281,7 +281,7 @@
 		</td>
 	</tr>
 	<tr height="34" bgcolor="FAFAFA">
-		<th colspan="2">RISE사업단</th>
+		<th colspan="2">앵커사업단</th>
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="43" />
 			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][43]?></textarea>
