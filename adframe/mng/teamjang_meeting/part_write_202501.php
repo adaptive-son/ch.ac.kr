@@ -299,8 +299,8 @@
 			</td>
 		</tr>
 		<?php } ?>
-		<?php if(in_array($_SESSION['ID'],$AID전환중점지원사업단['member'])==true){	?>
-		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$AID전환중점지원사업단['member'])==false){ ?>style="display:none"<?php }?>>
+		<?php if(in_array($_SESSION['ID'],${'AID 전환중점지원사업단'}['member'])==true){	?>
+		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],${'AID 전환중점지원사업단'}['member'])==false){ ?>style="display:none"<?php }?>>
 			<th colspan="2">AID 전환중점지원사업단</th>
 			<td style="padding:5px">
 				<input type="hidden" name="m_order[]" value="57" />
@@ -308,8 +308,8 @@
 			</td>
 		</tr>
 		<?php } ?>
-		<?php if(in_array($_SESSION['ID'],$청년도약인재양성부트캠프사업단['member'])==true){	?>
-		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$청년도약인재양성부트캠프사업단['member'])==false){ ?>style="display:none"<?php }?>>
+		<?php if(in_array($_SESSION['ID'],${'청년도약 인재양성 부트캠프사업단'}['member'])==true){	?>
+		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],${'청년도약 인재양성 부트캠프사업단'}['member'])==false){ ?>style="display:none"<?php }?>>
 			<th colspan="2">청년도약 인재양성 부트캠프사업단</th>
 			<td style="padding:5px">
 				<input type="hidden" name="m_order[]" value="58" />
@@ -317,8 +317,8 @@
 			</td>
 		</tr>
 		<?php } ?>
-		<?php if(in_array($_SESSION['ID'],$AID30집중캠프사업단['member'])==true){	?>
-		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$AID30집중캠프사업단['member'])==false){ ?>style="display:none"<?php }?>>
+		<?php if(in_array($_SESSION['ID'],${'AID 30+집중캠프사업단'}['member'])==true){	?>
+		<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],${'AID 30+집중캠프사업단'}['member'])==false){ ?>style="display:none"<?php }?>>
 			<th colspan="2">AID 30+집중캠프사업단</th>
 			<td style="padding:5px">
 				<input type="hidden" name="m_order[]" value="59" />
