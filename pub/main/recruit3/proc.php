@@ -149,64 +149,64 @@ $mPeriod1 = $mPeriod1_1."~".$mPeriod1_2;
 $dPeriod = $dPeriod1."~".$dPeriod2;
 $dPeriod1 = $dPeriod1_1."~".$dPeriod1_2;
 
-if($jpsYear1 && $jpsMonth1 && $jpsDate1){$jpsPeriod1 = $jpsYear1."-".$jpsMonth1."-".$jpsDate1;}
-if($jpeYear1 && $jpeMonth1 && $jpeDate1){$jpePeriod1 = $jpeYear1."-".$jpeMonth1."-".$jpeDate1;}
+$jpsParts1 = array_filter(array($jpsYear1,$jpsMonth1,$jpsDate1),'strlen'); if($jpsParts1)$jpsPeriod1 = implode("-",$jpsParts1);
+$jpeParts1 = array_filter(array($jpeYear1,$jpeMonth1,$jpeDate1),'strlen'); if($jpeParts1)$jpePeriod1 = implode("-",$jpeParts1);
 //if($jobYear1 && $jobMonth1){$jobPeriod1 = $jobYear1."-".$jobMonth1;}
 if($jobYear1 || $jobMonth1){$jobPeriod1 = $jobYear1."-".$jobMonth1;}
-if($jpsYear2 && $jpsMonth2 && $jpsDate2){$jpsPeriod2 = $jpsYear2."-".$jpsMonth2."-".$jpsDate2;}
-if($jpeYear2 && $jpeMonth2 && $jpeDate2){$jpePeriod2 = $jpeYear2."-".$jpeMonth2."-".$jpeDate2;}
+$jpsParts2 = array_filter(array($jpsYear2,$jpsMonth2,$jpsDate2),'strlen'); if($jpsParts2)$jpsPeriod2 = implode("-",$jpsParts2);
+$jpeParts2 = array_filter(array($jpeYear2,$jpeMonth2,$jpeDate2),'strlen'); if($jpeParts2)$jpePeriod2 = implode("-",$jpeParts2);
 //if($jobYear2 && $jobMonth2){$jobPeriod2 = $jobYear2."-".$jobMonth2;}
 if($jobYear2 || $jobMonth2){$jobPeriod2 = $jobYear2."-".$jobMonth2;}
-if($jpsYear3 && $jpsMonth3 && $jpsDate3){$jpsPeriod3 = $jpsYear3."-".$jpsMonth3."-".$jpsDate3;}
-if($jpeYear3 && $jpeMonth3 && $jpeDate3){$jpePeriod3 = $jpeYear3."-".$jpeMonth3."-".$jpeDate3;}
+$jpsParts3 = array_filter(array($jpsYear3,$jpsMonth3,$jpsDate3),'strlen'); if($jpsParts3)$jpsPeriod3 = implode("-",$jpsParts3);
+$jpeParts3 = array_filter(array($jpeYear3,$jpeMonth3,$jpeDate3),'strlen'); if($jpeParts3)$jpePeriod3 = implode("-",$jpeParts3);
 //if($jobYear3 && $jobMonth3){$jobPeriod3 = $jobYear3."-".$jobMonth3;}
 if($jobYear3 || $jobMonth3){$jobPeriod3 = $jobYear3."-".$jobMonth3;}
-if($jpsYear4 && $jpsMonth4 && $jpsDate4){$jpsPeriod4 = $jpsYear4."-".$jpsMonth4."-".$jpsDate4;}
-if($jpeYear4 && $jpeMonth4 && $jpeDate4){$jpePeriod4 = $jpeYear4."-".$jpeMonth4."-".$jpeDate4;}
+$jpsParts4 = array_filter(array($jpsYear4,$jpsMonth4,$jpsDate4),'strlen'); if($jpsParts4)$jpsPeriod4 = implode("-",$jpsParts4);
+$jpeParts4 = array_filter(array($jpeYear4,$jpeMonth4,$jpeDate4),'strlen'); if($jpeParts4)$jpePeriod4 = implode("-",$jpeParts4);
 //if($jobYear4 && $jobMonth4){$jobPeriod4 = $jobYear4."-".$jobMonth4;}
 if($jobYear4 || $jobMonth4){$jobPeriod4 = $jobYear4."-".$jobMonth4;}
-if($jpsYear5 && $jpsMonth5 && $jpsDate5){$jpsPeriod5 = $jpsYear5."-".$jpsMonth5."-".$jpsDate5;}
-if($jpeYear5 && $jpeMonth5 && $jpeDate5){$jpePeriod5 = $jpeYear5."-".$jpeMonth5."-".$jpeDate5;}
+$jpsParts5 = array_filter(array($jpsYear5,$jpsMonth5,$jpsDate5),'strlen'); if($jpsParts5)$jpsPeriod5 = implode("-",$jpsParts5);
+$jpeParts5 = array_filter(array($jpeYear5,$jpeMonth5,$jpeDate5),'strlen'); if($jpeParts5)$jpePeriod5 = implode("-",$jpeParts5);
 //if($jobYear5 && $jobMonth5){$jobPeriod5 = $jobYear5."-".$jobMonth5;}
 if($jobYear5 || $jobMonth5){$jobPeriod5 = $jobYear5."-".$jobMonth5;}
-if($jpsYear6 && $jpsMonth6 && $jpsDate6){$jpsPeriod6 = $jpsYear6."-".$jpsMonth6."-".$jpsDate6;}
-if($jpeYear6 && $jpeMonth6 && $jpeDate6){$jpePeriod6 = $jpeYear6."-".$jpeMonth6."-".$jpeDate6;}
+$jpsParts6 = array_filter(array($jpsYear6,$jpsMonth6,$jpsDate6),'strlen'); if($jpsParts6)$jpsPeriod6 = implode("-",$jpsParts6);
+$jpeParts6 = array_filter(array($jpeYear6,$jpeMonth6,$jpeDate6),'strlen'); if($jpeParts6)$jpePeriod6 = implode("-",$jpeParts6);
 //if($jobYear6 && $jobMonth6){$jobPeriod6 = $jobYear6."-".$jobMonth6;}
 if($jobYear6 || $jobMonth6){$jobPeriod6 = $jobYear6."-".$jobMonth6;}
-if($jpsYear7 && $jpsMonth7 && $jpsDate7){$jpsPeriod7 = $jpsYear7."-".$jpsMonth7."-".$jpsDate7;}
-if($jpeYear7 && $jpeMonth7 && $jpeDate7){$jpePeriod7 = $jpeYear7."-".$jpeMonth7."-".$jpeDate7;}
+$jpsParts7 = array_filter(array($jpsYear7,$jpsMonth7,$jpsDate7),'strlen'); if($jpsParts7)$jpsPeriod7 = implode("-",$jpsParts7);
+$jpeParts7 = array_filter(array($jpeYear7,$jpeMonth7,$jpeDate7),'strlen'); if($jpeParts7)$jpePeriod7 = implode("-",$jpeParts7);
 //if($jobYear7 && $jobMonth7){$jobPeriod7 = $jobYear7."-".$jobMonth7;}
 if($jobYear7 || $jobMonth7){$jobPeriod7 = $jobYear7."-".$jobMonth7;}
-if($jpsYear8 && $jpsMonth8 && $jpsDate8){$jpsPeriod8 = $jpsYear8."-".$jpsMonth8."-".$jpsDate8;}
-if($jpeYear8 && $jpeMonth8 && $jpeDate8){$jpePeriod8 = $jpeYear8."-".$jpeMonth8."-".$jpeDate8;}
+$jpsParts8 = array_filter(array($jpsYear8,$jpsMonth8,$jpsDate8),'strlen'); if($jpsParts8)$jpsPeriod8 = implode("-",$jpsParts8);
+$jpeParts8 = array_filter(array($jpeYear8,$jpeMonth8,$jpeDate8),'strlen'); if($jpeParts8)$jpePeriod8 = implode("-",$jpeParts8);
 //if($jobYear8 && $jobMonth8){$jobPeriod8 = $jobYear8."-".$jobMonth8;}
 if($jobYear8 || $jobMonth8){$jobPeriod8 = $jobYear8."-".$jobMonth8;}
-if($jpsYear9 && $jpsMonth9 && $jpsDate9){$jpsPeriod9 = $jpsYear9."-".$jpsMonth9."-".$jpsDate9;}
-if($jpeYear9 && $jpeMonth9 && $jpeDate9){$jpePeriod9 = $jpeYear9."-".$jpeMonth9."-".$jpeDate9;}
+$jpsParts9 = array_filter(array($jpsYear9,$jpsMonth9,$jpsDate9),'strlen'); if($jpsParts9)$jpsPeriod9 = implode("-",$jpsParts9);
+$jpeParts9 = array_filter(array($jpeYear9,$jpeMonth9,$jpeDate9),'strlen'); if($jpeParts9)$jpePeriod9 = implode("-",$jpeParts9);
 //if($jobYear9 && $jobMonth9){$jobPeriod9 = $jobYear9."-".$jobMonth9;}
 if($jobYear9 || $jobMonth9){$jobPeriod9 = $jobYear9."-".$jobMonth9;}
-if($jpsYear10 && $jpsMonth10 && $jpsDate10){$jpsPeriod10 = $jpsYear10."-".$jpsMonth10."-".$jpsDate10;}
-if($jpeYear10 && $jpeMonth10 && $jpeDate10){$jpePeriod10 = $jpeYear10."-".$jpeMonth10."-".$jpeDate10;}
+$jpsParts10 = array_filter(array($jpsYear10,$jpsMonth10,$jpsDate10),'strlen'); if($jpsParts10)$jpsPeriod10 = implode("-",$jpsParts10);
+$jpeParts10 = array_filter(array($jpeYear10,$jpeMonth10,$jpeDate10),'strlen'); if($jpeParts10)$jpePeriod10 = implode("-",$jpeParts10);
 //if($jobYear10 && $jobMonth10){$jobPeriod10 = $jobYear10."-".$jobMonth10;}
 if($jobYear10 || $jobMonth10){$jobPeriod10 = $jobYear10."-".$jobMonth10;}
-if($jpsYear11 && $jpsMonth11 && $jpsDate11){$jpsPeriod11 = $jpsYear11."-".$jpsMonth11."-".$jpsDate11;}
-if($jpeYear11 && $jpeMonth11 && $jpeDate11){$jpePeriod11 = $jpeYear11."-".$jpeMonth11."-".$jpeDate11;}
+$jpsParts11 = array_filter(array($jpsYear11,$jpsMonth11,$jpsDate11),'strlen'); if($jpsParts11)$jpsPeriod11 = implode("-",$jpsParts11);
+$jpeParts11 = array_filter(array($jpeYear11,$jpeMonth11,$jpeDate11),'strlen'); if($jpeParts11)$jpePeriod11 = implode("-",$jpeParts11);
 //if($jobYear11 && $jobMonth11){$jobPeriod11 = $jobYear11."-".$jobMonth11;}
 if($jobYear11 || $jobMonth11){$jobPeriod11 = $jobYear11."-".$jobMonth11;}
-if($jpsYear12 && $jpsMonth12 && $jpsDate12){$jpsPeriod12 = $jpsYear12."-".$jpsMonth12."-".$jpsDate12;}
-if($jpeYear12 && $jpeMonth12 && $jpeDate12){$jpePeriod12 = $jpeYear12."-".$jpeMonth12."-".$jpeDate12;}
+$jpsParts12 = array_filter(array($jpsYear12,$jpsMonth12,$jpsDate12),'strlen'); if($jpsParts12)$jpsPeriod12 = implode("-",$jpsParts12);
+$jpeParts12 = array_filter(array($jpeYear12,$jpeMonth12,$jpeDate12),'strlen'); if($jpeParts12)$jpePeriod12 = implode("-",$jpeParts12);
 //if($jobYear12 && $jobMonth12){$jobPeriod12 = $jobYear12."-".$jobMonth12;}
 if($jobYear12 || $jobMonth12){$jobPeriod12 = $jobYear12."-".$jobMonth12;}
-if($jpsYear13 && $jpsMonth13 && $jpsDate13){$jpsPeriod13 = $jpsYear13."-".$jpsMonth13."-".$jpsDate13;}
-if($jpeYear13 && $jpeMonth13 && $jpeDate13){$jpePeriod13 = $jpeYear13."-".$jpeMonth13."-".$jpeDate13;}
+$jpsParts13 = array_filter(array($jpsYear13,$jpsMonth13,$jpsDate13),'strlen'); if($jpsParts13)$jpsPeriod13 = implode("-",$jpsParts13);
+$jpeParts13 = array_filter(array($jpeYear13,$jpeMonth13,$jpeDate13),'strlen'); if($jpeParts13)$jpePeriod13 = implode("-",$jpeParts13);
 //if($jobYear13 && $jobMonth13){$jobPeriod13 = $jobYear13."-".$jobMonth13;}
 if($jobYear13 || $jobMonth13){$jobPeriod13 = $jobYear13."-".$jobMonth13;}
-if($jpsYear14 && $jpsMonth14 && $jpsDate14){$jpsPeriod14 = $jpsYear14."-".$jpsMonth14."-".$jpsDate14;}
-if($jpeYear14 && $jpeMonth14 && $jpeDate14){$jpePeriod14 = $jpeYear14."-".$jpeMonth14."-".$jpeDate14;}
+$jpsParts14 = array_filter(array($jpsYear14,$jpsMonth14,$jpsDate14),'strlen'); if($jpsParts14)$jpsPeriod14 = implode("-",$jpsParts14);
+$jpeParts14 = array_filter(array($jpeYear14,$jpeMonth14,$jpeDate14),'strlen'); if($jpeParts14)$jpePeriod14 = implode("-",$jpeParts14);
 //if($jobYear14 && $jobMonth14){$jobPeriod14 = $jobYear14."-".$jobMonth14;}
 if($jobYear14 || $jobMonth14){$jobPeriod14 = $jobYear14."-".$jobMonth14;}
-if($jpsYear15 && $jpsMonth15 && $jpsDate15){$jpsPeriod15 = $jpsYear15."-".$jpsMonth15."-".$jpsDate15;}
-if($jpeYear15 && $jpeMonth15 && $jpeDate15){$jpePeriod15 = $jpeYear15."-".$jpeMonth15."-".$jpeDate15;}
+$jpsParts15 = array_filter(array($jpsYear15,$jpsMonth15,$jpsDate15),'strlen'); if($jpsParts15)$jpsPeriod15 = implode("-",$jpsParts15);
+$jpeParts15 = array_filter(array($jpeYear15,$jpeMonth15,$jpeDate15),'strlen'); if($jpeParts15)$jpePeriod15 = implode("-",$jpeParts15);
 //if($jobYear15 && $jobMonth15){$jobPeriod15 = $jobYear15."-".$jobMonth15;}
 if($jobYear15 || $jobMonth15){$jobPeriod15 = $jobYear15."-".$jobMonth15;}
 
