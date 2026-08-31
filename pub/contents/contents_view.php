@@ -132,7 +132,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 
                         <?
                         if ( $TREE_ID!="main" && ${"find_".$DEPTH."depth"}[$TREE_NO][ETC1] != "TABUPPER" ) {
-                            $admission_semester_map = array(16618 => "march", 16619 => "sept");
+                            $admission_semester_map = array(16618 => "march", 16619 => "sept", 16606 => "trainee");
                             if ( $TREE_ID=="global2" && isset($admission_semester_map[$TREE_NO]) ) {
                                 $admission_row = $adb->getRow("SELECT * FROM admission_pdf WHERE site_id='global2' AND semester_key='".$admission_semester_map[$TREE_NO]."'", DB_FETCHMODE_ASSOC);
                                 if ( $admission_row[pdf_name] ) {

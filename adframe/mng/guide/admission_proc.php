@@ -2,7 +2,7 @@
 include "../_common.php";
 
 $site_id = $_SESSION[sel_site_id];
-$allowed_keys = array("march", "sept");
+$allowed_keys = array("march", "sept", "trainee");
 
 if ( !in_array($semester_key, $allowed_keys) ) {
     OnlyMsgView("잘못된 요청입니다.");

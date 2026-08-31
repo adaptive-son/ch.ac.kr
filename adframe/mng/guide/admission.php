@@ -5,8 +5,9 @@ include_once("../include/header.bootstrap.php");
 $site_id = $_SESSION[sel_site_id];
 
 $semesters = array(
-    "march" => "3월학기 모집",
-    "sept"  => "9월학기 모집",
+    "march"   => "3월학기 모집",
+    "sept"    => "9월학기 모집",
+    "trainee" => "연수생 입학",
 );
 
 $rows = array();
