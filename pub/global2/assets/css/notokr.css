@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/* 추가 Start */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Noto Sans Light'), local('NotoSans-Light'), url(../fonts/notokr/notokr-light.eot);
+	src: url(../fonts/notokr/notokr-light.eot?#iefix) format('embedded-opentype'),
+	url(../fonts/notokr/notokr-light.woff2) format('woff2'),
+	url(../fonts/notokr/notokr-light.woff) format('woff');;
+}
+/* 추가 End */
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	/* 수정 Start */
+	src: local('Noto Sans DemiLight'), local('NotoSans-DemiLight'), url(../fonts/notokr/notokr-demilight.eot);
+	/* 수정 End */
+	src: url(../fonts/notokr/notokr-demilight.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/notokr/notokr-demilight.woff2) format('woff2'),
+		 url(../fonts/notokr/notokr-demilight.woff) format('woff');;
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans Regular'), local('NotoSans-Regular'), url(../fonts/notokr/notokr-regular.eot);
+	src: url(../fonts/notokr/notokr-regular.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/notokr/notokr-regular.woff2) format('woff2'),
+		 url(../fonts/notokr/notokr-regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans Medium'), local('NotoSans-Medium'), url(../fonts/notokr/notokr-medium.eot);
+	src: url(../fonts/notokr/notokr-medium.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/notokr/notokr-medium.woff2) format('woff2'),
+		 url(../fonts/notokr/notokr-medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans Bold'), local('NotoSans-Bold'), url(../fonts/notokr/notokr-bold.eot);
+	src: url(../fonts/notokr/notokr-bold.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/notokr/notokr-bold.woff2) format('woff2'),
+		 url(../fonts/notokr/notokr-bold.woff) format('woff');
+}
+
+

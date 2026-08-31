@@ -1,0 +1,203 @@
+@charset "UTF-8";
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	background: #f1f1f1;
+}
+
+body.bg02 {
+	background: #fff;
+}
+
+.logo {
+	position: fixed;
+	top: 44px;
+	left: 48px;
+	z-index: 100;
+}
+
+.logo a {
+	display: block;
+	width: 196px;
+}
+
+.logo a > img {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 196px;
+}
+
+.error-wrapper {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 970px;
+	background: #fff;
+	transform:translate(-50%, -50%);
+}
+
+.error-area {
+	padding: 80px 50px 70px 50px;
+	text-align: center;
+}
+
+.error-area > h1 {
+	margin-bottom: 	40px;
+}
+
+.error-area > h1 > img {
+	display: block;
+	height: 116px;
+	margin: 0 auto;
+}
+
+.error-area > h1.img-403 > img {
+	width: 283px;
+	height: auto;
+}
+
+.error-area > .word-type01 {
+	font-size: 28px;
+	line-height: 36px;
+	color: #50a6dd;
+	font-weight: 500;
+	letter-spacing: -1px;
+	margin-bottom: 23px;
+}
+
+.error-area > .word-type02 {
+	font-size: 16px;
+	line-height: 32px;
+	color: #848484;
+	font-weight: 300;
+	letter-spacing: -1px;
+	margin-bottom: 47px;
+}
+
+.error-area > .word-type02 > span {
+	display: block;
+}
+
+.error-area > .btn-home {
+	display: inline-block;
+	min-width: 175px;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 20px;
+	background: #4e4f51;
+	color: #fff;
+	font-weight: 500;
+	font-size: 18px;
+	margin: 0 auto;
+	font-size: 18px;
+}
+
+
+@media only all and (max-width: 1023px) {
+	html {
+		font-size: 1.625rem; /* 기본베이스 폰트사이즈 26px */
+		line-height: 1.625rem; /* 기본베이스 line-height 사이즈 26px */
+	}
+
+	.logo {
+		top: 1.269rem;
+		left: 1.154rem;
+	}
+
+	.logo a {
+		width: 7.538rem;
+	}
+
+	.logo a > img {
+		width: 7.538rem;
+	}
+
+	.error-wrapper {
+		width: 24.62rem;
+	}
+
+	.error-area {
+		padding: 4.385rem 1.538rem 3.846rem 1.538rem;
+	}
+
+	.error-area > h1 {
+		margin-bottom: 	1.346rem;
+	}
+
+	.error-area > h1 > img {
+		height: 4.462rem
+	}
+
+	.error-area > h1.img-403 > img {
+		width: 10.88rem
+	}
+
+	.error-area > .word-type01 {
+		font-size: 1.385rem;
+		line-height: 1.923rem;
+		margin-bottom: 0.6923rem;
+	}
+
+	.error-area > .word-type01 > span {
+		display: block;
+	}
+
+	.error-area > .word-type02 {
+		font-size: 0.9231rem;
+		line-height: 1.538rem;
+		margin-bottom: 2.231rem;
+	}
+
+
+	.error-area > .btn-home {
+		width: 9.346rem;
+		height: 2.538rem;
+		line-height: 2.538rem;
+		font-size: 0.9231rem;
+	}
+}
+
+
+@media only all and (max-width: 767px) {
+	html {
+		font-size: 1.25rem; /* 기본베이스 폰트사이즈 18px */
+		line-height: 1.25rem; /* 기본베이스 line-height 사이즈 18px */
+	}
+
+	.footer-sns-list {
+		bottom: 4.038rem
+	}
+
+}
+
+
+@media only all and (max-width: 600px) {
+	html {
+		font-size: 0.9375rem; /* 기본베이스 폰트사이즈 15px */
+		line-height:  0.9375rem; /* 기본베이스 line-height 사이즈 15px */
+	}
+}
+
+@media only all and (max-width: 475px) {
+	html {
+		font-size: 0.8125rem; /* 기본베이스 폰트사이즈 13px */
+		line-height:  0.8125rem; /* 기본베이스 line-height 사이즈 13px */
+	}
+
+	.error-wrapper {
+		width: 23.08rem;
+	}
+
+	.error-area > .word-type01 {
+		letter-spacing: -2px;
+	}
+}
+
+
+
+
+

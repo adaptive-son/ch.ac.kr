@@ -1,0 +1,881 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.boardSearch {
+	min-height: 35px;
+	margin-bottom: 15px;
+}
+.boardList {
+	margin-bottom: 30px;
+	border-top: 2px solid #808086 ;
+	border-bottom: 1px solid #e1e2e2;
+	background: #fff;
+}
+.paging {
+	overflow: hidden;
+	height: 28px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.paging .btn {
+	display: inline-block;
+	vertical-align: top;
+}
+.paging .num {
+	display: inline-block;
+	vertical-align: middle;
+}
+.paging .mNum {
+	display: none;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+	background: transparent;
+}
+.contents .last {
+	margin-bottom: 37px;
+}
+.paging .last {
+	width: 20px !important;
+	background: url('../../common/image/btn/btn_last02.gif') no-repeat 0 0;
+}
+.paging .next {
+	width: 20px !important;
+	margin-left: -3px !important;
+	background: url('../../common/image/btn/btn_next02.gif') no-repeat 0 0;
+}
+.paging .prev {
+	width: 20px !important;
+	margin-right: -3px !important;
+	background: url('../../common/image/btn/btn_prev02.gif') no-repeat 0 0;
+}
+.paging .first {
+	width: 20px !important;
+	background: url('../../common/image/btn/btn_first02.gif') no-repeat 0 0;
+}
+.paging .btn a {
+	display: block;
+	width: 28px;
+	height: 28px;
+	margin: 0 -2px;
+	text-indent: -9999px;
+}
+
+.paging .num a, .paging strong {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	margin: 0 -1px;
+	font-weight: bold;
+	color: #555559;
+	text-align: center;
+}
+.paging .num a:hover, .paging strong.on {
+	background: #dfdfdf;
+	color: #333;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+.boardList table {
+	width: 100%;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
+	font-family: "Noto Sans KR", Noto Sans KR, sans-serif;
+}
+caption {
+	overflow: hidden;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0;
+}
+th, td {
+	padding: 0;
+}
+table tr .num {
+	width: 8%;
+}
+table tr .file {
+	width: 7%;
+}
+table tr .name {
+	width: 8%;
+}
+table tr .date {
+	width: 12%;
+}
+table tr .refer {
+	width: 8%;
+}
+table tr .refer {
+	width: 8%;
+}
+.boardList table tbody td {
+	line-height: 160%;
+	font-size: 17px;
+	font-weight: 300;
+	min-height: 22px;
+	height: 16px;
+	padding: 15px 0;
+	border-top: 1px solid #e1e2e2;
+	color: #555559;
+	vertical-align: middle;
+	text-align: center;
+}
+table tr.on th, table tr.on td {
+	background: #f6f7f8;
+}
+.boardList table tbody td.subject {
+	padding-left: 20px;
+	padding-right: 5px;
+	text-align: left;
+}
+table td > button, table td > a {
+	vertical-align: middle !important;
+}
+fieldset, img {
+	border: 0 none;
+	vertical-align: middle;
+}
+img {
+	border: 0 none;
+	vertical-align: middle;
+}
+dl, ul, ol, menu, li {
+	list-style: none;
+	list-style-type: none;
+	list-style-image: url("data:0");
+}
+ul::after, ol::after {
+	display: block;
+	height: 0px;
+	content: "";
+	float: none;
+	clear: both;
+}
+.boardList table tbody td.subject .mSubInfo {
+	display: none;
+}
+table tr.on td.subject {
+	font-weight: 400;
+	font-size: 17px !important;
+}
+.boardList table tbody td.subject img {
+	margin-left: 5px;
+}
+table tr .notice {
+	display: inline-block;
+	width: 15px;
+	height: 18px;
+	margin-top: 5px;
+	background: url('../image/icon/icon_notice.png') no-repeat 50% 50%;
+	text-indent: -9999em;
+}
+.boardList table thead th {
+	text-align: center;
+	line-height: 130%;
+	padding: 12px 0 14px;
+	border-bottom: 1px solid #ccc;
+	color: #333339;
+	vertical-align: middle;
+	font-family: "notoKrR", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+}
+.boardList table thead th:first-child {
+	background-image: none;
+}
+.boardSearch .result {
+	float: left;
+	margin-top: 10px;
+	margin-right: 5px;
+	background: url('../../common/image/icon/icon_docu.png') no-repeat left center;
+	padding-left: 20px;
+	color: #6c6e6f;
+	font-size: 15px;
+}
+.boardSearch .search {
+	float: right;
+}
+legend, .blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1px;
+	height: 1px;
+	font-size: 0px;
+	line-height: 100px;
+	white-space: nowrap;
+}
+
+.boardSearch .search .inText input[type='text'] {
+	display: block;
+	width: 180px;
+	padding: 0;
+	border: 0;
+	height: 33px;
+	line-height: 33px;
+	vertical-align: baseline;
+	font-size: 16px;
+}
+.btnSch {
+	display: inline-block;
+	min-width: 60px;
+	height: 35px;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+	padding-bottom: 3px;
+	background: #a6aaaf;
+	color: #fff !important;
+	vertical-align: middle;
+	text-align: center;
+}
+input[type=button], input[type=submit] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: none;
+}
+input.btnSch {
+	padding: 0 15px 4px !important;
+	nt: ;
+	*/: ;
+}
+.boardSearch .search .inText .btnSch {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	font-family: "notoKrM", sans-serif;
+	font-weight: 400;
+	line-height: 30px;
+	border: 1px solid #a6aaaf;
+	cursor: pointer;
+	font-size: 16px;
+}
+.selectBox label {
+	position: relative;
+	display: block;
+	color: #999;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 10px;
+	padding-right: 37px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overow: ellipsis;
+	cursor: pointer;
+	border: 1px solid #e1e2e2;
+	font-size: 15px;
+	font-weight: 400;
+}
+.boardSearch .selectBox label {
+	height: 33px;
+	line-height: 28px;
+	font-size: 16px;
+}
+select {
+	height: 28px;
+	padding: 4px 5px 3px 5px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	font-size: 12px;
+	color: #333;
+	vertical-align: middle;
+}
+.selectBox select {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	height: 26px;
+	min-height: 26px;
+	line-height: 26px;
+	padding: 0 10px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.boardSearch .result strong {
+	color: #31343f;
+}
+
+
+/*****************/
+
+.boardNext ul {
+	overflow: hidden;
+}
+.boardNext li {
+	float: left;
+	width: 100%;
+	border-top: 1px solid #d8d8d8;
+}
+.boardNext li:first-child {
+	border-top: none;
+}
+.boardNext li > strong {
+	display: block;
+	float: left;
+	width: 10.5%;
+	background: #f2f3f3;
+}
+.boardNext li > span {
+	display: block;
+	float: right;
+	width: 89.5%;
+}
+.boardNext li > span > span {
+	display: inline-block;
+	line-height: 150%;
+	min-height: 20px;
+	padding: 15px 0 15px 20px;
+	vertical-align: middle;
+	font-size: 18px;
+	font-weight: 300;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+	background: transparent;
+}
+.boardNext li > strong > span {
+	display: inline-block;
+	line-height: 150%;
+	min-height: 20px;
+	padding: 15px 20px 15px 20px;
+	vertical-align: middle;
+	font-size: 16px;
+	font-weight: 500;
+}
+.boardNext li.next > strong > span {
+	background: url('../../common/image/bul/bul_nextTxt.gif') no-repeat 100% 50%;
+}
+.boardNext li.prev > strong > span {
+	background: url('../../common/image/bul/bul_prevTxt.gif') no-repeat 100% 50%;
+}
+
+.btnArea02 .btnRight a {
+	margin-left: 7px;
+	margin-right: -2px;
+}
+.btnArea02 .btnMd01 span {
+	display: block;
+	padding: 0 40px;
+	height: 38px;
+	line-height: 34px;
+	border: 1px solid #5f646d;
+	background: #5f646d;
+	color: #fff;
+	font-size: 16px;
+	font-family: "notoKrR", sans-serif;
+	font-weight: 400;
+}
+.boardView > ul {
+	overflow: hidden;
+	border-top: 2px solid #585858;
+}
+.boardView > ul:first-child {
+	border-bottom: 1px solid #ccc;
+}
+.boardView .cont {
+	line-height: 170%;
+	padding: 45px 20px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.boardView ul.file {
+	border-top: none;
+	border-bottom: 1px solid #a0a0a0;
+}
+.boardView > ul > li {
+	float: left;
+	border-top: 1px solid #e5e5e5;
+}
+.boardView > ul > li:first-child {
+	border-top: none;
+}
+.boardView > ul > li.tit {
+	width: 100%;
+}
+.boardView ul.file li {
+	overflow: hidden;
+	padding: 15px 0;
+}
+.boardView > ul > li > strong {
+	display: block;
+	float: left;
+	background: url('../image/bg/bg_boardSec.gif') no-repeat 100% 50%;
+	color: #333;
+	vertical-align: middle;
+}
+.boardView > ul > li.tit > strong {
+	width: 10.75%;
+}
+.boardView > ul > li > span {
+	display: block;
+	float: right;
+}
+.boardView > ul > li.tit > span {
+	width: 89.25%;
+}
+.boardView > ul > li > span > span {
+	display: inline-block;
+	line-height: 150%;
+	min-height: 20px;
+	padding: 15px 0 15px 20px;
+	vertical-align: middle;
+	font-size: 18px;
+	font-weight: 300;
+	color: #555559;
+}
+.boardView ul.file li > span > span {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.btnDown {
+	display: inline-block;
+	min-width: 84px;
+	height: 20px;
+	line-height: 150%;
+	background: #4f90f1 url('../image/common/bul_down.png') no-repeat 10px 5px;
+	font-size: 13px;
+	color: #fff;
+	vertical-align: middle;
+	font-weight: bold;
+}
+a.btnDown {
+	min-width: 40px !important;
+	height: 22px;
+	padding: 1px 10px 0 25px;
+	color: #fff;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
+	font-family: "notoKrR", sans-serif;
+}
+.boardView ul.file li > span em {
+	display: block;
+	margin-top: 6px;
+}
+.boardView ul.file li > span em:first-child {
+	margin-top: 0px;
+}
+.boardView > ul > li > strong > span {
+	display: inline-block;
+	line-height: 150%;
+	min-height: 20px;
+	padding: 15px 0 15px 0px;
+	font-size: 16px;
+	font-weight: 500;
+}
+.boardView ul.file li > strong > span {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.boardView .cont p {
+	line-height: 2.5em !important;
+}
+.child02.boardView li.part {
+	width: 50%;
+}
+.child02.boardView li.part > strong {
+	width: 21%;
+}
+.child02.boardView li.part > span {
+	width: 79%;
+}
+
+/*************************************************************************************/
+
+.gudieSection h3.titleGuide01 {
+	margin-bottom: 20px;
+}
+.tbTopTxt {
+	overflow: hidden;
+	margin-bottom: 11px;
+	line-height: 150%;
+}
+.btnArea02 {
+	border-top: 1px solid #e7e7e7;
+	text-align: center;
+	margin-bottom: 35px;
+	padding-top: 20px;
+}
+.btnArea02::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.lineNone.btnArea02 {
+	border-top: 0;
+}
+.btnArea02 .btnRight {
+}
+.btnArea02 .btnMd01 {
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 77px;
+	height: 36px;
+}
+.btnArea02 .bg02.btnMd01 span {
+	border: 1px solid #b2b9c4;
+	background: #fff;
+	color: #222229;
+}
+.boardWrite {
+	margin-bottom: 60px;
+	border-top: 2px solid #808086;
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+}
+.agreeArea {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e1e2e2;
+}
+.agreeArea h3 {
+	font-size: 20px;
+	font-weight: 500;
+	color: #333339;
+	margin-bottom: 25px;
+}
+.agreeBox {
+	overflow: hidden;
+	overflow-y: auto;
+	height: 152px;
+	margin-bottom: 7px;
+	border: 1px solid #e5e5e5;
+}
+.agreeArea .agreeBox {
+	height: 132px;
+	background: #eff0f0;
+	padding: 25px 30px;
+	margin-bottom: 25px;
+	border: 0;
+	color: #444449;
+	font-weight: 300;
+	font-size: 15px;
+}
+.agreeTxt {
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.agreeTxt .left {
+	float: left;
+	font-size: 16px;
+	color: #333339;
+	font-weight: 300;
+}
+.agreeTxt .right {
+	float: right;
+}
+.inCk {
+	display: inline-block;
+	vertical-align: middle;
+	height: 33px;
+	line-height: 33px;
+}
+.agreeArea .agreeTxt .inCk {
+	height: auto;
+	line-height: 16px;
+}
+.agreeTxt .right input {
+	margin-left: 16px;
+}
+.w100 {
+	width: 100%;
+}
+input[type=text], input[type=password], input[type=tel], input[type=number], input[type=email], input[type=url] {
+	line-height: 1;
+	height: 28px;
+	padding: 6px 0 7px;
+	margin: 0;
+	border: 1px solid #e1e2e2;
+	-webkit-appearance: none !important;
+	background: #fff;
+	color: #4d4d4d;
+	font-size: 16px;
+	text-indent: 10px !important;
+}
+.boardWrite li input {
+	box-sizing: border-box;
+}
+.inCk input[type='radio'] {
+	display: none;
+}
+.inCk label {
+	margin-right: 28px;
+	color: #333339;
+	font-size: 18px;
+	font-weight: 400;
+}
+.inCk input[type='radio'] + .iconRadio {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	background: url(../../common/image/icon/icon_radio_type01_off.png) no-repeat 0 0;
+	background: -webkit-linear-gradient(transparent, transparent), url(../../common/image/icon/icon_radio_type01_off@2x.png) no-repeat 0 0;
+	background: linear-gradient(transparent, transparent), url(../../common/image/icon/icon_radio_type01_off@2x.png) no-repeat 0 0;
+	background-size: 16px 16px;
+}
+dl, ul, ol, menu, li {
+	list-style: none;
+	list-style-type: none;
+	list-style-image: url("data:0");
+}
+ul::after, ol::after {
+	display: block;
+	height: 0px;
+	content: "";
+	float: none;
+	clear: both;
+}
+.boardWrite > ul {
+	overflow: hidden;
+	width: 100%;
+}
+.boardWrite > ul > li {
+	overflow: hidden;
+	width: 100%;
+	border-top: 1px solid #e5e5e5;
+	padding: 15px 0px;
+}
+.boardWrite > ul:first-child > li:first-child {
+	border-top: 0;
+}
+.boardWrite li.half {
+	float: left;
+	width: 50%;
+}
+.boardWrite li .inputWrapper {
+	position: relative;
+	display: block;
+	padding-left: 97px;
+}
+.boardWrite li .tit {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0;
+}
+.boardWrite li .cnt {
+	line-height: 150%;
+	min-height: 30px;
+	/*padding: 15px 0;*/
+}
+.boardWrite li .cnt::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.boardWrite li .cnt .ibox, .boardWrite li .all .ibox {
+	margin-right: 20px;
+}
+.boardWrite li .cnt .fileBox {
+	position: relative;
+	float: left;
+	width: 80%;
+	padding-right: 180px;
+	box-sizing: border-box;
+}
+.boardWrite li .cnt .txtCmt {
+	float: left;
+	margin-left: 15px;
+	color: #666669;
+	font-weight: 400;
+	font-size: 15px;
+}
+.boardWrite li .cnt .ibox > p {
+	margin-top: 6px;
+}
+input[readonly], input[disabled] {
+	border: 1px solid #eee;
+	background: #f7f7f7;
+	color: #4d4d4d;
+	text-indent: 10px !important;
+}
+input[type=file] {
+	line-height: 1;
+	padding: 6px 10px 7px;
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	color: #4d4d4d;
+	cursor: pointer;
+	font-size: 12px;
+}
+.boardWrite li .cnt .fileBox .uploadName {
+	width: 100%;
+	height: 28px;
+	padding: 6px 0 7px 0;
+	background: #fff;
+	border: 1px solid #e1e2e2;
+}
+.boardWrite li .cnt .fileBox .fileBtns {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.boardWrite li .cnt .fileBox input[type='file'] {
+	display: none;
+}
+.boardWrite li .cnt .fileBox label, .boardWrite li .cnt .fileBox a {
+	float: left;
+	width: 82px;
+	height: 27px;
+	border: 1px solid #d6d6d9;
+	background: #eff0f0;
+	text-align: center;
+	line-height: 27px;
+	color: #31343f;
+	font-size: 12px;
+	font-family: "notoKrM", sans-serif;
+	font-weight: 500;
+	margin-left: 4px;
+}
+.boardWrite li .tit > span {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 17px;
+	color: #555559;
+	line-height: 30px;
+}
+textarea {
+	width: 100%;
+	padding: 5px 7px;
+	font-size: 17px;
+	color: #444449;
+	font-weight: 300;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: none;
+	border: 1px solid #e1e2e2;
+}
+textarea.textarea {
+	width: 95%;
+	padding: 2.5%;
+	height: 153px;
+}
+.star {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	vertical-align: top;
+	color: #ff4e00;
+}
+.phoneBox {
+	margin: 0;
+	padding: 0;
+}
+.phoneBox::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.selectBox {
+	position: relative;
+	display: block;
+	height: 28px;
+	background: transparent url(../../common/image/bg/bg_selectbox_arrow.png) no-repeat right center;
+	background: -webkit-linear-gradient(transparent,transparent),url(../../common/image/bg/bg_selectbox_arrow@2x.png) no-repeat right center;
+	background: linear-gradient(transparent,transparent),url(../../common/image/bg/bg_selectbox_arrow@2x.png) no-repeat right center;
+	background-size: 27px 26px;
+	background-color: #fff;
+}
+.phoneBox .selectBox {
+	float: left;
+	width: 35%;
+}
+.phoneBox input[type='text'] {
+	float: left;
+	width: 30%;
+	margin-left: 2%;
+}
+
+.emailBox {
+	margin: 0;
+	padding: 0;
+}
+.emailBox::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.emailBox .inputEmail1 {
+	float: left;
+	width: 30%;
+	margin-right: 2%;
+}
+.emailBox .inputEmail2 {
+	float: left;
+	position: relative;
+	width: 30%;
+	margin-right: 2%;
+}
+.emailBox .selectBox {
+	float: left;
+	width: 35%;
+}
+.emailBox .inputEmail2 span {
+	position: absolute;
+	top: 3px;
+	left: 9px;
+	color: #6c6e6f;
+	font-family: "notoKrM", sans-serif;
+	font-weight: 500;
+	display: block;
+}
+.emailBox .inputEmail2 input[type='text'] {
+	display: block;
+	padding-left: 20px;
+	width: 100%;
+}
+.inCk input[type='radio']:checked + .iconRadio {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	background: transparent url(../../common/image/icon/icon_radio_type01_on.png) no-repeat 0 0;
+	background: -webkit-linear-gradient(transparent, transparent), url(../../common/image/icon/icon_radio_type01_on@2x.png) no-repeat 0 0;
+	background: linear-gradient(transparent, transparent), url(../../common/image/icon/icon_radio_type01_on@2x.png) no-repeat 0 0;
+	background-size: 16px 16px;
+}
+.boardWrite li .cnt .ibox .writerName {
+	width: 40%;
+}
+.half.selectBox {
+	width: 40%;
+}
+.tbTopTxt > span {
+	float: right;
+	display: block;
+}
+.tbTopTxt > span strong.star {
+	display: inline-block;
+	float: left;
+	margin: 3px 7px 0 0;
+	color: #ff4e00;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
+	font-family: "notoKrR", sans-serif;
+}
+.tbTopTxt > span em {
+	display: inline-block;
+	float: left;
+}
+
