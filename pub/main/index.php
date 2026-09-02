@@ -1,3 +1,3 @@
 <script>
-    location.replace("./intro/intro_251024.html"); /* ./main/index.php */
+    location.replace("./intro/intro_260902.html"); /* ./main/index.php */
 </script>
