@@ -19,7 +19,15 @@ switch ( $mode ) {
             }
         }
         $sql = " INSERT INTO ".TABLE_TREE." SET ".$sql_sub;
-        $adb->query($sql);
+        $result = $adb->query($sql);
+        if ( PEAR::isError($result) ) {
+            echo "<pre style='white-space:pre-wrap;color:red;font-size:14px;'>";
+            echo "SQL: " . htmlspecialchars($sql) . "\n\n";
+            echo "MESSAGE: " . htmlspecialchars($result->getMessage()) . "\n\n";
+            echo "DEBUG: " . htmlspecialchars($result->getDebugInfo());
+            echo "</pre>";
+            exit;
+        }
         break;
 
     // 메뉴 상세 정보 수정
@@ -27,12 +35,21 @@ switch ( $mode ) {
         foreach ( $_POST as $k => $v ) {
             if ( $k != TREE_NO && $k != TREE_ID && in_array($k, $arr_columns) > 0 ) {
                 if ( $sql_sub != "" ) $sql_sub .= ", ";
+                if ( $k == PARENT && $v == "" ) $v = '0';
                 $sql_sub .= $k." = '".$v."' ";
             }
             if ( $k == TREE_NO ) $sql_where = " WHERE ".$k." = '".$v."' ";
         }
         $sql = " UPDATE ".TABLE_TREE." SET ".$sql_sub.$sql_where;
-        $adb->query($sql);
+        $result = $adb->query($sql);
+        if ( PEAR::isError($result) ) {
+            echo "<pre style='white-space:pre-wrap;color:red;font-size:14px;'>";
+            echo "SQL: " . htmlspecialchars($sql) . "\n\n";
+            echo "MESSAGE: " . htmlspecialchars($result->getMessage()) . "\n\n";
+            echo "DEBUG: " . htmlspecialchars($result->getDebugInfo());
+            echo "</pre>";
+            exit;
+        }
         break;
 }
 

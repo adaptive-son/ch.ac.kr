@@ -44,14 +44,11 @@ switch ( $mode ) {
         $sql .= " ON DUPLICATE KEY UPDATE TREE_NO = VALUES(TREE_NO), PARENT = VALUES(PARENT) , ORDER_NO = VALUES(ORDER_NO) , DEPTH = VALUES(DEPTH) ";
 
         $result = $adb->query($sql);
-		$data = "DONE";
-		/*
-        $data = array(
-			"sql"=>$sql, 
-			"result"=>$result
-		);
-		$data = json_encode($data);
-		*/
+        if ( PEAR::isError($result) ) {
+            $data = "ERROR: " . $result->getMessage() . " / " . $result->getDebugInfo();
+        } else {
+            $data = "DONE";
+        }
         break;
 }
 echo $data;

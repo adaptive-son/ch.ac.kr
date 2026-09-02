@@ -161,8 +161,12 @@ function saveOrderMenuList() {
 			dataType: "text",
 			data: _data,
 			success: function (data) {
-				alert("저장되었습니다.");
 				$.loader('close');
+				if ( data.indexOf("ERROR") === 0 ) {
+					alert("저장에 실패했습니다.\n\n" + data);
+					return;
+				}
+				alert("저장되었습니다.");
 				//parent.document.location.reload();
 				document.location.reload();
 				//console.log( JSON.parse(data) );
