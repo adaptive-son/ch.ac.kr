@@ -100,6 +100,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
+	/* 퀵서비스 탭 전환 */
+	document.querySelectorAll('#main-quickmenu > .quickmenu-wrapper > ul > li > button').forEach(function(btn) {
+		btn.addEventListener('click', function() {
+			document.querySelectorAll('#main-quickmenu > .quickmenu-wrapper > ul > li > button').forEach(function(b) {
+				b.classList.remove('active');
+			});
+			btn.classList.add('active');
+		});
+	});
+
 	/* 섹션 스크롤 진입 애니메이션 */
 	var observer = new IntersectionObserver(function(entries) {
 		entries.forEach(function(entry) {

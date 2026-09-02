@@ -62,6 +62,7 @@ $guide_menu_rs = $adb->query("SELECT * FROM guide_menu WHERE site_id='global2' A
 							<?php while ( $guide_menu_row = $guide_menu_rs->fetchRow(DB_FETCHMODE_ASSOC) ) { ?>
 							<li><a href="../guide/view.php?page=<?=$guide_menu_row[page_no]?>&menu=<?=$guide_menu_row[no]?>"><?=$guide_menu_row[title]?></a></li>
 							<?php } ?>
+							<li><a href="<?=$find_2depth[16656][LINK_URL]?>">교육환경</a></li>
 							<li><a href="<?=$find_2depth[16634][LINK_URL]?>">공지사항</a></li>
 							<li><a href="<?=$find_2depth[16635][LINK_URL]?>">FAQ</a></li>
 							<li><a href="<?=$find_2depth[16636][LINK_URL]?>">포토갤러리</a></li>

@@ -390,6 +390,209 @@
 	margin-top: 38px;
 }
 
+/* 국제교류처 퀵서비스 + 홍보영상 (본교 메인 위젯을 이식, 좌우 배치는 본교와 반대로 퀵서비스-좌/영상-우) */
+.main-quick-wrapper {
+	background-color: #fff;
+	padding: 48px 20px;
+}
+
+.main-quick-inner {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.youtube-quickmenu-wrapper {
+	display: flex;
+	gap: 20px;
+}
+
+.youtube-wrapper {
+	flex: 0 0 37.91%;
+	height: 420px;
+	max-height: 420px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #dbe0e6;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+}
+
+.youtube-wrapper > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.youtube-wrapper > a > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.main-quickmenu-wrapper {
+	position: relative;
+	flex: 1;
+	min-width: 0;
+	height: 420px;
+	padding-left: 213px;
+	padding-right: 16px;
+	box-sizing: border-box;
+	background-color: #eff0f2;
+	background-image: url(../img/main/bg_quickmenu01.gif);
+	background-repeat: no-repeat;
+	background-size: 378px 98px;
+	background-position: right top;
+	border: 1px solid #dbe0e6;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.main-quickmenu-wrapper > h2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: table;
+	width: 197px;
+	height: 98px;
+	margin: 0;
+	background-color: #0067b8;
+	text-align: center;
+}
+
+.main-quickmenu-wrapper > h2 > span {
+	display: table-cell;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 22px;
+	line-height: 26px;
+	font-weight: 800;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li {
+	float: left;
+	width: 15%;
+	margin-right: 2%;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li:last-child {
+	margin-right: 0;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 98px;
+	font-size: 19px;
+	font-weight: 700;
+	text-align: center;
+	color: #777777;
+	transition: all 0.2s ease-in-out;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:hover,
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:focus,
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active {
+	color: #005aab;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:before {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 5px;
+	background-color: #005aab;
+	transition: all 0.2s ease-in-out;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:hover:before,
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button:focus:before,
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active:before {
+	left: 0;
+	width: 100%;
+}
+
+.main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active + .quickmenu-area {
+	display: block;
+}
+
+.main-quickmenu-wrapper .quickmenu-area {
+	position: absolute;
+	top: 98px;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 322px;
+	box-sizing: border-box;
+	background-color: #fff;
+	padding: 36px 18px 0 18px;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li {
+	position: relative;
+	float: left;
+	width: 16.666%;
+	height: 106px;
+	margin-bottom: 26px;
+	box-sizing: border-box;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: "";
+	display: block;
+	width: 1px;
+	height: 106px;
+	background-color: #eeeeee;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li:nth-child(6n):before {
+	display: none;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li > a {
+	display: block;
+	text-align: center;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li > a > img {
+	display: block;
+	width: 52px;
+	margin: 5px auto 6px auto;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li > a > strong {
+	display: block;
+	color: #333333;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 19px;
+	letter-spacing: -0.5px;
+	transition: all 0.2s ease-in-out;
+}
+
+.main-quickmenu-wrapper .quickmenu-area > ul > li > a:hover > strong,
+.main-quickmenu-wrapper .quickmenu-area > ul > li > a:focus > strong {
+	color: #0067b8;
+}
+
 /* 자료실 + 배너존 */
 .main-board-wrapper {
 	background-color: #fff;

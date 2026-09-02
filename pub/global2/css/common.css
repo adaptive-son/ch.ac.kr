@@ -277,6 +277,11 @@
 		background-color: #00a85d;
 	}
 
+	/* 구글 번역 아이콘: 고유 색상이라 초록 원 대신 흰 배경 위에 올린다 */
+	.mobile-gnb-wrapper .mobile-gnb-area > ul > li > a > .image.lang-icon {
+		background-color: #fff;
+	}
+
 
 	.mobile-gnb-wrapper .mobile-gnb-area > ul > li > a > .image > img {
 		position: absolute;

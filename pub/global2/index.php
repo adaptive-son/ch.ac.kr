@@ -10,7 +10,7 @@
 
 <body> 
 	<script>
-		location.replace("./main/intro.php");
+		location.replace("./main/intro2.php");
 	</script>
 </body>
 </html>

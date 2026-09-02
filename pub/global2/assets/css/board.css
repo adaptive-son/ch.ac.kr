@@ -1186,7 +1186,15 @@
 
 
 	.photo-list-wrapper > li > a > .images {
+		display: block;
+		overflow: hidden;
 		margin-bottom: 0.3846rem;
+	}
+
+	.photo-list-wrapper > li > a > .images img {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	.photo-list-wrapper > li > a > strong {

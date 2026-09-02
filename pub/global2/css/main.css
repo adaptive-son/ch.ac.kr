@@ -197,6 +197,88 @@
         margin-top: 0.7692rem
     }
 
+    /* 국제교류처 퀵서비스 + 홍보영상 */
+    .main-quick-wrapper {
+        padding: 1.8462rem 1.1538rem;
+    }
+
+    .youtube-quickmenu-wrapper {
+        flex-direction: column;
+        gap: 1.1538rem;
+    }
+
+    .youtube-wrapper {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding-bottom: 81.6%;
+    }
+
+    .youtube-wrapper > a > img {
+        min-height: 0;
+    }
+
+    .main-quickmenu-wrapper {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 3.4615rem 0.7692rem 0.7692rem;
+        background-image: none;
+    }
+
+    .main-quickmenu-wrapper > h2 {
+        width: 100%;
+        height: 2.6923rem;
+    }
+
+    .main-quickmenu-wrapper > h2 > span {
+        font-size: 0.9615rem;
+        line-height: 1.1538rem;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li {
+        width: 33.333%;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button {
+        height: 2.6923rem;
+        font-size: 0.7692rem;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area {
+        position: static;
+        display: none;
+        width: 100%;
+        height: auto;
+        padding: 0.7692rem 0;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active + .quickmenu-area {
+        display: block;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area > ul > li {
+        width: 33.333%;
+        height: auto;
+        margin-bottom: 0.9231rem;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area > ul > li:nth-child(3n):before {
+        display: none;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area > ul > li > a > img {
+        width: 1.6923rem;
+        margin: 0 auto 0.3846rem auto;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area > ul > li > a > strong {
+        font-size: 0.6923rem;
+        line-height: 0.9231rem;
+    }
+
     /* 자료실 + 배너존 */
     .main-board-wrapper {
         padding: 3.9231rem 1.1538rem 3.5385rem;
@@ -329,11 +411,22 @@
     }
 
     .main-dept-inner--flat {
-        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
         gap: 1.1538rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.3846rem;
+        scrollbar-width: none;
+    }
+    .main-dept-inner--flat::-webkit-scrollbar {
+        display: none;
     }
     .dept-card--flat {
-        width: 100%;
+        width: 85%;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
         padding: 3.5385rem 1.1538rem 1.7308rem;
     }
     .dept-link {

@@ -1,13 +1,4 @@
 			<style>
-			/* 버튼 위치: header-area 우측, btn-totalmenu(100px) 바로 왼쪽 */
-			.header-area .g-lan-box {
-			    position: absolute;
-			    right: 120px;
-			    top: 50%;
-			    transform: translateY(-50%);
-			    z-index: 200;
-			}
-
 			.custom-lang-dropdown { position: relative; }
 
 			.custom-lang-dropdown button#langToggle {
@@ -18,15 +9,15 @@
 			    padding: 0 12px;
 			    background: transparent;
 			    border: none;
-			    color: #555;
+			    color: rgba(255,255,255,0.85);
 			    font-size: 13px;
 			    cursor: pointer;
 			    white-space: nowrap;
 			    transition: all 0.2s ease-in-out;
 			}
 			.custom-lang-dropdown button#langToggle:hover {
-			    color: #0c4ca3;
-			    background-color: #f5f5f5;
+			    color: #fff;
+			    background-color: rgba(255,255,255,0.12);
 			}
 
 			.custom-lang-dropdown button#langToggle::after {
@@ -36,7 +27,7 @@
 			    height: 0;
 			    border-left: 4px solid transparent;
 			    border-right: 4px solid transparent;
-			    border-top: 5px solid rgba(0,0,0,0.4);
+			    border-top: 5px solid rgba(255,255,255,0.7);
 			    margin-left: 4px;
 			    transition: transform 0.2s;
 			}
@@ -75,18 +66,36 @@
 			#langList li.active { font-weight: bold; color: #0c4ca3; }
 
 			/* 모바일 전체메뉴 내 LANGUAGE 항목 */
+			.mobile-gnb-wrapper .mobile-gnb-area > ul > li {
+			    position: relative;
+			}
 			#langListMob {
 			    display: none;
 			    list-style: none;
 			    margin: 0;
-			    padding: 0;
+			    padding: 4px 0;
+			    position: absolute;
+			    top: calc(100% + 8px);
+			    left: 50%;
+			    transform: translateX(-50%);
+			    background: #2b2f56;
+			    border-radius: 6px;
+			    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+			    min-width: 150px;
+			    max-height: 220px;
+			    overflow-y: auto;
+			    z-index: 20;
 			}
 			#langListMob.open { display: block; }
 			#langListMob li {
 			    padding: 10px 20px;
 			    font-size: 14px;
+			    color: #fff;
+			    text-align: left;
+			    white-space: nowrap;
 			    cursor: pointer;
 			}
+			#langListMob li:hover { background: rgba(255,255,255,0.1); }
 			#langListMob li.active { font-weight: bold; }
 			.mob-lang-arrow {
 			    display: inline-block;
@@ -115,6 +124,70 @@
 				<a href="#contents">본문으로 바로가기</a>
 			</p>
 			<!-- //skip navigation -->
+
+			<div class="gnb-wrapper">
+				<div class="gnb-area">
+					<div class="left">
+						<ul>
+							<li>
+								<a href="https://ch.ac.kr/" target="_self">
+									대학메인
+								</a>
+							</li>
+							<li>
+								<a href="http://eclass.ch.ac.kr/" target="_blank" title="새창열림">
+									e클래스
+								</a>
+							</li>
+							<li>
+								<a href="https://job.ch.ac.kr/default.aspx" target="_blank" title="새창열림">
+									학생이력관리시스템
+								</a>
+							</li>
+							<li>
+								<a href="https://hs1.ch.ac.kr" target="_blank" title="새창열림">
+									학사행정시스템
+								</a>
+							</li>
+							<li>
+								<a href="https://lib.ch.ac.kr" target="_blank" title="새창열림">
+									도서관
+								</a>
+							</li>
+							<li>
+								<a href="https://chgw.ch.ac.kr" target="_blank" title="새창열림">
+									전자결재
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="right">
+						<div id="google_translate_element" style="display:none;"></div>
+						<div class="g-lan-box notranslate" translate="no">
+							<div class="custom-lang-dropdown">
+								<button id="langToggle" title="구글번역 언어선택">
+									<img src="https://www.ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;">
+									<span>LANGUAGE</span>
+								</button>
+								<ul id="langList" class="notranslate" translate="no">
+									<li data-lang="en">English</li>
+									<li data-lang="vi">Vietnamese</li>
+									<li data-lang="uz">Uzbek</li>
+									<li data-lang="th">Thai</li>
+									<li data-lang="my">Burmese</li>
+									<li data-lang="id">Indonesian</li>
+									<li data-lang="si">Sinhala</li>
+									<li data-lang="mn">Mongolian</li>
+									<li data-lang="zh-CN">Chinese</li>
+									<li data-lang="ja">Japanese</li>
+									<li data-lang="ko">Korean</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="header">
 				<div class="header-wrapper">
@@ -188,29 +261,6 @@
 							</ul>
 						</div>
 
-						<div id="google_translate_element" style="display:none;"></div>
-						<div class="g-lan-box notranslate" translate="no">
-							<div class="custom-lang-dropdown">
-								<button id="langToggle" title="구글번역 언어선택">
-									<img src="https://www.ch.ac.kr/img/common/google_logo.png" alt="Google 번역" style="height:14px;vertical-align:middle;margin-right:4px;">
-									<span>LANGUAGE</span>
-								</button>
-								<ul id="langList" class="notranslate" translate="no">
-									<li data-lang="en">English</li>
-									<li data-lang="vi">Vietnamese</li>
-									<li data-lang="uz">Uzbek</li>
-									<li data-lang="th">Thai</li>
-									<li data-lang="my">Burmese</li>
-									<li data-lang="id">Indonesian</li>
-									<li data-lang="si">Sinhala</li>
-									<li data-lang="mn">Mongolian</li>
-									<li data-lang="zh-CN">Chinese</li>
-									<li data-lang="ja">Japanese</li>
-									<li data-lang="ko">Korean</li>
-								</ul>
-							</div>
-						</div>
-
 						<button type="button" class="btn-totalmenu">
 							<span class="menu">
 								<span></span>
@@ -233,7 +283,7 @@
 
 						<ul>
 							<li>
-								<a href="#">
+								<a href="https://ch.ac.kr/">
 									<span class="image">
 										<img src="../../assets/img/icon/icon_type0102.png" alt="" />
 									</span>
@@ -244,7 +294,7 @@
 							</li>
 
 							<li>
-								<a href="#">
+								<a href="https://ipsiw.ch.ac.kr" target="_blank" title="새창열림">
 									<span class="image">
 										<img src="../../assets/img/icon/icon_type0103.png" alt="" />
 									</span>
@@ -256,8 +306,8 @@
 							<!-- LANGUAGE -->
 							<li>
 								<a href="javascript:void(0);" id="langToggleMob" class="custom-lang-dropdown notranslate" translate="no">
-									<span class="image">
-										<img src="https://ch.ac.kr/img/common/google_logo.png" alt="Google 번역" />
+									<span class="image lang-icon">
+										<img src="../../assets/img/icon/icon_google_g.svg" alt="Google 번역" />
 									</span>
 									<strong>
 										LANGUAGE<span class="mob-lang-arrow"></span>
