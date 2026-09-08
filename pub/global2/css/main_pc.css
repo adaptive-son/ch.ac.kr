@@ -1103,5 +1103,131 @@
 		width: 400px;
 	}
 
-	
+
+}
+
+/* 배너존 - 동영상 배너 재생 아이콘 */
+.banner-video-trigger {
+	position: relative;
+	display: block;
+}
+
+.banner-play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 64px;
+	height: 64px;
+	margin: -32px 0 0 -32px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.45);
+	transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.banner-play-icon:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 54%;
+	width: 0;
+	height: 0;
+	transform: translate(-50%, -50%);
+	border-style: solid;
+	border-width: 12px 0 12px 20px;
+	border-color: transparent transparent transparent #ffffff;
+}
+
+.banner-video-trigger:hover .banner-play-icon,
+.banner-video-trigger:focus .banner-play-icon {
+	background-color: rgba(12, 76, 163, 0.85);
+	transform: scale(1.08);
+}
+
+/* 배너존 - 동영상 모달 */
+.banner-video-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.banner-video-modal[aria-hidden="false"] {
+	display: block;
+}
+
+.banner-video-modal-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.banner-video-modal-box {
+	position: relative;
+	width: 90%;
+	max-width: 960px;
+	margin: 0 auto;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #000000;
+	padding: 44px 16px 16px;
+	border-radius: 8px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.banner-video-modal-title {
+	position: absolute;
+	top: 0;
+	left: 16px;
+	right: 60px;
+	height: 44px;
+	line-height: 44px;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.banner-video-modal-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 44px;
+	height: 44px;
+	color: #ffffff;
+	font-size: 0;
+	text-indent: -5000rem;
+}
+
+.banner-video-modal-close:before,
+.banner-video-modal-close:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 2px;
+	background-color: #ffffff;
+}
+
+.banner-video-modal-close:before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.banner-video-modal-close:after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.banner-video-modal-player {
+	display: block;
+	width: 100%;
+	max-height: 70vh;
+	background-color: #000000;
 }

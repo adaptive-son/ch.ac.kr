@@ -48,6 +48,46 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
+	/* 배너존 - 동영상 배너 모달 재생 */
+	var videoModal = document.getElementById('bannerVideoModal');
+	if (videoModal) {
+		var videoPlayer = document.getElementById('bannerVideoModalPlayer');
+		var videoTitle = document.getElementById('bannerVideoModalTitle');
+
+		function openVideoModal(src, title) {
+			bannerSwiper.autoplay.stop();
+			videoPlayer.src = src;
+			videoTitle.textContent = title || '';
+			videoModal.setAttribute('aria-hidden', 'false');
+			videoPlayer.play();
+		}
+
+		function closeVideoModal() {
+			videoModal.setAttribute('aria-hidden', 'true');
+			videoPlayer.pause();
+			videoPlayer.removeAttribute('src');
+			videoPlayer.load();
+			bannerSwiper.autoplay.start();
+		}
+
+		document.querySelectorAll('.banner-video-trigger').forEach(function(trigger) {
+			trigger.addEventListener('click', function(e) {
+				e.preventDefault();
+				openVideoModal(trigger.dataset.videoSrc, trigger.dataset.videoTitle);
+			});
+		});
+
+		videoModal.querySelectorAll('[data-video-close]').forEach(function(el) {
+			el.addEventListener('click', closeVideoModal);
+		});
+
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && videoModal.getAttribute('aria-hidden') === 'false') {
+				closeVideoModal();
+			}
+		});
+	}
+
 	/* 학과 소개 슬라이드 (외국인 전담학과 고정 노출로 전환되어 슬라이더가 없는 경우 건너뜀) */
 	if (document.querySelector('.main-dept-swiper')) {
 		var deptSwiper = new Swiper('.main-dept-swiper', {

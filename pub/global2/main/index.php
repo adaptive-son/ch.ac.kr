@@ -268,16 +268,16 @@
 													<ul>
 														<li><a href="https://eclass.ch.ac.kr" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0201.png" alt="" /><strong>e-class</strong></a></li>
 														<li><a href="https://job.ch.ac.kr/default.aspx" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0202.png" alt="" /><strong>학생이력관리시스템</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3"><img src="/assets/img/icon/quickmenu/0203.png" alt="" /><strong>캠퍼스맵</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16117&DEPTH=3"><img src="/assets/img/icon/quickmenu/0204.png" alt="" /><strong>증명서발급</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2"><img src="/assets/img/icon/quickmenu/0205.png" alt="" /><strong>학과안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16110&DEPTH=4"><img src="/assets/img/icon/quickmenu/0206.png" alt="" /><strong>생활관(기숙사)</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0207.png" alt="" /><strong>CH뉴스</strong></a></li>
-														<li><a href="/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3"><img src="/assets/img/icon/quickmenu/0208.png" alt="" /><strong>전화번호안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0209.png" alt="" /><strong>통학버스안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0210.png" alt="" /><strong>춘해병원</strong></a></li>
-														<li><a href="https://lib.ch.ac.kr" target="_blank"><img src="/assets/img/icon/quickmenu/0211.png" alt="" /><strong>도서관</strong></a></li>
-														<li><a href="/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2"><img src="/assets/img/icon/quickmenu/0212.png" alt="" /><strong>학사일정</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0203.png" alt="" /><strong>캠퍼스맵</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16117&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0204.png" alt="" /><strong>증명서발급</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0205.png" alt="" /><strong>학과안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16110&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0206.png" alt="" /><strong>생활관(기숙사)</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0207.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0208.png" alt="" /><strong>전화번호안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0209.png" alt="" /><strong>통학버스안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0210.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://lib.ch.ac.kr" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0211.png" alt="" /><strong>도서관</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0212.png" alt="" /><strong>학사일정</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -289,14 +289,14 @@
 														<li><a href="https://job.ch.ac.kr/default.aspx" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0302.png" alt="" /><strong>학생이력관리시스템</strong></a></li>
 														<li><a href="https://hs1.ch.ac.kr" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0303.png" alt="" /><strong>학사행정시스템</strong></a></li>
 														<li><a href="https://chgw.ch.ac.kr/" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0304.png" alt="" /><strong>웹메일</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16060&DEPTH=3"><img src="/assets/img/icon/quickmenu/0305.png" alt="" /><strong>규정집</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16060&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0305.png" alt="" /><strong>규정집</strong></a></li>
 														<li><a href="https://ipsiw.ch.ac.kr/page/main/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0306.png" alt="" /><strong>입학안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2"><img src="/assets/img/icon/quickmenu/0307.png" alt="" /><strong>학과안내</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2"><img src="/assets/img/icon/quickmenu/0308.png" alt="" /><strong>공지사항</strong></a></li>
-														<li><a href="/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3"><img src="/assets/img/icon/quickmenu/0309.png" alt="" /><strong>전화번호안내</strong></a></li>
-														<li><a href="/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2"><img src="/assets/img/icon/quickmenu/0310.png" alt="" /><strong>학사일정</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0311.png" alt="" /><strong>CH뉴스</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0312.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0307.png" alt="" /><strong>학과안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0308.png" alt="" /><strong>공지사항</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0309.png" alt="" /><strong>전화번호안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0310.png" alt="" /><strong>학사일정</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0311.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0312.png" alt="" /><strong>춘해병원</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -308,14 +308,14 @@
 														<li><a href="https://hs1.ch.ac.kr" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0402.png" alt="" /><strong>학사행정시스템</strong></a></li>
 														<li><a href="https://job.ch.ac.kr/default.aspx" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0403.png" alt="" /><strong>학생이력관리시스템</strong></a></li>
 														<li><a href="https://chgw.ch.ac.kr/" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0404.png" alt="" /><strong>웹메일</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16060&DEPTH=3"><img src="/assets/img/icon/quickmenu/0405.png" alt="" /><strong>규정집</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0406.png" alt="" /><strong>통학버스안내</strong></a></li>
-														<li><a href="/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3"><img src="/assets/img/icon/quickmenu/0407.png" alt="" /><strong>전화번호안내</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2"><img src="/assets/img/icon/quickmenu/0408.png" alt="" /><strong>공지사항</strong></a></li>
-														<li><a href="/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2"><img src="/assets/img/icon/quickmenu/0409.png" alt="" /><strong>학사일정</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16060&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0405.png" alt="" /><strong>규정집</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0406.png" alt="" /><strong>통학버스안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0407.png" alt="" /><strong>전화번호안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0408.png" alt="" /><strong>공지사항</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0409.png" alt="" /><strong>학사일정</strong></a></li>
 														<li><a href="https://academyinfo.go.kr/index.do" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0410.png" alt="" /><strong>대학알리미</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0411.png" alt="" /><strong>CH뉴스</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0412.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0411.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0412.png" alt="" /><strong>춘해병원</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -324,17 +324,17 @@
 												<div class="quickmenu-area">
 													<ul>
 														<li><a href="https://ipsiw.ch.ac.kr/page/main/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0101.png" alt="" /><strong>입학안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16013&DEPTH=4"><img src="/assets/img/icon/quickmenu/0102.png" alt="" /><strong>춘해Vision</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0103.png" alt="" /><strong>오시는길</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16110&DEPTH=4"><img src="/assets/img/icon/quickmenu/0104.png" alt="" /><strong>생활관(기숙사)</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16101&DEPTH=4"><img src="/assets/img/icon/quickmenu/0105.png" alt="" /><strong>신입생장학금</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0106.png" alt="" /><strong>춘해병원</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3"><img src="/assets/img/icon/quickmenu/0107.png" alt="" /><strong>캠퍼스맵</strong></a></li>
-														<li><a href="/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0108.png" alt="" /><strong>역사갤러리</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0109.png" alt="" /><strong>통학버스</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2"><img src="/assets/img/icon/quickmenu/0110.png" alt="" /><strong>학과안내</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0111.png" alt="" /><strong>CH뉴스</strong></a></li>
-														<li><a href="/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2"><img src="/assets/img/icon/quickmenu/0112.png" alt="" /><strong>학사일정</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16013&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0102.png" alt="" /><strong>춘해Vision</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0103.png" alt="" /><strong>오시는길</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16110&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0104.png" alt="" /><strong>생활관(기숙사)</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16101&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0105.png" alt="" /><strong>신입생장학금</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0106.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0107.png" alt="" /><strong>캠퍼스맵</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0108.png" alt="" /><strong>역사갤러리</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0109.png" alt="" /><strong>통학버스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0110.png" alt="" /><strong>학과안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0111.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0112.png" alt="" /><strong>학사일정</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -342,18 +342,18 @@
 												<button type="button"><span>동문</span></button>
 												<div class="quickmenu-area">
 													<ul>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16071&DEPTH=3"><img src="/assets/img/icon/quickmenu/0501.png" alt="" /><strong>발전기금</strong></a></li>
-														<li><a href="/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0502.png" alt="" /><strong>역사갤러리</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16071&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0501.png" alt="" /><strong>발전기금</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0502.png" alt="" /><strong>역사갤러리</strong></a></li>
 														<li><a href="https://ipsiw.ch.ac.kr/page/main/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0503.png" alt="" /><strong>입학안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2"><img src="/assets/img/icon/quickmenu/0504.png" alt="" /><strong>학과안내</strong></a></li>
-														<li><a href="/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2"><img src="/assets/img/icon/quickmenu/0505.png" alt="" /><strong>학사일정</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0506.png" alt="" /><strong>통학버스안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3"><img src="/assets/img/icon/quickmenu/0507.png" alt="" /><strong>캠퍼스맵</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16117&DEPTH=3"><img src="/assets/img/icon/quickmenu/0508.png" alt="" /><strong>증명서발급</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0509.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0504.png" alt="" /><strong>학과안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/main_schedule/list.php?site_id=main&TREE_NO=16135&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0505.png" alt="" /><strong>학사일정</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0506.png" alt="" /><strong>통학버스안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0507.png" alt="" /><strong>캠퍼스맵</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16117&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0508.png" alt="" /><strong>증명서발급</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0509.png" alt="" /><strong>CH뉴스</strong></a></li>
 														<li><a href="https://edu.ch.ac.kr/main/main.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0510.png" alt="" /><strong>평생교육원</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0511.png" alt="" /><strong>춘해병원</strong></a></li>
-														<li><a href="/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3"><img src="/assets/img/icon/quickmenu/0512.png" alt="" /><strong>전화번호안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0511.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0512.png" alt="" /><strong>전화번호안내</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -361,18 +361,18 @@
 												<button type="button"><span>방문객</span></button>
 												<div class="quickmenu-area">
 													<ul>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3"><img src="/assets/img/icon/quickmenu/0601.png" alt="" /><strong>캠퍼스맵</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16074&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0601.png" alt="" /><strong>캠퍼스맵</strong></a></li>
 														<li><a href="https://ipsiw.ch.ac.kr/page/main/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0602.png" alt="" /><strong>입학안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2"><img src="/assets/img/icon/quickmenu/0603.png" alt="" /><strong>학과안내</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2&category=%EC%9E%85%EC%B0%B0%EC%A0%95%EB%B3%B4"><img src="/assets/img/icon/quickmenu/0604.png" alt="" /><strong>입찰공고</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16026&DEPTH=3"><img src="/assets/img/icon/quickmenu/0605.png" alt="" /><strong>행정부서/기관</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0606.png" alt="" /><strong>통학버스안내</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4"><img src="/assets/img/icon/quickmenu/0607.png" alt="" /><strong>오시는길</strong></a></li>
-														<li><a href="/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0608.png" alt="" /><strong>역사갤러리</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16205&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0603.png" alt="" /><strong>학과안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16087&DEPTH=2&category=%EC%9E%85%EC%B0%B0%EC%A0%95%EB%B3%B4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0604.png" alt="" /><strong>입찰공고</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16026&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0605.png" alt="" /><strong>행정부서/기관</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0606.png" alt="" /><strong>통학버스안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16183&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0607.png" alt="" /><strong>오시는길</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/history/index.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0608.png" alt="" /><strong>역사갤러리</strong></a></li>
 														<li><a href="https://edu.ch.ac.kr/main/main.php" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0609.png" alt="" /><strong>평생교육원</strong></a></li>
-														<li><a href="/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3"><img src="/assets/img/icon/quickmenu/0610.png" alt="" /><strong>전화번호안내</strong></a></li>
-														<li><a href="/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2"><img src="/assets/img/icon/quickmenu/0611.png" alt="" /><strong>CH뉴스</strong></a></li>
-														<li><a href="/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4"><img src="/assets/img/icon/quickmenu/0612.png" alt="" /><strong>춘해병원</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16076&DEPTH=3" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0610.png" alt="" /><strong>전화번호안내</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/board/board.php?site_id=main&TREE_NO=16078&DEPTH=2" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0611.png" alt="" /><strong>CH뉴스</strong></a></li>
+														<li><a href="https://www.ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16106&DEPTH=4" target="_blank" title="새창열림"><img src="/assets/img/icon/quickmenu/0612.png" alt="" /><strong>춘해병원</strong></a></li>
 													</ul>
 												</div>
 											</li>
@@ -471,8 +471,17 @@
 									<div class="swiper-wrapper" aria-live="polite">
 										<?php if ( $bannerZone_count > 0 ) { foreach ( $bannerZone_list as $bannerZone_i => $bannerZone_row ) { ?>
 										<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="<?=($bannerZone_i+1)?>번째 슬라이드 / 전체 <?=$bannerZone_count?>개">
-											<?php if ( trim($bannerZone_row[link_url]) != "" ) { ?>
-											<a href="<?=$bannerZone_row[link_url]?>" target="<?=$bannerZone_row[target]?>">
+											<?php
+											$bannerZone_link = trim($bannerZone_row[link_url]);
+											$bannerZone_isVideo = preg_match('/\.mp4(\?.*)?$/i', $bannerZone_link);
+											?>
+											<?php if ( $bannerZone_link != "" && $bannerZone_isVideo ) { ?>
+											<a href="<?=$bannerZone_link?>" class="banner-video-trigger" data-video-src="<?=$bannerZone_link?>" data-video-title="<?=htmlspecialchars($bannerZone_row[title])?>">
+												<img src="<?=BANNER_LOAD_PATH?>/<?=$bannerZone_row[banner_name]?>" alt="<?=$bannerZone_row[title]?>" />
+												<span class="banner-play-icon" aria-hidden="true"></span>
+											</a>
+											<?php } elseif ( $bannerZone_link != "" ) { ?>
+											<a href="<?=$bannerZone_link?>" target="<?=$bannerZone_row[target]?>">
 												<img src="<?=BANNER_LOAD_PATH?>/<?=$bannerZone_row[banner_name]?>" alt="<?=$bannerZone_row[title]?>" />
 											</a>
 											<?php } else { ?>
@@ -491,6 +500,15 @@
 						</div>
 					</div>
 				</article>
+
+				<div class="banner-video-modal" id="bannerVideoModal" aria-hidden="true">
+					<div class="banner-video-modal-backdrop" data-video-close></div>
+					<div class="banner-video-modal-box" role="dialog" aria-modal="true" aria-labelledby="bannerVideoModalTitle">
+						<button type="button" class="banner-video-modal-close" data-video-close aria-label="닫기">닫기</button>
+						<h3 id="bannerVideoModalTitle" class="banner-video-modal-title"></h3>
+						<video id="bannerVideoModalPlayer" class="banner-video-modal-player" controls playsinline></video>
+					</div>
+				</div>
 
 				<article data-aside-theme="light">
 					<div class="main-dept-wrapper" role="region" aria-label="외국인 전담학과 소개">

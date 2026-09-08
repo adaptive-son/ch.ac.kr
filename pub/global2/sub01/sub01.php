@@ -17,40 +17,19 @@
 		</header>
 		<!-- //header -->
 
+		<?php
+		$PAGEINDEX1 = 1;
+		$PAGENAME1 = "국제교류처";
+		$PAGENAME2 = "인사말";
+		?>
 		<!-- sub visual -->
-		<div class="sub-visual">
-			<img src="../img/sub01/img_subvisual_pc.jpg" alt="" class="pc" />
-			<img src="../img/sub01/img_subvisual_mobile.jpg" alt="" class="mobile" />
-			<div class="word-slogan-wrapper">
-				<p class="title">
-					국제교류처
-				</p>
-				<div class="contents-navigation-wrapper">
-					<div class="contents-navigation">
-						<span class="icon-home">
-							Home
-						</span>
-						<span class="icon-gt">
-							&gt;
-						</span>
-						<span class="location">
-							국제교류처
-						</span>
-						<span class="icon-gt">
-							&gt;
-						</span>
-						<strong>
-							인사말
-						</strong>
-					</div>
-				</div>
-			</div>
-		</div>
+		<? include "../include/sub_visual.php" ?>
 		<!-- //sub visual -->
 
 		<!-- container -->
 		<section>
 			<div class="container" id="container">
+				<? include "../include/contents_navi.php" ?>
 				<div class="container-wrapper">
 
 					<div class="lnb-wrapper">
@@ -63,7 +42,7 @@
 						<div class="contents" id="contents">
 	
 							
-							<h3 class="contents-title">
+							<h3 class="contents-title" data-eng-title="INTERNATIONAL AFFAIRS OFFICE">
 								인사말
 								<span class="arrow"></span>
 							</h3>

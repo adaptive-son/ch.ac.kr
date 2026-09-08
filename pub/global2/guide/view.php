@@ -48,6 +48,7 @@
 		<!-- container -->
 		<section>
 			<div class="container" id="container">
+				<? include "../include/contents_navi.php" ?>
 				<div class="container-wrapper">
 					<!-- lnb -->
 					<div class="lnb-wrapper">
@@ -100,7 +101,7 @@
 					<!-- contents -->
 					<article>
 						<div class="contents" id="contents">
-							<h3 class="contents-title guide-contents-title">
+							<h3 class="contents-title guide-contents-title" data-eng-title="KOREAN LANGUAGE EDUCATION CENTER">
 								<?=$current_title?>
 								<span class="arrow"></span>
 							</h3>

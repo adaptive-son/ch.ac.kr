@@ -10,14 +10,7 @@ define("_TAG_TITLE",get_site_info('site_name',$_GET['site_id']));
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 <meta name="format-detection" content="telephone=no" />
 
-<!-- url공유 썸네일 이미지 지정-->
-
-<meta property="og:image" content="../img/sns.png">
-<link rel="image_src" href="../img/sns.png" />
-<meta name="twitter:image" content="../img/sns.png" />
-<meta name="nate:image" content="../img/sns.png" />
-
-<!-- url공유 썸네일 이미지 지정-->
+<!-- url공유 썸네일 이미지 지정 (간호학과 이미지가 잘못 걸려있어 제거 - 추후 국제교류처용 이미지로 교체 예정) -->
 
 
 <?php

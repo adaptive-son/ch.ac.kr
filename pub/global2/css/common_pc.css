@@ -856,58 +856,205 @@ caption {
 		0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-.sub-visual .contents-navigation-wrapper {
-	display: inline-block;
-	vertical-align: middle;
+/* contents navigation (메인 사이트 스타일) */
+.contents-navigation-wrapper {
+	display: block;
+	width: 100%;
+	height: 66px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #e8e8e8;
+	position: relative;
+	z-index: 100;
 }
 
-.sub-visual .contents-navigation {
+.contents-navigation-area {
+	max-width: 1440px;
 	padding: 0 20px;
+	margin: 0 auto;
 }
 
-.sub-visual .contents-navigation:after {
+.contents-navigation-area:after {
 	content: "";
 	clear: both;
 	display: block;
 }
 
-.sub-visual .contents-navigation .icon-home {
+.contents-navigation {
 	float: left;
-	width: 14px;
-	height: 32px;
-	background-image: url(../img/icon/icon_home02@2x.gif);
-	background-repeat: no-repeat;
-	background-position: right center;
-	background-size: 14px 14px;
+}
+
+.contents-navigation > .home {
+	position: relative;
+	float: left;
+	width: 66px;
+	height: 66px;
+	border-left: 1px solid #e7e7e7;
+	border-right: 1px solid #e7e7e7;
+	transition: all 0.2s ease-in-out;
+}
+
+.contents-navigation > .home > span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 18px;
+	height: 15px;
+	margin-top: -8px;
+	margin-left: -9px;
+	font-size: 0;
 	text-indent: -5000rem;
-}
-
-.sub-visual .contents-navigation .icon-gt {
-	float: left;
-	width: 4px;
-	height: 32px;
-	margin: 0 15px;
-	background-image:url(../img/icon/icon_gt02@2x.gif);
+	background-size: 18px 30px;
+	background-position: 0 -15px;
 	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 4px 7px;
-	text-indent: -5000rem;
+	background-image: url(../img/icon/icon_home01.png);
+	transition: all 0.2s ease-in-out;
 }
 
-.sub-visual .contents-navigation .location,
-.sub-visual .contents-navigation strong {
+.contents-navigation > .home:hover,
+.contents-navigation > .home:focus {
+	background-color: #e7e7e7;
+}
+
+.contents-navigation > .home:hover > span,
+.contents-navigation > .home:focus > span {
+	background-position: 0 0;
+}
+
+.contents-navigation-area .contents-navigation > ul {
 	float: left;
-	font-size: 12px;
-	line-height: 32px;
-	color: #f0f0f0;
-	font-weight: 700;
-	letter-spacing: -1px;
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.sub-visual .contents-navigation .icon-home,
-.sub-visual .contents-navigation .icon-gt {
-	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
+.contents-navigation-area .contents-navigation > ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.contents-navigation-area .contents-navigation > ul > li {
+	position: relative;
+	float: left;
+	min-width: 180px;
+	max-width: 300px;
+	border-right: 1px solid #e7e7e7;
+}
+
+.contents-navigation-area .contents-navigation > ul > li button {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 66px;
+	padding: 0 45px 0 20px;
+	color: #000000;
+	font-size: 16px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transition: all 0.2s ease-in-out;
+}
+
+.contents-navigation-area .contents-navigation > ul > li button.active {
+	color: #000;
+	background-color: #e7e7e7;
+}
+
+.contents-navigation-area .contents-navigation > ul > li button:after {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	content: "";
+	display: block;
+	width: 11px;
+	height: 6px;
+	background-image: url(../img/icon/icon_arrow_down01.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 11px 6px;
+	transition: all 0.2s ease-in-out;
+}
+
+.contents-navigation-area .contents-navigation > ul > li button.active:after {
+	background-image: url(../img/icon/icon_arrow_down01_on.png);
+	transform: rotate(180deg);
+}
+
+.contents-navigation-area .contents-navigation > ul > li > ul {
+	position: absolute;
+	top: 66px;
+	left: -1px;
+	display: none;
+	width: calc(100% + 2px);
+	min-width: 280px;
+	max-height: 350px;
+	overflow-y: auto;
+	z-index: 15;
+}
+
+.contents-navigation-area .contents-navigation > ul > li > ul > li {
+	display: block;
+	border: 1px solid #e7e7e7;
+	margin-top: -1px;
+}
+
+.contents-navigation-area .contents-navigation > ul > li > ul > li > a {
+	display: block;
+	padding: 10px 20px;
+	background-color: #fbfbfb;
+	color: #000000;
+	font-size: 15px;
+	line-height: 24px;
+	white-space: nowrap;
+	transition: all 0.2s ease-in-out;
+}
+
+.contents-navigation-area .contents-navigation > ul > li > ul > li > a:hover,
+.contents-navigation-area .contents-navigation > ul > li > ul > li > a:focus {
+	background-color: #0c4ca3;
+	color: #fff;
+}
+
+.additional-function-wrapper {
+	float: right;
+}
+
+.additional-function-wrapper > li {
+	float: left;
+	width: 16px;
+	height: 66px;
+	padding-top: 25px;
+	margin: 0 9px;
+}
+
+.additional-function-wrapper > li > button {
+	display: block;
+	width: 16px;
+	height: 16px;
+	text-indent: -5000rem;
+	background-size: 16px 32px;
+	background-position: 0 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.additional-function-wrapper > li > button:focus,
+.additional-function-wrapper > li > button:hover {
+	background-position: 0 -16px;
+}
+
+.additional-function-wrapper > li > button.big {
+	background-image: url(../img/icon/icon_font_big01.png);
+}
+
+.additional-function-wrapper > li > button.reset {
+	background-image: url(../img/icon/icon_font_reset01.png);
+}
+
+.additional-function-wrapper > li > button.small {
+	background-image: url(../img/icon/icon_font_small01.png);
+}
+
+.additional-function-wrapper > li > button.print {
+	background-image: url(../img/icon/icon_print.png);
 }
 
 
@@ -1149,7 +1296,7 @@ caption {
 }
 
 .contents-title::before {
-	content: "INTERNATIONAL AFFAIRS OFFICE";
+	content: attr(data-eng-title);
 	display: block;
 	margin-bottom: 10px;
 	color: #025faf;
