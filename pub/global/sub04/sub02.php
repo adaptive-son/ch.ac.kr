@@ -4,7 +4,7 @@
 <head>
     <? include "../include/meta.php" ?>
     <title>
-        한국어연수과정 서류제출 &lt; 한국어교육원 &lt; 국제교류처 - 춘해보건대학교
+        한국어연수과정 서류제출 &lt; 한국어교육센터 &lt; 국제교류처 - 춘해보건대학교
     </title>
 </head>
 
@@ -35,7 +35,7 @@
                             &gt;
                         </span>
                         <span class="location">
-                            한국어교육원
+                            한국어교육센터
                         </span>
                         <span class="icon-gt">
                             &gt;

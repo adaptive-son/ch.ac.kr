@@ -38,8 +38,8 @@
 							<li>
 								<a href="../sub04/sub01.php" class="topmenu4">
 									<span class="title">
-										<span data-hover="한국어교육원">
-										한국어교육원
+										<span data-hover="한국어교육센터">
+										한국어교육센터
 										</span>
 									</span>
 								</a>

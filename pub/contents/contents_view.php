@@ -104,14 +104,43 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
             <!-- contents -->
             <article>
                 <div class="contents" id="contents">
-                    <h3 class="contents-title">
+                    <?
+                        $global2_contents_title_attr = "";
+                        if ( $TREE_ID == "global2" ) {
+                            $global2_dept_eng_map = array(
+                                "국제교류처" => "INTERNATIONAL AFFAIRS OFFICE",
+                                "한국어교육센터" => "KOREAN LANGUAGE EDUCATION CENTER",
+                                "글로벌센터" => "GLOBAL CENTER",
+                                "국제개발협력센터" => "INTERNATIONAL DEVELOPMENT COOPERATION CENTER",
+                            );
+                            $global2_dept_eng = isset($global2_dept_eng_map[$pageName1]) ? $global2_dept_eng_map[$pageName1] : "INTERNATIONAL AFFAIRS OFFICE";
+                            $global2_contents_title_attr = ' data-eng-title="'.$global2_dept_eng.'"';
+                        }
+                    ?>
+                    <h3 class="contents-title"<?=$global2_contents_title_attr?>>
 						<?
 							//대표 홈페이지 이고 $DEPTH가 4인 경우 부모의 메뉴명을 가져옴 - 20.12.04 shlee
 							$PARENT = ${"find_".$DEPTH."depth"}[$TREE_NO][PARENT];
 							if($DEPTH=="4" && $TREE_ID=="main") {
 								echo ${"find_3depth"}[$PARENT][NAME];
 							} else {
-								echo ${"find_".$DEPTH."depth"}[$TREE_NO][NAME];
+								$contents_title_name = ${"find_".$DEPTH."depth"}[$TREE_NO][NAME];
+								if ( trim($contents_title_name) == "" ) {
+									// 숨김 메뉴(MENU_ON=N) 등으로 find_Ndepth 캐시에 이름이 비어 있는 경우 af_tree에서 직접 조회
+									$contents_title_fallback_row = $adb->getRow("SELECT * FROM af_tree WHERE TREE_ID='".addslashes(TREE_ID)."' AND TREE_NO='".$TREE_NO."'", DB_FETCHMODE_ASSOC);
+									if ( $contents_title_fallback_row ) $contents_title_name = $contents_title_fallback_row[NAME];
+								}
+								if ( $TREE_ID == "global2" && trim($contents_title_name) == "" ) {
+									// af_tree의 NAME 필드 자체가 비어 있는 global2 특수 랜딩 항목(카드 링크 전용) 최종 보정
+									$global2_title_fallback_map = array(
+										"16612" => "국제교류처 소개",
+										"16627" => "한국어교육센터 소개",
+										"16639" => "글로벌센터 소개",
+										"16648" => "국제개발협력센터 소개",
+									);
+									if ( isset($global2_title_fallback_map[$TREE_NO]) ) $contents_title_name = $global2_title_fallback_map[$TREE_NO];
+								}
+								echo $contents_title_name;
 							}
 						?>
                         <span class="arrow"></span>

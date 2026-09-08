@@ -218,7 +218,7 @@
 											<li>
 												<a href="../sub04/sub01.php" class="topmenu4-1">
 													<span class="title">
-														한국어교육원 소개
+														한국어교육센터 소개
 													</span>
 													<span class="bg"></span>
 												</a>

@@ -3,7 +3,7 @@
 <head>
 	<? include "../include/meta.php" ?>
 	<title>
-		한국어교육원 소개 &lt; 한국어교육원 &lt; 국제교류처 - 춘해보건대학교
+		한국어교육센터 소개 &lt; 한국어교육센터 &lt; 국제교류처 - 춘해보건대학교
 	</title>
 </head>
 
@@ -34,13 +34,13 @@
 							&gt;
 						</span>
 						<span class="location">
-							한국어교육원
+							한국어교육센터
 						</span>
 						<span class="icon-gt">
 							&gt;
 						</span>
 						<span class="location">
-							한국어교육원 소개
+							한국어교육센터 소개
 						</span>
 						<!-- 3차뎁스 있을 시 아래 코드 사용 -->
 						<!-- <span class="icon-gt">
@@ -66,7 +66,7 @@
 	
 							
 							<h3 class="contents-title">
-								한국어교육원 소개
+								한국어교육센터 소개
 								<span class="arrow"></span>
 							</h3>
 
@@ -103,18 +103,18 @@
 
 									<div class="contents-area">
 										<h4 class="title-type01">
-											한국어교육원 소개
+											한국어교육센터 소개
 										</h4>
 										<div class="contents-box pl0">
 											<p class="word-type01">
-											춘해보건대학교 한국어교육원은 외국인 연수생들이 한국어를 열심히 배울 수 있는 환경을 마련하여 선진화된 교육과정과 한국문화 체험, 재학생과의 교류 활동, 진로지도, 취업지원 활동 등을 제공한다.
+											춘해보건대학교 한국어교육센터은 외국인 연수생들이 한국어를 열심히 배울 수 있는 환경을 마련하여 선진화된 교육과정과 한국문화 체험, 재학생과의 교류 활동, 진로지도, 취업지원 활동 등을 제공한다.
 											</p>
 										</div>
 									</div>
 
 									<div class="contents-area">
 										<h4 class="title-type01">
-											한국어교육원 목표
+											한국어교육센터 목표
 										</h4>
 										<div class="images-box">
 											<img src="../img/sub04/img040102_pc.png" class="pc" alt="">
@@ -124,7 +124,7 @@
 
 									<div class="contents-area">
 										<h4 class="title-type01">
-											한국어교육원 업무
+											한국어교육센터 업무
 										</h4>
 										<div class="contents-box pl0">
 											<ul class="ul-list02">

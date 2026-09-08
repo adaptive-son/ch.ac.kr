@@ -3,7 +3,7 @@
 <head>
 	<? include "../include/meta.php" ?>
 	<title>
-		공지사항 &lt; 한국어교육원 &lt; 국제교류원 - 춘해보건대학교
+		공지사항 &lt; 한국어교육센터 &lt; 국제교류원 - 춘해보건대학교
 	</title>
 </head>
 
@@ -33,7 +33,7 @@
 							&gt;
 						</span>
 						<span class="location">
-							한국어교육원
+							한국어교육센터
 						</span>
 						<span class="icon-gt">
 							&gt;

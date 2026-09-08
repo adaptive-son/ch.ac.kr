@@ -62,7 +62,7 @@
 
 								<button class=" main-tab01 active" >
 									<div class="tab-tit">
-										<span>한국어교육원</span>
+										<span>한국어교육센터</span>
 										<span class="eng">Korean Language Institute</span>
 									</div>
 								</button>
@@ -149,7 +149,7 @@
 														<img src="../img/main/icon_menu0101.png" alt="" />
 													</span>
 													<strong>
-														한국어교육원 소개
+														한국어교육센터 소개
 													</strong>
 												</a>
 											</li>
@@ -228,7 +228,7 @@
 										
 										<div class="board-tit">
 											<h2>
-												한국어교육원
+												한국어교육센터
 												<strong>포토갤러리</strong>
 											</h2>
 
