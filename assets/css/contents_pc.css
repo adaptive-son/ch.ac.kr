@@ -3312,3 +3312,97 @@ p + ol + ol {
 
 
 }
+
+/* 체류관리 등 안내형 콘텐츠 (visa-information / office-information) */
+.visa-information-area {
+	margin-top: 40px;
+}
+
+.visa-information-area:first-child {
+	margin-top: 0;
+}
+
+.visa-information-area > .title0301 {
+	margin-bottom: 15px;
+	color: #212121;
+	font-size: 22px;
+	line-height: 28px;
+	font-weight: 700;
+	word-break: keep-all;
+}
+
+.visa-information-area > .title0301.mb30 {
+	margin-bottom: 30px;
+}
+
+.visa-information-area > .word-type01 {
+	margin-bottom: 15px;
+}
+
+.word-type02 {
+	margin-top: 10px;
+	color: #888888;
+	font-size: 14px;
+	line-height: 22px;
+	word-break: keep-all;
+}
+
+.title0401 {
+	margin-bottom: 15px;
+	color: #212121;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.one-box {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.one-box .half-box {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 0 15px;
+}
+
+.office-information-wrapper {
+	position: relative;
+	padding: 25px;
+	border: 1px solid #dddddd;
+	background: #f9f9f9;
+}
+
+.office-information-wrapper > img.icon {
+	display: none;
+}
+
+.office-information-wrapper > dl {
+	display: table;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+.office-information-wrapper > dl:last-child {
+	margin-bottom: 0;
+}
+
+.office-information-wrapper > dl > dt {
+	display: table-cell;
+	width: 90px;
+	padding: 4px 0;
+	color: #0263be;
+	font-size: 15px;
+	font-weight: 700;
+	vertical-align: top;
+}
+
+.office-information-wrapper > dl > dd {
+	display: table-cell;
+	padding: 4px 0;
+	color: #666666;
+	font-size: 15px;
+	line-height: 22px;
+	vertical-align: top;
+}

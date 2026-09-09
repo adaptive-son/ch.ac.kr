@@ -47,6 +47,11 @@ if ( $Confirm == "delete" ) {
     $arr_allowedLocation = array("1", "2", "3", "4", "5", "6", "7");
     $location = ( in_array($location, $arr_allowedLocation) ) ? $location : "1";
 
+    // 배너 기간을 비워두면 DATE 컬럼에 빈 문자열이 들어가 저장이 거부되므로(mysql error 1292),
+    // 비워둔 경우 "오늘부터 계속 노출"로 보고 기본 기간을 채워준다.
+    if ( trim($gigan1) == "" ) $gigan1 = date("Y-m-d");
+    if ( trim($gigan2) == "" ) $gigan2 = "2099-12-31";
+
     $sql_common = "
         link_url	= '".addslashes($link_url)."',
         link_url2	= '".addslashes($link_url2)."',
@@ -63,13 +68,22 @@ if ( $Confirm == "delete" ) {
     $no = (int)$no;
     if ( $no == "" || !$no ) {
         // 추가
-        $sql = " insert into ".TABLE_BANNER." set ".$sql_common.$sql_file_sub.$sql_file_sub2;
+        // contents 컬럼은 이 폼에서 쓰지 않지만 DB에 기본값 없는 NOT NULL 컬럼이라
+        // 값을 안 넣으면 저장 자체가 실패한다 (mysql error 1364).
+        $sql = " insert into ".TABLE_BANNER." set ".$sql_common.", contents = '' ".$sql_file_sub.$sql_file_sub2;
     } else {
         // 수정
         $sql = " update ".TABLE_BANNER." set ".$sql_common.$sql_file_sub.$sql_file_sub2." where no = '".$no."' ";
 
     }
-    $adb->query($sql);
+    $result = $adb->query($sql);
+    if ( PEAR::isError($result) ) {
+        echo "<pre style='white-space:pre-wrap;color:red;font-size:14px;'>";
+        echo "MESSAGE: " . htmlspecialchars($result->getMessage()) . "\n\n";
+        echo "DEBUG: " . htmlspecialchars($result->getDebugInfo());
+        echo "</pre>";
+        exit;
+    }
 }
 include_once("../include/__footer.php");
 alert_replace("banner.list.php");
