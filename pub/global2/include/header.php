@@ -160,6 +160,13 @@
 								</a>
 							</li>
 						</ul>
+						<!-- 한국어교육센터, 글로벌센터, 국제개발협력센터 바로기기 버튼 -->
+						<div class="center-btn-wrapper">
+							<a href="http://global.adaptive.co.kr/contents/contents_view.php?site_id=global2&TREE_NO=16627&DEPTH=2">한국어교육센터</a>
+							<a href="http://global.adaptive.co.kr/contents/contents_view.php?site_id=global2&TREE_NO=16639&DEPTH=2">글로벌센터</a>
+							<a href="http://global.adaptive.co.kr/contents/contents_view.php?site_id=global2&TREE_NO=16648&DEPTH=2">국제개발협력센터</a>
+						</div>
+						<!-- //한국어교육센터, 글로벌센터, 국제개발협력센터 바로기기 버튼 -->
 					</div>
 
 					<div class="right">

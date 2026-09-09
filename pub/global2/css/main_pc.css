@@ -989,67 +989,10 @@
 .dept-card.dept-paused .dept-btn-play  { display: flex; }
 
 
-.aside-sns-menu {
-	position: fixed;
-	top: 50%;
-	right: 45px;
-	width: 100px;
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	transform: translateY(-50%);
-	z-index: 10;
-}
-.aside-sns-menu > li {
-	display: block;
-}
 
-.aside-sns-menu > li > a {
-	display: block;
-	text-align: center;
-}
-
-.aside-sns-menu > li > a > img {
-	display: block;
-	width: 60px;
-	margin: 0 auto 5px auto
-}
-
-.aside-sns-menu > li > a > strong {
-	position: relative;
-	display: block;
-	color: #424242;
-	font-size: 16px;
-	line-height: 25px;
-	font-weight: 600;
-	transition: color 0.3s ease;
-}
-
-.aside-sns-menu > li[data-theme="light"] > a > strong {
-	color: #fff;
-}
 
 .main .btn-mobile-back {
 	display: none !important;
-}
-
-@media only all and (max-width: 1679px) {
-	.aside-sns-menu {
-		right: 20px;
-		width: 30px;
-		gap: 15px;
-	}
-
-	.aside-sns-menu > li > a > img {
-		width: 30px;
-		margin: 0 auto
-	}
-
-	.aside-sns-menu > li > a > strong {
-		display: none;
-	}
 }
 
 

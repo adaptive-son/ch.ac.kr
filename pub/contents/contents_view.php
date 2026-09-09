@@ -161,7 +161,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 
                         <?
                         if ( $TREE_ID!="main" && ${"find_".$DEPTH."depth"}[$TREE_NO][ETC1] != "TABUPPER" ) {
-                            $admission_semester_map = array(16618 => "march", 16619 => "sept", 16606 => "trainee", 16657 => "trainee");
+                            $admission_semester_map = array(16618 => "march", 16619 => "sept", 16606 => "trainee");
                             if ( $TREE_ID=="global2" && isset($admission_semester_map[$TREE_NO]) ) {
                                 $admission_row = $adb->getRow("SELECT * FROM admission_pdf WHERE site_id='global2' AND semester_key='".$admission_semester_map[$TREE_NO]."'", DB_FETCHMODE_ASSOC);
                                 if ( $admission_row[pdf_name] ) {
@@ -169,7 +169,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
                                     echo '<a href="'.GUIDE_LOAD_PATH.'/'.$admission_row[pdf_name].'" class="btn-pdf-download" download><span>모집요강 PDF다운로드</span><img src="../img/icon/icon_download01.png" alt="" /></a>';
                                     echo '<a href="https://get.adobe.com/reader/?loc=kr" class="btn-pdf-download" target="_blank"><span>PDF뷰어 다운로드</span><img src="../img/icon/icon_download01.png" alt="" /></a>';
                                     echo '</div></div>';
-                                    echo '<iframe class="div-pdf" src="'.GUIDE_LOAD_PATH.'/'.$admission_row[pdf_name].'" title="'.${"find_".$DEPTH."depth"}[$TREE_NO][NAME].'"></iframe>';
+                                    echo '<iframe class="div-pdf" src="../pdfjs/web/viewer.html?file='.GUIDE_LOAD_PATH.'/'.$admission_row[pdf_name].'" title="'.${"find_".$DEPTH."depth"}[$TREE_NO][NAME].'"></iframe>';
                                 } else {
                                     echo '<p style="text-align:center;"><img src="../img/common/img_preparation.jpg" alt="준비중입니다" /></p>';
                                 }

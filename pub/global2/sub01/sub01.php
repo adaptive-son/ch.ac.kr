@@ -42,7 +42,7 @@
 						<div class="contents" id="contents">
 	
 							
-							<h3 class="contents-title" data-eng-title="INTERNATIONAL AFFAIRS OFFICE">
+							<h3 class="contents-title">
 								인사말
 								<span class="arrow"></span>
 							</h3>

@@ -149,4 +149,41 @@
 					BACK
 				</a>
 				<!-- //상단으로 이동 -->
+				
+				
+				<ul class="aside-sns-menu">
+					<li>
+						<a href="https://www.youtube.com/channel/UC4mS4ygHn3FBWa-APxtT_bg" target="_blank" title="새창 열림">
+							<img src="../img/main/icon_sns01.png" alt="유튜브 바로가기" />
+							<strong>
+								유튜브
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/choonhae1968/" target="_blank" title="새창 열림">
+							<img src="../img/main/icon_sns02.png" alt="인스타그램 바로가기" />
+							<strong>
+								인스타그램
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank" title="새창 열림">
+							<img src="../img/main/icon_sns03.png" alt="카카오톡 상담 바로가기" />
+							<strong>
+								카카오톡 상담
+							</strong>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/ch19680316/" target="_blank" title="새창 열림">
+							<img src="../img/main/icon_sns04.png" alt="페이스북 바로가기" />
+							<strong>
+								페이스북
+							</strong>
+						</a>
+					</li>
+				</ul>
+				
 			</div>

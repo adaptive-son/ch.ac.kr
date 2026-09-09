@@ -277,8 +277,14 @@ caption {
 	left: 0;
 	width: 100%;
 	height: 100px;
-	z-index: 100;
+	z-index: 200;
 	background-color: #fff;
+}
+
+/* 헤더(z-index:100) 안의 대메뉴 드롭다운이 항상 퀵메뉴 아이콘 위로 뜨는 문제 보정:
+   퀵메뉴 자체 z-index를 헤더보다 높여서 드롭다운이 뒤로 가게 함 (공용 quickmenu02.css는 건드리지 않음) */
+.aside-quickmenu-wrapper {
+	z-index: 150;
 }
 
 .wrapper.fixed .header {
@@ -1718,6 +1724,13 @@ p + ol + ol {
 	filter: brightness(0) invert(1);
 }
 
+.div-pdf {
+	margin-top: 20px;
+	width: 100%;
+	height: 960px;
+	border: 1px solid #dddddd;
+}
+
 /* 학과 안내 (메인 사이트 학과안내 CSS 원본 그대로, 이미지 경로만 변경) */
 .major-wrapper {
 	display: block;
@@ -1969,7 +1982,7 @@ p + ol + ol {
 .footer {
 	position: relative;
 	padding: 35px 0 45px 0;
-	z-index: 10;
+	z-index: 200;
 	background: #f5f6f8;
 	border-top: 1px solid #e5e5e5;
 }
