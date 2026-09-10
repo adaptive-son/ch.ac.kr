@@ -662,6 +662,8 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 	<?
 		if($TREE_ID=="main") {
 			include("../_common/main_footer.php");
+		} else if($TREE_ID=="global2") {
+			include("../global2/include/footer.php");
 		} else {
 			include("../_common/footer.php");
 		}
