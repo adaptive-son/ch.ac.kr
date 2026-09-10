@@ -65,3 +65,12 @@ Thumbs.db
 *.rar
 *.7z
 *.pdf
+
+# 문서 파일 (커밋 제외)
+*.hwpx
+*.hwp
+*.pptx
+*.xlsx
+*.xls
+*.docx
+*.doc
