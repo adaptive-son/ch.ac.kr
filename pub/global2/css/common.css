@@ -897,6 +897,22 @@
 		font-size: 1.25rem; /* 기본베이스 폰트사이즈 18px */
 		line-height: 1.25rem; /* 기본베이스 line-height 사이즈 18px */
 	}
+
+	.aside-sns-menu {
+		width: 60px;
+		right: 10px;
+		gap: 12px;
+	}
+
+	.aside-sns-menu > li > a > img {
+		width: 36px;
+		margin-bottom: 3px;
+	}
+
+	.aside-sns-menu > li > a > strong {
+		font-size: 10px;
+		line-height: 14px;
+	}
 }
 
 @media only all and (max-width: 600px) {

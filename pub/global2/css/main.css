@@ -236,7 +236,17 @@
         line-height: 1.1538rem;
     }
 
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul:after {
+        display: none;
+    }
+
     .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li {
+        float: none;
         width: 33.333%;
         margin-right: 0;
         box-sizing: border-box;
