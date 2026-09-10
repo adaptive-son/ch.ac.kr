@@ -239,6 +239,7 @@
     .main-quickmenu-wrapper > .quickmenu-wrapper > ul {
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
     }
 
     .main-quickmenu-wrapper > .quickmenu-wrapper > ul:after {
@@ -260,16 +261,35 @@
     .main-quickmenu-wrapper .quickmenu-area {
         position: static;
         display: none;
-        width: 100%;
+        box-sizing: border-box;
+        width: 300%;
         height: auto;
         padding: 0.7692rem 0;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li:nth-child(3n+2) .quickmenu-area {
+        margin-left: -100%;
+    }
+
+    .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li:nth-child(3n) .quickmenu-area {
+        margin-left: -200%;
     }
 
     .main-quickmenu-wrapper > .quickmenu-wrapper > ul > li > button.active + .quickmenu-area {
         display: block;
     }
 
+    .main-quickmenu-wrapper .quickmenu-area > ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-quickmenu-wrapper .quickmenu-area > ul:after {
+        display: none;
+    }
+
     .main-quickmenu-wrapper .quickmenu-area > ul > li {
+        float: none;
         width: 33.333%;
         height: auto;
         margin-bottom: 0.9231rem;
