@@ -5,12 +5,19 @@
 
     <?php
 
+		// global2는 이관 전 구 사이트(global)의 게시판도 함께 관리해야 하므로 site_id 조건에 같이 포함
+		if($_SESSION['sel_site_id']=="global2"){
+			$siteIdCondition = "site_id IN ('global2','global')";
+		}else{
+			$siteIdCondition = "site_id='$_SESSION[sel_site_id]'";
+		}
+
 		if($_SESSION['ADMIN_GROUP']=="F" || $_SESSION['ADMIN_GROUP']=="E"){
 			$sql = " select * from ".TABLE_BOARD_MNG." where idx > 0 AND site_id='main' and length(board_key) >2 order by board_key asc";
 		}else if($_SESSION['MEMBER_ID']=="global_korea" || $_SESSION['MEMBER_ID']=="global_global" || $_SESSION['MEMBER_ID']=="global_dev") {
-			$sql = " select * from ".TABLE_BOARD_MNG." where idx > 0 AND site_id='$_SESSION[sel_site_id]' and length(board_key) >2 and board_name like '%_".$_SESSION['MEMBER_UNAME']."'  order by board_key asc";
+			$sql = " select * from ".TABLE_BOARD_MNG." where idx > 0 AND ".$siteIdCondition." and length(board_key) >2 and board_name like '%_".$_SESSION['MEMBER_UNAME']."'  order by board_key asc";
 		}else{
-			$sql = " select * from ".TABLE_BOARD_MNG." where idx > 0 AND site_id='$_SESSION[sel_site_id]' and length(board_key) >2 order by board_key asc";
+			$sql = " select * from ".TABLE_BOARD_MNG." where idx > 0 AND ".$siteIdCondition." and length(board_key) >2 order by board_key asc";
 		}
     //echo $sql;
 
