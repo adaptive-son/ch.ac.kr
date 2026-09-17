@@ -33,7 +33,7 @@ $(function() {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		autoplay: {
-			delay: 10000,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 		pagination: {

@@ -56,6 +56,26 @@
 												</dl>
 											</div>
 										</div>
+										
+										<div class="swiper-slide">
+											<img src="../img/main/main_visual_pc02.jpg" alt="" class="pc"/>
+											<img src="../img/main/main_visual_mobile02.jpg" alt="" class="mobile"/>
+
+											<div class="main-slogan-wrapper01">
+												<p class="word-eng">
+													The Department of Global Beauty
+												</p>
+												<dl>
+													<dt>
+														<span>글로벌 무대에서 빛나는</span>
+														<span>뷰티 전문가의 시작</span>
+													</dt>
+													<dd>
+														<span>Where Beauty Professionals Begin to Shine on the Global Stage</span>
+													</dd>
+												</dl>
+											</div>
+										</div>
 
 <!--
 										<div class="swiper-slide">
