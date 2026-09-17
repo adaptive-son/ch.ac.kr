@@ -3012,7 +3012,7 @@ p + ol + ol {
 	display: flex;
 	flex-wrap: nowrap;
 
-	padding: 30px 60px;
+	padding: 30px 30px;
 }
 
 .info-box span{
