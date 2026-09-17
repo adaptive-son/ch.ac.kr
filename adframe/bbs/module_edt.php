@@ -1,5 +1,4 @@
 <?
-
 include_once ("_common.php");
 
 //error_reporting( E_ALL );

@@ -855,6 +855,44 @@
 		line-height: 1.154rem
 	}
 
+	.board-write dl.writer-add-file {
+		padding-left: 6.923rem;
+	}
+
+	.board-write dl.writer-add-file dt {
+		width: 6.538rem;
+		height: 3.462rem;
+		line-height: 2.692rem;
+		padding: 0.3846rem 0 0.3846rem 0.7692rem;
+		font-size: 0.9231rem;
+	}
+
+	.board-write dl.writer-add-file dt label {
+		display: block;
+		line-height: 1.167rem;
+		margin-bottom: 0.625rem;
+	}
+
+	.board-write dl.writer-add-file dt a {
+		clear: both;
+		display: inline-block;
+		vertical-align: top;
+		height: 1.167rem;
+		line-height: 1.167rem;
+	}
+
+	.board-write dl.writer-add-file dt a > img {
+		width: 1.25rem;
+	}
+
+	.board-write dl.writer-add-file dd {
+		padding: 0.625rem 0;
+	}
+
+	.board-write dl.writer-add-file dd .file-info {
+		padding-bottom: 0.625rem;
+	}
+
 	.attached-file-wrapper {
 		padding-right: 6.154rem;
 	}

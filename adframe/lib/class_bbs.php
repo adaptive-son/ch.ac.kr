@@ -159,6 +159,13 @@ class Sub_BBSStart {
 			";
         }else if($configBBS[module_editor] == "None.php"){
             $ScrpitBodyCheck = " var content = form.fm_content.value; ";
+        }else if($configBBS[module_editor] == "ckeditor.php"){
+            $ScrpitBodyCheck = "
+				if (typeof CKEDITOR != 'undefined' && CKEDITOR.instances['fm_content']) {
+					CKEDITOR.instances['fm_content'].updateElement();
+				}
+				var content = form.fm_content.value;
+			";
         }else{
             $ScrpitBodyCheck = " var content = form.fm_content.value; ";
         }

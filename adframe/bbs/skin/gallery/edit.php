@@ -162,3 +162,15 @@
 		</fieldset>
 	</form>
 </div>
+
+<form id="img_upload_form" action="/adframe/bbs/Extention/Editor/ckeditor/img_upload.php" enctype="multipart/form-data" method="post" style="display:none;">
+	<input type='file' id="img_file" multiple="multiple" name='imgfile[]' accept="image/*">
+</form>
+
+<div id="ajaxImageModal" style="display:none;">
+	<div id="light" style="display: table;position: absolute;top:25%;left:25%;width:50%;height:50%; text-align:center; background-color:transparent; z-index:1002;overflow: auto;">
+		<div style="display: table-cell; vertical-align: middle;">
+			<img src="/adframe/bbs/Extention/Editor/ckeditor/plugins/ajaximage/loading.gif" style="user-select: none; -ms-user-select: none;">
+		</div>
+	</div>
+</div>

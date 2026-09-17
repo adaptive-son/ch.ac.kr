@@ -141,7 +141,7 @@ $Config_FileLimitExt = array("jpg","jpge","png","gif","JPG","hwp","hwpx","xls","
 			}
 		}
 
-		if ($filei > $configBBS[board_upfile]) go_back("제한 된 파일 업로드 갯수를 초과하였습니다.");
+		if ($configBBS[board_upfile] != 0 && $filei > $configBBS[board_upfile]) go_back("제한 된 파일 업로드 갯수를 초과하였습니다.");
 	}
 
 	/******************** 파일 업로드 구문 ***********************************/

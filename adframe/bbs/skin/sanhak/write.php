@@ -1,7 +1,7 @@
 <div class="board-area">
 	<form name="writeform" method="POST" action="/adframe/bbs/module_wte.php?TREE_NO=<?=$TREE_NO?>&DEPTH=<?=$DEPTH?>" enctype="multipart/form-data">
 
-        <input type="hidden" name="site_id" value="<?=$_REQUEST[site_id]?>">
+        <input type="hidden" name="site_id" value="<?=$_REQUEST['site_id']?>">
         <input type="hidden" name="ref" value="<?=$bbs_row[ref]?>">
         <input type="hidden" name="re_step" value="<?=$bbs_row[re_step]?>">
         <input type="hidden" name="re_level" value="<?=$bbs_row[re_level]?>">

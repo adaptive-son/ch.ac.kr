@@ -1281,6 +1281,89 @@
 	border: 1px solid #e8e8e8;
 }
 
+.board-write dl.writer-add-file {
+	position: relative;
+	padding-left: 195px;
+}
+
+.board-write dl.writer-add-file dt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 175px;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 0;
+	color: #666666;
+	white-space: nowrap;
+}
+
+.board-write dl.writer-add-file dt label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.board-write dl.writer-add-file dt a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.board-write dl.writer-add-file dt a img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+}
+
+.board-write dl.writer-add-file dd {
+	background: #fff;
+	padding: 11px 0;
+}
+
+.board-write dl.writer-add-file dd .file-info {
+	padding-bottom: 10px;
+}
+
+.board-write dl.writer-add-file dd .file-info input[type="checkbox"] {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+.board-write dl.writer-add-file dd .file-info label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.board-write dl.writer-add-file dd .file-info .btn-file-delete {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 10px;
+	height: 22px;
+	line-height: 22px;
+	background: #a1a5b0;
+	color: #fff;
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+.board-write dl.writer-add-file dd .file-box {
+	padding-bottom: 10px;
+}
+
+.board-write dl.writer-add-file dd .file-box:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.board-write dl.writer-add-file dd .file-box input[type="file"] {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
 .attached-file-wrapper {
 	position: relative;
 	padding-right: 150px;
