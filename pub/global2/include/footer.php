@@ -10,32 +10,38 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16223&DEPTH=2" target="_blank">
 									이메일무단수집거부
 									<span class="line"></span>
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://ch.ac.kr/contents/campusTel.php?site_id=main&TREE_NO=16116&DEPTH=3" target="_blank">
 									전화번호안내
 									<span class="line"></span>
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/contents/contents_view.php?site_id=global2&TREE_NO=16615&DEPTH=2">
 									오시는길
 									<span class="line"></span>
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://ch.ac.kr/information/sub/sub01_01.php" target="_blank">
 									정보공개
 									<span class="line"></span>
 								</a>
 							</li>
 							<li>
-								<a href="#" class="word-privacy">
+								<a href="https://ch.ac.kr/contents/contents_view.php?site_id=main&TREE_NO=16214&DEPTH=2" class="word-privacy" target="_blank">
 									개인정보처리방침
+									<span class="line"></span>
+								</a>
+							</li>
+							<li>
+								<a href="/adframe/mng" class="word-privacy">
+									관리자모드
 									<span class="line"></span>
 								</a>
 							</li>
