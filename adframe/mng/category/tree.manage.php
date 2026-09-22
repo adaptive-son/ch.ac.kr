@@ -1,4 +1,4 @@
-<?php include "../_common.php"; ?>
+<?php include "../_common.php"; require_menu_auth('menu', 'category', 'main'); ?>
 
 <!DOCTYPE HTML>
 <html lang="ko" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">

@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'part');
 if ( $Confirm == "delete" ) {
     // 쿼리 삭제
     $sql = " delete from ".TABLE_PART." where p_num = '".$p_num."' ";

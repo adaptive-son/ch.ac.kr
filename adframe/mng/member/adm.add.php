@@ -46,9 +46,25 @@ if ($mode == "u") {
             if($("#adm_group").val()=="T"){
                 $("input[type=checkbox]").prop("checked",false);
                 $("input[type=checkbox]").attr("disabled",true);
+                $("input[type=radio]").attr("disabled",true);
+                $("tr[id^=menuauth_row_]").hide();
             }else{
                 $("input[type=checkbox]").attr("disabled",false);
+                $("input[type=radio]").attr("disabled",false);
             }
+        }
+
+        // 사이트별 메뉴 권한 설정 영역 펼치기/접기
+        function toggleMenuAuth(siteId){
+            var row = document.getElementById('menuauth_row_'+siteId);
+            row.style.display = (row.style.display === 'none') ? '' : 'none';
+        }
+
+        // 전체허용/선택허용 라디오에 따라 세부 체크박스 영역 표시
+        function toggleMenuAuthDetail(siteId){
+            var checked = document.querySelector('input[name="site_mode['+siteId+']"]:checked');
+            var mode = checked ? checked.value : 'all';
+            document.getElementById('menuauth_detail_'+siteId).style.display = (mode === 'custom') ? 'block' : 'none';
         }
 
         function member_search()
@@ -170,15 +186,57 @@ if ($mode == "u") {
                                                 FROM ".TABLE_SITE_MNG." mng WHERE mng.use_yn ='Y' order by mng.site_no asc ";
                                                 $result = mysql_query($site_sql) or die (mysql_error());
 
+                                                // 기존 사이트별 하위메뉴/게시판 세부권한 로딩 (수정 모드)
+                                                $menuAuthMap = array();
+                                                if ($mode == "u") {
+                                                    $maRs = $adb->query("SELECT site_id, menu_type, menu_key FROM admin_menu_auth WHERE id='".addslashes($id)."'");
+                                                    if (!PEAR::isError($maRs)) {
+                                                        while ($maRow = $maRs->fetchRow()) {
+                                                            $menuAuthMap[$maRow['site_id']][$maRow['menu_type']][] = $maRow['menu_key'];
+                                                        }
+                                                    }
+                                                }
+
                                                 while ($site_row = mysql_fetch_array($result)) {
+                                                    $sid = $site_row[site_id];
+                                                    $isCustom = isset($menuAuthMap[$sid]);
+                                                    $menuKeys = isset($menuAuthMap[$sid]['menu']) ? $menuAuthMap[$sid]['menu'] : array();
+                                                    $boardKeys = isset($menuAuthMap[$sid]['board']) ? $menuAuthMap[$sid]['board'] : array();
                                                     ?>
                                                     <tr>
                                                         <td>
                                                             <input type="checkbox" id="cms_site_id" name="cms_site_id[]"
-                                                                   value="<?= $site_row[site_id] ?>" <? if ($site_row[reg_cnt] > 0) echo "checked"; ?>>
+                                                                   value="<?= $sid ?>" <? if ($site_row[reg_cnt] > 0) echo "checked"; ?>>
                                                         </td>
-                                                        <td><?= $site_row[site_name] ?></td>
-                                                        <td><?= $site_row[site_id] ?></td>
+                                                        <td><?= $site_row[site_name] ?>
+                                                            <a href="javascript:;" onclick="toggleMenuAuth('<?= $sid ?>')" style="font-size:11px; color:#3366cc;">[메뉴 권한 설정]</a>
+                                                        </td>
+                                                        <td><?= $sid ?></td>
+                                                    </tr>
+                                                    <tr id="menuauth_row_<?= $sid ?>" style="display:none;">
+                                                        <td colspan="3" style="background:#f7f7f7; padding:10px;">
+                                                            <label><input type="radio" name="site_mode[<?= $sid ?>]" value="all" <? if (!$isCustom) echo "checked"; ?> onclick="toggleMenuAuthDetail('<?= $sid ?>')"> 전체 허용</label>
+                                                            &nbsp;&nbsp;
+                                                            <label><input type="radio" name="site_mode[<?= $sid ?>]" value="custom" <? if ($isCustom) echo "checked"; ?> onclick="toggleMenuAuthDetail('<?= $sid ?>')"> 선택 허용</label>
+
+                                                            <div id="menuauth_detail_<?= $sid ?>" style="display:<?= $isCustom ? 'block' : 'none' ?>; margin-top:8px;">
+                                                                <strong>메뉴</strong><br>
+                                                                <?php foreach ( admin_menu_applicable_keys($sid) as $mk ) { ?>
+                                                                    <label style="margin-right:10px;">
+                                                                        <input type="checkbox" name="site_menu[<?= $sid ?>][]" value="<?= $mk ?>" <? if (in_array($mk, $menuKeys)) echo "checked"; ?>>
+                                                                        <?= $GLOBALS['ADMIN_MENU_REGISTRY'][$mk] ?>
+                                                                    </label>
+                                                                <? } ?>
+                                                                <hr>
+                                                                <strong>게시판</strong><br>
+                                                                <?php foreach ( admin_menu_get_boards($sid) as $b ) { ?>
+                                                                    <label style="margin-right:10px;">
+                                                                        <input type="checkbox" name="site_board[<?= $sid ?>][]" value="<?= $b['idx'] ?>" <? if (in_array($b['idx'], $boardKeys)) echo "checked"; ?>>
+                                                                        <?= $b['board_name'] ?>
+                                                                    </label>
+                                                                <? } ?>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 <? } ?>
                                                 </tbody>

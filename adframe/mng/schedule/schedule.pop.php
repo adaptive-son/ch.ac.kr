@@ -1,6 +1,7 @@
 <?
 // adframe 공통 인클루드 파일
 include_once "../_common.php";
+require_menu_auth('menu', 'schedule');
 
 if ($mode == "u") {
     $sql = "select * from " . TABLE_SCHEDULE . " where del_yn='N' AND schedule_no = '" . $schedule_no . "'";

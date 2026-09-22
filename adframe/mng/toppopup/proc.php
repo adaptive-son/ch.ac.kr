@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'toppopup');
 // 업로드 파일 경로
 $file_path = TOPPOPUP_FILE_PATH;
 

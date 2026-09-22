@@ -16,4 +16,8 @@ if ( $_SESSION["ADMIN_GROUP"] !="T" &&  $_SESSION["ADMIN_GROUP"] !="S" && $_SESS
      alert_replace("https://".$_SERVER["HTTP_HOST"]."/adframe/mng/login.php");
 }
 
+// 사이트별 하위메뉴/게시판 세부 권한
+require_once(dirname(__FILE__)."/_menu_registry.php");
+require_once(dirname(__FILE__)."/_menu_auth.php");
+
 ?>

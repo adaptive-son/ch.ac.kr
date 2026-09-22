@@ -8,6 +8,13 @@ if($_GET['managerBoard']){
     $_SESSION["managerBoardKey"] = $_GET['managerBoard'];
 }
 
+// 게시판 단위 접근권한 체크 (메뉴 숨김 뿐 아니라 직접 URL 접근도 차단)
+if ( $_SESSION["managerBoardKey"] ) {
+    $__board_auth_row = DBarray("SELECT idx, site_id FROM ".TABLE_BOARD_MNG." WHERE board_key='".addslashes($_SESSION["managerBoardKey"])."'");
+    if ( $__board_auth_row ) {
+        require_menu_auth('board', $__board_auth_row['idx'], $__board_auth_row['site_id']);
+    }
+}
 
 ?>
 <!doctype html>

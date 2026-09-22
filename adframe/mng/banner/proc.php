@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'banner');
 // 업로드 파일 경로
 $file_path = BANNER_FILE_PATH;
 if ( $Confirm == "delete" ) {

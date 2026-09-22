@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'guide_list');
 include_once("../include/header.bootstrap.php");
 
 if ( $no != "" ) {

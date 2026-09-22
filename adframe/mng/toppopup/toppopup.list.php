@@ -1,5 +1,6 @@
 <?php
 include "../_common.php";
+require_menu_auth('menu', 'toppopup');
 include_once("../include/header.bootstrap.php");
 
 // 검색

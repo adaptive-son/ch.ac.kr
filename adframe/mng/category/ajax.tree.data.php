@@ -1,5 +1,6 @@
 <?php
 include_once "../_common.php";
+require_menu_auth('menu', 'category', 'main');
 
 // 변수 초기화
 if ( array_key_exists("id", $_POST)) $pId = $_POST["id"];

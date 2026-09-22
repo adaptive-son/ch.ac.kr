@@ -8,6 +8,7 @@ if ( $pId == "" || $pId == null ) $pId = "0";
 if ( $pLevel == "" || $pLevel == null ) $pLevel = "";
 $pId = htmlspecialchars($pId);
 $TREE_ID = $_REQUEST[TREE_ID];
+require_menu_auth('menu', 'menu_tree', $TREE_ID);
 
 $sql = " SELECT *, ";
 $sql .= " ( SELECT count(*) FROM ".TABLE_TREE." AS b WHERE a.TREE_NO = b.PARENT AND TREE_ID = '".$TREE_ID."' ) AS cnt ";

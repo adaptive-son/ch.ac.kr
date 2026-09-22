@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'tel');
 include_once("../include/header.bootstrap.php");
 
 // 검색

@@ -1,6 +1,7 @@
 <?
 // adframe 공통 인클루드 파일
 include_once "../_common.php";
+require_menu_auth('menu', 'professor');
 
 // 검색
 if ( $searchstring ) {

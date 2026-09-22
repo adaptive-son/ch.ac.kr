@@ -33,6 +33,11 @@
             frm.submit();
         }
 
+        // 관리자 계정 / 교직원(학사연동) 로그인 전환
+        function toggleLoginType(el) {
+            document.getElementById('command').value = (el.value === 'employee') ? 'loginEmployeeAction' : 'loginAction';
+        }
+
         $(document).ready(function() {
             // 아이디 입력란 자동 포커스
             $('input[name="id"]').focus();
@@ -52,6 +57,11 @@
                 <h1>
                     <img src="./make_img/login/title01.png" alt="ADMINISTRATOR (관리자 로그인)" />
                 </h1>
+                <div class="login-type-area" style="margin-bottom:10px;">
+                    <label><input type="radio" name="login_type" value="admin" checked onclick="toggleLoginType(this)"> 관리자 계정</label>
+                    &nbsp;&nbsp;
+                    <label><input type="radio" name="login_type" value="employee" onclick="toggleLoginType(this)"> 교직원(학사연동)</label>
+                </div>
                 <div class="login-box">
                     <input type="text" name="id" placeholder="USERID" value=""/>
                     <input type="password" name="password" placeholder="PASSWORD" />

@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'tel');
 if ( $Confirm == "delete" ) {
     // 쿼리 삭제
     $sql = " delete from ".TABLE_TEL." where t_num = '".$t_num."' ";

@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'guide_admission');
 
 $site_id = $_SESSION[sel_site_id];
 $allowed_keys = array("march", "sept", "trainee");

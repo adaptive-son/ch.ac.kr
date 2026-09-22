@@ -1,5 +1,6 @@
 <?
 include "../_common.php";
+require_menu_auth('menu', 'part');
 include_once("../include/header.bootstrap.php");
 
 if ( $p_num != "" ) {

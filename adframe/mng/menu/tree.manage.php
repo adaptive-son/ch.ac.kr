@@ -1,4 +1,7 @@
-<?php include "../_common.php";?>
+<?php
+include "../_common.php";
+require_menu_auth('menu', 'menu_tree', isset($_GET['id']) ? $_GET['id'] : $_SESSION['sel_site_id']);
+?>
 
 <!DOCTYPE HTML>
 <html lang="ko">

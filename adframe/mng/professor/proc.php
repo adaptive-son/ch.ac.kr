@@ -1,6 +1,8 @@
 <? include "../_common.php" ?>
 
 <?php
+require_menu_auth('menu', 'professor');
+
 // 업로드 파일 경로
 $file_path = PROFESSOR_FILE_PATH;
 if($mode=="u" || $mode=="d") {

@@ -1,5 +1,6 @@
 <?
 include_once "../_common.php";
+require_menu_auth('menu', 'menu_tree', isset($_POST['TREE_ID']) ? $_POST['TREE_ID'] : $_SESSION['sel_site_id']);
 
 // 해당 테이블 Column 정보
 $arr_columns = desc_columns(TABLE_TREE);

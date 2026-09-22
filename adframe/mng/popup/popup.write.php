@@ -1,4 +1,4 @@
-<? include "../_common.php" ?>
+<? include "../_common.php"; require_menu_auth('menu', 'popup'); ?>
 <? include_once("../include/header.bootstrap.php");?>
 
 <?

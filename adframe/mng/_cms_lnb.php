@@ -40,6 +40,7 @@
                             $pg_result = $adb->query($sql);
 
                             for ( $i = 0 ; $pg_row = $pg_result->fetchRow() ; $i++ ) {
+                                if ( !has_menu_auth($pg_row[site_id], 'board', $pg_row[idx]) ) continue;
                                 ?>
                                 <li class="noDepth">
                                     <!-- 메뉴 2차 DEPTH -->
@@ -177,20 +178,22 @@
                         <!-- 메뉴 1차 DEPTH -->
                         <a href="javascript:;" class="depth">메뉴관리</a>
                         <ul style="display: none;">
+                            <?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'menu_tree') ) { ?>
                             <li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
                                 <a href="/adframe/mng/menu/tree.manage.php?id=<?=$_SESSION[sel_site_id]?>" target="ifrm_index">홈페이지 관리</a>
                             </li>
+                            <? } ?>
                         </ul>
                     </li>
-		
+
                     <li class="">
                         <!-- 메뉴 1차 DEPTH -->
                         <a href="javascript:;" class="depth" target="ifrm_index">사이트운영관리</a>
                         <ul style="display: none;">
 							<?
 								//대표 홈페이지와 학교기업 언어치료센터가 아닐 경우 교수관리 메뉴 보여짐-20.12.02 shlee
-								if($_SESSION[sel_site_id]!="main" && $_SESSION[sel_site_id]!="chslc" && $_SESSION['sel_site_id']!="global") {
+								if($_SESSION[sel_site_id]!="main" && $_SESSION[sel_site_id]!="chslc" && $_SESSION['sel_site_id']!="global" && has_menu_auth($_SESSION['sel_site_id'], 'menu', 'professor')) {
 							?>
                             <li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
@@ -200,18 +203,21 @@
 							<?
 								//대표 홈페이지와 학교기업 언어치료센터가 아닐 경우 교수관리 메뉴 보여짐-20.12.02 shlee
 								//if($_SESSION[sel_site_id]=="main" || $_SESSION[sel_site_id]=="child") {
+								if(has_menu_auth($_SESSION['sel_site_id'], 'menu', 'popup')) {
 							?>
                             <li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
                                 <a href="/adframe/mng/popup/popup.list.php" target="ifrm_index">팝업관리</a>
                             </li>
-							<? //} ?>
+							<? } ?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'schedule') ) { ?>
                             <li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
                                 <a href="/adframe/mng/schedule/schedule.inc.php" target="ifrm_index">일정관리</a>
                             </li>
+							<? } ?>
 							<?
-								if($_SESSION[sel_site_id]=="main" || $_SESSION[sel_site_id]=="global2") {
+								if(($_SESSION[sel_site_id]=="main" || $_SESSION[sel_site_id]=="global2") && has_menu_auth($_SESSION['sel_site_id'], 'menu', 'banner')) {
 							?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/banner/banner.list.php" target="ifrm_index">배너관리</a>
@@ -220,29 +226,41 @@
 							<?
 								if($_SESSION[sel_site_id]=="global2") {
 							?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'guide_list') ) { ?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/guide/list.php" target="ifrm_index">한국어교육센터 PDF 메뉴 관리</a>
                             </li>
+							<? } ?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'guide_admission') ) { ?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/guide/admission.php" target="ifrm_index">정규과정 입학 PDF 관리</a>
                             </li>
 							<? } ?>
+							<? } ?>
 							<?
 								if($_SESSION[sel_site_id]=="main") {
 							?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'category') ) { ?>
 							<li class="noDepth">
                                 <!-- 메뉴 2차 DEPTH -->
                                 <a href="/adframe/mng/category/tree.manage.php" target="ifrm_index">규정집 카테고리 관리</a>
                             </li>
+							<? } ?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'toppopup') ) { ?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/toppopup/toppopup.list.php" target="ifrm_index">상단 팝업 관리</a>
                             </li>
+							<? } ?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'tel') ) { ?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/tel/tel.list.php" target="ifrm_index">전화번호 관리</a>
                             </li>
+							<? } ?>
+							<?php if ( has_menu_auth($_SESSION['sel_site_id'], 'menu', 'part') ) { ?>
 							<li class="noDepth">
                                 <a href="/adframe/mng/part/part.list.php" target="ifrm_index">공지사항 부서 관리</a>
                             </li>
+							<? } ?>
 							<? } ?>
                         </ul>
                     </li>

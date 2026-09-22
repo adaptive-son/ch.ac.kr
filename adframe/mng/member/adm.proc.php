@@ -22,6 +22,10 @@ $result = mysql_query($sql) or die(mysql_error());
 $sql = "delete from site_admin where id='$id'";
 $result = mysql_query($sql) or die(mysql_error());
 
+// 사이트별 하위메뉴/게시판 세부권한 초기화 후 재저장
+$sql = "delete from admin_menu_auth where id='".addslashes($id)."'";
+$result = mysql_query($sql) or die(mysql_error());
+
 for($i=0; $i<count($_POST['cms_site_id']); $i++){
     $siteId = $_POST['cms_site_id'];
 
@@ -38,6 +42,26 @@ for($i=0; $i<count($_POST['cms_site_id']); $i++){
                )";
 
       $result = mysql_query($sql) or die(mysql_error());
+
+    // 세부 메뉴/게시판 권한 ("선택 허용"으로 지정된 사이트만 제한 저장, "전체 허용"이면 행을 남기지 않음)
+    $siteMode = isset($_POST['site_mode'][$siteId[$i]]) ? $_POST['site_mode'][$siteId[$i]] : "all";
+    if ($siteMode == "custom") {
+        $menuKeys = isset($_POST['site_menu'][$siteId[$i]]) ? $_POST['site_menu'][$siteId[$i]] : array();
+        if (count($menuKeys) == 0) $menuKeys = array("__none__");
+        foreach ($menuKeys as $menuKey) {
+            $sql = "INSERT INTO admin_menu_auth (id, site_id, menu_type, menu_key, regi_date)
+                    VALUES ('".addslashes($id)."','".addslashes($siteId[$i])."','menu','".addslashes($menuKey)."', now())";
+            $result = mysql_query($sql) or die(mysql_error());
+        }
+
+        $boardKeys = isset($_POST['site_board'][$siteId[$i]]) ? $_POST['site_board'][$siteId[$i]] : array();
+        if (count($boardKeys) == 0) $boardKeys = array("__none__");
+        foreach ($boardKeys as $boardKey) {
+            $sql = "INSERT INTO admin_menu_auth (id, site_id, menu_type, menu_key, regi_date)
+                    VALUES ('".addslashes($id)."','".addslashes($siteId[$i])."','board','".addslashes($boardKey)."', now())";
+            $result = mysql_query($sql) or die(mysql_error());
+        }
+    }
 }
 
 

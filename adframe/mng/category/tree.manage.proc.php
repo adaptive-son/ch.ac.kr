@@ -1,5 +1,6 @@
 <?
 include_once "../_common.php";
+require_menu_auth('menu', 'category', 'main');
 
 // 해당 테이블 Column 정보
 $arr_columns = desc_columns(TABLE_CATEGORY);
