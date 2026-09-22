@@ -358,7 +358,7 @@ header( "Content-Description: PHP4 Generated Data" );
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][33])))?></td>
 	</tr-->
 	<tr>
-		<th rowspan="3" style="border:1px solid #000;">국제교류원</th>
+		<th rowspan="3" style="border:1px solid #000;">국제교류처</th>
 		<th colspan="2" style="height:30px;border:1px solid #000;">공통</td>
 		<td colspan="7" style="border:1px solid #000;"><?php echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][49])))?></td>
 	</tr>

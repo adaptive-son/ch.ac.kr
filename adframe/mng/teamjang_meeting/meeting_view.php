@@ -507,7 +507,7 @@
 		</td>
 	</tr-->
 	<tr height="34" bgcolor="FAFAFA">
-		<th rowspan="3">국제교류원</th>
+		<th rowspan="3">국제교류처</th>
 
 		<th style="padding:0px 10px;">공통</th>
 		<td style="padding:5px">

@@ -537,23 +537,23 @@ if($k>0){
 		</td>
 	</tr-->
 	<?php } ?>
-	<?php if(in_array($_SESSION['ID'],$국제교류원['member'])==true){?>
-	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류원['member'])==false){?>style="display:none"<?php }?>>
-		<th rowspan="3">국제교류원</th>
+	<?php if(in_array($_SESSION['ID'],$국제교류처['member'])==true){?>
+	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류처['member'])==false){?>style="display:none"<?php }?>>
+		<th rowspan="3">국제교류처</th>
 		<th style="padding:0px 10px;">공통</th>
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="49" />
 			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][49]?></textarea>
 		</td>
 	</tr>
-	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류원['member'])==false){?>style="display:none"<?php }?>>
+	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류처['member'])==false){?>style="display:none"<?php }?>>
 		<th style="padding:0px 10px;">국제개발협력센터</th>
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="12" />
 			<textarea name="m_content[]" style="width:100%;height:150px;"><?php echo $result['m_content'][12]?></textarea>
 		</td>
 	</tr>
-	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류원['member'])==false){?>style="display:none"<?php }?>>
+	<tr height="34" bgcolor="FAFAFA" <?php if(in_array($_SESSION['ID'],$국제교류처['member'])==false){?>style="display:none"<?php }?>>
 		<th style="padding:0px 10px;">글로벌센터</th>
 		<td style="padding:5px">
 			<input type="hidden" name="m_order[]" value="17" />
