@@ -9,10 +9,12 @@ if($_GET['managerBoard']){
 }
 
 // 게시판 단위 접근권한 체크 (메뉴 숨김 뿐 아니라 직접 URL 접근도 차단)
+// global2 처럼 이관 전 구 사이트 게시판을 함께 관리하는 경우, 게시판 자체의 site_id(예: 'global')가 아니라
+// 현재 선택된 사이트(sel_site_id, 예: 'global2') 기준으로 권한을 저장/확인해야 일치한다.
 if ( $_SESSION["managerBoardKey"] ) {
-    $__board_auth_row = DBarray("SELECT idx, site_id FROM ".TABLE_BOARD_MNG." WHERE board_key='".addslashes($_SESSION["managerBoardKey"])."'");
+    $__board_auth_row = DBarray("SELECT idx FROM ".TABLE_BOARD_MNG." WHERE board_key='".addslashes($_SESSION["managerBoardKey"])."'");
     if ( $__board_auth_row ) {
-        require_menu_auth('board', $__board_auth_row['idx'], $__board_auth_row['site_id']);
+        require_menu_auth('board', $__board_auth_row['idx']);
     }
 }
 
