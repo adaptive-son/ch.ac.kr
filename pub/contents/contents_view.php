@@ -603,7 +603,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 		});
 
 		$("#facilities-btn11 .swiper-button-pause").on('click', function(e){
-			facilitiesSwiper01.autoplay.stop();
+			facilitiesSwiper11.autoplay.stop();
 
 			$("#facilities-btn11 .swiper-button-pause").hide();
 			$("#facilities-btn11 .swiper-button-play").show();
