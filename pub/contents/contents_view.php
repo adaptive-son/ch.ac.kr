@@ -563,7 +563,7 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 		});
 		
 		/* facilities swiper05 */
-		 var facilitiesSwiper04 = new Swiper('#facilities-slider05', {
+		 var facilitiesSwiper05 = new Swiper('#facilities-slider05', {
 			loop : true, // 슬라이드 반복
 			autoplay: {
 				delay: 10000,
@@ -586,6 +586,33 @@ if($_GET['TREE_NO'] == "16183" | $_GET['TREE_NO'] == "16184"){
 			facilitiesSwiper04.autoplay.start();
 			$("#facilities-btn05 .swiper-button-pause").show();
 			$("#facilities-btn05 .swiper-button-play").hide();
+		});
+		
+		
+		/* facilities swiper11 글로벌뷰티과 */
+		 var facilitiesSwiper11 = new Swiper('#facilities-slider11', {
+			loop : true, // 슬라이드 반복
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			navigation: {
+				nextEl: '#facilities-btn11 .facilities-next',
+				prevEl: '#facilities-btn11 .facilities-prev',
+			},
+		});
+
+		$("#facilities-btn11 .swiper-button-pause").on('click', function(e){
+			facilitiesSwiper01.autoplay.stop();
+
+			$("#facilities-btn11 .swiper-button-pause").hide();
+			$("#facilities-btn11 .swiper-button-play").show();
+		});
+
+		$("#facilities-btn11 .swiper-button-play").on('click', function(e){
+			facilitiesSwiper11.autoplay.start();
+			$("#facilities-btn11 .swiper-button-pause").show();
+			$("#facilities-btn11 .swiper-button-play").hide();
 		});
 
 	
