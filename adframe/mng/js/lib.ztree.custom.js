@@ -162,7 +162,7 @@ function saveOrderMenuList() {
 			data: _data,
 			success: function (data) {
 				$.loader('close');
-				if ( data.indexOf("ERROR") === 0 ) {
+				if ( $.trim(data).indexOf("DONE") !== 0 ) {	// 2026.10.02 - ERROR 블랙리스트 → DONE 화이트리스트 판정. 세션만료 시 _common.php 가 반환하는 <script> 리다이렉트, PHP Fatal, 빈 응답이 전부 "저장되었습니다"로 오판되던 문제 차단
 					alert("저장에 실패했습니다.\n\n" + data);
 					return;
 				}
