@@ -60,6 +60,18 @@ switch($Confirm)
         )) or die("Couldn't connect to SQL Server on $ms_tds");
 
         //if($LogRows >= 5){go_back("로그인 정보가 5회이상 잘못되었습니다. 관리자에게 문의하세요.");exit;}
+        // 로그인 5회 실패 시 15분간 잠금 (login_error 테이블 기준, 아이디별)
+        $lock_max = 5;
+        $lock_sec = 900;
+        $lock_id = mysqli_real_escape_string($conn, (string)$_POST['login_id']);
+        $lock_rs = mysqli_query($conn, "SELECT COUNT(*) AS cnt, MAX(RTIME) AS last_time FROM login_error WHERE user_id='".$lock_id."' AND RTIME > ".(time() - $lock_sec));
+        $lock_row = $lock_rs ? mysqli_fetch_assoc($lock_rs) : null;
+        if ($lock_row && $lock_row['cnt'] >= $lock_max) {
+            sqlsrv_close($ms_con);
+            $remain = max(1, ceil(($lock_row['last_time'] + $lock_sec - time()) / 60));
+            go_back("로그인 5회 실패로 계정이 잠겼습니다. ".$remain."분 후 다시 시도해주세요.");
+            exit;
+        }
         $time = time();
 
 
@@ -143,6 +155,7 @@ switch($Confirm)
             //$rs=$oradb->query($loginQue);
             if ($result[0] < 1) {
                 sqlsrv_close($ms_con);
+                mysqli_query($conn, "INSERT INTO login_error (user_id,REMOTE_ADDR,RTIME) VALUES ('".$lock_id."','".$_SERVER['REMOTE_ADDR']."','".$time."')");
                 go_back("로그인 정보가 잘못되었습니다.");
                 exit;
             } else {
@@ -163,6 +176,8 @@ switch($Confirm)
 
         }
 
+        // 인증 성공: 실패 기록 초기화
+        mysqli_query($conn, "DELETE FROM login_error WHERE user_id='".$lock_id."'");
         sqlsrv_close($ms_con);
         //$oradb->discon();
         if(  $_POST['login_id'] == "" || $_POST['login_pw'] == "")
