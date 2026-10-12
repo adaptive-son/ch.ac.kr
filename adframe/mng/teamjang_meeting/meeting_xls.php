@@ -419,7 +419,8 @@ header( "Content-Description: PHP4 Generated Data" );
 	    if ( $_GET["idx"] > 133 && $part2_member["idx"] == 22 ) continue;
 		$part2_member_data = $part2_member['m_member'];
 		$part2_member_data_array = explode(",",$part2_member_data);
-		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_GET['idx']}' and m_part='{$part2_member['m_part']}'"));
+		// 2026.10.12 - 같은 (m_idx, m_part) 조합에 행이 여러 개 쌓여 있어도 최신 것을 읽도록 ORDER BY idx DESC LIMIT 1 추가. 이전에는 정렬이 없어 맨 처음(가장 오래된) 행만 읽혀, 두 번째 이후 저장분이 화면/회의록/엑셀 어디에도 안 나타났다.
+		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_GET['idx']}' and m_part='{$part2_member['m_part']}' ORDER BY idx DESC LIMIT 1"));
 	?>
 	
 <!--

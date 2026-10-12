@@ -32,9 +32,18 @@
 	$k=0;
 	while($row = mysql_fetch_array($res)){
 		$result['m_content'][$row['m_order']] = $row['m_content'];
+		// 2026.10.12 - 동시 작성 충돌 방지용. 각 칸의 최종 수정 시각을 함께 들고 간다.
+		$result['m_write_date'][$row['m_order']] = $row['m_write_date'];
 		$i++;
 		$k++;
 	}
+
+	// 2026.10.12 - 이 화면을 연 시각(DB 서버 시계 기준).
+	//  한 부서에 담당자가 여러 명이면 그 부서의 칸 전체가 한 폼으로 함께 전송되므로,
+	//  나중에 저장한 사람이 그 사이 다른 담당자가 쓴 내용을 옛 값으로 덮어쓰고 있었다.
+	//  저장할 때 이 시각 이후에 수정된 칸은 건드리지 않는다(proc.php 의 p_u 분기).
+	$_nowRow = mysql_fetch_array(mysql_query("SELECT NOW() AS n"));
+	$m_loaded_at = $_nowRow['n'];
 
 	$m_part_1 = mysql_fetch_array(mysql_query("SELECT count(*) as cnt FROM teamjang_meeting_member WHERE m_member like '%{$_SESSION['ID']}%' AND m_part_gubun='1'"));
 	$m_part_2 = mysql_fetch_array(mysql_query("SELECT count(*) as cnt FROM teamjang_meeting_member WHERE m_member like '%{$_SESSION['ID']}%' AND m_part_gubun='2'"));
@@ -62,11 +71,12 @@
 	}
 
 
-if($k>0){
-	$mode = "p_u";
-}else{
-	$mode = "p_w";
-}
+// 2026.10.12 - 저장 모드 판정 수정
+//  $k 는 부서 테이블(teamjang_meeting_content_new)의 행 수만 센다. 학과 담당자가 저장할 때
+//  부서 내용이 아직 하나도 없으면 $k=0 이 되어 p_w(무조건 INSERT)로 빠졌고, 저장할 때마다
+//  teamjang_meeting_class_content_new 에 중복 행이 쌓였다(2026.10.12 실측 36개 조합).
+//  p_u 는 "있으면 UPDATE, 없으면 INSERT" 라 p_w 의 동작을 모두 포함하므로 항상 p_u 로 둔다.
+$mode = "p_u";
 ?>
 <link rel="stylesheet" type="text/css" href="../js/jquery-ui.css" />
 <script type="text/javascript" src="../js/jquery.js" ></script>
@@ -79,6 +89,7 @@ if($k>0){
 <input type="hidden" name="m_idx" value="<?=$parent['idx']?>" />
 <input type="hidden" name="m_writer" value=""/>
 <input type="hidden" name="m_page" value="part_write.php" />
+<input type="hidden" name="m_loaded_at" value="<?php echo $m_loaded_at?>" />
 <input type="hidden" name="mode" value="<?php echo $mode?>" />
 <?php if($m_part_1['cnt'] > 0){?>
 <table border="0" cellpadding="0" cellspacing="1" bgcolor="D8D8D8" width="70%" >
@@ -627,7 +638,9 @@ if($m_part_2['cnt'] > 0){
 			$part_member_data_array = explode(",",$part_member_data);
 			${$part_member['m_part']}[idx] = $part_member['idx'];
 			${$part_member['m_part']}[member] = $part_member_data_array;
-			$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$parent['idx']}' and m_part='{$part_member['m_part']}'"));
+			// 2026.10.12 - 같은 (m_idx, m_part) 조합에 행이 여러 개 쌓여 있어도 최신 것을 읽도록 ORDER BY idx DESC LIMIT 1 추가. 이전에는 정렬이 없어 맨 처음(가장 오래된) 행만 읽혀, 두 번째 이후 저장분이 화면/회의록/엑셀 어디에도 안 나타났다.
+			$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$parent['idx']}' and m_part='{$part_member['m_part']}' ORDER BY idx DESC LIMIT 1"));
+			$part_lastmod[$part_member['m_part']] = $part_data['m_write_date'];
 
 	?>
 		<?php if(in_array($_SESSION['ID'],${$part_member['m_part']}['member'])==true){ ?>
@@ -671,6 +684,35 @@ if($m_part_2['cnt'] > 0){
 		<td style="text-align:center"><input type="submit" class='btn1' value='등록' style="cursor:pointer"/></td>
 	</tr>
 </table>
+<?php
+	// 2026.10.12 - 각 입력칸 아래에 최종 수정 시각을 표시해, 다른 담당자가 그 사이
+	//  수정했는지 눈으로 바로 알 수 있게 한다. 입력칸 블록을 직접 고치지 않으려고
+	//  값만 넘기고 표시는 JS 가 붙인다.
+	$_lastMod = array("order" => array(), "part" => array());
+	if ( !empty($result['m_write_date']) ) {
+		foreach ( $result['m_write_date'] as $_o => $_d ) { if ( $_d ) $_lastMod["order"][(string)$_o] = $_d; }
+	}
+	if ( !empty($part_lastmod) ) {
+		foreach ( $part_lastmod as $_p => $_d ) { if ( $_d ) $_lastMod["part"][$_p] = $_d; }
+	}
+?>
+<script>
+var _lastMod = <?php echo json_encode($_lastMod, JSON_UNESCAPED_UNICODE); ?>;
+$(function(){
+	function _lmLabel(d){ return $('<div style="margin-top:4px;font-size:11px;color:#888;">최종 수정 ' + d + '</div>'); }
+	$('input[name="m_order[]"]').each(function(){
+		var d = _lastMod.order[$(this).val()];
+		if(d) $(this).closest('td').append(_lmLabel(d));
+	});
+	var _parts = $('input[name="m_part[]"]');
+	$.each(['m_content_this[]', 'm_content_next[]', 'm_content_past[]'], function(_, nm){
+		$('textarea[name="' + nm + '"]').each(function(i){
+			var d = _lastMod.part[_parts.eq(i).val()];
+			if(d) $(this).closest('td').append(_lmLabel(d));
+		});
+	});
+});
+</script>
 
 </form>
 </div>

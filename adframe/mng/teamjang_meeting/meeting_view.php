@@ -19,11 +19,12 @@
 		$result['m_content'][$row['m_order']] = $row['m_content'];
 	}
 
-	if($rows > 0){
-		$mode = "p_u_1";
-	}else{
-		$mode = "p_w_2";
-	}
+	// 2026.10.12 - 저장 모드 수정
+	//  p_w_2 는 proc.php 에 존재하지 않는 모드다(처리되는 것은 w / p_w / p_u / p_w_1 / p_u_1).
+	//  부서 내용이 하나도 없는 회의에서 저장하면 이 값이 들어가 switch 에 걸리는 분기가 없었고,
+	//  쿼리가 한 줄도 실행되지 않은 채 $msg·$url 도 비어 빈 알림창만 뜬 뒤 제자리로 돌아왔다.
+	//  p_u_1 을 "있으면 UPDATE, 없으면 INSERT" 로 보강했으므로 항상 p_u_1 을 쓴다.
+	$mode = "p_u_1";
 ?>
 <link rel="stylesheet" type="text/css" href="../js/jquery-ui.css" />
 <script type="text/javascript" src="../js/jquery.js" ></script>
@@ -588,7 +589,8 @@
 	    if ( $_GET["idx"] > 133 && $part2_member["idx"] == "22" ) continue;
 		$part2_member_data = $part2_member['m_member'];
 		$part2_member_data_array = explode(",",$part2_member_data);
-		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_GET['idx']}' and m_part='{$part2_member['m_part']}'"));
+		// 2026.10.12 - 같은 (m_idx, m_part) 조합에 행이 여러 개 쌓여 있어도 최신 것을 읽도록 ORDER BY idx DESC LIMIT 1 추가. 이전에는 정렬이 없어 맨 처음(가장 오래된) 행만 읽혀, 두 번째 이후 저장분이 화면/회의록/엑셀 어디에도 안 나타났다.
+		$part_data = mysql_fetch_array(mysql_query("SELECT * FROM teamjang_meeting_class_content_new WHERE m_idx='{$_GET['idx']}' and m_part='{$part2_member['m_part']}' ORDER BY idx DESC LIMIT 1"));
 	?>
 		<input type="hidden" name="m_part[]" value="<?php echo $part2_member['m_part']?>" />
 		<!--
