@@ -169,7 +169,7 @@
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][43])))?>
 		</td>
 	</tr>
-	<tr>
+	<!--tr>
 		<th colspan="3" style="border:1px solid #000;">AID 전환중점지원사업단</th>
 		<td colspan="7" style="border:1px solid #000;">
 			<?php
@@ -189,7 +189,7 @@
 			<?php
 				echo nl2br(str_replace("<","(",str_replace(">",")",$result['m_content'][59])))?>
 		</td>
-	</tr>
+	</tr-->
 
 	<tr>
 		<th rowspan="4" style="border:1px solid #000;">국<br/>제<br/>교<br />류<br />처</th>
