@@ -47,10 +47,6 @@ if($no != "") {
                 return false;
             }
 
-            if(form.link_url.value == ""){
-                alert("링크 URL을 입력하세요.");
-                return false;
-            }
             return true;
 
         }
