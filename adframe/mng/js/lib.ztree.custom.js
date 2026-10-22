@@ -286,8 +286,8 @@ function beforeClick(treeId, treeNode, clickFlag) {
 		if ( treeNode.link_target == "1" ) $("#checkbox0101").attr('checked', true);
 		else $("#checkbox0101").attr('checked', false);
 		// 메뉴 표시 여부
-		if ( treeNode.menu_on == "Y" ) $("#radio_Y").attr("checked", true);
-		else $("#radio_N").attr("checked", true);
+		if ( treeNode.menu_on == "Y" ) { $("#radio_Y").attr("checked", true); $("#radio_N").attr("checked", false); }
+		else { $("#radio_N").attr("checked", true); $("#radio_Y").attr("checked", false); }
 		$("#ETC2").val(treeNode.ETC2); //담당부서
 		$("#ETC3").val(treeNode.ETC3); //담당자
 		$("#ETC4").val(treeNode.ETC4); //이메일
