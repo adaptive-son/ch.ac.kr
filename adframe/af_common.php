@@ -142,8 +142,7 @@ if(getcwd()=="/home/dev/adframe/mng"){
 		
 	}else{
 		//out
-		echo("<script> 접근가능한 지역이 아닙니다.</script>");
-		exit;
+		alert_replace("/", "접근 가능한 지역이 아닙니다.");
 	}
 
 }
