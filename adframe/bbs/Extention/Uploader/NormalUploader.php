@@ -24,7 +24,7 @@
 
 	}
 	/******************** 파일 삭제 구문 ***********************************/
-$Config_FileLimitExt = array("jpg","jpge","png","gif","JPG","hwp","hwpx","xls","xlsx","PDF","pdf","ppt","zip","bmp");
+$Config_FileLimitExt = array("jpg","jpeg","png","gif","JPG","hwp","hwpx","xls","xlsx","PDF","pdf","ppt","zip","bmp");
 	/******************** 파일 업로드 구문 ***********************************/
 
 	// 첨부파일 없이 글만 등록할 때도 up_file(int NOT NULL) 컬럼에 값이 필요하므로 기본값 설정
