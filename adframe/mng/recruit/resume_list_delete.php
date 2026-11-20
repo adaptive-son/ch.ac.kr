@@ -3,8 +3,12 @@
 include_once "../_common.php";
 // 접속로그
 include_once( dirname(__FILE__)."/lib/log.access.forPrivate.php" );
+include_once( dirname(__FILE__)."/../employment/lib/func.delete_apply_file.php" );
 for($i=0; $i<count($chk); $i++){
     $del_idx = $chk[$i];
+    // 첨부파일 삭제 (DB 행 삭제 전에 경로 조회)
+    $frow = mysql_fetch_array(mysql_query("SELECT file_name FROM recruit_copy WHERE wr_id='$del_idx'"));
+    if ($frow) delete_apply_file($frow['file_name']);
     $sql = "DELETE FROM recruit_copy WHERE wr_id='$del_idx'";
     mysql_query($sql);
     $sql2 = "DELETE FROM recruit1 WHERE parent='$del_idx'";
