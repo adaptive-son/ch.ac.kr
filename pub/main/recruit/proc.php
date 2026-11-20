@@ -18,6 +18,16 @@
 		exit;
 	}
 
+	// 업로드 용량 초과 안내
+	// post_max_size 초과 시 $_POST/$_FILES 가 통째로 비어서 넘어온다.
+	if (empty($_POST) && empty($_FILES) && isset($_SERVER['CONTENT_LENGTH']) && (int)$_SERVER['CONTENT_LENGTH'] > 0) {
+		Error("첨부파일 용량이 초과되었습니다. (최대 ".ini_get('upload_max_filesize').")");
+	}
+	// upload_max_filesize / MAX_FILE_SIZE 초과 시 error 값만 세팅되고 size 는 0 으로 온다.
+	if (isset($_FILES['file1']) && in_array($_FILES['file1']['error'], array(UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE))) {
+		Error("첨부파일 용량이 초과되었습니다. (최대 ".ini_get('upload_max_filesize').")");
+	}
+
 	$j = $_POST["j"];
 
 	$id = date("Ymd");
@@ -40,9 +50,25 @@
 		if($file1_size>0) {
 			$s_file_name1 = $file1_name;
 			$temp1=explode(".",$file1_name);
-			$allowed_ext = array('jpg','jpeg','png','gif','pdf','doc','docx','hwp');
-			if (!in_array(strtolower(end($temp1)), $allowed_ext)) { Error("허용되지 않는 파일 형식입니다."); }
-			$temp1_name = $reg_date.'.'.$temp1[1];
+			// 업로드 금지 확장자(웹쉘/실행 가능 파일 등). 이중 확장자(shell.php.jpg) 우회를 막기 위해
+			// 파일명의 모든 '.' 구간을 검사한다.
+			$denied_ext = array(
+				'php','php3','php4','php5','php7','php8','phtml','pht','phps','phar','inc','module',
+				'asp','aspx','asa','asax','ascx','ashx','asmx','cer','cdx','jsp','jspx','jspf','jsw','jsv',
+				'cgi','pl','py','pyc','rb','sh','bash','lua','exe','com','bat','cmd','dll','so','msi','scr','vbs','vbe','wsf','wsh','ps1',
+				'htm','html','xhtml','shtml','shtm','htaccess','htpasswd','ini','user','js','jar','war','svg','swf'
+			);
+			if (count($temp1) < 2) { Error("허용되지 않는 파일 형식입니다."); }
+			foreach ($temp1 as $k => $seg) {
+				if ($k == 0) continue;
+				// 공백, 널바이트, 끝의 점 등 우회 문자 제거 후 비교
+				$seg = strtolower(trim(str_replace("\0", "", $seg)));
+				if ($seg === '' || in_array($seg, $denied_ext)) { Error("허용되지 않는 파일 형식입니다."); }
+			}
+			if (strpos($file1_name, "\0") !== false) { Error("허용되지 않는 파일 형식입니다."); }
+			$ext1 = strtolower(preg_replace('/[^A-Za-z0-9]/', '', end($temp1)));
+			if ($ext1 === '') { Error("허용되지 않는 파일 형식입니다."); }
+			$temp1_name = $reg_date.'.'.$ext1;
 
 			$file1 = preg_replace("/\\\\\\\\/","\\\\", $file1);
 			$s_file_name1 = str_replace(" ","_",$s_file_name1);
