@@ -172,19 +172,22 @@
 						<?php if($configBBS[module_editor]!="None.php"){?>
 
 							<p class="point-color03 pb10 pt20">
-								크로스에디터 영역 - 편집영역 다음탭 : Esc, 편집영역 이전탭 : Shift+Esc
+								에디터 영역 - 편집영역 다음탭 : Tab, 편집영역 이전탭 : Shift+Tab, 도구 모음 : Alt+F10, 도움말 : Alt+0
 							</p>     
 						
-							<!--
-							<textarea name="fm_content" id="fm_content" style="display: none;"></textarea>
-							-->
-                        <script type="text/javascript" src="/manage/js/namo_scripteditor.js"> </script>
-                        <script type="text/javascript">
-                            var CrossEditor = new NamoSE("Namo");
-                            CrossEditor.params.Width = "100%";
-                            CrossEditor.params.UserLang = "auto";
-                            CrossEditor.params.FullScreen = false;
-                            CrossEditor.EditorStart();
+							<?php /* 261125 크롬 158부터 XSLT 기능이 빠져 나모 크로스에디터가 뜨지 않음 → 관리자 글작성(adm_board/write.php)과 같은 CKEditor로 에디터만 교체. smartEditor 설정 게시판에서 저장 검사(class_bbs.php의 oEditors)가 멈추는 기존 문제는 그대로 둠 */ ?>
+                        <script src="/adframe/mng/js/jquery.form.min.js"></script>
+                        <script src="/adframe/bbs/Extention/Editor/ckeditor/ckeditor.js"></script>
+                        <script src="/adframe/bbs/Extention/Editor/ckeditor/adapters/jquery.js"></script>
+                        <textarea name="fm_content" id="fm_content" style="width: 100%; height: 300px;"></textarea>
+                        <script>
+                            $('#fm_content').ckeditor();
+                            // 이미지 업로드(ajaximage) 기본값 - ckeditor.php 모듈과 같음
+                            var ajaxImage = {};
+                            ajaxImage["id"] = "fm_content";
+                            ajaxImage["uploadDir"] = "upload";
+                            ajaxImage["imgMaxN"] = 10;
+                            ajaxImage["imgMaxSize"] = 20;
                         </script>
                         <? }else{?>
 <textarea name="fm_content" id="fm_content" style="width:100%;height:250px"></textarea>

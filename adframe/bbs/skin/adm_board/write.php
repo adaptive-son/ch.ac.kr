@@ -377,16 +377,23 @@
                         </label>
                     </dt>
                     <dd>
-                        <textarea name="fm_content" id="fm_content" style="display: none;"></textarea>
                         <?php if($configBBS[module_editor]!="None.php"){?>
-                        <script type="text/javascript" src="/manage/js/namo_scripteditor.js"> </script>
-                        <script type="text/javascript">
-                            var CrossEditor = new NamoSE("Namo");
-                            CrossEditor.params.Width = "100%";
-                            CrossEditor.params.UserLang = "auto";
-                            CrossEditor.params.FullScreen = false;
-                            CrossEditor.EditorStart();
+                        <?php /* 261125 크롬 158부터 XSLT 기능이 빠져 나모 크로스에디터 툴바가 뜨지 않음 → 수정 화면(edit.php)과 같은 CKEditor 사용. ckeditor.php 모듈은 $bbs_row 본문을 미리 채워(답글이면 원글 내용) 여기서는 빈 칸으로 직접 씀 */ ?>
+                        <script src="/adframe/mng/js/jquery.form.min.js"></script>
+                        <script src="/adframe/bbs/Extention/Editor/ckeditor/ckeditor.js"></script>
+                        <script src="/adframe/bbs/Extention/Editor/ckeditor/adapters/jquery.js"></script>
+                        <textarea name="fm_content" id="fm_content" style="width: 100%; height: 300px;"></textarea>
+                        <script>
+                            $('#fm_content').ckeditor();
+                            // 이미지 업로드(ajaximage) 기본값 - ckeditor.php 모듈과 같음
+                            var ajaxImage = {};
+                            ajaxImage["id"] = "fm_content";
+                            ajaxImage["uploadDir"] = "upload";
+                            ajaxImage["imgMaxN"] = 10;
+                            ajaxImage["imgMaxSize"] = 20;
                         </script>
+                        <? }else{ ?>
+                        <textarea name="fm_content" id="fm_content" style="display: none;"></textarea>
                         <? }?>
                         <?
                         //춘해대 특수
@@ -513,10 +520,39 @@
                 }
             }
             <?php if($configBBS[module_editor]!="None.php"){?>
-            document.getElementById('fm_content').value = CrossEditor.GetBodyValue();
+            document.getElementById('fm_content').value = CKEDITOR.instances.fm_content.getData();
             <?php }?>
             bbsSendit();
             return false;
         });
     });
 </script>
+<?php /* 261125 CKEditor 이미지 업로드(ajaximage)용 숨은 폼·로딩 표시·설정 - edit.php 끝부분과 같음 */ ?>
+<?php if($configBBS[module_editor]!="None.php"){?>
+<form id="img_upload_form" action="/adframe/bbs/Extention/Editor/ckeditor/img_upload.php" enctype="multipart/form-data" method="post" style="display:none;">
+	<input type='file' id="img_file" multiple="multiple" name='imgfile[]' accept="image/*">
+</form>
+	 
+<div id="ajaxImageModal" style="display:none;">
+	<div id="light" style="display: table;position: absolute;top:25%;left:25%;width:50%;height:50%; text-align:center; background-color:transparent; z-index:1002;overflow: auto;">
+		<div style="display: table-cell; vertical-align: middle;">
+			<img src="/adframe/bbs/Extention/Editor/ckeditor/plugins/ajaximage/loading.gif" style="user-select: none; -ms-user-select: none;">
+		</div>
+	</div>
+</div>
+<?php
+if($configBBS['module_editor']=="ckeditor.php"){?>
+<script>
+	//객체 생성
+	var ajaxImage = {};
+	// ckeditor textarea id
+	ajaxImage["id"] = "fm_content";
+	// 업로드 될 디렉토리
+	ajaxImage["uploadDir"] = "/data/smartEditorUpload/";
+	// 한 번에 업로드할 수 있는 이미지 최대 수
+	ajaxImage["imgMaxN"] = 10;
+	// 허용할 이미지 하나의 최대 크기(MB)
+	ajaxImage["imgMaxSize"] = 50;
+</script>
+<?php } ?>
+<?php } ?>
