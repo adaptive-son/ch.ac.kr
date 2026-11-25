@@ -45,6 +45,13 @@ if(isset($_POST['fm_content']) && $dataArr[idx]){
 //권한매핑 설정
 include $_SERVER["DOCUMENT_ROOT"]."/adframe/mng/bbs_manager/auth_config.php";
 
+//261125 글쓰기 화면(lib/class_bbs.php)과 같게: 관리자 권한 게시판(auth_admin=Y)은 글쓰기·답글·댓글을 관리자만 허용
+if($configBBS['auth_admin'] == "Y"){
+	$configBBS['auth_write_use'] = "Y";	$configBBS['auth_write'] = "OnlyAdmin";
+	$configBBS['auth_reply_use'] = "Y";	$configBBS['auth_reply'] = "OnlyAdmin";
+	$configBBS['auth_comment_use'] = "Y";	$configBBS['auth_comment'] = "OnlyAdmin";
+}
+
 //if($_POST['Confirm']=="define" && $_SESSION["_BBS_WRITE_CONN"]){
 if($_POST['Confirm']=="define"){
 
@@ -88,7 +95,8 @@ if($_POST['Confirm']=="define"){
 
 	//답글 권한제어
 	if($dataArr[idx]) {
-		if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_reply_use] == "Y" && $configBBS[auth_reply] && @strpos(",".$configBBS[auth_reply], $bbs_authgroup) == false){
+		//261125 그룹 칸이 비어 있으면 검사를 건너뛰던 것을 글쓰기 화면(lib/class_bbs.php)과 같게: Y면 그룹 없는 사용자와 목록에 없는 그룹은 막음
+		if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_reply_use] == "Y" && ($bbs_authgroup == "" || @strpos(",".$configBBS[auth_reply], $bbs_authgroup) == false)){
 			go_back("답글쓰기 권한이 없습니다.");
 			exit;
 		}
@@ -97,7 +105,8 @@ if($_POST['Confirm']=="define"){
 	}else{
 		//alert("n");
 		//alert($_SESSION['_BBS_SecAdmin']);
-		if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_write_use] == "Y" && $configBBS[auth_write] && @strpos(",".$configBBS[auth_write], $bbs_authgroup) == false){
+		//261125 그룹 칸이 비어 있으면 검사를 건너뛰던 것을 글쓰기 화면(lib/class_bbs.php)과 같게: Y면 그룹 없는 사용자와 목록에 없는 그룹은 막음
+		if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_write_use] == "Y" && ($bbs_authgroup == "" || @strpos(",".$configBBS[auth_write], $bbs_authgroup) == false)){
 			//alert("n");
 			go_back("글쓰기 권한이 없습니다.");
 			exit;
@@ -273,7 +282,8 @@ if($_POST['Confirm']=="define"){
 	if(strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) == false)  exit;
 
 	//코멘트 권한제어
-	if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_comment_use] == "Y" && $configBBS[auth_comment] && @strpos(",".$configBBS[auth_comment], $bbs_authgroup) == false){
+	//261125 그룹 칸이 비어 있으면 검사를 건너뛰던 것을 글쓰기 화면(lib/class_bbs.php)과 같게: Y면 그룹 없는 사용자와 목록에 없는 그룹은 막음
+	if($_SESSION['_BBS_SecAdmin'] != 1 && $configBBS[auth_comment_use] == "Y" && ($bbs_authgroup == "" || @strpos(",".$configBBS[auth_comment], $bbs_authgroup) == false)){
 		go_back("답글쓰기 권한이 없습니다.");
 		exit;
 	}
